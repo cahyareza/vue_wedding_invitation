@@ -1,12 +1,16 @@
 <template>
-    <section class="hero is-primary is-fullheight">
-        <section class="section pt-4">
-            <div class="container">
-                <p class="title mt-4">Kirim Ucapan</p>
+    <section class="hero is-primary is-large">
+        <div class="columns">
+            <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                <section class="section pt-4">
+                    <div class="container">
+                        <p class="title mt-4">Kirim Ucapan</p>
+                    </div>
+                </section>
+                <MessagePage></MessagePage>
+                <MessageForm></MessageForm>
             </div>
-        </section>
-        <MessagePage></MessagePage>
-        <MessageForm></MessageForm>
+        </div>
     </section>
 </template>
 

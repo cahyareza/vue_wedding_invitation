@@ -1,5 +1,5 @@
 <template>
-    <div class="container m-4 mt-1">
+    <div class="container m-4 mt-6">
         <div class="box">
             <form class="form">
                 <p class="has-text-weight-bold mb-4"> Kirim ucapan:</p>

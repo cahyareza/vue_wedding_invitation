@@ -1,8 +1,9 @@
 <template>
     <section class="hero is-info is-large">
         <div class="container">
-            <div class="notification is-primary mt-4 mb-4">
-                <div class="columns is-multiline is-centered mt-1">
+            
+            <div class="columns is-multiline mt-1 mb-1">
+                <div class="notification is-primary m-4">
                     <div class="column is-full">
                         <p class="title is-size-4 mb-6">Akad Nikah</p>
 

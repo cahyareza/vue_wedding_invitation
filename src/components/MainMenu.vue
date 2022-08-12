@@ -63,7 +63,7 @@ button-music.button {
     position: fixed;
     height: 40px;
     top: 20px;
-    right: 10px;
+    right: 20px;
     color: #fff;
     border-radius: 50px;
     cursor: pointer;
@@ -74,7 +74,7 @@ button-amplop.button {
     position: fixed;
     height: 40px;
     top: 70px;
-    right: 10px;
+    right: 20px;
     color: #fff;
     border-radius: 50px;
     cursor: pointer;

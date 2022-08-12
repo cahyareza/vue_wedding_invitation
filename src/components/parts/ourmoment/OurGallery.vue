@@ -1,16 +1,16 @@
 <template>
-    <div class="container mt-6">
-        <div class="grid">
-            <img src="https://source.unsplash.com/400x400?mountain">
-            <img src="https://source.unsplash.com/400x400?nature">
-            <img src="https://source.unsplash.com/400x400?valley">
-            <img src="https://source.unsplash.com/400x400?beach">
-            <img src="https://source.unsplash.com/400x400?ocean">
-            <img src="https://source.unsplash.com/400x400?water">
-            <img src="https://source.unsplash.com/400x400?trees">
-            <img src="https://source.unsplash.com/400x400?lake">
-        </div>
-    </div>
+  <div class="section">
+      <div class="grid">
+          <img src="https://source.unsplash.com/400x400?mountain">
+          <img src="https://source.unsplash.com/400x400?nature">
+          <img src="https://source.unsplash.com/400x400?valley">
+          <img src="https://source.unsplash.com/400x400?beach">
+          <img src="https://source.unsplash.com/400x400?ocean">
+          <img src="https://source.unsplash.com/400x400?water">
+          <img src="https://source.unsplash.com/400x400?trees">
+          <img src="https://source.unsplash.com/400x400?lake">
+      </div>
+  </div>
 </template>
 
 
@@ -37,7 +37,7 @@ body {
   justify-content: center;
   align-content: center;
   grid-gap: 10px;
-  height: 100vh;
+  height: 780px;
 }
 
 .grid img {

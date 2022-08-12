@@ -1,5 +1,5 @@
 <template>
-    <section class="hero is-light is-fullheight">
+    <section class="hero is-light is-large">
         <section class="section pt-4">
             <div class="container">
                 <p class="title is-size-4-mobile mt-5 p-6">Acara Akan Diselenggarakan</p>
