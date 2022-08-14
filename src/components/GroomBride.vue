@@ -41,9 +41,19 @@
     </section>
 </template>
 
-// <script setup>
-// import HeaderSection from '@/components/HeaderSection.vue'
-// import Card from '@/components/Card.vue'
-// import wave from '@/assets/svg/wave.svg'
-// </script>
+<script setup>
+import axios from 'axios'
+import { ref, onMounted } from 'vue'
+
+const couples = ref(null)
+
+onMounted(() => {
+    axios.get('contents/couples.json')
+        .then( 
+            res => couples.value = res.data.couples,
+            console.log(couples.value)
+        )
+        .catch( err => alert(err) )
+})
+</script>
 
