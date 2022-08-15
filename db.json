@@ -1,19 +1,18 @@
 {
-	"couples": [
+	"couples":
 		{   "perempuan": {
                 "name": "Nadia",
-                "instagram_link": "",
-                "anak-ke":"",
-                "nama-ayah": "",
-                "nama-ibu": ""
+                "instagram_link": "https://javascriptsu.wordpress.com/2021/12/12/how-to-use-axios-in-vue3-setup/",
+                "anak_ke":"dua",
+                "nama_ayah": "Michael Stamp",
+                "nama_ibu": "Aminah"
 		    },
-            "laki-laki": {
+            "laki_laki": {
                 "name": "Yudha",
-                "instagram_link": "",
-                "anak-ke":"",
-                "nama-ayah": "",
-                "nama-ibu": ""
-		    },
+                "instagram_link": "https://javascriptsu.wordpress.com/2021/12/12/how-to-use-axios-in-vue3-setup/",
+                "anak_ke":"tiga",
+                "nama_ayah": "Bambang",
+                "nama_ibu": "Siti Susana"
+            }
         }
-    ]
 }
