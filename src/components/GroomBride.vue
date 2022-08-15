@@ -12,7 +12,7 @@
                         </figure>
 
                         <!-- <p class="title mt-5 mb-6" v-for="couple in couples.perempuan" :key="couple.id">{{ couple }}</p> -->
-                        <p class="title mt-5 mb-6" v-if="couples.perempuan">{{ couples.perempuan.name }}</p>
+                        <p class="title mt-5 mb-6">{{ couples.perempuan?.name }}</p>
 
                         <p class="subtitle is-size-6 has-text-weight-bold mb-1">Putri ke{{ couples.perempuan?.anak_ke }} dari</p>
                         <p class="subtitle is-size-6 mt-1">Bapak {{ couples.perempuan?.nama_ayah }} & Ibu {{ couples.perempuan?.nama_ibu }}</p>
@@ -44,16 +44,12 @@
 
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { inject, computed } from 'vue'
 
-const couples = ref([]);
+const store = inject('store');
 
-onMounted(() => {
-    fetch(' http://localhost:3000/couples')
-    .then(response => response.json())
-    .then(data => {
-        couples.value = data
-    });
-});
+const couples = computed(() => store.state.couples); 
+
+store.actions.getCouples();
 
 </script>

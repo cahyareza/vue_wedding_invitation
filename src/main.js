@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
+import store from './store';
 
 require("@/assets/main.scss");
 
@@ -16,4 +17,5 @@ library.add(fas, fab)
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
 .use(router)
+.provide("store", store)
 .mount('#app')
