@@ -5,10 +5,9 @@
                 <div class="container">
                     <div class="box has-background-light">
                         <p class="subtitle is-size-4-tablet is-size-6-mobile">
-                            "Dan Diantara tanda-tanda kebesaran-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri supaya kamu mendapatkan ketenangan hati dan 
-                            dijadikan-Nya kasih sayang diantara kamu sesungguhnya yang demikian menjadi tanda-tanda kebesaran-Nya bagi orang-orang yang berfikir"
+                            "{{ quote?.kutipan }}""
                         </p>
-                        <p> (Surat Ar-Ruum:21) </p>       
+                        <p> {{ quote?.ayat}} </p>       
                     </div>
                 </div>
             </section>
@@ -16,8 +15,13 @@
     </section>
 </template>
 
-// <script setup>
-// import HeaderSection from '@/components/HeaderSection.vue'
-// import Card from '@/components/Card.vue'
-// import wave from '@/assets/svg/wave.svg'
-// </script>
+<script setup>
+import { inject, computed } from 'vue'
+// import moment from 'moment'
+
+const store = inject('store');
+
+const quote = computed(() => store.state.quote); 
+
+store.actions.getQuote();
+</script>

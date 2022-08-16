@@ -1,8 +1,32 @@
 <template>
-  <div class="px-2">
-    <section class="section">
-        <p class="subtitle is-size-5 has-text-weight-bold mb-1">14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7</p>
-        <p class="subtitle is-size-5 has-text-weight-bold mt-1">JAM &nbsp;MENIT &nbsp;DETIK</p>
-    </section>
+  <div class="columns is-centered mt-6 mb-6">
+    <div v-for="(value, name, index) in countdown" :key="index">
+      <div class="column">
+        <p class="subtitle is-size-2 mb-1">{{ value }}</p>
+        <p class="subtitle is-size-2 mt-1">{{ name }}</p>
+      </div>
+    </div>
   </div>
 </template>
+
+
+<script setup>
+import { inject, computed } from 'vue'
+import useTimer from "../../../hooks/useTimer";
+
+const store = inject('store');
+// console.log(store);
+
+const acara = computed(() => store.state.acara); 
+
+store.actions.getAcara();
+// console.log(acara.value);
+
+const { createTimer, countdown } = useTimer();
+
+const timer = setInterval(() => {
+  createTimer(new Date(acara.value.tanggal_resepsi).getTime(), countdown, () => {
+    clearInterval(timer)
+  })
+}, 1000)
+</script>

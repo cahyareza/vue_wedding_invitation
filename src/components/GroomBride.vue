@@ -7,7 +7,7 @@
                 <div class="columns is-multiline is-centered mt-1">
                     <div class="column is-full">
                         <figure class="image is-inline-block" style="height:180px; width: 180px;">
-                            <img class="is-rounded mb-3" src="https://bulma.io/images/placeholders/128x128.png">
+                            <img class="is-rounded mb-3" :src="couples.perempuan?.picture">
                             <a :href="couples.perempuan?.instagram_link"><font-awesome-icon icon="fa-brands fa-4x fa-instagram" /></a>
                         </figure>
 
@@ -23,7 +23,7 @@
                     </div>
                     <div class="column is-full mt-4">
                         <figure class="image is-inline-block" style="height:180px; width: 180px;">
-                            <img class="is-rounded mb-3" src="https://bulma.io/images/placeholders/128x128.png">
+                            <img class="is-rounded mb-3" :src="couples.laki_laki?.picture">
                             <a :href="couples.laki_laki?.instagram_link"><font-awesome-icon icon="fa-brands fa-4x fa-instagram" /></a>
                         </figure>
 
@@ -48,8 +48,7 @@ import { inject, computed } from 'vue'
 
 const store = inject('store');
 
-const couples = computed(() => store.state.couples); 
+const couples = computed(() => store.state.couples);
 
 store.actions.getCouples();
-
 </script>

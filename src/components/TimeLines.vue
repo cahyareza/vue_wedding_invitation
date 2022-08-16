@@ -2,10 +2,7 @@
     <section class="hero is-light is-large">
         <section class="section pt-4">
             <div class="container">
-                <p class="title is-size-4-mobile mt-5 p-6">Acara Akan Diselenggarakan</p>
-
-                <p class="title">1070</p>
-                <p class="subtitle is-size-5 has-text-weight-bold">HARI</p>
+                <p class="title is-size-4-mobile mt-5 p-4">Acara Akan Diselenggarakan</p>
 
                 <CountDown></CountDown>
 

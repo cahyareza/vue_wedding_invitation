@@ -5,7 +5,7 @@
         
             <p class="title mt-5">{{couples.perempuan?.name }} & {{couples.laki_laki?.name }}</p>
 
-            <p class="subtitle mt-4 is-size-6">17 . 7 . 2025</p>
+            <p class="subtitle mt-4 is-size-6">{{ acara.tanggal_resepsi }}</p>
         </section>
 
         <section class="hero-footer mb-6 p-6">
@@ -17,16 +17,18 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { inject, computed } from 'vue'
+// import moment from 'moment'
 
-const couples = ref([]);
+const store = inject('store');
 
-onMounted(() => {
-    fetch(' http://localhost:3000/couples')
-    .then(response => response.json())
-    .then(data => {
-        couples.value = data
-    });
-});
+const couples = computed(() => store.state.couples); 
 
+store.actions.getCouples();
+
+const acara = computed(() => store.state.acara); 
+
+store.actions.getAcara();
+
+// const tanggal_resepsi = computed(() => moment(String(new Date("05 October 2011 14:48 UTC").getTime())).format('MM/DD/YYYY'))
 </script>

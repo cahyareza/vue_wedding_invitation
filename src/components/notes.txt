@@ -1,0 +1,59 @@
+onMounted(() => {
+    fetch(' http://localhost:3000/couples')
+    .then(response => response.json())
+    .then(data => {
+        state.couples = data
+    });
+});
+
+<script>
+import { inject, computed } from 'vue'
+
+export default {
+    name: 'GroomBride',
+    setup() {
+        const store = inject('store');
+
+        const couples = computed(() => store.state.couples); 
+
+        store.actions.getCouples();
+
+        return {
+            couples
+        };
+    }
+}
+</script>
+
+
+import { ref } from 'vue'
+const countdown = ref(null)
+
+
+// Handler for countdown
+const createTimer = (target, container, cb) => {
+   // target => UNIX time target
+   // Container => variable for return result
+   // cb => callback if countdown finish
+   const now = new Date().getTime()
+   const distance = target - now
+   if ( distance > 0 ) {
+     const hari = Math.floor(distance / (1000 * 60 * 60 * 24));
+     const jam = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+     const menit = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+     const detik = Math.floor((distance % (1000 * 60)) / 1000);
+      
+     container.value = { hari, jam, menit, detik }
+     //alert(JSON.stringify(container))
+      
+     if (hari === 0 && jam === 0 && menit === 0 && detik === 0 ) cb()
+   } else {
+     container.value = { hari: 0, jam: 0, menit: 0, detik: 0 }
+   } 
+}
+const timer = setInterval(() => {
+  createTimer(new Date('2022-10-8 19:30').getTime(), countdown, () => {
+    clearInterval(timer)
+  }),
+  console.log(countdown.value);
+}, 1000)
