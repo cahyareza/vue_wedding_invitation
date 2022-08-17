@@ -6,13 +6,8 @@
 
                 <CountDown></CountDown>
 
-                <button class="button is-rounded is-primary p-2 is-size-7">
-                    <font-awesome-icon icon="fa-solid fa-calendar-plus" />&nbsp;Simpan acara ke kalender
-                </button>
-                <br>
-                <button class="button is-rounded is-primary p-2 is-size-7 mt-4">
-                    <font-awesome-icon icon="fa-solid fa-bell" />&nbsp;Aktifkan notifikasi
-                </button>
+                <AddtoCalender></AddtoCalender>
+
             </div>
         </section>
 
@@ -30,5 +25,6 @@
 import CountDown from '@/components/parts/timelines/CountDown.vue'
 import GuestBook from '@/components/parts/timelines/GuestBook.vue'
 import GoToOurWedding from '@/components/parts/timelines/GoToOurWedding.vue'
+import AddtoCalender from '@/components/parts/timelines/AddtoCalender.vue'
 
 </script>

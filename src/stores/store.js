@@ -5,12 +5,14 @@ const state = reactive({
     couples: [],
     acara: [],
     quote: [],
+    addtocalender: [],
 });
 
 const mutations = {
     updateCouples: (payload) => state.couples = payload,
     updateAcara: (payload) => state.acara = payload,
     updateQuote: (payload) => state.quote = payload,
+    updateAddtocalender: (payload) => state.addtocalender = payload,
 }
 
 const actions = {
@@ -27,6 +29,11 @@ const actions = {
     getQuote: () => {
       return axios.get('http://localhost:3000/quotes').then((response) => {
         mutations.updateQuote(response.data);
+      });
+    },
+    getAddtocalender: () => {
+      return axios.get('http://localhost:3000/addtocalender').then((response) => {
+        mutations.updateAddtocalender(response.data);
       });
     },
 };

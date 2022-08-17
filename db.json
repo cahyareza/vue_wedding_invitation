@@ -1,35 +1,54 @@
 {
-	"couples":
-		{   "perempuan": {
-                "name": "Nadia",
-                "instagram_link": "https://javascriptsu.wordpress.com/2021/12/12/how-to-use-axios-in-vue3-setup/",
-                "anak_ke":"dua",
-                "nama_ayah": "Michael Stamp",
-                "nama_ibu": "Aminah",
-                "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD3qgKmQbVAWFzN591LQGGxELkk-u1DQ23qQ&usqp=CAU"
-		    },
-            "laki_laki": {
-                "name": "Yudha",
-                "instagram_link": "https://javascriptsu.wordpress.com/2021/12/12/how-to-use-axios-in-vue3-setup/",
-                "anak_ke":"tiga",
-                "nama_ayah": "Bambang",
-                "nama_ibu": "Siti Susana",
-                "picture": "https://alexandra.bridestory.com/image/upload/q_80,w_412/blogs/sas-designs-image3-BkxA9bYcv.jpg"
-            }
-        },
-    "acara":
-        {
-            "tanggal_akad": "2022-11-8 19:30",
-            "tempat_akad": "Jalan Kemuning Raya, di Masjid Al Barokah",
-            "tanggal_resepsi": "2023-10-8 19:30",
-            "tempat_resepsi": "Jalan Kemuning Raya, di Masjid Al Barokah",
-            "tanggal_unduh_mantu": "new Date('2022-9-8 19:30')",
-            "tempat_unduh_mantu": "Jalan Kemuning Raya, di Masjid Al Barokah",
-            "google_map_location": ""
-        },
-    "quotes":
-        {
-            "ayat": "Surat Ar-Ruum:21",
-            "kutipan": "Dan Diantara tanda-tanda kebesaran-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri supaya kamu mendapatkan ketenangan hati dan dijadikan-Nya kasih sayang diantara kamu sesungguhnya yang demikian menjadi tanda-tanda kebesaran-Nya bagi orang-orang yang berfikir"
-        }
+  "couples": {
+    "perempuan": {
+      "name": "Nadia",
+      "instagram_link": "https://javascriptsu.wordpress.com/2021/12/12/how-to-use-axios-in-vue3-setup/",
+      "anak_ke": "dua",
+      "nama_ayah": "Michael Stamp",
+      "nama_ibu": "Aminah",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD3qgKmQbVAWFzN591LQGGxELkk-u1DQ23qQ&usqp=CAU"
+    },
+    "laki_laki": {
+      "name": "Yudha",
+      "instagram_link": "https://javascriptsu.wordpress.com/2021/12/12/how-to-use-axios-in-vue3-setup/",
+      "anak_ke": "tiga",
+      "nama_ayah": "Bambang",
+      "nama_ibu": "Siti Susana",
+      "picture": "https://alexandra.bridestory.com/image/upload/q_80,w_412/blogs/sas-designs-image3-BkxA9bYcv.jpg"
+    }
+  },
+  "acara": {
+    "tanggal_akad": "2022-11-8 19:30",
+    "tempat_akad": "Jalan Kemuning Raya, di Masjid Al Barokah",
+    "tanggal_resepsi": "2023-10-8 19:30",
+    "tempat_resepsi": "Jalan Kemuning Raya, di Masjid Al Barokah",
+    "tanggal_unduh_mantu": "new Date('2022-9-8 19:30')",
+    "tempat_unduh_mantu": "Jalan Kemuning Raya, di Masjid Al Barokah",
+    "google_map_location": ""
+  },
+  "quotes": {
+    "ayat": "Surat Ar-Ruum:21",
+    "kutipan": "Dan Diantara tanda-tanda kebesaran-Nya ialah diciptakan-Nya untukmu pasangan hidup dari jenismu sendiri supaya kamu mendapatkan ketenangan hati dan dijadikan-Nya kasih sayang diantara kamu sesungguhnya yang demikian menjadi tanda-tanda kebesaran-Nya bagi orang-orang yang berfikir"
+  },
+  "addtocalender": {
+    "name": "Reminder to star the add-to-calendar-button repo",
+    "description": "Check out the maybe easiest way to include add-to-calendar-buttons to your website:\n→ [url]https://github.com/jekuer/add-to-calendar-button|Click here![/url]",
+    "startDate": "2022-08-14",
+    "location": "World Wide Web",
+    "label": "Simpan ke kalender!",
+    "startTime": "10:13",
+    "endTime": "12:57",
+    "options": [
+      "Google",
+      "Apple",
+      "iCal",
+      "Yahoo",
+      "Outlook.com",
+      "Microsoft365"
+    ],
+    "timeZone": "Asia/Jakarta",
+    "trigger": "click",
+    "iCalFileName": "Reminder-Event"
+  },
+  "hadir": []
 }
