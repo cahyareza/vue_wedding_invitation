@@ -50,5 +50,61 @@
     "trigger": "click",
     "iCalFileName": "Reminder-Event"
   },
-  "hadir": []
+  "hadir": [
+    {
+      "name": "danu",
+      "hadir": "iya",
+      "id": 1
+    },
+    {
+      "name": "joko",
+      "hadir": "iya",
+      "id": 2
+    },
+    {
+      "name": "joko",
+      "hadir": "tidak",
+      "id": 3
+    },
+    {
+      "name": "joko",
+      "hadir": "iya",
+      "id": 4
+    },
+    {
+      "name": "yudha",
+      "hadir": "iya",
+      "id": 5
+    },
+    {
+      "name": "anis",
+      "hadir": "iya",
+      "id": 6
+    },
+    {
+      "name": "nana",
+      "hadir": "iya",
+      "id": 7
+    },
+    {
+      "name": "sono",
+      "hadir": "iya",
+      "id": 8
+    },
+    {
+      "name": "nana",
+      "hadir": "tidak",
+      "id": 9
+    },
+    {
+      "name": "mantab",
+      "hadir": "iya",
+      "id": 10
+    },
+    {
+      "name": "jino",
+      "hadir": "iya",
+      "id": 11
+    }
+  ]
 }

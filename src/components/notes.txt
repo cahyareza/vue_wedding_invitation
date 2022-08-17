@@ -57,3 +57,83 @@ const timer = setInterval(() => {
   }),
   console.log(countdown.value);
 }, 1000)
+
+
+
+
+
+import useTimer from "../../../hooks/useTimer";
+import { inject, computed } from 'vue'
+
+const store = inject('store');
+// console.log(store);
+
+const acara = computed(() => store.state.acara); 
+
+store.actions.getAcara();
+// console.log(acara.value);
+
+// import hooks method
+const { createTimer, countdown } = useTimer();
+
+createTimer;
+
+const timer = setInterval(() => {new Date("2022-07-8 19:30").getTime(), 
+  countdown, 
+  () => {
+    clearInterval(timer)
+  }}, 
+  1000);
+
+
+  <template>
+  <div class="atcb">
+    {
+        "name":"Reminder to star the add-to-calendar-button repo",
+        "description":"Check out the maybe easiest way to include add-to-calendar-buttons to your website:\n→ [url]https://github.com/jekuer/add-to-calendar-button|Click here![/url]",
+        "startDate":"2022-08-14",
+        "location":"World Wide Web",
+        "label":"Simpan ke kalender!",
+        "startTime":"10:13",
+        "endTime":"12:57",
+        "options":[
+            "Google",
+            "Apple",
+            "iCal",
+            "Yahoo",
+            "Outlook.com",
+            "Microsoft365"
+        ],
+        "timeZone":"Asia/Jakarta",
+        "trigger":"click",
+        "iCalFileName":"Reminder-Event"
+    }
+  </div>
+</template>
+
+<script setup>
+import { onMounted } from "vue";
+import { atcb_init } from 'add-to-calendar-button';
+import 'add-to-calendar-button/assets/css/atcb.css';
+import { inject } from 'vue';
+
+const store = inject('store');
+
+// const addtocalender = computed(() => store.state.addtocalender);
+
+store.actions.getAddtocalender();
+
+onMounted(() => {
+  atcb_init();
+})
+
+</script>
+
+
+onMounted(() => {
+
+    axios
+        .get("http://localhost:3000/hadir")
+        .then((response) => setHadir(response.data))
+        .catch((error) => console.log(error));
+})

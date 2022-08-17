@@ -1,9 +1,7 @@
 <template>
     <div class="notification is-primary is-light">
-        <p><strong>6 tamu</strong> merespon akan datang,</p>
-        <p class="mb-1">kirim konfirmasi</p>
-        <hr>
-        <button @click="showhidebutton" class="button is-rounded mt-1">
+        <p><strong>{{ jumlahHadir }} tamu</strong> merespon akan datang,</p>
+        <button @click="showhidebutton" class="button is-rounded mt-4">
             <font-awesome-icon icon="fa-solid fa-calendar-check" />&nbsp;Konfirmasi Kehadiran
         </button>
         
@@ -11,19 +9,19 @@
             <hr>
             <div class="field">
                 <div class="control">
-                    <input class="input" type="text" placeholder="Nama lengkap" v-model="hadir.name">
+                    <input class="input" type="text" placeholder="Nama lengkap" v-model="konfirmasi.name">
                     <span style="color: red"></span>
                 </div>
             </div>
             <div class="field has-text-left">
                 <p>konfirmasi kehadiran:</p>
                     <label class="radio">
-                        <input type="radio" name="rsvp" value="hadir" v-model="hadir.konfirmasi">
+                        <input type="radio" name="rsvp" value="iya" v-model="konfirmasi.hadir">
                         Iya, saya akan datang
                     </label>
                     <br/>
                     <label class="radio">
-                        <input type="radio" name="rsvp" value="tidak hadir" v-model="hadir.konfirmasi">
+                        <input type="radio" name="rsvp" value="tidak" v-model="konfirmasi.hadir">
                         Maaf, sepertinya tidak bisa
                     </label>
             </div>  
@@ -34,34 +32,51 @@
 
 <script setup>
 
-import { ref, reactive } from "vue";
+import { ref, reactive, inject, computed, onMounted } from "vue";
 import axios from 'axios';
 
 const show = ref(false);
-
-const hadir = reactive({
-    name: null,
-    konfirmasi: null,
-});
 
 const showhidebutton = () => {
     show.value = !show.value
  }
 
+
+
+const konfirmasi = reactive({
+    name: null,
+    hadir: null,
+});
+
+
 const confirmHadir = () => {
 
     axios
-        .post("http://localhost:3000/hadir", hadir)
+        .post("http://localhost:3000/hadir", konfirmasi)
         .then(() => {
             console.log('berhasil post');
             showhidebutton();
-            hadir.name = "";
+            konfirmasi.name = "";
+            konfirmasi.hadir = "";
+            store.actions.getHadir();
         })
         .catch((err) => console.log(err));
 }
 
- 
+const store = inject('store');
+const hadir = computed(() => store.state.hadir); 
 
-//  const showhidebutton = computed(() => show.value = !show.value);
+const jumlahHadir = computed(() => {
+    const listhadir = [];
+    for (let konfirm of hadir.value) {
+        if (konfirm.hadir == "iya") {
+            listhadir.push(konfirm);
+        }
+    }
+    return listhadir.length;
+});
 
+onMounted(() => {
+    store.actions.getHadir();
+});
 </script>

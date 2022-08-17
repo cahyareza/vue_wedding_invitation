@@ -6,6 +6,7 @@ const state = reactive({
     acara: [],
     quote: [],
     addtocalender: [],
+    hadir: []
 });
 
 const mutations = {
@@ -13,6 +14,7 @@ const mutations = {
     updateAcara: (payload) => state.acara = payload,
     updateQuote: (payload) => state.quote = payload,
     updateAddtocalender: (payload) => state.addtocalender = payload,
+    updateHadir: (payload) => state.hadir = payload,
 }
 
 const actions = {
@@ -34,6 +36,11 @@ const actions = {
     getAddtocalender: () => {
       return axios.get('http://localhost:3000/addtocalender').then((response) => {
         mutations.updateAddtocalender(response.data);
+      });
+    },
+    getHadir: () => {
+      return axios.get('http://localhost:3000/hadir').then((response) => {
+        mutations.updateHadir(response.data);
       });
     },
 };
