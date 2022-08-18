@@ -25,9 +25,24 @@ import { inject, computed } from 'vue'
 const store = inject('store');
 // console.log(store);
 
-const goto = computed(() => store.state.goto); 
+const goto = computed(() => store.state.goto);
 
 store.actions.getGoto();
-// console.log(acara.value.tanggal_resepsi);
+
+// console.log(rawgoto);
+
+// onMounted(async () => {
+//   await store.actions.getGoto();
+//   var rawgoto= toRaw(goto.value);
+// })
+
+// const get_link_iframe = async () => {
+//   await store.actions.getGoto();
+//   var rawgoto= toRaw(goto.value);
+
+//   let myRegex = /".*?\"/;
+//   let result = rawgoto.link_iframe.match(myRegex)
+//   console.log(result)
+// }
 
 </script>

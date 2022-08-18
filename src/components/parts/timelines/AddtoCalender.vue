@@ -1,19 +1,15 @@
 <template>
-    <button ref="default_button">Add to calendar</button>
-    <p>{{ addtocalender }}</p>
+    <button class= "button is-rounded" ref="default_button">Simpan acara di kalender</button>
 </template>
 
 <script setup>
-import { onMounted, ref, inject, computed } from "vue";
+import { onMounted, ref, inject, computed, toRaw } from "vue";
 import { atcb_action } from 'add-to-calendar-button';
 import 'add-to-calendar-button/assets/css/atcb.css';
-import axios from 'axios';
 
 const store = inject('store');
 
 const addtocalender = computed(() => store.state.addtocalender);
-
-store.actions.getAddtocalender();
 
 // watchEffect(
 //     () => {
@@ -28,29 +24,20 @@ store.actions.getAddtocalender();
 
 const default_button = ref(null)
 
-var config = null;
-
-console.log(addtocalender.value);
-
-// const token = reactive(rawToken);
-// const rawToken = toRaw(addtocalender.value.name);
-
-// console.log(rawToken);
-
-onMounted(() => {
-    store.actions.getAddtocalender();
-    axios
-        .get("http://localhost:3000/hadir")
-        .then((response) => {
-            config = response.data,
-            console.log(response.data)
-        })
-        .catch((err) => console.log(err));
-
-    store.actions.getAddtocalender();
+const getaddtocalender = async () => {
+    await store.actions.getAddtocalender();
+    const rawaddtocalender = toRaw(addtocalender.value);
+    const config = rawaddtocalender
 
     const button = default_button.value
     button.addEventListener('click', () => atcb_action(config, button));
+}
+
+
+onMounted( () => {
+    getaddtocalender();
 })
+
+
 
 </script>
