@@ -10,7 +10,7 @@
             marginheight="0" marginwidth="0"></iframe>
         </div>
         <p class="subtitle is-size-7 mt-3 mb-3 p-2">{{ goto?.lokasi }}</p>
-        <button class="button is-rounded is-size-7 px-1 mb-3">
+        <button class="button is-rounded is-size-7 px-2  mb-3">
             <a :href="goto?.link_gmap">Buka di Google Map
             </a>
         </button>
