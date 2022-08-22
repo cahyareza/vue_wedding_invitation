@@ -137,3 +137,18 @@ onMounted(() => {
         .then((response) => setHadir(response.data))
         .catch((error) => console.log(error));
 })
+
+
+
+const default_button = ref(null)
+
+onMounted(async () => {
+    await store.actions.getAddtocalender();
+    // console.log(addtocalender);
+    const rawaddtocalender = toRaw(addtocalender.value);
+
+ 
+    const config = rawaddtocalender
+    const button = default_button.value
+    button.addEventListener('click', () => atcb_action(config, button));
+})

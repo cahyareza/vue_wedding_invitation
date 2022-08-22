@@ -7,7 +7,8 @@ const state = reactive({
     quote: [],
     addtocalender: [],
     hadir: [],
-    goto: []
+    goto: [],
+    invitation: []
 });
 
 const mutations = {
@@ -17,6 +18,7 @@ const mutations = {
     updateAddtocalender: (payload) => state.addtocalender = payload,
     updateHadir: (payload) => state.hadir = payload,
     updateGoto: (payload) => state.goto = payload,
+    updateInvitation: (payload) => state.invitation = payload,
 }
 
 const actions = {
@@ -48,6 +50,11 @@ const actions = {
     getGoto: () => {
       return axios.get('http://localhost:3000/goto').then((response) => {
         mutations.updateGoto(response.data);
+      });
+    },
+    getInvitation: () => {
+      return axios.get('http://localhost:3000/spesial_invitation').then((response) => {
+        mutations.updateInvitation(response.data);
       });
     },
 };
