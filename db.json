@@ -62,5 +62,18 @@
     "link_gmap": "https://www.google.com/maps/place/IPB+Sports+Arena/@-6.5563681,106.7245777,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69c4ad2405f643:0x91a40348a37987f4!8m2!3d-6.5563681!4d106.7245777"
 
   },
-  "spesial_invitation": ["H. Akil Somantri, B.A", "Bpk. Agus", "Bpk. Ronie, S.Ap"]
+  "spesial_invitation": ["H. Akil Somantri, B.A", "Bpk. Agus", "Bpk. Ronie, S.Ap"],
+  "ourmoment": {
+    "video": "https://www.youtube.com/embed/tgbNymZ7vqY",
+    "photo": [
+      "https://source.unsplash.com/400x400?mountain",
+      "https://source.unsplash.com/400x400?nature",
+      "https://source.unsplash.com/400x400?valley",
+      "https://source.unsplash.com/400x400?beach",
+      "https://source.unsplash.com/400x400?ocean",
+      "https://source.unsplash.com/400x400?water",
+      "https://source.unsplash.com/400x400?trees",
+      "https://source.unsplash.com/400x400?lake"
+    ]
+  }
 }
