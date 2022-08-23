@@ -1,5 +1,16 @@
 <template v-slot:prev-btn="{ prev }">
   <div class="section">
+    <Carousel :autoplay="2000" :wrap-around="true">
+      <Slide v-for="(slide, index) in ourmoment?.photo" :key="slide">
+        <div class="carousel__item">
+          <img @click="showMultiple(ourmoment?.photo, index)" :src="slide">
+        </div>
+      </Slide>
+
+      <template #addons>
+        <Pagination />
+      </template>
+    </Carousel>
 
     <!-- single -->
     <!-- <div class="grid">
@@ -9,12 +20,12 @@
     </div> -->
 
     <!-- multiple-->
-    <div class="grid">
+    <!-- <div class="grid">
       <div v-for="(piece, index) in ourmoment?.photo" v-bind:key="piece.id">
         <img @click="showMultiple(ourmoment?.photo, index)" :src="piece">
       </div>
 
-    </div>
+    </div> -->
 
     <vue-easy-lightbox
       :visible="visibleRef"
@@ -31,12 +42,18 @@ import VueEasyLightbox from 'vue-easy-lightbox'
 import { ref, defineComponent } from 'vue'
 import { inject, computed, onBeforeMount } from 'vue'
 import axios from 'axios';
-// import moment from 'moment'
+
+import { Carousel, Pagination, Slide } from 'vue3-carousel';
+
+import 'vue3-carousel/dist/carousel.css';
 
 
 export default defineComponent({
   components: {
-    VueEasyLightbox
+    VueEasyLightbox,
+    Carousel,
+    Slide,
+    Pagination
   },
   setup() {
     const store = inject('store');
@@ -105,48 +122,4 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
-
-body {
-  margin: 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 160px);
-  justify-content: center;
-  align-content: center;
-  grid-gap: 10px;
-  height: 780px;
-}
-
-.grid img {
-  width: 200px;
-  height: 190px;
-  cursor: pointer;
-}
-
-#lightbox {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .8);
-  display: none;
-}
-
-#lightbox.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  padding: 4px;
-  background-color: black;
-  border: 2px solid white;
-}
-
 </style>

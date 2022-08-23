@@ -66,22 +66,14 @@
   "ourmoment": {
     "video": "https://www.youtube.com/embed/tgbNymZ7vqY",
     "photo": [
-      "https://source.unsplash.com/400x400?mountain",
-      "https://source.unsplash.com/400x400?nature",
-      "https://source.unsplash.com/400x400?valley",
+      "https://images.unsplash.com/photo-1661205793647-55ae4ef58543?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "https://images.unsplash.com/photo-1661181715626-9bbf60cc7bce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+      "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
       "https://source.unsplash.com/400x400?beach",
       "https://source.unsplash.com/400x400?ocean",
       "https://source.unsplash.com/400x400?water",
       "https://source.unsplash.com/400x400?trees",
       "https://source.unsplash.com/400x400?lake"
     ]
-  },
-  "media": [
-    {
-      "thumb": "http://example.com/thumb.jpg",
-      "src": "http://example.com/image.jpg",
-      "caption": "caption to display. receive <html> <b>tag</b>",
-      "srcset": "..."
-    }
-  ]
+  }
 }
