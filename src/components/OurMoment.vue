@@ -6,6 +6,7 @@
                     <p class="title">Moment yang berharga</p>
                     <p class="subtitle mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
                 </section>
+
                 <OurVideo></OurVideo>
                 <OurGallery></OurGallery>
             </div>

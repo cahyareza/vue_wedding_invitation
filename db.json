@@ -75,5 +75,13 @@
       "https://source.unsplash.com/400x400?trees",
       "https://source.unsplash.com/400x400?lake"
     ]
-  }
+  },
+  "media": [
+    {
+      "thumb": "http://example.com/thumb.jpg",
+      "src": "http://example.com/image.jpg",
+      "caption": "caption to display. receive <html> <b>tag</b>",
+      "srcset": "..."
+    }
+  ]
 }

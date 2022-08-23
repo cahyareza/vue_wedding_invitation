@@ -86,31 +86,6 @@ const timer = setInterval(() => {new Date("2022-07-8 19:30").getTime(),
   1000);
 
 
-  <template>
-  <div class="atcb">
-    {
-        "name":"Reminder to star the add-to-calendar-button repo",
-        "description":"Check out the maybe easiest way to include add-to-calendar-buttons to your website:\n→ [url]https://github.com/jekuer/add-to-calendar-button|Click here![/url]",
-        "startDate":"2022-08-14",
-        "location":"World Wide Web",
-        "label":"Simpan ke kalender!",
-        "startTime":"10:13",
-        "endTime":"12:57",
-        "options":[
-            "Google",
-            "Apple",
-            "iCal",
-            "Yahoo",
-            "Outlook.com",
-            "Microsoft365"
-        ],
-        "timeZone":"Asia/Jakarta",
-        "trigger":"click",
-        "iCalFileName":"Reminder-Event"
-    }
-  </div>
-</template>
-
 <script setup>
 import { onMounted } from "vue";
 import { atcb_init } from 'add-to-calendar-button';
@@ -151,4 +126,28 @@ onMounted(async () => {
     const config = rawaddtocalender
     const button = default_button.value
     button.addEventListener('click', () => atcb_action(config, button));
+})
+
+
+
+const lightbox = document.createElement('div')
+lightbox.id = 'lightbox'
+document.body.appendChild(lightbox)
+
+const images = document.querySelectorAll('img')
+images.forEach(image => {
+  image.addEventListener('click', function (e) => {
+    lightbox.classList.add('active')
+    const img = document.createElement('img')
+    img.src = image.src
+    while (lightbox.firstChild) {
+      lightbox.removeChild(lightbox.firstChild)
+    }
+    lightbox.appendChild(img)
+  })
+})
+
+lightbox.addEventListener('click', e => {
+  if (e.target !== e.currentTarget) return
+  lightbox.classList.remove('active')
 })
