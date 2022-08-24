@@ -1,18 +1,22 @@
 <template>
     <section class="hero is-light is-large">
-        <section class="section pt-4">
-            <div class="container">
-                <p class="title is-size-4-mobile mt-5 p-4">Acara Akan Diselenggarakan</p>
+        <div class="columns">
+            <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                <section class="section pt-4">
+                    <div class="container">
+                        <p class="title is-size-4-mobile mt-5 p-4">Acara Akan Diselenggarakan</p>
 
-                <CountDown></CountDown>
+                        <CountDown></CountDown>
 
-                <AddtoCalender></AddtoCalender>
+                        <AddtoCalender></AddtoCalender>
 
+                    </div>
+                </section>
+
+                <div class="container px-5 pt-5">
+                    <GuestBook></GuestBook>
+                </div>
             </div>
-        </section>
-
-        <div class="container px-5 pt-5">
-            <GuestBook></GuestBook>
         </div>
 
     </section>
