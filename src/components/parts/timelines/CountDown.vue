@@ -1,9 +1,9 @@
 <template>
-  <div class="columns is-centered mt-6 mb-6">
+  <div class="columns is-centered mt-3 mb-6 is-mobile">
     <div v-for="(value, name, index) in countdown" :key="index">
       <div class="column">
-        <p class="subtitle is-size-5 mb-1">{{ value }}</p>
-        <p class="subtitle is-size-5 mt-1">{{ name }}</p>
+        <p class="subtitle is-size-5-mobile is-size-4-tablet mb-1">{{ value }}</p>
+        <p class="subtitle is-size-5-mobile is-size-4-tablet mt-1">{{ name }}</p>
       </div>
     </div>
   </div>

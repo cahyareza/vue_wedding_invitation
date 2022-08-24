@@ -6,6 +6,7 @@
     <TimeLines></TimeLines>
     <RunDown></RunDown>
     <SpecialInvitation></SpecialInvitation>
+    <LiveStream></LiveStream>
     <OurMoment></OurMoment>
     <MessageBox></MessageBox>
     <FooterPage></FooterPage>
@@ -24,6 +25,7 @@ import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import MainMenu from '@/components/MainMenu.vue'
+import LiveStream from '@/components/LiveStream.vue'
 
 // Navigation handler
 // const navigationHandler = id => {
