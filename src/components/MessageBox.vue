@@ -4,7 +4,7 @@
             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                 <section class="section pt-4">
                     <div class="container">
-                        <p class="title mt-4">Kirim Ucapan</p>
+                        <p class="title mt-4 mb-2 is-marginless">Kirim Ucapan</p>
                     </div>
                 </section>
                 <MessagePage></MessagePage>

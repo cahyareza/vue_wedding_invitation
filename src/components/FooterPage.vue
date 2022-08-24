@@ -1,6 +1,6 @@
 <template>
     <section class="hero is-small">
-        <div class="hero-body">
+        <div class="hero-body p-3">
             <section class="section is-paddingless">
                 <div class="container">
                     <p class="subtitle is-size-7 mb-1">presented by</p>

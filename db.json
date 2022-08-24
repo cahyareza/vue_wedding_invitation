@@ -22,7 +22,7 @@
     "tanggal_selesai_akad": "2022-11-8 19:30",
     "tempat_akad": "Jalan Kemuning Raya, di Masjid Al Barokah",
     "link_gmap_akad": "https://www.google.com/maps/place/IPB+Sports+Arena/@-6.5563681,106.7245777,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69c4ad2405f643:0x91a40348a37987f4!8m2!3d-6.5563681!4d106.7245777",
-    "tanggal_resepsi": "2023-10-8 19:30",
+    "tanggal_resepsi": "2022-10-8 19:30",
     "tanggal_selesai_resepsi": "2023-10-8 19:30",
     "tempat_resepsi": "Jalan Kemuning Raya, di Masjid Al Barokah",
     "link_gmap_resepsi": "https://www.google.com/maps/place/IPB+Sports+Arena/@-6.5563681,106.7245777,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69c4ad2405f643:0x91a40348a37987f4!8m2!3d-6.5563681!4d106.7245777",
@@ -54,15 +54,23 @@
     "trigger": "click",
     "iCalFileName": "Reminder-Event"
   },
-  "hadir": [],
-  "goto":
-  {
+  "hadir": [
+    {
+      "name": "joko",
+      "hadir": "iya",
+      "id": 1
+    }
+  ],
+  "goto": {
     "link_iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.7249266095187!2d106.7245777!3d-6.5563680999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c4ad2405f643%3A0x91a40348a37987f4!2sIPB%20Sports%20Arena!5e0!3m2!1sen!2sid!4v1660819735848!5m2!1sen!2sid",
     "lokasi": "Jalan Pondok Merah Kuning Blok M No 22, Kaliabang tengah, Bekasi Utara",
     "link_gmap": "https://www.google.com/maps/place/IPB+Sports+Arena/@-6.5563681,106.7245777,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69c4ad2405f643:0x91a40348a37987f4!8m2!3d-6.5563681!4d106.7245777"
-
   },
-  "spesial_invitation": ["H. Akil Somantri, B.A", "Bpk. Agus", "Bpk. Ronie, S.Ap"],
+  "spesial_invitation": [
+    "H. Akil Somantri, B.A",
+    "Bpk. Agus",
+    "Bpk. Ronie, S.Ap"
+  ],
   "ourmoment": {
     "video": "https://www.youtube.com/embed/tgbNymZ7vqY",
     "photo": [
@@ -75,5 +83,13 @@
       "https://source.unsplash.com/400x400?trees",
       "https://source.unsplash.com/400x400?lake"
     ]
-  }
+  },
+  "ucapan": [
+    {
+      "name": "Mamet",
+      "alamat": "prembun",
+      "pesan": "selamat yak!",
+      "id": 1
+    }
+  ]
 }

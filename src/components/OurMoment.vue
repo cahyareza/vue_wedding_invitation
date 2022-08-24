@@ -1,5 +1,5 @@
 <template>
-    <section class="hero is-info is-fullheight">
+    <section class="hero is-info is-medium">
         <div class="columns">
             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                 <section class="section pt-4">
