@@ -19,7 +19,7 @@
                 <!--    Modal        -->
                 <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
                     <div class="modal-background"></div>
-                    <div class="modal-card m-4" style="padding: 10vw;">
+                    <div class="modal-card m-4" style="padding: 4vw;">
                         <header class="modal-card-head">
                             <p class="modal-card-title">Amplop Digital</p>
                             <button class="delete" aria-label="close" @click="cancelModal">></button>
@@ -30,7 +30,8 @@
                                 <div v-for="info in dompet" :key="info.id">
                                     <div class="column pb-1 is-gapless has-text-left">
                                         <p>{{ info.rekening }}</p>
-                                        <p><strong>{{ info.nomor }}</strong></p>
+                                        <p><strong>{{ info.nomor }}</strong> <button class="button-copy" @click="copy(info.nomor)">copy</button></p>
+                                        
                                         <p>a/n {{ info.pemilik }}</p>
                                         <hr class="m-1">
                                     </div>
@@ -83,6 +84,7 @@
 <script setup>
 import { reactive, inject, computed, onMounted } from "vue";
 import trumpetSfx from '../assets/contents/mp3/sample.mp3';
+import useClipboard from 'vue-clipboard3'
 
 // Audio
 var audio = {
@@ -135,6 +137,18 @@ onMounted(() => {
 });
 
 
+// Copy clipboard
+
+const { toClipboard } = useClipboard()
+
+const copy = async (vari) => {
+    try {
+        await toClipboard(vari)
+        console.log('Copied to clipboard')
+    } catch (e) {
+        console.error(e)
+    }
+}
 
 </script>
 
@@ -173,4 +187,55 @@ button-amplop.button {
     cursor: pointer;
     box-shadow: 2px 2px 3px #999;
 }
+
+
+.button-copy{
+  position: relative;
+  background-color: grey;
+  border-radius: 4em;
+  font-size: 16px;
+  color: white;
+  padding: 0.2em 0.4em;
+  cursor:pointer;
+  user-select:none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.button-copy:hover {
+  transition-duration: 0.1s;
+  background-color: #3A3A3A;
+}
+
+.button-copy:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+
+.button-copy:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.button-copy:active {
+  top: 1px;
+}
+
 </style>
