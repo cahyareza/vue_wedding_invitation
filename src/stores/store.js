@@ -10,7 +10,8 @@ const state = reactive({
     goto: [],
     invitation: [],
     ourmoment: [],
-    ucapan: []
+    ucapan: [],
+    dompet:[]
 });
 
 const mutations = {
@@ -23,6 +24,7 @@ const mutations = {
     updateInvitation: (payload) => state.invitation = payload,
     updateOurmoment: (payload) => state.ourmoment = payload,
     updateUcapan: (payload) => state.ucapan = payload,
+    updateDompet: (payload) => state.dompet = payload,
 }
 
 const actions = {
@@ -69,6 +71,11 @@ const actions = {
     getUcapan: () => {
       return axios.get('http://localhost:3000/ucapan').then((response) => {
         mutations.updateUcapan(response.data);
+      });
+    },
+    getDompet: () => {
+      return axios.get('http://localhost:3000/dompet').then((response) => {
+        mutations.updateDompet(response.data);
       });
     },
 };

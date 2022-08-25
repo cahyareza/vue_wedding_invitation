@@ -92,5 +92,22 @@
       "pesan": "selamat yak!",
       "id": 1
     }
+  ],
+  "dompet": [
+    {
+      "rekening": "BCA",
+      "nomor": "1124321",
+      "pemilik": "cahya"
+    },
+    {
+      "rekening": "BRI",
+      "nomor": "1124321122332",
+      "pemilik": "cahya"
+    },
+    {
+      "rekening": "MANDIRI",
+      "nomor": "1124321665",
+      "pemilik": "cahya"
+    }
   ]
 }

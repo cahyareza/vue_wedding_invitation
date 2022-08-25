@@ -15,7 +15,7 @@
                     </section>
                 </div>
             </div>
-            <vue-audio file="../assets/contents/mp3/sample.mp3"></vue-audio>
+
         </div>
     </section>
 </template>
