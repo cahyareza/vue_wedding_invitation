@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <button-music class="button is-rounded is-light p-3">
+        <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded is-light p-3">
             <span class="icon has-text-dark">
                 <font-awesome-icon icon="fa-solid fa-music" />
             </span>
@@ -42,7 +42,33 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
+import trumpetSfx from '../assets/contents/mp3/sample.mp3';
 
+var audio = {
+    file: new Audio(trumpetSfx),
+    isPlaying: false
+}
+
+const play = () => {
+    audio.isPlaying = true;
+    audio.file.play();
+    // // set to default
+    // audio.isPlaying = false;
+}
+
+const pause = () => {
+    audio.isPlaying = false;
+    audio.file.pause();
+}
+
+onMounted(() => {
+    play;
+})
+
+// const handleClick = () => {
+//     audio.play()
+// }
 </script>
 
 <style lang="scss" scoped>
