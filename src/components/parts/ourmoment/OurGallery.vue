@@ -101,7 +101,7 @@ export default defineComponent({
       .get("http://localhost:3000/ourMoment")
       .then((response) => {
         imgsRef.value = response.data
-        console.log(imgsRef.value.photo)
+        // console.log(imgsRef.value.photo)
       })
     })
 

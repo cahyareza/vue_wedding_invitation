@@ -50,29 +50,27 @@
             
             <div class="container">
                 <div class="notification is-primary p-2">
-                        <!-- <span class="mr-4" @click="editEvent(day.id, event.details)"><fa :icon="['fas', 'pencil']" /></span>
-                        <span @click="deleteEvent(day.id, event.details)"><fa :icon="['fas', 'trash']" /></span> -->
                     <span class="icon-text is-paddingless is-marginless">
-                        <span class="icon">
+                        <!-- <span>Couple</span> -->
+                        <span @click="navPage('groom')" class="icon">
                             <font-awesome-icon icon="fa-solid fa-heart" />
                         </span>
-                        <!-- <span>Couple</span> -->
-                        <span class="icon">
-                            <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                        </span>
                         <!-- <span>Date</span> -->
-                        <span class="icon">
+                        <span @click="navPage('time')" class="icon">
                             <font-awesome-icon icon="fa-solid fa-map" />
                         </span>
-                        <!-- <span>Location</span> -->
-                        <span class="icon">
+                        <!-- <span>Rundown</span> -->
+                        <span @click="navPage('run')" class="icon">
+                            <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                        </span>
+                        <!-- <span>Moment</span> -->
+                        <span @click="navPage('moment')" class="icon">
                             <font-awesome-icon icon="fa-solid fa-images" />
                         </span>
-                        <!-- <span>Galleries</span> -->
-                        <span class="icon">
+                         <!-- <span>Wishes</span> -->
+                        <span @click="navPage('message')" class="icon">
                             <font-awesome-icon icon="fa-solid fa-pen-to-square" />
                         </span>
-                        <!-- <span>Wishes</span> -->
                     </span>
                 </div>
             </div>
@@ -82,9 +80,21 @@
 </template>
 
 <script setup>
-import { reactive, inject, computed, onMounted } from "vue";
+import { reactive, inject, computed, onMounted, defineEmits } from "vue";
 import trumpetSfx from '../assets/contents/mp3/sample.mp3';
 import useClipboard from 'vue-clipboard3'
+
+const emit = defineEmits(['coba', 'page']);
+
+// emit
+// const cobaEmit = (value) => {
+//     emit("coba", value)
+// }
+
+const navPage = (value) => {
+    emit("page", value)
+}
+
 
 // Audio
 var audio = {
@@ -191,11 +201,11 @@ button-amplop.button {
 
 .button-copy{
   position: relative;
-  background-color: grey;
+  background-color: #D3D3D3;
   border-radius: 4em;
-  font-size: 16px;
-  color: white;
-  padding: 0.2em 0.4em;
+  font-size: 12px;
+  color: black;
+  padding: 0.1em 0.4em;
   cursor:pointer;
   user-select:none;
   text-align: center;

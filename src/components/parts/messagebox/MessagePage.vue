@@ -18,21 +18,6 @@
 </template>
 
 
-// <script>
-//     export default {
-//         name: 'MessagePage',
-//         data() {
-//             return {
-//                 comments: [{"nama": "joko", "alamat": "jakarta", "pesan":"selamat"}, 
-//                     {"nama": "joko", "alamat": "jakarta", "pesan":"selamat"},
-//                     {"nama": "joko", "alamat": "jakarta", "pesan":"selamat"},
-//                     {"nama": "joko", "alamat": "jakarta", "pesan":"selamat"}
-//                 ]
-//             }
-//         },
-//     };
-// </script>
-
 <script setup>
 
 import { onMounted, inject, computed } from "vue";

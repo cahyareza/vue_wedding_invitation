@@ -2,15 +2,25 @@
   <section>
     <MainCover></MainCover>
     <QuotePage></QuotePage>
-    <GroomBride></GroomBride>
-    <TimeLines></TimeLines>
-    <RunDown></RunDown>
+    <div ref="groom">
+      <GroomBride></GroomBride>
+    </div>
+    <div ref="time">
+      <TimeLines></TimeLines>
+    </div>
+    <div ref='run'>
+      <RunDown></RunDown>
+    </div>
     <SpecialInvitation></SpecialInvitation>
     <LiveStream></LiveStream>
-    <OurMoment></OurMoment>
-    <MessageBox></MessageBox>
+    <div ref='moment'>
+      <OurMoment></OurMoment>
+    </div>
+    <div ref='message'>
+      <MessageBox></MessageBox>
+    </div>
     <FooterPage></FooterPage>
-    <MainMenu></MainMenu>
+    <MainMenu @coba="onCoba" @page="navigation"></MainMenu>
   </section>
 </template>
 
@@ -27,10 +37,41 @@ import FooterPage from '@/components/FooterPage.vue'
 import MainMenu from '@/components/MainMenu.vue'
 import LiveStream from '@/components/LiveStream.vue'
 
-// Navigation handler
-// const navigationHandler = id => {
-//   document.querySelector(id).scrollIntoView({
-//     behavior: 'smooth'
-//   })
-// }
+import { ref, onMounted } from "vue";
+
+// test
+const onCoba = val => {
+    console.log(val);
+}
+
+
+const groom = ref()
+const time = ref()
+const run = ref()
+const moment = ref()
+const message = ref()
+
+
+// // Navigation handler
+const navigation = val => {
+  console.log(val)
+  if (val == 'groom') {
+    groom.value.scrollIntoView({behavior: "smooth"})
+  } else if (val == 'time') {
+    time.value.scrollIntoView({behavior: "smooth"})
+  } else if (val == 'run') {
+    run.value.scrollIntoView({behavior: "smooth"})
+  } else if (val == 'moment') {
+    moment.value.scrollIntoView({behavior: "smooth"})
+  } else if (val == 'message') {
+    message.value.scrollIntoView({behavior: "smooth"})
+  }
+}
+
+
+onMounted( () => {
+  navigation();
+  // groom.value.scrollIntoView({behavior: "smooth"})
+})
+
 </script>
