@@ -109,5 +109,8 @@
       "nomor": "1124321665",
       "pemilik": "cahya"
     }
-  ]
+  ],
+  "theme": {
+    "default": true
+  }
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="columns">
-        <div class="column is-half-tablet is-offset-one-quarter-tablet">
+        <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
             <div class="container">
                 <!--  Music     -->
                 <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded is-light p-3">

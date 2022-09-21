@@ -1,13 +1,13 @@
 <template>
-    <section class="hero is-info is-fullheight">
+    <section class="hero is-fullheight">
         <div class="columns is-multiline">
             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                 <section class="section">
-                    <p class="subtitle">Undangan Pernikahan</p>
+                    <p class="subtitle is-family-sans-serif">Undangan Pernikahan</p>
                 
-                    <p class="title mt-5">{{couples.perempuan?.name }} & {{couples.laki_laki?.name }}</p>
+                    <p class="title mt-5 is-family-sans-serif">{{couples.perempuan?.name }} & {{couples.laki_laki?.name }}</p>
 
-                    <p class="subtitle mt-4 is-size-6">{{ acara.tanggal_resepsi }}</p>
+                    <p class="subtitle mt-4 is-size-6 is-family-sans-serif">{{ acara.tanggal_resepsi }}</p>
                 </section>
             </div>
         </div>
@@ -41,3 +41,7 @@ store.actions.getAcara();
 
 // const tanggal_resepsi = computed(() => moment(String(new Date("05 October 2011 14:48 UTC").getTime())).format('MM/DD/YYYY'))
 </script>
+
+<style lang="scss" scoped>
+@import "../styles/component/maincover.scss";
+</style>
