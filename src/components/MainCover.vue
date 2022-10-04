@@ -1,32 +1,34 @@
 <template>
-    <section class="hero is-fullheight">
-        <div class="columns is-multiline">
-            <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                <section class="section">
-                    <p class="subtitle is-family-sans-serif">Undangan Pernikahan</p>
-                
-                    <p class="title mt-5 is-family-sans-serif">{{couples.perempuan?.name }} & {{couples.laki_laki?.name }}</p>
+    <div :class="theme">
+        <section class="hero is-fullheight">
+            <div class="columns is-multiline">
+                <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                    <section class="section">
+                        <p class="subtitle">Undangan Pernikahan</p>
+                    
+                        <p class="title mt-5">{{couples.perempuan?.name }} & {{couples.laki_laki?.name }}</p>
 
-                    <p class="subtitle mt-4 is-size-6 is-family-sans-serif">{{ acara.tanggal_resepsi }}</p>
-                </section>
+                        <p class="subtitle mt-4 is-size-6">{{ acara.tanggal_resepsi }}</p>
+                    </section>
+                </div>
             </div>
-        </div>
 
-        
-        <div class="columns is-multiline">
-            <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                <section class="hero-footer mb-6 p-6">
-                    <font-awesome-icon icon="angles-down" />
+            
+            <div class="columns is-multiline">
+                <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                    <section class="hero-footer mb-6 p-6">
+                        <font-awesome-icon icon="angles-down" />
 
-                    <p class="subtitle is-size-7">scroll kebawah</p>
-                </section>
+                        <p class="subtitle is-size-7">scroll kebawah</p>
+                    </section>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
 
 <script setup>
-import { inject, computed } from 'vue'
+import { inject, computed, onMounted } from 'vue'
 // import moment from 'moment'
 
 const store = inject('store');
@@ -38,6 +40,18 @@ store.actions.getCouples();
 const acara = computed(() => store.state.acara); 
 
 store.actions.getAcara();
+
+
+// THEME
+const theme = computed(() => store.state.theme); 
+
+store.actions.getTheme();
+
+onMounted(() => {  
+    store.actions.getTheme();
+});
+
+console.log(theme)
 
 // const tanggal_resepsi = computed(() => moment(String(new Date("05 October 2011 14:48 UTC").getTime())).format('MM/DD/YYYY'))
 </script>

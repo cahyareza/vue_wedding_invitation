@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+// Import only what you need from Bulma
+@import "../../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../../node_modules/bulma/sass/base/_all.sass";
+@import "../../../node_modules/bulma/sass/elements/button.sass";
+@import "../../../node_modules/bulma/sass/elements/container.sass";
+@import "../../../node_modules/bulma/sass/elements/title.sass";
+@import "../../../node_modules/bulma/sass/form/_all.sass";
+@import "../../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../../node_modules/bulma/sass/layout/section.sass";
+
+// // Import a Google Font
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
+
+// THEME-1
+
+// // Set your fonts
+$parisienne: 'Parisienne', cursive;
+$im_fell_english: 'IM Fell English SC', serif;
+
+$theme-1: (
+   font: (
+        "title": $parisienne, 
+        "subtitle": $im_fell_english
+   ),
+   hero: (
+       "mobile": url("../assets/contents/background/pink_minimalist_2.png"),
+       "tablet": url("../assets/contents/background/pink_minimalist_3.png"),
+       "desktop": url("../assets/contents/background/pink_minimalist.png")
+   )
+);
+
+
+// THEME-2
+
+$allura: 'Allura', cursive;
+$old_standard: 'Old Standard TT', serif;
+
+$theme-2: (
+   font: (
+        "title": $allura,
+        "subtitle": $old_standard
+   ),
+   hero: (
+       "mobile": url("../assets/contents/background/autumn_mobile.png"),
+       "tablet": url("../assets/contents/background/autumn_tablet.png"),
+       "desktop": url("../assets/contents/background/autumn_desktop.png")
+   )
+);
+
+
+// MIXINS
+@mixin themable ($theme-name, $theme-map){
+    .#{$theme-name} {
+        .title {
+            font-size: 36px;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+        }
+
+        @if ($theme-name == theme-2) {
+            .columns {
+                margin-bottom: 8px;
+                // display: block;
+                // text-align: center;
+            }
+        }
+
+        // Loop through each of the keys (sections)
+       @each $section, $map in $theme-map {
+            @if ($section == font) {
+                .title {
+                    font-family: map-get($map, "title");
+                }
+                .subtitle {
+                    font-family: map-get($map, "subtitle");
+                }
+            } @else {
+                .#{$section} {
+                    @include mobile {
+                        background-image: map-get($map, "mobile");
+                        background-repeat:no-repeat;
+                        background-size:cover;
+                        background-position:center;
+                    }
+        
+                    @include tablet {
+                        background-image: map-get($map, "tablet");
+                        background-repeat:no-repeat;
+                        background-size:cover;
+                        background-position:center;
+                    }
+        
+                    @include desktop {
+                        background-image: map-get($map, "desktop");
+                        background-repeat:no-repeat;
+                        background-size:cover;
+                        background-position:center;
+                    }
+                }
+            }
+       }
+    }
+}
+
+// Call for theme-1
+@include themable(theme-1, $theme-1);
+
+// Call for theme-2
+@include themable(theme-2, $theme-2);

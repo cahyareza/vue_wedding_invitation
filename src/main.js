@@ -4,7 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './stores/store'
 
-import '@/styles/main.scss'
+import '@/styles/_main.scss'
 
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import {library} from "@fortawesome/fontawesome-svg-core";
