@@ -1,5 +1,6 @@
-import { reactive, readonly } from 'vue';
+import { reactive, readonly, ref } from 'vue';
 import axios from 'axios';
+import { useRoute } from 'vue-router';
 
 const state = reactive({
     couples: [],
@@ -13,7 +14,10 @@ const state = reactive({
     ucapan: [],
     dompet:[],
     theme: "false",
+    portofolio: [],
 });
+
+const slug = ref('');
 
 const mutations = {
     updateCouples: (payload) => state.couples = payload,
@@ -27,9 +31,15 @@ const mutations = {
     updateUcapan: (payload) => state.ucapan = payload,
     updateDompet: (payload) => state.dompet = payload,
     updateTheme: (payload) => state.theme = payload,
+    updatePortofolio: (payload) => state.portofolio = payload,
 }
 
 const actions = {
+    getSlug: () => {
+      const route = useRoute();
+      slug.value = route.params.slug
+      return slug
+    },
     getCouples: () => {
       return axios.get('http://localhost:3000/couples').then((response) => {
         mutations.updateCouples(response.data);
@@ -83,6 +93,17 @@ const actions = {
     getTheme: () => {
       return axios.get('http://localhost:3000/theme').then((response) => {
         mutations.updateTheme(response.data);
+      });
+    },
+    getPortofolio: () => {
+      actions.getSlug();
+      // const route = useRoute();
+      // slug.value = route.params.slug
+      // console.log(slug.value)
+      return axios.get('http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}')
+      .then((response) => {
+        // console.log(response.data.results);
+        mutations.updatePortofolio(response.data.results[0]);
       });
     },
 };

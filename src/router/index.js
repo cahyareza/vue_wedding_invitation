@@ -4,12 +4,12 @@ import MainView from '../views/MainView.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/:slug',
     name: 'open',
     component: OpenView
   },
   {
-    path: '/main',
+    path: '/main/:slug',
     name: 'main',
     component: MainView
   },
@@ -17,7 +17,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes: routes,
 })
 
 export default router

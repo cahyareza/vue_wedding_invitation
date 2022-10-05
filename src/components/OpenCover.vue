@@ -6,10 +6,11 @@
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
                         <div class="">
                             <p class="title">
-                            Nadia & Yudha
+                            <!-- {{ couples.perempuan?.name }} & {{ couples.laki_laki?.name }} -->
+                                {{ portofolio.pname }} & {{ portofolio.lname }} 
                             </p>
                             <button class="button">
-                                <router-link to="/main">Buka Undangan</router-link>
+                                <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
                             </button>
                         </div>
                     </div>
@@ -20,6 +21,15 @@
 </template>
 
 <script setup>
+import { inject, computed, onMounted } from 'vue'
 
+const store = inject('store');
 
+const portofolio = computed(() => store.state.portofolio);
+
+const slug = store.actions.getSlug().value;
+
+onMounted(() => {
+    store.actions.getPortofolio();
+})
 </script>
