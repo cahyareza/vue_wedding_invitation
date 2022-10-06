@@ -7,9 +7,9 @@
                         <div class="container">
                             <div class="box has-background-light">
                                 <p class="subtitle is-size-4-tablet is-size-6-mobile">
-                                    "{{ quote?.kutipan }}""
+                                    "{{ quote.kutipan }}"
                                 </p>
-                                <p> {{ quote?.ayat}} </p>       
+                                <p> {{ quote.ayat}} </p>       
                             </div>
                         </div>
                     </section>
@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { inject, computed } from 'vue'
+import { inject, computed, onMounted } from 'vue'
 // import moment from 'moment'
 
 const store = inject('store');
@@ -29,5 +29,9 @@ const store = inject('store');
 const quote = computed(() => store.state.quote); 
 
 store.actions.getQuote();
+
+onMounted(() => {
+    store.actions.getQuote();
+})
 
 </script>

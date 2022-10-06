@@ -6,9 +6,9 @@
                     <section class="section">
                         <p class="subtitle">Undangan Pernikahan</p>
                     
-                        <p class="title mt-5">{{couples.perempuan?.name }} & {{couples.laki_laki?.name }}</p>
+                        <p class="title mt-5">{{ portofolio.pname }} & {{ portofolio.lname }}</p>
 
-                        <p class="subtitle mt-4 is-size-6">{{ acara.tanggal_resepsi }}</p>
+                        <p class="subtitle mt-4 is-size-6">{{ portofolio.tanggal_resepsi }}</p>
                     </section>
                 </div>
             </div>
@@ -29,17 +29,12 @@
 
 <script setup>
 import { inject, computed, onMounted } from 'vue'
-// import moment from 'moment'
+
+// PORTOFOLIO
 
 const store = inject('store');
 
-const couples = computed(() => store.state.couples); 
-
-store.actions.getCouples();
-
-const acara = computed(() => store.state.acara); 
-
-store.actions.getAcara();
+const portofolio = computed(() => store.state.portofolio);
 
 
 // THEME
@@ -48,10 +43,11 @@ const theme = computed(() => store.state.theme);
 store.actions.getTheme();
 
 onMounted(() => {  
+    store.actions.getPortofolio();
     store.actions.getTheme();
 });
 
-console.log(theme)
+// console.log(theme)
 
 // const tanggal_resepsi = computed(() => moment(String(new Date("05 October 2011 14:48 UTC").getTime())).format('MM/DD/YYYY'))
 </script>

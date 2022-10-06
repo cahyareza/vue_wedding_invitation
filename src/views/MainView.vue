@@ -1,7 +1,11 @@
 <template>
   <section>
-    <MainCover></MainCover>
-    <QuotePage></QuotePage>
+    <KeepAlive>
+      <MainCover></MainCover>
+    </KeepAlive>
+    <KeepAlive>
+      <QuotePage></QuotePage>
+    </KeepAlive>
     <div ref="groom">
       <GroomBride></GroomBride>
     </div>
@@ -54,7 +58,6 @@ const message = ref()
 
 // // Navigation handler
 const navigation = val => {
-  console.log(val)
   if (val == 'groom') {
     groom.value.scrollIntoView({behavior: "smooth"})
   } else if (val == 'time') {
@@ -71,7 +74,6 @@ const navigation = val => {
 
 onMounted( () => {
   navigation();
-  // groom.value.scrollIntoView({behavior: "smooth"})
 })
 
 </script>

@@ -51,8 +51,9 @@ const actions = {
       });
     },
     getQuote: () => {
-      return axios.get('http://localhost:3000/quotes').then((response) => {
-        mutations.updateQuote(response.data);
+      actions.getSlug();
+      return axios.get('http://127.0.0.1:8000/portofolio/api/quote/?slug=${slug.value}').then((response) => {
+        mutations.updateQuote(response.data.results[0]);
       });
     },
     getAddtocalender: () => {
