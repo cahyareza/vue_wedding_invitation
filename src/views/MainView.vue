@@ -1,13 +1,13 @@
 <template>
   <section>
-    <KeepAlive>
-      <MainCover></MainCover>
-    </KeepAlive>
+    <MainCover></MainCover>
     <KeepAlive>
       <QuotePage></QuotePage>
     </KeepAlive>
     <div ref="groom">
-      <GroomBride></GroomBride>
+      <KeepAlive>
+        <GroomBride></GroomBride>
+      </KeepAlive>
     </div>
     <div ref="time">
       <TimeLines></TimeLines>

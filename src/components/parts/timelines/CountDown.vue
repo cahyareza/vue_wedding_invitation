@@ -15,17 +15,15 @@ import { inject, computed } from 'vue'
 import useTimer from "../../../hooks/useTimer";
 
 const store = inject('store');
-// console.log(store);
 
-const acara = computed(() => store.state.acara); 
+const portofolio = computed(() => store.state.portofolio);
 
-store.actions.getAcara();
-// console.log(acara.value.tanggal_resepsi);
+store.actions.getPortofolio();
 
 const { createTimer, countdown } = useTimer();
 
 const timer = setInterval(() => {
-  createTimer(new Date(acara.value.tanggal_resepsi).getTime(), countdown, () => {
+  createTimer(new Date(portofolio.value.datetime_resepsi).getTime(), countdown, () => {
     clearInterval(timer)
   })
 }, 1000)

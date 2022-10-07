@@ -9,15 +9,15 @@
                         <div class="columns is-multiline is-centered mt-1">
                             <div class="column is-full">
                                 <figure class="image is-inline-block" style="height:180px; width: 180px;">
-                                    <img class="is-rounded mb-3" :src="couples.perempuan?.picture">
-                                    <a :href="couples.perempuan?.instagram_link"><font-awesome-icon icon="fa-brands fa-4x fa-instagram" /></a>
+                                    <img class="is-rounded mb-3" :src="portofolio.ppicture">
+                                    <a :href="portofolio.pinsta_link"><font-awesome-icon icon="fa-brands fa-4x fa-instagram" /></a>
                                 </figure>
 
                                 <!-- <p class="title mt-5 mb-6" v-for="couple in couples.perempuan" :key="couple.id">{{ couple }}</p> -->
-                                <p class="title mt-5 mb-6">{{ couples.perempuan?.name }}</p>
+                                <p class="title mt-5 mb-6">{{ portofolio.pname }}</p>
 
-                                <p class="subtitle is-size-6 has-text-weight-bold mb-1">Putri ke{{ couples.perempuan?.anak_ke }} dari</p>
-                                <p class="subtitle is-size-6 mt-1">Bapak {{ couples.perempuan?.nama_ayah }} & Ibu {{ couples.perempuan?.nama_ibu }}</p>
+                                <p class="subtitle is-size-6 has-text-weight-bold mb-1">Putri ke{{ portofolio.panak_ke }} dari</p>
+                                <p class="subtitle is-size-6 mt-1">Bapak {{ portofolio.pnama_ayah }} & Ibu {{ portofolio.pnama_ibu }}</p>
 
                                 <p class="subtitle is-size-5 has-text-weight-bold mt-3">&</p>
 
@@ -25,14 +25,14 @@
                             </div>
                             <div class="column is-full mt-4">
                                 <figure class="image is-inline-block" style="height:180px; width: 180px;">
-                                    <img class="is-rounded mb-3" :src="couples.laki_laki?.picture">
-                                    <a :href="couples.laki_laki?.instagram_link"><font-awesome-icon icon="fa-brands fa-4x fa-instagram" /></a>
+                                    <img class="is-rounded mb-3" :src="portofolio.lpicture">
+                                    <a :href="portofolio.linsta_link"><font-awesome-icon icon="fa-brands fa-4x fa-instagram" /></a>
                                 </figure>
 
-                                <p class="title mt-5 mb-6">{{ couples.laki_laki?.name }}</p>
+                                <p class="title mt-5 mb-6">{{ portofolio.lname }}</p>
 
-                                <p class="subtitle is-size-6 has-text-weight-bold mb-1">Putra ke{{couples.laki_laki?.anak_ke }} dari</p>
-                                <p class="subtitle is-size-6 mt-1">Bapak {{ couples.laki_laki?.nama_ayah }} & Ibu {{ couples.laki_laki?.nama_ibu }}</p>
+                                <p class="subtitle is-size-6 has-text-weight-bold mb-1">Putra ke{{ portofolio.lanak_ke }} dari</p>
+                                <p class="subtitle is-size-6 mt-1">Bapak {{ portofolio.lnama_ayah }} & Ibu {{ portofolio.lnama_ibu }}</p>
                             </div>
                         </div>
 
@@ -47,11 +47,21 @@
 
 
 <script setup>
-import { inject, computed } from 'vue'
+import { inject, computed, onMounted } from 'vue'
+
+// PORTOFOLIO
 
 const store = inject('store');
 
-const couples = computed(() => store.state.couples);
+const portofolio = computed(() => store.state.portofolio);
 
-store.actions.getCouples();
+onMounted(() => {  
+    store.actions.getPortofolio();
+});
+
+// const store = inject('store');
+
+// const couples = computed(() => store.state.couples);
+
+// store.actions.getCouples();
 </script>

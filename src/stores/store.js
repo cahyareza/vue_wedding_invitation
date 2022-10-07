@@ -72,8 +72,11 @@ const actions = {
       });
     },
     getInvitation: () => {
-      return axios.get('http://localhost:3000/spesial_invitation').then((response) => {
-        mutations.updateInvitation(response.data);
+      actions.getSlug();
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/specialinvitation/?slug=${slug.value}`)
+      .then((response) => {
+        console.log(response.data.results);
+        mutations.updateInvitation(response.data.results);
       });
     },
     getOurmoment: () => {
@@ -101,9 +104,9 @@ const actions = {
       // const route = useRoute();
       // slug.value = route.params.slug
       // console.log(slug.value)
-      return axios.get('http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}')
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}`)
       .then((response) => {
-        // console.log(response.data.results);
+        // console.log(response.data.results[0]);
         mutations.updatePortofolio(response.data.results[0]);
       });
     },

@@ -10,7 +10,8 @@
                                 {{ portofolio.pname }} & {{ portofolio.lname }} 
                             </p>
                             <button class="button">
-                                <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
+                                <!-- <router-link :to="`/main/${slug}`">Buka Undangan</router-link> -->
+                                <a :href="`/main/${slug}`">Buka Undangan</a>
                             </button>
                         </div>
                     </div>

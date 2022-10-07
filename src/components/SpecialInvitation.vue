@@ -8,7 +8,7 @@
                     </p>
                     <p class="has-text-weight-bold is-size-6-tablet is-size-7-mobile"> Turut mengundang: </p>
                     <div v-for="invite in invitation" v-bind:key="invite.id">
-                        <p class="is-size-6-tablet is-size-7-mobile mt-2">{{ invite }}</p>
+                        <p class="is-size-6-tablet is-size-7-mobile mt-1">{{ invite.name_invite }}</p>
                     </div>
                 </div>
             </div>
@@ -18,12 +18,14 @@
 
 <script setup>
 
-import { inject, computed } from 'vue'
+import { inject, computed, onMounted } from 'vue'
 
 const store = inject('store');
 
 const invitation = computed(() => store.state.invitation);
 
-store.actions.getInvitation();
+onMounted(() => {  
+    store.actions.getInvitation();
+});
 
 </script>
