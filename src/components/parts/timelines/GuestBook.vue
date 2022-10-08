@@ -35,12 +35,12 @@
 import { ref, reactive, inject, computed, onMounted } from "vue";
 import axios from 'axios';
 
-const store = inject('store');
+var store = inject('store');
 const show = ref(false);
 
 const slug = store.actions.getSlug().value;
 
-var hadir = computed(() => store.state.hadir); 
+const hadir = computed(() => store.state.hadir); 
 
 const showhidebutton = () => {
     show.value = !show.value
@@ -51,8 +51,6 @@ const konfirmasi = reactive({
     name: null,
     hadir: null,
 });
-
-var getHadir = store.actions.getHadir()
 
 var jumlahHadir = computed(() => {
     const listhadir = [];
@@ -72,9 +70,10 @@ const confirmHadir = () => {
             showhidebutton();
             konfirmasi.name = "";
             konfirmasi.hadir = "";
-     
-            getHadir
-            console.log(jumlahHadir)
+                
+            axios.get(`http://127.0.0.1:8000/portofolio/api/hadir/?slug=${slug.value}`).then((response) => {
+                store.mutations.updateHadir(response.data);
+            });
         })
         .catch((err) => console.log(err));
 

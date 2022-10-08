@@ -91,6 +91,12 @@
       "alamat": "prembun",
       "pesan": "selamat yak!",
       "id": 1
+    },
+    {
+      "name": "Joni",
+      "alamat": "Jakrta",
+      "pesan": "Selamat ya",
+      "id": 2
     }
   ],
   "dompet": [

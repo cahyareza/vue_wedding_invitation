@@ -1,9 +1,9 @@
 <template v-slot:prev-btn="{ prev }">
   <div class="section">
-    <Carousel :autoplay="2000" :wrap-around="true">
-      <Slide v-for="(slide, index) in ourmoment?.photo" :key="slide">
+    <Carousel :autoplay="6000" :wrap-around="true">
+      <Slide v-for="(slide, index) in multiimage" :key="slide">
         <div class="carousel__item">
-          <img @click="showMultiple(ourmoment?.photo, index)" :src="slide">
+          <img @click="showMultiple(multiimage, index)" :src="slide">
         </div>
       </Slide>
 
@@ -40,8 +40,7 @@
 // If VueApp is already registered with VueEasyLightbox, there is no need to register it here.
 import VueEasyLightbox from 'vue-easy-lightbox'
 import { ref, defineComponent } from 'vue'
-import { inject, computed, onBeforeMount } from 'vue'
-import axios from 'axios';
+import { inject, computed, onMounted } from 'vue'
 
 import { Carousel, Pagination, Slide } from 'vue3-carousel';
 
@@ -58,9 +57,11 @@ export default defineComponent({
   setup() {
     const store = inject('store');
 
-    const ourmoment = computed(() => store.state.ourmoment); 
+    const multiimage = computed(() => store.state.multiimage); 
 
-    store.actions.getOurmoment();
+    onMounted(async() => {  
+      store.actions.getMultiimage();
+    });
 
     const visibleRef = ref(false)
     const indexRef = ref(0) // default 0
@@ -96,14 +97,14 @@ export default defineComponent({
     }
     const onHide = () => (visibleRef.value = false)
 
-    onBeforeMount( async () => {
-      await axios
-      .get("http://localhost:3000/ourMoment")
-      .then((response) => {
-        imgsRef.value = response.data
-        // console.log(imgsRef.value.photo)
-      })
-    })
+    // onBeforeMount( async () => {
+    //   await axios
+    //   .get("http://localhost:3000/ourMoment")
+    //   .then((response) => {
+    //     imgsRef.value = response.data
+    //     // console.log(imgsRef.value.photo)
+    //   })
+    // })
 
     return {
       visibleRef,
@@ -112,7 +113,7 @@ export default defineComponent({
       showSingle,
       showMultiple,
       onHide,
-      ourmoment
+      multiimage
     }
   }
 })

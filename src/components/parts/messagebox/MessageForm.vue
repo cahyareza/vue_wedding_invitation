@@ -1,4 +1,20 @@
 <template>
+    <div v-if="ucapan.length !==0" class="container m-4 mb-6">
+        <div class="product-container">
+            <div class="product-card center">
+                <div class="commentlist notification is-light mt-5 p-3" v-for="piece in ucapan" :key="piece.id">
+                    <!-- <div class="product-image"> -->
+                    <article class="media is-paddingless is-marginless">
+                        <div class="content is-paddingless is-marginless">
+                            <p class="subtitle is-size-6 has-text-black has-text-weight-bold has-text-left mb-1">{{ piece.nama }} <small> - {{ piece.alamat }}</small></p>
+                            <p class="subtitle is-size-7 has-text-black has-text-left mt-2">{{ piece.pesan }}</p>
+                        </div>
+                    </article>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container m-4 mt-2 mb-6">
         <div class="box">
             <form class="form" v-on:submit.prevent>
@@ -6,8 +22,8 @@
                 <!-- New Item Field -->
                 <div class="field">
                     <div class="control">
-                        <input class="input" v-model="fields.name" type="text" placeholder="Nama lengkap">
-                        <span style="color: red">{{ fieldErrors.name }}</span>
+                        <input class="input" v-model="fields.nama" type="text" placeholder="Nama lengkap">
+                        <span style="color: red">{{ fieldErrors.nama }}</span>
                     </div>
                 </div>
 
@@ -34,40 +50,86 @@
 </template>
 
 <script setup>
-import { reactive, inject } from "vue";
+import { onMounted, reactive, inject, computed } from "vue";
 import axios from 'axios';
 
+
+const store = inject('store');
+const ucapan = computed(() => store.state.ucapan); 
+
+onMounted(() => {
+    store.actions.getUcapan();
+});
+
+const slug = store.actions.getSlug().value;
+
 const fields = reactive({
-    name: null,
+    portofolio: slug,
+    nama: null,
     alamat: null,
     pesan: null,
 });
 
 const fieldErrors = reactive({
-    name: undefined,
+    nama: undefined,
     alamat: undefined,
     pesan: undefined
 });
 
 
-
-const store = inject('store');
-
 const confirmUcapan = () => {
 
     axios
-        .post("http://localhost:3000/ucapan", fields)
+        .post(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug.value}`, fields)
         .then(() => {
             console.log('berhasil post');
-            fields.name = "";
+            fields.nama = "";
             fields.alamat = "";
             fields.pesan = "";
-            store.actions.getUcapan();
+
+            axios.get(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug.value}`).then((response) => {
+                store.mutations.updateUcapan(response.data);
+            });
         })
         .catch((err) => console.log(err));
 }
 
 </script>
+
+<style lang="scss" scoped>
+
+.product-container {
+  background: black;
+//   display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  flex: 1 100%;
+  width: 220px;
+  height: 280px;
+  margin-left: 60px;
+}
+
+.product-image {
+  position: relative;
+  width: 180px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
 
 // <script>
 // export default {
@@ -108,3 +170,4 @@ const confirmUcapan = () => {
 //     }
 // }
 // </script>
+

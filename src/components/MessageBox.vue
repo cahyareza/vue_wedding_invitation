@@ -7,7 +7,6 @@
                         <p class="title is-size-4-mobile is-paddingless mt-3">Kirim Ucapan</p>
                     </div>
                 </section>
-                <MessagePage></MessagePage>
                 <MessageForm></MessageForm>
             </div>
         </div>
@@ -16,6 +15,5 @@
 
 <script setup>
 import MessageForm from '@/components/parts/messagebox/MessageForm.vue'
-import MessagePage from '@/components/parts/messagebox/MessagePage.vue'
 </script>
 

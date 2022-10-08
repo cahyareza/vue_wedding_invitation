@@ -1,17 +1,19 @@
 <template>
     <section class="container">
-        <iframe width="350" height="220" :src="ourmoment?.video"></iframe>
+        <iframe width="350" height="220" :src="portofolio.video"></iframe>
     </section>
 </template>
 
 <script setup>
-import { inject, computed } from 'vue'
+import { inject, computed, onMounted } from 'vue'
 
 const store = inject('store');
 
-const ourmoment = computed(() => store.state.ourmoment); 
+const portofolio = computed(() => store.state.portofolio);
 
-store.actions.getOurmoment();
+onMounted(() => {  
+    store.actions.getPortofolio();
+});
 
 
 </script>

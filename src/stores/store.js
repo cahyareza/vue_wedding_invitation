@@ -8,7 +8,7 @@ const state = reactive({
     quote: [],
     hadir: [],
     invitation: [],
-    ourmoment: [],
+    multiimage: [],
     ucapan: [],
     dompet:[],
     theme: "false",
@@ -23,7 +23,7 @@ const mutations = {
     updateQuote: (payload) => state.quote = payload,
     updateHadir: (payload) => state.hadir = payload,
     updateInvitation: (payload) => state.invitation = payload,
-    updateOurmoment: (payload) => state.ourmoment = payload,
+    updateMultiImage: (payload) => state.multiimage = payload,
     updateUcapan: (payload) => state.ucapan = payload,
     updateDompet: (payload) => state.dompet = payload,
     updateTheme: (payload) => state.theme = payload,
@@ -63,16 +63,24 @@ const actions = {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/specialinvitation/?slug=${slug.value}`)
       .then((response) => {
-        mutations.updateInvitation(response.data[0]);
+        mutations.updateInvitation(response.data);
       });
     },
-    getOurmoment: () => {
-      return axios.get('http://localhost:3000/ourMoment').then((response) => {
-        mutations.updateOurmoment(response.data);
+    getMultiimage: () => {
+      actions.getSlug();
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/multiimage/?portofolio__slug=${slug.value}`)
+      .then((response) => {
+        // console.log(response.data) 
+        const imagelist = []
+        for (let image in response.data) {
+          imagelist.push(response.data[image].image)
+        }
+        mutations.updateMultiImage(imagelist);
       });
     },
     getUcapan: () => {
-      return axios.get('http://localhost:3000/ucapan').then((response) => {
+      actions.getSlug();
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug.value}`) .then((response) => {
         mutations.updateUcapan(response.data);
       });
     },
