@@ -6,9 +6,7 @@ const state = reactive({
     couples: [],
     acara: [],
     quote: [],
-    addtocalender: [],
     hadir: [],
-    goto: [],
     invitation: [],
     ourmoment: [],
     ucapan: [],
@@ -23,9 +21,7 @@ const mutations = {
     updateCouples: (payload) => state.couples = payload,
     updateAcara: (payload) => state.acara = payload,
     updateQuote: (payload) => state.quote = payload,
-    updateAddtocalender: (payload) => state.addtocalender = payload,
     updateHadir: (payload) => state.hadir = payload,
-    updateGoto: (payload) => state.goto = payload,
     updateInvitation: (payload) => state.invitation = payload,
     updateOurmoment: (payload) => state.ourmoment = payload,
     updateUcapan: (payload) => state.ucapan = payload,
@@ -53,30 +49,21 @@ const actions = {
     getQuote: () => {
       actions.getSlug();
       return axios.get('http://127.0.0.1:8000/portofolio/api/quote/?slug=${slug.value}').then((response) => {
-        mutations.updateQuote(response.data.results[0]);
-      });
-    },
-    getAddtocalender: () => {
-      return axios.get('http://localhost:3000/addtocalender').then((response) => {
-        mutations.updateAddtocalender(response.data);
+        mutations.updateQuote(response.data[0]);
       });
     },
     getHadir: () => {
-      return axios.get('http://localhost:3000/hadir').then((response) => {
+      actions.getSlug();
+      return axios.get('http://127.0.0.1:8000/portofolio/api/hadir/?slug=${slug.value}').then((response) => {
         mutations.updateHadir(response.data);
-      });
-    },
-    getGoto: () => {
-      return axios.get('http://localhost:3000/goto').then((response) => {
-        mutations.updateGoto(response.data);
+        // console.log(response.data.results);
       });
     },
     getInvitation: () => {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/specialinvitation/?slug=${slug.value}`)
       .then((response) => {
-        console.log(response.data.results);
-        mutations.updateInvitation(response.data.results);
+        mutations.updateInvitation(response.data[0]);
       });
     },
     getOurmoment: () => {
@@ -106,8 +93,8 @@ const actions = {
       // console.log(slug.value)
       return axios.get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}`)
       .then((response) => {
-        // console.log(response.data.results[0]);
-        mutations.updatePortofolio(response.data.results[0]);
+        // console.log(response.data[0]);
+        mutations.updatePortofolio(response.data[0]);
       });
     },
 };

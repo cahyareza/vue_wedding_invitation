@@ -9,25 +9,35 @@ import 'add-to-calendar-button/assets/css/atcb.css';
 
 const store = inject('store');
 
-const addtocalender = computed(() => store.state.addtocalender);
+// const addtocalender = computed(() => store.state.addtocalender);
 
-// watchEffect(
-//     () => {
-//         console.log(addtocalender.value);
-//     },
-//     {
-//         onTrigger(e) {
-//             console.log(e);
-//         }
-//     },
-// )
+const portofolio = computed(() => store.state.portofolio);
+
+console.log(portofolio)
 
 const default_button = ref(null)
 
 const getaddtocalender = async () => {
-    await store.actions.getAddtocalender();
-    const rawaddtocalender = toRaw(addtocalender.value);
-    const config = rawaddtocalender
+    await store.actions.getPortofolio();
+    const config = {
+        "name": toRaw(portofolio.value.name),
+        "description": toRaw(portofolio.value.description),
+        "startDate": toRaw(portofolio.value.startDate),
+        "location": toRaw(portofolio.value.location),
+        "startTime": toRaw(portofolio.value.startTime),
+        "endTime": toRaw(portofolio.value.endTime),
+        "options": [
+          "Google",
+          "Apple",
+          "iCal",
+          "Yahoo",
+          "Outlook.com",
+          "Microsoft365"
+        ],
+        "timeZone": toRaw(portofolio.value.timeZone),
+        "trigger": toRaw(portofolio.value.trigger),
+        "iCalFileName": toRaw(portofolio.value.iCalFileName)
+    }
 
     const button = default_button.value
     button.addEventListener('click', () => atcb_action(config, button));

@@ -28,10 +28,6 @@ const portofolio = computed(() => store.state.portofolio);
 
 store.actions.getPortofolio();
 
-// const goto = computed(() => store.state.goto);
-
-// store.actions.getGoto();
-
 onMounted(() => {  
     store.actions.getPortofolio();
 });

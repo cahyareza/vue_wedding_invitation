@@ -35,38 +35,26 @@
 import { ref, reactive, inject, computed, onMounted } from "vue";
 import axios from 'axios';
 
+const store = inject('store');
 const show = ref(false);
+
+const slug = store.actions.getSlug().value;
+
+var hadir = computed(() => store.state.hadir); 
 
 const showhidebutton = () => {
     show.value = !show.value
  }
 
-
-
 const konfirmasi = reactive({
+    portofolio: slug,
     name: null,
     hadir: null,
 });
 
+var getHadir = store.actions.getHadir()
 
-const confirmHadir = () => {
-
-    axios
-        .post("http://localhost:3000/hadir", konfirmasi)
-        .then(() => {
-            console.log('berhasil post');
-            showhidebutton();
-            konfirmasi.name = "";
-            konfirmasi.hadir = "";
-            store.actions.getHadir();
-        })
-        .catch((err) => console.log(err));
-}
-
-const store = inject('store');
-const hadir = computed(() => store.state.hadir); 
-
-const jumlahHadir = computed(() => {
+var jumlahHadir = computed(() => {
     const listhadir = [];
     for (let konfirm of hadir.value) {
         if (konfirm.hadir == "iya") {
@@ -75,6 +63,23 @@ const jumlahHadir = computed(() => {
     }
     return listhadir.length;
 });
+
+const confirmHadir = () => {
+    axios
+        .post(`http://127.0.0.1:8000/portofolio/api/hadir/?slug=${slug}`, konfirmasi)
+        .then(() => {
+            console.log('berhasil post');
+            showhidebutton();
+            konfirmasi.name = "";
+            konfirmasi.hadir = "";
+     
+            getHadir
+            console.log(jumlahHadir)
+        })
+        .catch((err) => console.log(err));
+
+}
+
 
 onMounted(() => {
     store.actions.getHadir();
