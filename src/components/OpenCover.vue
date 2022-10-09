@@ -6,12 +6,11 @@
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
                         <div class="">
                             <p class="title">
-                            <!-- {{ couples.perempuan?.name }} & {{ couples.laki_laki?.name }} -->
                                 {{ portofolio.pname }} & {{ portofolio.lname }} 
                             </p>
                             <button class="button">
-                                <!-- <router-link :to="`/main/${slug}`">Buka Undangan</router-link> -->
-                                <a :href="`/main/${slug}`">Buka Undangan</a>
+                                <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
+                                <!-- <a :href="`/main/${slug}`">Buka Undangan</a> -->
                             </button>
                         </div>
                     </div>
