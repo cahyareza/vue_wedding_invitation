@@ -38,7 +38,7 @@ import axios from 'axios';
 var store = inject('store');
 const show = ref(false);
 
-const slug = store.actions.getSlug().value;
+var slug = store.actions.getSlug().value;
 
 const hadir = computed(() => store.state.hadir); 
 
@@ -64,14 +64,14 @@ var jumlahHadir = computed(() => {
 
 const confirmHadir = () => {
     axios
-        .post(`http://127.0.0.1:8000/portofolio/api/hadir/?slug=${slug}`, konfirmasi)
+        .post(`http://127.0.0.1:8000/portofolio/api/hadir/?portofolio__slug=${slug}`, konfirmasi)
         .then(() => {
             console.log('berhasil post');
             showhidebutton();
             konfirmasi.name = "";
             konfirmasi.hadir = "";
                 
-            axios.get(`http://127.0.0.1:8000/portofolio/api/hadir/?slug=${slug.value}`).then((response) => {
+            axios.get(`http://127.0.0.1:8000/portofolio/api/hadir/?portofolio__slug=${slug}`).then((response) => {
                 store.mutations.updateHadir(response.data);
             });
         })

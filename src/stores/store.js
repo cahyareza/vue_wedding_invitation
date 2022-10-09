@@ -3,8 +3,6 @@ import axios from 'axios';
 import { useRoute } from 'vue-router';
 
 const state = reactive({
-    couples: [],
-    acara: [],
     quote: [],
     hadir: [],
     invitation: [],
@@ -18,8 +16,6 @@ const state = reactive({
 const slug = ref('');
 
 const mutations = {
-    updateCouples: (payload) => state.couples = payload,
-    updateAcara: (payload) => state.acara = payload,
     updateQuote: (payload) => state.quote = payload,
     updateHadir: (payload) => state.hadir = payload,
     updateInvitation: (payload) => state.invitation = payload,
@@ -36,32 +32,23 @@ const actions = {
       slug.value = route.params.slug
       return slug
     },
-    getCouples: () => {
-      return axios.get('http://localhost:3000/couples').then((response) => {
-        mutations.updateCouples(response.data);
-      });
-    },
-    getAcara: () => {
-      return axios.get('http://localhost:3000/acara').then((response) => {
-        mutations.updateAcara(response.data);
-      });
-    },
     getQuote: () => {
       actions.getSlug();
-      return axios.get('http://127.0.0.1:8000/portofolio/api/quote/?slug=${slug.value}').then((response) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/quote/?portofolio__slug=${slug.value}`).then((response) => {
         mutations.updateQuote(response.data[0]);
+        // console.log(response.data[0])
       });
     },
     getHadir: () => {
       actions.getSlug();
-      return axios.get('http://127.0.0.1:8000/portofolio/api/hadir/?slug=${slug.value}').then((response) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/hadir/?portofolio__slug=${slug.value}`).then((response) => {
         mutations.updateHadir(response.data);
         // console.log(response.data.results);
       });
     },
     getInvitation: () => {
       actions.getSlug();
-      return axios.get(`http://127.0.0.1:8000/portofolio/api/specialinvitation/?slug=${slug.value}`)
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/specialinvitation/?portofolio__slug=${slug.value}`)
       .then((response) => {
         mutations.updateInvitation(response.data);
       });
@@ -85,7 +72,8 @@ const actions = {
       });
     },
     getDompet: () => {
-      return axios.get('http://localhost:3000/dompet').then((response) => {
+      actions.getSlug();
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/dompet/?portofolio__slug=${slug.value}`) .then((response) => {
         mutations.updateDompet(response.data);
       });
     },

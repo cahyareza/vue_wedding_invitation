@@ -9,7 +9,7 @@
                                 <p class="subtitle is-size-4-tablet is-size-6-mobile">
                                     "{{ quote.kutipan }}"
                                 </p>
-                                <p> {{ quote.ayat}} </p>       
+                                <p> {{ quote.ayat }} </p>       
                             </div>
                         </div>
                     </section>
@@ -27,8 +27,7 @@ import { inject, computed, onMounted } from 'vue'
 const store = inject('store');
 
 const quote = computed(() => store.state.quote); 
-
-store.actions.getQuote();
+console.log(quote)
 
 onMounted(() => {
     store.actions.getQuote();

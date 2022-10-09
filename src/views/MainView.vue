@@ -1,9 +1,7 @@
 <template>
   <section>
     <MainCover></MainCover>
-    <KeepAlive>
-      <QuotePage></QuotePage>
-    </KeepAlive>
+    <QuotePage></QuotePage>
     <div ref="groom">
       <KeepAlive>
         <GroomBride></GroomBride>

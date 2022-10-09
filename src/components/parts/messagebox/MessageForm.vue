@@ -1,5 +1,5 @@
 <template>
-    <div v-if="ucapan.length !==0" class="container m-4 mb-6">
+    <div v-if="ucapan.length" class="container m-4 mb-6"> 
         <div class="product-container">
             <div class="product-card center">
                 <div class="commentlist notification is-light mt-5 p-3" v-for="piece in ucapan" :key="piece.id">
@@ -50,18 +50,17 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, inject, computed } from "vue";
+import { reactive, inject, computed } from "vue";
 import axios from 'axios';
 
 
 const store = inject('store');
 const ucapan = computed(() => store.state.ucapan); 
 
-onMounted(() => {
-    store.actions.getUcapan();
-});
 
-const slug = store.actions.getSlug().value;
+store.actions.getUcapan();
+
+var slug = store.actions.getSlug().value;
 
 const fields = reactive({
     portofolio: slug,
@@ -80,16 +79,18 @@ const fieldErrors = reactive({
 const confirmUcapan = () => {
 
     axios
-        .post(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug.value}`, fields)
+        .post(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug}`, fields)
         .then(() => {
             console.log('berhasil post');
             fields.nama = "";
             fields.alamat = "";
             fields.pesan = "";
 
-            axios.get(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug.value}`).then((response) => {
+            axios.get(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug}`).then((response) => {
+                console.log(response.data)
                 store.mutations.updateUcapan(response.data);
             });
+
         })
         .catch((err) => console.log(err));
 }
