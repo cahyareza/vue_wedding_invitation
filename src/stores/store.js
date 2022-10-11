@@ -78,8 +78,10 @@ const actions = {
       });
     },
     getTheme: () => {
-      return axios.get('http://localhost:3000/theme').then((response) => {
-        mutations.updateTheme(response.data);
+      actions.getSlug();
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
+        const theme = { [response.data[0].theme]: true }
+        mutations.updateTheme(theme);
       });
     },
     getPortofolio: () => {
