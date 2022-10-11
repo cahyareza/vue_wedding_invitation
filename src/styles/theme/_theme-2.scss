@@ -1,0 +1,14 @@
+// THEME-2
+$theme-2: (
+    maincover: (
+        font: (
+            "title": $allura,
+            "subtitle": $old_standard
+        ),
+        hero: (
+            "mobile": url("../assets/contents/background/autumn_mobile.png"),
+            "tablet": url("../assets/contents/background/autumn_tablet.png"),
+            "desktop": url("../assets/contents/background/autumn_desktop.png")
+        )
+    )
+);

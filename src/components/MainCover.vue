@@ -28,30 +28,30 @@
 </template>
 
 <script setup>
-import { inject, computed, onMounted } from 'vue'
+import { inject, computed, onMounted, onBeforeMount } from 'vue'
 
-// PORTOFOLIO
-
+// LOAD STATE
 const store = inject('store');
 
+// PORTOFOLIO
 const portofolio = computed(() => store.state.portofolio);
 
 
 // THEME
 const theme = computed(() => store.state.theme); 
 
-store.actions.getTheme();
-
-onMounted(() => {  
-    store.actions.getPortofolio();
+// LIFECYCLE
+onBeforeMount(() => {
     store.actions.getTheme();
 });
 
-// console.log(theme)
+onMounted(() => {  
+    store.actions.getPortofolio();
+});
 
-// const tanggal_resepsi = computed(() => moment(String(new Date("05 October 2011 14:48 UTC").getTime())).format('MM/DD/YYYY'))
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/component/maincover.scss";
+// @import "../styles/global.scss";
 </style>
