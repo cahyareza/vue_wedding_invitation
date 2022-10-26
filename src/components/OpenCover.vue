@@ -31,6 +31,5 @@ const slug = store.actions.getSlug().value;
 
 onMounted(() => {
     store.actions.getPortofolio();
-    store.actions.getQuote();
 })
 </script>
