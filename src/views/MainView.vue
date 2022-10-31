@@ -3,9 +3,7 @@
     <MainCover></MainCover>
     <QuotePage></QuotePage>
     <div ref="groom">
-      <KeepAlive>
-        <GroomBride></GroomBride>
-      </KeepAlive>
+      <GroomBride></GroomBride>
     </div>
     <div ref="time">
       <TimeLines></TimeLines>

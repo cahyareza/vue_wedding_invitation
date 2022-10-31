@@ -81,6 +81,7 @@ const actions = {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
         const theme = { [response.data[0].theme]: true }
+        console.log(theme)
         mutations.updateTheme(theme);
       });
     },
