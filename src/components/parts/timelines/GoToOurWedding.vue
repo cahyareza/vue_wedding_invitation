@@ -4,16 +4,16 @@
         <div class="mt-4">
         <iframe 
             data-aos="zoom-in"
-            class="w-10/12 mx-auto mt-4 mb-8" style="border: 5px solid black; border-radius: 4px;" height="300" 
+            class="iframe mx-auto mt-4 mb-1" height="300" 
             :src= "portofolio.link_iframe"
             frameborder="0" scrolling="no" 
             marginheight="0" marginwidth="0"></iframe>
         </div>
-        <p class="subtitle is-size-7 mt-3 mb-3 p-2">{{ portofolio.lokasi }}</p>
-        <button class="button is-rounded is-size-7 px-2  mb-3">
-            <a :href="portofolio.link_gmap">Buka di Google Map
-            </a>
-        </button>
+        <p class="subtitle is-size-7 mt-1 mb-3">{{ portofolio.lokasi }}</p>
+        <a class="button is-rounded is-size-7 mb-3" :href="portofolio.link_gmap">
+           <font-awesome-icon icon="fa-solid fa-location-dot" />
+           &nbsp;Buka di Google Map
+        </a>
         
     </section>
   </section>

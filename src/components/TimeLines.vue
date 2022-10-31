@@ -3,9 +3,12 @@
         <section class="hero is-light is-large">
             <div class="columns">
                 <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                    <section class="section pt-4">
+                    <section class="section pt-3 pb-1">
                         <div class="container">
-                            <p class="subtitle is-uppercase is-size-5 mt-3 p-3">Acara Akan Diselenggarakan</p>
+                            <p class="subtitle-2 is-uppercase is-size-5 mt-3 p-3">
+                                Acara Akan Diselenggarakan<br>
+                                <img class="mt-1" src="../assets/contents/line_blue.png" style="width: 180px; height: 27px;">
+                            </p>
 
                             <CountDown></CountDown>
 
@@ -14,7 +17,7 @@
                         </div>
                     </section>
 
-                    <div class="container px-5 pt-5">
+                    <div class="container px-5">
                         <GuestBook></GuestBook>
                     </div>
                 </div>
