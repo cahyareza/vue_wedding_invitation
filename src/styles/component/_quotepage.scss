@@ -22,8 +22,9 @@
                 background-color: $fourth-theme-1;
             }
             .notification {
-                box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.05);
-                color: red;
+                background-color: rgba($primary-theme-1, 0.2);
+                padding: 10px;
+                border-radius: 5%;
             }
         } 
         // Loop through each of the keys (sections)

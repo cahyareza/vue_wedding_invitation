@@ -1,5 +1,5 @@
 <template>
-    <div class="notification-2 notification is-info is-light">
+    <div class="notification2 notification">
         <p><strong>{{ jumlahHadir }} tamu</strong> merespon akan datang,</p>
         <button @click="showhidebutton" class="button is-rounded mt-4 mb-4">
             <font-awesome-icon icon="fa-solid fa-calendar-check" />&nbsp;Konfirmasi Kehadiran

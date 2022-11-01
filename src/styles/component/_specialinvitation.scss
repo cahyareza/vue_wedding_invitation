@@ -19,7 +19,7 @@
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: rgba($fourth-theme-1, 0.4);
+                background-color: $fourth-theme-1;
             }
         }
         // Loop through each of the keys (sections)
@@ -27,11 +27,11 @@
             @if ($page == maincover) {
                 @each $section, $map in $sections {
                     @if ($section == font) {
-                        .title2 {
+                        .title {
                             font-family: map-get($map, "title");
                             color: $secondary-theme-1;
                         }
-                        .subtitle2 {
+                        .subtitle {
                             font-family: map-get($map, "subtitle");
                             color: $third-theme-1;
                         }

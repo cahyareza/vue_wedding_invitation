@@ -19,7 +19,7 @@
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: rgba($fourth-theme-1, 0.4);
+                background-color: $primary-theme-1;
             }
         }
         // Loop through each of the keys (sections)

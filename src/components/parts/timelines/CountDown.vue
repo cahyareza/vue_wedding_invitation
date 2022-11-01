@@ -31,26 +31,8 @@ const timer = setInterval(() => {
   })
 }, 1000)
 
-// // THEME
-// const theme = computed(() => store.state.theme); 
-
-// // LIFECYCLE
-// onBeforeMount(() => {
-//     store.actions.getTheme();
-// });
-
 onMounted(() => {  
     store.actions.getPortofolio();
 });
 
 </script>
-
-<style lang="scss" scoped>
-// @import "../../../styles/component/parts/timelines/countdown.scss";
-// @import "../styles/global.scss";
-
-// .subtitle {
-//   color: blue;
-// }
-
-</style>

@@ -19,7 +19,18 @@
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: rgba($fourth-theme-1, 0.4);
+                background-color: $primary-theme-1;
+                // background-image: $backg;
+            }
+            .icon {
+                color: $fourth-theme-1;
+            }
+            .notification {
+                background-color: rgba($fourth-theme-1, 0.2);
+            }
+            .button {
+                color: $secondary-theme-1;
+                border: 1px solid $secondary-theme-1;
             }
         }
         // Loop through each of the keys (sections)
@@ -29,11 +40,15 @@
                     @if ($section == font) {
                         .title2 {
                             font-family: map-get($map, "title");
-                            color: $secondary-theme-1;
+                            color: $third-theme-1;
                         }
                         .subtitle2 {
                             font-family: map-get($map, "subtitle");
-                            color: $third-theme-1;
+                            color: $secondary-theme-1;
+                        }
+                        .subtitle3 {
+                            font-family: map-get($map, "subtitle");
+                            color: $fourth-theme-1;
                         }
                     }
                 }

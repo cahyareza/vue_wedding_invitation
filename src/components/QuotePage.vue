@@ -7,7 +7,7 @@
                         <section class="section is-paddingless">
                             <div class="container">
                                 <img class="" src="../assets/contents/flower.png" style="width: 200px; height: 50px;">
-                                <div class="notification is-light mt-2">
+                                <div class="notification mt-2">
                                     <p class="subtitle is-size-4-tablet is-size-6-mobile">
                                         "{{ quote.kutipan }}"
                                     </p>

@@ -18,22 +18,31 @@
 @mixin themable ($theme-name, $theme-map){
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
-            .hero {
+            :deep(.product-container) {
                 background-color: rgba($fourth-theme-1, 0.4);
             }
+            :deep(.button) {
+                color: $secondary-theme-1;
+                border: 1px solid $primary-theme-1;
+            }
+            .hero {
+                background-color: $primary-theme-1;
+                // background-image: $backg;
+            }
         }
+
         // Loop through each of the keys (sections)
        @each $page, $sections in $theme-map {
-            @if ($page == maincover) {
+            @if ($page == timelines) {
                 @each $section, $map in $sections {
                     @if ($section == font) {
-                        .title2 {
+                        .title {
                             font-family: map-get($map, "title");
                             color: $secondary-theme-1;
                         }
                         .subtitle2 {
                             font-family: map-get($map, "subtitle");
-                            color: $third-theme-1;
+                            color: $fourth-theme-1;
                         }
                     }
                 }

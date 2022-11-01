@@ -18,6 +18,9 @@
 @mixin themable ($theme-name, $theme-map){
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
+            :deep(.notification2) {
+                background-color: rgba($primary-theme-1, 0.2);
+            }
             :deep(.iframe) {
                 border: 5px solid $primary-theme-1; 
                 border-radius: 4px;
