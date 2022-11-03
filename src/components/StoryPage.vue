@@ -13,7 +13,6 @@
                         type: 'fraction',
                         }"
                         :navigation="true"
-                        :modules="modules"
                         class="mySwiper is-paddingless is-marginless"
                     >
                         <swiper-slide>
@@ -43,7 +42,7 @@
                         </swiper-slide>
                     </swiper>
 
-                    <SlidePage :visible="showForm"></SlidePage>
+                    <SlidePage v-model:visible="showForm"></SlidePage>
                     <!-- <SlidePage @visible="show"></SlidePage> -->
                     <button label="hide manufacturer" @click="showForm = true">Show</button>
 
@@ -61,10 +60,6 @@ import { inject, computed, onBeforeMount, ref } from 'vue'
 
 const showForm = ref(false)
 
-
-// const show = val => {
-//     const asu = val
-// }
 
 // swiper core
 import SwiperCore, { Pagination, Navigation } from "swiper";
