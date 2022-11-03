@@ -22,7 +22,7 @@
                     <div class="modal-card m-4" style="padding: 4vw;">
                         <header class="modal-card-head">
                             <p class="modal-card-title">Amplop Digital</p>
-                            <button class="delete" aria-label="close" @click="cancelModal">></button>
+                            <button class="delete" aria-label="close" @click="cancelModal"></button>
                         </header>
                         <section class="modal-card-body">
                             <p class="has-text-left mb-4">Transfer langsung ke rekening berikut ini;</p>
@@ -44,7 +44,6 @@
                         </footer>
                     </div>
                 </div>
-
             </div>
 
             
@@ -84,17 +83,12 @@ import { reactive, inject, computed, onMounted, defineEmits } from "vue";
 import trumpetSfx from '../assets/contents/mp3/sample.mp3';
 import useClipboard from 'vue-clipboard3'
 
-const emit = defineEmits(['coba', 'page']);
+const emit = defineEmits(['page']);
 
 // emit
-// const cobaEmit = (value) => {
-//     emit("coba", value)
-// }
-
 const navPage = (value) => {
     emit("page", value)
 }
-
 
 // Audio
 var audio = {
