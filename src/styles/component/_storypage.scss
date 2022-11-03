@@ -1,0 +1,51 @@
+@import '../variables';
+@import '../theme/theme-1';
+@import '../theme/theme-2';
+// @import '../function';
+
+// Import only what you need from Bulma
+@import "../../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../../node_modules/bulma/sass/base/_all.sass";
+@import "../../../node_modules/bulma/sass/elements/button.sass";
+@import "../../../node_modules/bulma/sass/elements/container.sass";
+@import "../../../node_modules/bulma/sass/elements/title.sass";
+@import "../../../node_modules/bulma/sass/form/_all.sass";
+@import "../../../node_modules/bulma/sass/components/navbar.sass";
+@import "../../../node_modules/bulma/sass/layout/hero.sass";
+@import "../../../node_modules/bulma/sass/layout/section.sass";
+
+// MIXINS
+@mixin themable ($theme-name, $theme-map){
+    .#{$theme-name} {
+        @if ($theme-name == theme-1) {
+            .hero {
+                background-color: $primary-theme-1;
+                // background-image: $backg;
+            }
+        }
+
+        // Loop through each of the keys (sections)
+       @each $page, $sections in $theme-map {
+            @if ($page == timelines) {
+                @each $section, $map in $sections {
+                    @if ($section == font) {
+                        .title {
+                            font-family: map-get($map, "title");
+                            color: $secondary-theme-1;
+                        }
+                        .subtitle2 {
+                            font-family: map-get($map, "subtitle");
+                            color: $fourth-theme-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Call for theme-1
+@include themable(theme-1, $theme-1);
+
+// Call for theme-2
+@include themable(theme-2, $theme-2);

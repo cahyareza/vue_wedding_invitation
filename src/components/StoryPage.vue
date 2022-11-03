@@ -3,7 +3,7 @@
         <section class="hero is-large">
             <div class="columns mb-3">
                 <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                    <p class="subtitle is-uppercase is-size-5">
+                    <p class="subtitle2 is-uppercase is-size-5 mt-4">
                         Cerita Kita<br>
                         <img class="mt-1" src="../assets/contents/line.png" style="width: 180px; height: 30px;">
                     </p>
@@ -16,36 +16,58 @@
                         class="mySwiper is-paddingless is-marginless"
                     >
                         <swiper-slide>
-                            <figure class="image is-128x128">
-                                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-                            </figure>
+                            <div class="columns is-multiline">
+                                <div class="column mt-1">
+                                    <p class="subtitle2 has-text-white mb-1">2022</p>
+                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                    </figure>
+                                </div>
+                            </div>
                         </swiper-slide>
                         <swiper-slide>
-                            <figure class="image is-128x128">
-                                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-                            </figure>
+                            <div class="columns is-multiline">
+                                <div class="column mt-1">
+                                    <p class="subtitle2 has-text-white mb-1">2022</p>
+                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                    </figure>
+                                </div>
+                            </div>
                         </swiper-slide>
                         <swiper-slide>
-                            <figure class="image is-128x128">
-                                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-                            </figure>
+                            <div class="columns is-multiline">
+                                <div class="column mt-1">
+                                    <p class="subtitle2 has-text-white mb-1">2022</p>
+                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                    </figure>
+                                </div>
+                            </div>
                         </swiper-slide>
                         <swiper-slide>
-                            <figure class="image is-128x128">
-                                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-                            </figure>
+                            <div class="columns is-multiline">
+                                <div class="column mt-1">
+                                    <p class="subtitle2 has-text-white mb-1">2022</p>
+                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                    </figure>
+                                </div>
+                            </div>
                         </swiper-slide>
                         <swiper-slide>
-                            <figure class="image is-128x128">
-                                <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-                            </figure>
+                            <div class="columns is-multiline">
+                                <div class="column mt-1">
+                                    <p class="subtitle2 has-text-white mb-1">2022</p>
+                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                    </figure>
+                                </div>
+                            </div>
                         </swiper-slide>
                     </swiper>
 
                     <SlidePage v-model:visible="showForm"></SlidePage>
-                    <!-- <SlidePage @visible="show"></SlidePage> -->
-                    <button label="hide manufacturer" @click="showForm = true">Show</button>
-
                 </div>
             </div>
         </section>
@@ -96,12 +118,12 @@ onBeforeMount(() => {
 
 
 <style lang="scss" scoped>
-@import "../styles/component/messagebox.scss";
+@import "../styles/component/storypage.scss";
 // @import "../styles/global.scss";
 
 .swiper {
   width: 100%;
-  height: 180px;
+  height: 200px;
 }
 
 .swiper-slide {

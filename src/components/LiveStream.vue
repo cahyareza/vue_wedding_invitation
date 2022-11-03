@@ -13,8 +13,7 @@
                             <a :href="portofolio.livestream"><font-awesome-icon icon="fa-solid fa-video" />&nbsp;Menuju Streaming
                             </a>
                         </button>
-                        <hr class="is-paddingless mt-2 mb-3">
-                        <p class="subtitle2 is-size-6-tablet is-size-6-mobile">Silahkan untuk join live streaming.</p>
+                        <p class="subtitle2 is-size-7-tablet is-size-7-mobile">Silahkan untuk join live streaming.</p>
                     </div>
                 </div>
             </div>

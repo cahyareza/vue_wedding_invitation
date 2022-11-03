@@ -1,9 +1,8 @@
 <template>
     <!--    Modal        -->
     <div class="modal" :class="{'is-active': visible}">
-        <p class="title has-text-white">Modal title</p>
         <div class="modal-background"></div>
-            <button class="delete" aria-label="close" @click="$emit('update:visible', false)" style="float: right; position:absolute; top:10px; right:10px;"></button>
+            <button class="delete" aria-label="close" @click="$emit('update:visible', false)" style="float: right; position:absolute; top:20px; right:20px;"></button>
             <div class="modal-content">
                 <swiper
                     :slidesPerView="1"
@@ -14,29 +13,48 @@
                     class="mySwiper is-paddingless is-marginless"
                 >
                     <swiper-slide>
-                        <figure class="image is-128x128">
-                            <img class="" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.planetware.com%2Fpictures%2Ffrance-f.htm&psig=AOvVaw0fkZ0Tv4CIuW2MXe_rfrhQ&ust=1667563026330000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKjEi8D6kfsCFQAAAAAdAAAAABAE">
-                        </figure>
+                        <div class="columns is-multiline">
+                            <div class="column mt-1">
+                                <p class="title has-text-white">2022</p>
+                                <p class="subtitle has-text-white">"Paragraph"</p>
+                                <figure class="image is-480x480">
+                                    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                </figure>
+                            </div>
+                        </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <figure class="image is-128x128">
-                            <img class="" src="https://bulma.io/images/placeholders/128x128.png">
-                        </figure>
+                        <div class="columns is-multiline">
+                            <div class="column mt-1">
+                                <p class="title has-text-white">2022</p>
+                                <p class="subtitle has-text-white">"Paragraph"</p>
+                                <figure class="image is-480x480">
+                                    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                </figure>
+                            </div>
+                        </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <figure class="image is-128x128">
-                            <img class="" src="https://bulma.io/images/placeholders/128x128.png">
-                        </figure>
+                        <div class="columns is-multiline">
+                            <div class="column mt-1">
+                                <p class="title has-text-white">2022</p>
+                                <p class="subtitle has-text-white">"Paragraph"</p>
+                                <figure class="image is-480x480">
+                                    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                </figure>
+                            </div>
+                        </div>
                     </swiper-slide>
                     <swiper-slide>
-                        <figure class="image is-128x128">
-                            <img class="" src="https://bulma.io/images/placeholders/128x128.png">
-                        </figure>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <figure class="image is-128x128">
-                            <img class="" src="https://bulma.io/images/placeholders/128x128.png">
-                        </figure>
+                        <div class="columns is-multiline">
+                            <div class="column mt-1">
+                                <p class="title has-text-white">2022</p>
+                                <p class="subtitle has-text-white">"Paragraph"</p>
+                                <figure class="image is-480x480">
+                                    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                </figure>
+                            </div>
+                        </div>
                     </swiper-slide>
                 </swiper>
             </div>
