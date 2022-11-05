@@ -12,7 +12,18 @@
                     :navigation="true"
                     class="mySwiper is-paddingless is-marginless"
                 >
-                    <swiper-slide>
+                    <swiper-slide v-for="stori in story" :key="stori.id">
+                        <div class="columns is-multiline">
+                            <div class="column mt-1">
+                                <p class="title has-text-white">{{ stori.year }}</p>
+                                <p class="subtitle has-text-white">{{ stori.cerita }}</p>
+                                <figure class="image is-480x480">
+                                    <img class="" :src="stori.image">
+                                </figure>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <!-- <swiper-slide>
                         <div class="columns is-multiline">
                             <div class="column mt-1">
                                 <p class="title has-text-white">2022</p>
@@ -44,25 +55,21 @@
                                 </figure>
                             </div>
                         </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="columns is-multiline">
-                            <div class="column mt-1">
-                                <p class="title has-text-white">2022</p>
-                                <p class="subtitle has-text-white">"Paragraph"</p>
-                                <figure class="image is-480x480">
-                                    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                </figure>
-                            </div>
-                        </div>
-                    </swiper-slide>
+                    </swiper-slide> -->
                 </swiper>
             </div>
     </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, inject, computed, onBeforeMount } from 'vue'
+
+// LOAD STATE
+const store = inject('store');
+
+// STORY
+const story = computed(() => store.state.story); 
+
 
 // MODAL
 // eslint-disable-next-line no-unused-vars
@@ -90,6 +97,11 @@ import "swiper/scss/navigation";
 // import { Pagination, Navigation } from "swiper";
 
 SwiperCore.use([Navigation, Pagination]);
+
+// LIFECYCLE
+onBeforeMount(() => {
+    store.actions.getStory();
+});
 
 </script>
 
@@ -121,8 +133,8 @@ SwiperCore.use([Navigation, Pagination]);
 
 .swiper-slide img {
   display: block;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  width: 100vw;
+  height: 70vh;
 }
 </style>

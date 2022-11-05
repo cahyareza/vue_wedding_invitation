@@ -11,6 +11,7 @@ const state = reactive({
     dompet:[],
     theme: "false",
     portofolio: [],
+    story: [],
 });
 
 const slug = ref('');
@@ -24,6 +25,7 @@ const mutations = {
     updateDompet: (payload) => state.dompet = payload,
     updateTheme: (payload) => state.theme = payload,
     updatePortofolio: (payload) => state.portofolio = payload,
+    updateStory: (payload) => state.story = payload,
 }
 
 const actions = {
@@ -81,7 +83,7 @@ const actions = {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
         const theme = { [response.data[0].theme]: true }
-        console.log(theme)
+        // console.log(theme)
         mutations.updateTheme(theme);
       });
     },
@@ -94,6 +96,13 @@ const actions = {
       .then((response) => {
         // console.log(response.data[0]);
         mutations.updatePortofolio(response.data[0]);
+      });
+    },
+    getStory: () => {
+      actions.getSlug();
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/story/?portofolio__slug=${slug.value}`) .then((response) => {
+        // console.log(response.data);
+        mutations.updateStory(response.data.reverse());
       });
     },
 };

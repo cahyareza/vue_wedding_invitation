@@ -15,7 +15,28 @@
                         :navigation="true"
                         class="mySwiper is-paddingless is-marginless"
                     >
-                        <swiper-slide>
+                        <swiper-slide v-for="stori in story" :key="stori.id">
+                            <div class="columns is-multiline">
+                                <div class="column mt-1">
+                                    <p class="subtitle2 has-text-white mb-1">{{ stori.year }}</p>
+                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                        <img class="is-rounded" :src="stori.image">
+                                    </figure>
+                                </div>
+                            </div>
+                        </swiper-slide>
+
+                        <!-- <swiper-slide>
+                            <div class="columns is-multiline">
+                                <div class="column mt-1">
+                                    <p class="subtitle2 has-text-white mb-1">2022</p>
+                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
+                                    </figure>
+                                </div>
+                            </div>
+                        </swiper-slide> -->
+                        <!-- <swiper-slide>
                             <div class="columns is-multiline">
                                 <div class="column mt-1">
                                     <p class="subtitle2 has-text-white mb-1">2022</p>
@@ -44,27 +65,7 @@
                                     </figure>
                                 </div>
                             </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="columns is-multiline">
-                                <div class="column mt-1">
-                                    <p class="subtitle2 has-text-white mb-1">2022</p>
-                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                    </figure>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="columns is-multiline">
-                                <div class="column mt-1">
-                                    <p class="subtitle2 has-text-white mb-1">2022</p>
-                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                    </figure>
-                                </div>
-                            </div>
-                        </swiper-slide>
+                        </swiper-slide> -->
                     </swiper>
 
                     <SlidePage v-model:visible="showForm"></SlidePage>
@@ -81,6 +82,12 @@ import SlidePage from '@/components/parts/storypage/SlidePage.vue'
 import { inject, computed, onBeforeMount, ref } from 'vue'
 
 const showForm = ref(false)
+
+// LOAD STATE
+const store = inject('store');
+
+// STORY
+const story = computed(() => store.state.story); 
 
 
 // swiper core
@@ -101,15 +108,13 @@ import "swiper/scss/navigation";
 
 SwiperCore.use([Navigation, Pagination]);
 
-// LOAD STATE
-const store = inject('store');
-
 // THEME
 const theme = computed(() => store.state.theme); 
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getStory();
 });
 
 </script>
