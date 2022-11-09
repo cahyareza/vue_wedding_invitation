@@ -6,7 +6,7 @@
                     <section class="section pt-4">
                         <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
                             Moment yang berharga
-                            <img class="mt-1" src="../assets/contents/line_blue.png" style="width: 180px; height: 27px;">
+                            <img class="filter mt-1" :src="themeproduct.theme?.line">
                         </p>
                         <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
                     </section>
@@ -30,10 +30,12 @@ const store = inject('store');
 
 // THEME
 const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct); 
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 </script>
 

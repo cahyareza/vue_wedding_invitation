@@ -6,7 +6,7 @@
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
                         <section class="section is-paddingless">
                             <div class="container">
-                                <img class="" src="../assets/contents/flower.png" style="width: 200px; height: 50px;">
+                                <img class="filter" :src="themeproduct.theme?.quote_fitur">
                                 <div class="notification mt-2">
                                     <p class="subtitle is-size-4-tablet is-size-6-mobile">
                                         "{{ quote.kutipan }}"
@@ -32,11 +32,13 @@ const store = inject('store');
 const quote = computed(() => store.state.quote); 
 
 // THEME
-const theme = computed(() => store.state.theme); 
+const theme = computed(() => store.state.theme);
+const themeproduct = computed(() => store.state.themeproduct);  
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 
 onMounted(() => {

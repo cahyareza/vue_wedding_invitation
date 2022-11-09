@@ -6,10 +6,10 @@
                     <div class="columns is-multiline">
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <div class="">
-                                <p class="title is-size-3">
+                                <p class="title is-size-3 mb-3">
                                     {{ portofolio.pname }}
                                 </p>
-                                <img class="is-rounded mb-3" src="../assets/contents/ring.png" style="width: 28px; height: 31px;">
+                                <img class="filter is-rounded mb-3" :src="themeproduct.theme?.open_fitur">
                                 <p class="title is-size-3">
                                     {{ portofolio.lname }} 
                                 </p>
@@ -39,6 +39,7 @@ const portofolio = computed(() => store.state.portofolio);
 
 // THEME
 const theme = computed(() => store.state.theme);
+const themeproduct = computed(() => store.state.themeproduct); 
 
 // SLUG
 const slug = store.actions.getSlug().value;
@@ -46,6 +47,7 @@ const slug = store.actions.getSlug().value;
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 
 onMounted(() => {

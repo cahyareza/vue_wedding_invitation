@@ -7,7 +7,7 @@
                         <div class="container">
                             <p class="subtitle-2 is-uppercase is-size-5 mt-3 p-3">
                                 Acara Akan Diselenggarakan<br>
-                                <img class="mt-1" src="../assets/contents/line_blue.png" style="width: 180px; height: 27px;">
+                                <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>
 
                             <CountDown></CountDown>
@@ -43,10 +43,12 @@ const store = inject('store');
 
 // THEME
 const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct);
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 </script>
 

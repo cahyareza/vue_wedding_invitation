@@ -5,7 +5,7 @@
                 <div class="column is-half-tablet is-offset-one-quarter-tablet">
                     <p class="subtitle2 is-uppercase is-size-5 mt-4">
                         Cerita Kita<br>
-                        <img class="mt-1" src="../assets/contents/line.png" style="width: 180px; height: 30px;">
+                        <img class="filter mt-1" :src="themeproduct.theme?.line">
                     </p>
                     <swiper
                         :slidesPerView="2"
@@ -25,47 +25,6 @@
                                 </div>
                             </div>
                         </swiper-slide>
-
-                        <!-- <swiper-slide>
-                            <div class="columns is-multiline">
-                                <div class="column mt-1">
-                                    <p class="subtitle2 has-text-white mb-1">2022</p>
-                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                    </figure>
-                                </div>
-                            </div>
-                        </swiper-slide> -->
-                        <!-- <swiper-slide>
-                            <div class="columns is-multiline">
-                                <div class="column mt-1">
-                                    <p class="subtitle2 has-text-white mb-1">2022</p>
-                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                    </figure>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="columns is-multiline">
-                                <div class="column mt-1">
-                                    <p class="subtitle2 has-text-white mb-1">2022</p>
-                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                    </figure>
-                                </div>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="columns is-multiline">
-                                <div class="column mt-1">
-                                    <p class="subtitle2 has-text-white mb-1">2022</p>
-                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                        <img class="is-rounded" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                    </figure>
-                                </div>
-                            </div>
-                        </swiper-slide> -->
                     </swiper>
 
                     <SlidePage v-model:visible="showForm"></SlidePage>
@@ -110,11 +69,13 @@ SwiperCore.use([Navigation, Pagination]);
 
 // THEME
 const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct); 
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
     store.actions.getStory();
+    store.actions.getThemeProduct();
 });
 
 </script>

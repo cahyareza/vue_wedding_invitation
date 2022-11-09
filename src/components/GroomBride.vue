@@ -7,7 +7,7 @@
                         <div class="container">
                             <p class="subtitle is-uppercase is-size-5 mt-1 p-1">
                                 Pengantin<br>
-                                <img class="mt-1" src="../assets/contents/line.png" style="width: 180px; height: 30px;">
+                                <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>
 
                             <div class="columns is-multiline is-centered">
@@ -66,10 +66,12 @@ const portofolio = computed(() => store.state.portofolio);
 
 // THEME
 const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct); 
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 
 onMounted(() => {  

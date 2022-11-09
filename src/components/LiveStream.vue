@@ -6,7 +6,7 @@
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
                         <p class="subtitle2 is-uppercase is-size-5 mt-1 p-1">
                             Live Streaming<br>
-                            <img class="mt-1" src="../assets/contents/line_gray.png" style="width: 180px; height: 27px;">
+                            <img class="filter mt-1" :src="themeproduct.theme?.line">
                         </p>
                         <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> Temui kami secara virtual untuk menyaksikan acara pernikahan kami </p>
                         <button class="button is-rounded is-size-7 px-2  mb-3">
@@ -33,10 +33,12 @@ const portofolio = computed(() => store.state.portofolio);
 
 // THEME
 const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct); 
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 
 onMounted(() => {  

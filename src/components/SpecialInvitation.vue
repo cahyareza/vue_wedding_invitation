@@ -9,7 +9,7 @@
                         </p>
                         <p class="has-text-weight-bold is-size-6-tablet is-size-7-mobile"> Turut mengundang: </p>
                         <div v-for="invite in invitation" v-bind:key="invite.id">
-                            <p class="is-size-6-tablet is-size-7-mobile">{{ invite.name_invite }}</p>
+                            <p class="is-size-6-tablet is-size-7-mobile is-capitalized">{{ invite.name_invite }}</p>
                         </div>
                     </div>
                 </div>

@@ -1,43 +1,6 @@
-// BACKGROUND LOCATION
-$backg: url("../assets/contents/image_background.png");
 // THEME-1
 $theme-1: (
-   opencover: (
-        font: (
-            "title": $dancing_script, 
-            "subtitle": $roboto,
-        ),
-   ),
-   maincover: (
-        font: (
-            "title": $dancing_script, 
-            "subtitle": $roboto,
-        ),
-        background: (
-            "background-image": url("../assets/contents/image_background.png"),
-        )
-   ),
-   quotepage: (
-        font: (
-            "subtitle": $roboto,
-        ),
-    ),
-    groombridge: (
-        font: (
-            "title": $dancing_script, 
-            "subtitle": $roboto,
-        ),
-        border: (
-            "border-image": url("../assets/contents/border.png"),
-        )
-   ),
    countdown: (
-        font: (
-            "title": $dancing_script, 
-            "subtitle": $roboto,
-        ),
-    ),
-    timelines: (
         font: (
             "title": $dancing_script, 
             "subtitle": $roboto,

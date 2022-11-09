@@ -1,7 +1,6 @@
 @import '../variables';
 @import '../theme/theme-1';
 @import '../theme/theme-2';
-// @import '../function';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -26,18 +25,12 @@
                 padding: 10px;
                 border-radius: 5%;
             }
-        } 
-        // Loop through each of the keys (sections)
-       @each $page, $sections in $theme-map {
-            @if ($page == quotepage) {
-                @each $section, $map in $sections {
-                    @if ($section == font) {
-                        .subtitle {
-                            font-family: map-get($map, "subtitle");
-                            color: $third-theme-1;
-                        }
-                    }
-                }
+            .subtitle {
+                font-family: $roboto;
+                color: $third-theme-1;
+            }
+            .filter{
+                filter: $primary-filter-theme-1;
             }
         }
     }
