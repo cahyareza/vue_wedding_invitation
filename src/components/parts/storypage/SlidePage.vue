@@ -23,39 +23,6 @@
                             </div>
                         </div>
                     </swiper-slide>
-                    <!-- <swiper-slide>
-                        <div class="columns is-multiline">
-                            <div class="column mt-1">
-                                <p class="title has-text-white">2022</p>
-                                <p class="subtitle has-text-white">"Paragraph"</p>
-                                <figure class="image is-480x480">
-                                    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                </figure>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="columns is-multiline">
-                            <div class="column mt-1">
-                                <p class="title has-text-white">2022</p>
-                                <p class="subtitle has-text-white">"Paragraph"</p>
-                                <figure class="image is-480x480">
-                                    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                </figure>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="columns is-multiline">
-                            <div class="column mt-1">
-                                <p class="title has-text-white">2022</p>
-                                <p class="subtitle has-text-white">"Paragraph"</p>
-                                <figure class="image is-480x480">
-                                    <img class="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png">
-                                </figure>
-                            </div>
-                        </div>
-                    </swiper-slide> -->
                 </swiper>
             </div>
     </div>

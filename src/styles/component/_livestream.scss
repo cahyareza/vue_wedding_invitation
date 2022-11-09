@@ -1,7 +1,6 @@
 @import '../variables';
 @import '../theme/theme-1';
 @import '../theme/theme-2';
-// @import '../function';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -21,22 +20,16 @@
             .hero {
                 background-color: $primary-theme-1;
             }
-        }
-        // Loop through each of the keys (sections)
-       @each $page, $sections in $theme-map {
-            @if ($page == maincover) {
-                @each $section, $map in $sections {
-                    @if ($section == font) {
-                        .title2 {
-                            font-family: map-get($map, "title");
-                            color: $secondary-theme-1;
-                        }
-                        .subtitle2 {
-                            font-family: map-get($map, "subtitle");
-                            color: $third-theme-1;
-                        }
-                    }
-                }
+            .title2 {
+                font-family: $dancing_script;
+                color: $secondary-theme-1;
+            }
+            .subtitle2 {
+                font-family: $roboto;
+                color: $third-theme-1;
+            }
+            .filter{
+                filter: $third-filter-theme-1;
             }
         }
     }

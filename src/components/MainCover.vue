@@ -1,17 +1,17 @@
 <template>
     <div :class="theme">
-        <div class="low-opacity-bg-image">
+        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portofolio.cover_background + ')' }">
             <section class="hero is-fullheight">
                 <div class="columns is-multiline">
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
                         <section class="section">
                             <p class="subtitle is-uppercase is-size-5">Undangan Pernikahan</p>
 
-                            <img class="" src="../assets/contents/ukiran.png" style="width: 180px; height: 31px;">
+                            <img class="filter" :src="themeproduct.theme?.cover_fitur">
                             
-                            <p class="title is-size-3 is-capitalized">{{ portofolio.pname }} & {{ portofolio.lname }}</p>
+                            <p class="title is-size-3 is-capitalized mb-2">{{ portofolio.pname }} & {{ portofolio.lname }}</p>
 
-                            <img class="" src="../assets/contents/ukiran.png" style="width: 180px; height: 31px; transform: rotate(180deg);">
+                            <img class="filter" :src="themeproduct.theme?.cover_fitur" style="transform: rotate(180deg);">
 
                             <p class="subtitle mt-4 is-size-6">{{ portofolio.tanggal_resepsi }}</p>
                         </section>
@@ -47,10 +47,12 @@ const portofolio = computed(() => store.state.portofolio);
 
 // THEME
 const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct); 
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 
 onMounted(() => {  
@@ -61,5 +63,4 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @import "../styles/component/maincover.scss";
-// @import "../styles/global.scss";
 </style>

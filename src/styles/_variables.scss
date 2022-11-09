@@ -14,10 +14,12 @@ $old_standard: 'Old Standard TT', serif;
 $dancing_script: 'Dancing Script', cursive;
 $roboto: 'Roboto', sans-serif;
 
-
 // Text color
 // Theme-1
 $primary-theme-1: #A5C6DE;
 $secondary-theme-1: #6BA2CA;
 $third-theme-1: #666060;
 $fourth-theme-1: #FFFFFF;
+$primary-filter-theme-1: invert(86%) sepia(6%) saturate(1820%) hue-rotate(174deg) brightness(92%) contrast(88%);
+$third-filter-theme-1: invert(35%) sepia(17%) saturate(97%) hue-rotate(314deg) brightness(99%) contrast(85%);
+$fourth-filter-theme-1: invert(99%) sepia(1%) saturate(266%) hue-rotate(237deg) brightness(117%) contrast(100%);

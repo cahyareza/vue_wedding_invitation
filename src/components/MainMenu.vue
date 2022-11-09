@@ -162,7 +162,6 @@ const copy = async (vari) => {
 
 <style lang="scss" scoped>
 @import "../styles/component/mainmenu.scss";
-// @import "../styles/global.scss";
 
 
 .notification2 {

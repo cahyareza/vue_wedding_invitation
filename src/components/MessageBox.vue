@@ -7,7 +7,7 @@
                         <div class="container">
                             <p class="subtitle2 is-uppercase is-size-5">
                                 Ucapan<br>
-                                <img class="mt-1" src="../assets/contents/line.png" style="width: 180px; height: 30px;">
+                                <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>
                         </div>
                     </section>
@@ -28,10 +28,12 @@ const store = inject('store');
 
 // THEME
 const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct);
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 </script>
 

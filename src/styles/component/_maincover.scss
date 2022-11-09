@@ -1,7 +1,7 @@
 @import '../variables';
 @import '../theme/theme-1';
 @import '../theme/theme-2';
-// @import '../function';
+
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -18,10 +18,8 @@
 @mixin themable ($theme-name, $theme-map){
     .low-opacity-bg-image {
         display: grid;
-
         position: relative;
         isolation: isolate;
-
         background-size: cover;
         background-position: center;
     }
@@ -32,49 +30,26 @@
         z-index: -1;
         inset: 0;
         opacity: .7;
-
         background: $primary-theme-1;
     }
     
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
-            .hero {
-                // background-color: $primary-theme-1;
-                // background-image: $backg;
-            }
             .icon {
                 color: $fourth-theme-1;
             }
-
-        } @else if ($theme-name == theme-2) {
-            .columns {
-                margin-top: 180px;
+            .title {
+                font-family: $dancing_script;
+                color: $fourth-theme-1;
             }
-        }
-
-        // Loop through each of the keys (sections)
-       @each $page, $sections in $theme-map {
-            @if ($page == maincover) {
-                @each $section, $map in $sections {
-                    @if ($section == font) {
-                        .title {
-                            font-family: map-get($map, "title");
-                            color: $fourth-theme-1;
-                        }
-                        .subtitle {
-                            font-family: map-get($map, "subtitle");
-                            color: $fourth-theme-1;
-                        }
-                    } @else if ($section == background) {
-                        .low-opacity-bg-image {
-                            @include mobile {
-                                background-image: map-get($map, "background-image");
-                            }
-                        }
-                    }
-                }
+            .subtitle {
+                font-family: $roboto;
+                color: $fourth-theme-1;
             }
-        }
+            .filter{
+                filter: $fourth-filter-theme-1;
+            }
+        } 
     }
 }
 
