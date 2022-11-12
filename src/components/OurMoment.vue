@@ -1,21 +1,23 @@
 <template>
-    <div :class="theme">
-        <section class="hero is-info is-medium">
-            <div class="columns">
-                <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                    <section class="section pt-4">
-                        <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
-                            Moment yang berharga
-                            <img class="filter mt-1" :src="themeproduct.theme?.line">
-                        </p>
-                        <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
-                    </section>
+    <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+        <div :class="theme">
+            <section class="hero is-info is-medium">
+                <div class="columns">
+                    <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                        <section class="section pt-4">
+                            <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
+                                Moment yang berharga
+                                <img class="filter mt-1" :src="themeproduct.theme?.line">
+                            </p>
+                            <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
+                        </section>
 
-                    <OurVideo></OurVideo>
-                    <OurGallery></OurGallery>
+                        <OurVideo></OurVideo>
+                        <OurGallery></OurGallery>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 </template>
 

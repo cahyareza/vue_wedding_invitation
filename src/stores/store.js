@@ -103,7 +103,7 @@ const actions = {
       // console.log(slug.value)
       return axios.get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}`)
       .then((response) => {
-        // console.log(response.data[0]);
+        console.log(response.data[0]);
         mutations.updatePortofolio(response.data[0]);
       });
     },
