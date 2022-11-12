@@ -1,20 +1,22 @@
 <template>
-    <div :class="theme">
-        <section class="hero is-large">
-            <div class="columns">
-                <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                    <section class="section pt-4">
-                        <div class="container">
-                            <p class="subtitle2 is-uppercase is-size-5">
-                                Ucapan<br>
-                                <img class="filter mt-1" :src="themeproduct.theme?.line">
-                            </p>
-                        </div>
-                    </section>
-                    <MessageForm></MessageForm>
+    <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+        <div :class="theme">
+            <section class="hero is-large">
+                <div class="columns">
+                    <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                        <section class="section pt-4">
+                            <div class="container">
+                                <p class="subtitle2 is-uppercase is-size-5">
+                                    Ucapan<br>
+                                    <img class="filter mt-1" :src="themeproduct.theme?.line">
+                                </p>
+                            </div>
+                        </section>
+                        <MessageForm></MessageForm>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 </template>
 

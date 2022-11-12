@@ -3,19 +3,21 @@
         <div class="columns">
             <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
                 <div class="container">
-                    <!--  Music     -->
-                    <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded is-light p-3">
-                        <span class="icon has-text-dark">
-                            <font-awesome-icon icon="fa-solid fa-music" />
-                        </span>
-                    </button-music>
-
-                    <!--  Amplop    -->
-                    <button-amplop @click="showModal" class="button2 is-rounded p-2">
-                        <span class="icon has-text-dark">
-                            <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
-                        </span>
-                    </button-amplop>
+                    <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+                        <!--  Music     -->
+                        <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded is-light p-3">
+                            <span class="icon has-text-dark">
+                                <font-awesome-icon icon="fa-solid fa-music" />
+                            </span>
+                        </button-music>
+                    
+                        <!--  Amplop    -->
+                        <button-amplop @click="showModal" class="button2 is-rounded p-2">
+                            <span class="icon has-text-dark">
+                                <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
+                            </span>
+                        </button-amplop>
+                    </div>
 
                     <!--    Modal        -->
                     <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
@@ -60,14 +62,17 @@
                             <span @click="navPage('run')" class="icon">
                                 <font-awesome-icon icon="fa-solid fa-calendar-days" />
                             </span>
-                            <!-- <span>Moment</span> -->
-                            <span @click="navPage('moment')" class="icon">
-                                <font-awesome-icon icon="fa-solid fa-images" />
-                            </span>
-                            <!-- <span>Wishes</span> -->
-                            <span @click="navPage('message')" class="icon">
-                                <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                            </span>
+                            <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+                                <!-- <span>Moment</span> -->
+                                <span @click="navPage('moment')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-images" />
+                                </span>
+                            
+                                <!-- <span>Wishes</span> -->
+                                <span @click="navPage('message')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                </span>
+                            </div>
                         </span>
                     </div>
                 </div>
@@ -135,10 +140,12 @@ const dompet = computed(() => store.state.dompet);
 
 // THEME
 const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct); 
 
 // LIFECYCLE
 onBeforeMount(() => {
     store.actions.getTheme();
+    store.actions.getThemeProduct();
 });
 onMounted(() => {
     store.actions.getDompet();
