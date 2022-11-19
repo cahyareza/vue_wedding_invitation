@@ -13,6 +13,7 @@ const state = reactive({
     themeproduct: [],
     portofolio: [],
     story: [],
+    acara: [],
 });
 
 const slug = ref('');
@@ -28,6 +29,7 @@ const mutations = {
     updateThemeProduct: (payload) => state.themeproduct = payload,
     updatePortofolio: (payload) => state.portofolio = payload,
     updateStory: (payload) => state.story = payload,
+    updateAcara: (payload) => state.acara = payload,
 }
 
 const actions = {
@@ -92,7 +94,7 @@ const actions = {
     getThemeProduct: () => {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
-        console.log(response.data[0])
+        // console.log(response.data[0])
         mutations.updateThemeProduct(response.data[0]);
       });
     },
@@ -103,7 +105,7 @@ const actions = {
       // console.log(slug.value)
       return axios.get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}`)
       .then((response) => {
-        console.log(response.data[0]);
+        // console.log(response.data[0]);
         mutations.updatePortofolio(response.data[0]);
       });
     },
@@ -112,6 +114,13 @@ const actions = {
       return axios.get(`http://127.0.0.1:8000/portofolio/api/story/?portofolio__slug=${slug.value}`) .then((response) => {
         // console.log(response.data);
         mutations.updateStory(response.data.reverse());
+      });
+    },
+    getAcara: () => {
+      actions.getSlug();
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/acara/?portofolio__slug=${slug.value}`) .then((response) => {
+        // console.log(response.data);
+        mutations.updateAcara(response.data.reverse());
       });
     },
 };

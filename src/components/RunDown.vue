@@ -6,45 +6,22 @@
                     <section class="section is-paddingless">
                         <div class="container">
                             <div class="notification m-5">
-
                                 <img class="filter center mt-1 mb-1" :src="themeproduct.theme?.rundown_fitur">
-                                <div class="columns is-multiline mb-1">
-                                    <div class="column is-full">
-                                        <p class="title2 is-size-4 mb-3">Akad Nikah</p>
+                                <div v-for="piece in acara" :key="piece.id">
+                                    <div class="columns is-multiline">
+                                        <div class="column is-12">
+                                            <p class="title2 is-size-4 mb-3">{{ piece.nama_acara }}</p>
 
-                                        <p class="subtitle2 is-size-7 has-text-weight-bold mb-1">{{ portofolio.tanggal_akad }}</p>
-                                        <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ portofolio.waktu_akad }}- selesai</p>
-                                        <p class="subtitle2 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ portofolio.tempat_akad }}</p>
+                                            <p class="subtitle2 is-size-7 has-text-weight-bold mb-1">{{ piece.tanggal_acara }}</p>
+                                            <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ piece.waktu_mulai_acara }} - {{ piece.waktu_selesai_acara }}</p>
+                                            <p class="subtitle2 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ piece.tempat_acara }}</p>
 
-                                        <a class="button is-rounded is-size-7 px-2 mb-2" :href="portofolio.link_gmap_akad">
-                                            <font-awesome-icon icon="fa-solid fa-location-dot" />&nbsp;Buka di Google Map
-                                        </a><br>
+                                            <a class="button is-rounded is-size-7 px-2 mb-2" :href="piece.link_gmap_acara">
+                                                <font-awesome-icon icon="fa-solid fa-location-dot" />&nbsp;Buka di Google Map
+                                            </a><br>
 
-                                        <img class="filter mt-3" :src="themeproduct.theme?.space">
-                                    </div>
-                                    <div class="column is-full">
-                                        <p class="title2 is-size-4 mb-3">Resepsi</p>
-
-                                        <p class="subtitle2 is-size-7 has-text-weight-bold mb-1">{{ portofolio.tanggal_resepsi }}</p>
-                                        <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ portofolio.waktu_resepsi }} - {{ portofolio.waktu_selesai_resepsi }}</p>
-                                        <p class="subtitle2 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ portofolio.tempat_resepsi }}</p>
-
-                                        <a class="button is-rounded is-size-7 px-2 mb-2" :href="portofolio.link_gmap_resepsi">
-                                            <font-awesome-icon icon="fa-solid fa-location-dot" />&nbsp;Buka di Google Map
-                                        </a><br>
-
-                                        <img class="filter mt-3" :src="themeproduct.theme?.space">
-                                    </div>
-                                    <div class="column is-full">
-                                        <p class="title2 is-size-4 mb-3">Unduh Mantu</p>
-
-                                        <p class="subtitle2 is-size-7 has-text-weight-bold mb-1">{{ portofolio.tanggal_unduhmantu }}</p>
-                                        <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ portofolio.waktu_unduhmantu }} - selesai</p>
-                                        <p class="subtitle2 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ portofolio.tempat_unduhmantu }}</p>
-
-                                        <a class="button is-rounded is-size-7 px-2 mb-2" :href="portofolio.link_gmap_unduh_mantu">
-                                            <font-awesome-icon icon="fa-solid fa-location-dot" />&nbsp;Buka di Google Map
-                                        </a>
+                                            <img class="filter mt-3" :src="themeproduct.theme?.space">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +40,10 @@ import { inject, computed, onMounted, onBeforeMount } from 'vue'
 const store = inject('store');
 
 // PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
+// const portofolio = computed(() => store.state.portofolio);
+
+// ACARA
+const acara = computed(() => store.state.acara);
 
 // THEME
 const theme = computed(() => store.state.theme); 
@@ -73,10 +53,11 @@ const themeproduct = computed(() => store.state.themeproduct);
 onBeforeMount(() => {
     store.actions.getTheme();
     store.actions.getThemeProduct();
+    store.actions.getAcara();
 });
 
 onMounted(() => {  
-    store.actions.getPortofolio();
+    // store.actions.getPortofolio();
 });
 </script>
 
