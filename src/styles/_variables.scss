@@ -1,18 +1,20 @@
 // Import a Google Font
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+// font theme-2
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 // Fonts
-$parisienne: 'Parisienne', cursive;
-$im_fell_english: 'IM Fell English SC', serif;
-$allura: 'Allura', cursive;
-$old_standard: 'Old Standard TT', serif;
+// theme-1
 $dancing_script: 'Dancing Script', cursive;
 $roboto: 'Roboto', sans-serif;
+
+// theme-2
+$great_vibes: 'Great Vibes', cursive;
+$playfair: 'Playfair Display', serif;
+
 
 // Text color
 // Theme-1
@@ -23,3 +25,12 @@ $fourth-theme-1: #FFFFFF;
 $primary-filter-theme-1: invert(86%) sepia(6%) saturate(1820%) hue-rotate(174deg) brightness(92%) contrast(88%);
 $third-filter-theme-1: invert(35%) sepia(17%) saturate(97%) hue-rotate(314deg) brightness(99%) contrast(85%);
 $fourth-filter-theme-1: invert(99%) sepia(1%) saturate(266%) hue-rotate(237deg) brightness(117%) contrast(100%);
+
+// Theme-2
+$primary-theme-2: #E0FFF5;
+$secondary-theme-2: #077E5E;
+$third-theme-2: #5A5A5A;
+$fourth-theme-2: #FFFFFF;
+$primary-filter-theme-2: invert(97%) sepia(79%) saturate(235%) hue-rotate(67deg) brightness(101%) contrast(110%);
+$secondary-filter-theme-2: invert(37%) sepia(14%) saturate(3688%) hue-rotate(122deg) brightness(94%) contrast(94%);
+$fourth-filter-theme-2: invert(99%) sepia(1%) saturate(266%) hue-rotate(237deg) brightness(117%) contrast(100%);

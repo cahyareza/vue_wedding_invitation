@@ -5,7 +5,7 @@
                 <div class="column is-half-tablet is-offset-one-quarter-tablet">
                     <section class="section pt-4">
                         <div class="container">
-                            <p class="subtitle is-uppercase is-size-5 mt-1 p-1">
+                            <p class="subtitle2 is-uppercase is-size-5 mt-1 p-1">
                                 Pengantin<br>
                                 <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>
@@ -13,19 +13,19 @@
                             <div class="columns is-multiline is-centered">
                                 <div class="column is-full">
                                     <figure class="image is-inline-block mb-4" style="height:180px; width: 180px;">
-                                        <img class="mb-3" :src="portofolio.ppicture" style="height:180px; width: 180px; position: absolute;">
+                                        <img class="filter mb-3" :src="portofolio.ppicture" style="height:180px; width: 180px; position: absolute;">
                                         <div class="sprocket-mosaic-image-container"></div>
                                     </figure> <br>
 
-                                    <a :href="portofolio.pinsta_link"><font-awesome-icon icon="fa-brands fa-4x fa-instagram" /></a>
+                                    <a :href="portofolio.pinsta_link"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
 
                                     <!-- <p class="title mt-5 mb-6" v-for="couple in couples.perempuan" :key="couple.id">{{ couple }}</p> -->
-                                    <p class="title is-size-3 mt-3 mb-6">{{ portofolio.pname }}</p>
+                                    <p class="title2 is-size-3 mt-3 mb-6">{{ portofolio.pname }}</p>
 
-                                    <p class="subtitle is-size-6 has-text-weight-bold mb-1">Putri {{ portofolio.panak_ke }} dari</p>
-                                    <p class="subtitle is-size-6 mt-1">Bapak {{ portofolio.pnama_ayah }} & Ibu {{ portofolio.pnama_ibu }}</p>
+                                    <p class="subtitle2 is-size-6 has-text-weight-bold mb-1">Putri {{ portofolio.panak_ke }} dari</p>
+                                    <p class="subtitle2 is-size-6 mt-1">Bapak {{ portofolio.pnama_ayah }} & Ibu {{ portofolio.pnama_ibu }}</p>
 
-                                    <p class="subtitle is-size-5 has-text-weight-bold mt-3">&</p>
+                                    <p class="subtitle2 is-size-5 has-text-weight-bold mt-3">&</p>
 
 
                                 </div>
@@ -35,12 +35,12 @@
                                         <div class="sprocket-mosaic-image-container"></div>
                                     </figure> <br>
 
-                                    <a :href="portofolio.linsta_link"><font-awesome-icon icon="fa-brands fa-4x fa-instagram" /></a>
+                                    <a :href="portofolio.linsta_link"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
 
-                                    <p class="title is-size-3 mt-5 mb-6">{{ portofolio.lname }}</p>
+                                    <p class="title2 is-size-3 mt-5 mb-6">{{ portofolio.lname }}</p>
 
-                                    <p class="subtitle is-size-6 has-text-weight-bold mb-1">Putra {{ portofolio.lanak_ke }} dari</p>
-                                    <p class="subtitle is-size-6 mt-1">Bapak {{ portofolio.lnama_ayah }} & Ibu {{ portofolio.lnama_ibu }}</p>
+                                    <p class="subtitle2 is-size-6 has-text-weight-bold mb-1">Putra {{ portofolio.lanak_ke }} dari</p>
+                                    <p class="subtitle2 is-size-6 mt-1">Bapak {{ portofolio.lnama_ayah }} & Ibu {{ portofolio.lnama_ibu }}</p>
                                 </div>
                             </div>
 

@@ -21,7 +21,7 @@
                 
                 <div class="columns is-multiline">
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                        <section class="hero-footer mb-6 p-6">
+                        <section class="hero-footer mb-6 p-6"> 
                             <span class="icon">
                                 <font-awesome-icon icon="angles-down" />
                             </span>
