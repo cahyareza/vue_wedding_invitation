@@ -9,7 +9,12 @@
                                 Moment yang berharga
                                 <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>
-                            <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
+                            <div v-if="portofolio.kata_moment">
+                                <p class="subtitle-3 mt-5 is-size-6">{{ portofolio.kata_moment }}</p>
+                            </div>
+                            <div v-else>
+                                <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
+                            </div>
                         </section>
 
                         <OurVideo></OurVideo>
@@ -30,6 +35,9 @@ import { inject, computed, onBeforeMount } from 'vue'
 // LOAD STATE
 const store = inject('store');
 
+// PORTOFOLIO
+const portofolio = computed(() => store.state.portofolio);
+
 // THEME
 const theme = computed(() => store.state.theme); 
 const themeproduct = computed(() => store.state.themeproduct); 
@@ -38,6 +46,7 @@ const themeproduct = computed(() => store.state.themeproduct);
 onBeforeMount(() => {
     store.actions.getTheme();
     store.actions.getThemeProduct();
+    store.actions.getPortofolio();
 });
 </script>
 
