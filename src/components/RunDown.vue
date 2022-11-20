@@ -13,8 +13,8 @@
                                             <div class="column is-12">
                                                 <p class="title2 is-size-4 mb-3">{{ piece.nama_acara }}</p>
 
-                                                <p class="subtitle2 is-size-7 has-text-weight-bold mb-1">{{ piece.tanggal_acara }}</p>
-                                                <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ piece.waktu_mulai_acara }} - {{ piece.waktu_selesai_acara }} {{ portofolio.timeZone }}</p>
+                                                <p class="subtitle2 is-size-7 has-text-weight-bold mb-1">{{ tanggal(piece.tanggal_acara) }}</p>
+                                                <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - {{ waktu(piece.waktu_selesai_acara) }} {{ portofolio.timeZone }}</p>
                                                 <p class="subtitle2 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ piece.tempat_acara }}</p>
 
                                                 <a class="button is-rounded is-size-7 px-2 mb-2" :href="piece.link_gmap_acara">
@@ -37,6 +37,7 @@
 
 <script setup>
 import { inject, computed, onMounted, onBeforeMount } from 'vue'
+import moment from 'moment';
 
 // LOAD STATE
 const store = inject('store');
@@ -50,6 +51,14 @@ const acara = computed(() => store.state.acara);
 // THEME
 const theme = computed(() => store.state.theme); 
 const themeproduct = computed(() => store.state.themeproduct); 
+
+// METHOD
+const tanggal = (value) => {
+    return moment(value).locale('id').format('dddd, DD-MM-YYYY');
+}
+const waktu = (value) => {
+    return moment(value, "HH:mm:ss").format("HH:mm");
+}
 
 // LIFECYCLE
 onBeforeMount(() => {
