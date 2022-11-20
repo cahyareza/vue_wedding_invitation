@@ -26,7 +26,7 @@ const portofolio = computed(() => store.state.portofolio);
 const { createTimer, countdown } = useTimer();
 
 const timer = setInterval(() => {
-  createTimer(new Date(portofolio.value.datetime_resepsi).getTime(), countdown, () => {
+  createTimer(new Date(portofolio.value.datetime_countdown).getTime(), countdown, () => {
     clearInterval(timer)
   })
 }, 1000)
