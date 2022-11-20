@@ -13,7 +13,7 @@
 
                             <img class="filter" :src="themeproduct.theme?.cover_fitur" style="transform: rotate(180deg);">
 
-                            <p class="subtitle mt-4 is-size-6">{{ portofolio.tanggal_countdown }}</p>
+                            <p class="subtitle mt-4 is-size-6">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                         </section>
                     </div>
                 </div>
@@ -38,6 +38,7 @@
 
 <script setup>
 import { inject, computed, onMounted, onBeforeMount } from 'vue'
+import moment from 'moment';
 
 // LOAD STATE
 const store = inject('store');
@@ -48,6 +49,11 @@ const portofolio = computed(() => store.state.portofolio);
 // THEME
 const theme = computed(() => store.state.theme); 
 const themeproduct = computed(() => store.state.themeproduct); 
+
+// METHOD
+const tanggal = (value) => {
+    return moment(value).locale('id').format('dddd, DD-MM-YYYY');
+}
 
 // LIFECYCLE
 onBeforeMount(() => {
