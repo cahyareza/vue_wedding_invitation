@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import { inject, computed, onMounted, onBeforeMount } from 'vue'
+import { inject, computed, onBeforeMount } from 'vue'
 
 // LOAD STATE
 const store = inject('store');
@@ -56,9 +56,6 @@ onBeforeMount(() => {
     store.actions.getAcara();
 });
 
-onMounted(() => {  
-    // store.actions.getPortofolio();
-});
 </script>
 
 <style lang="scss" scoped>

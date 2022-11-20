@@ -13,7 +13,7 @@
 
                             <img class="filter" :src="themeproduct.theme?.cover_fitur" style="transform: rotate(180deg);">
 
-                            <p class="subtitle mt-4 is-size-6">{{ portofolio.tanggal_resepsi }}</p>
+                            <p class="subtitle mt-4 is-size-6">{{ portofolio.tanggal_countdown }}</p>
                         </section>
                     </div>
                 </div>
