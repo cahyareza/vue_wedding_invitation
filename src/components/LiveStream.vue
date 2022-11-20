@@ -10,7 +10,13 @@
                                     Live Streaming<br>
                                     <img class="filter mt-1" :src="themeproduct.theme?.line">
                                 </p>
-                                <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> Temui kami secara virtual untuk menyaksikan acara pernikahan kami </p>
+                                <div v-if="portofolio.kata_live_streaming">
+                                    <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> {{ portofolio.kata_live_streaming }} </p>
+                                </div>
+                                <div v-else>
+                                     <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> Temui kami secara virtual untuk menyaksikan acara pernikahan kami </p>
+                                </div>
+                                
                                 <button class="button is-rounded is-size-7 px-2  mb-3">
                                     <a :href="portofolio.livestream"><font-awesome-icon icon="fa-solid fa-video" />&nbsp;Menuju Streaming
                                     </a>
