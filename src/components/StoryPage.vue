@@ -1,37 +1,39 @@
 <template>
-    <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
-        <div :class="theme">
-            <section class="hero is-large">
-                <div class="columns mb-3">
-                    <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                        <p class="subtitle2 is-uppercase is-size-5 mt-4">
-                            Cerita Kita<br>
-                            <img class="filter mt-1" :src="themeproduct.theme?.line">
-                        </p>
-                        <swiper
-                            :slidesPerView="2"
-                            :pagination="{
-                            type: 'fraction',
-                            }"
-                            :navigation="true"
-                            class="mySwiper is-paddingless is-marginless"
-                        >
-                            <swiper-slide v-for="stori in story" :key="stori.id">
-                                <div class="columns is-multiline">
-                                    <div class="column mt-1">
-                                        <p class="subtitle2 has-text-white mb-1">{{ stori.year }}</p>
-                                        <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                            <img class="is-rounded" :src="stori.image">
-                                        </figure>
+    <div v-if="story.length != 0">
+        <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+            <div :class="theme">
+                <section class="hero is-large">
+                    <div class="columns mb-3">
+                        <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                            <p class="subtitle2 is-uppercase is-size-5 mt-4">
+                                Cerita Kita<br>
+                                <img class="filter mt-1" :src="themeproduct.theme?.line">
+                            </p>
+                            <swiper
+                                :slidesPerView="2"
+                                :pagination="{
+                                type: 'fraction',
+                                }"
+                                :navigation="true"
+                                class="mySwiper is-paddingless is-marginless"
+                            >
+                                <swiper-slide v-for="stori in story" :key="stori.id">
+                                    <div class="columns is-multiline">
+                                        <div class="column mt-1">
+                                            <p class="subtitle2 has-text-white mb-1">{{ stori.year }}</p>
+                                            <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                                <img class="is-rounded" :src="stori.image">
+                                            </figure>
+                                        </div>
                                     </div>
-                                </div>
-                            </swiper-slide>
-                        </swiper>
+                                </swiper-slide>
+                            </swiper>
 
-                        <SlidePage v-model:visible="showForm"></SlidePage>
+                            <SlidePage v-model:visible="showForm"></SlidePage>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </div>
 </template>
