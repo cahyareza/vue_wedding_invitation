@@ -13,7 +13,7 @@
                                             <p class="title2 is-size-4 mb-3">{{ piece.nama_acara }}</p>
 
                                             <p class="subtitle2 is-size-7 has-text-weight-bold mb-1">{{ piece.tanggal_acara }}</p>
-                                            <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ piece.waktu_mulai_acara }} - {{ piece.waktu_selesai_acara }}</p>
+                                            <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ piece.waktu_mulai_acara }} - {{ piece.waktu_selesai_acara }} {{ portofolio.timeZone }}</p>
                                             <p class="subtitle2 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ piece.tempat_acara }}</p>
 
                                             <a class="button is-rounded is-size-7 px-2 mb-2" :href="piece.link_gmap_acara">
@@ -34,13 +34,13 @@
 </template>
 
 <script setup>
-import { inject, computed, onBeforeMount } from 'vue'
+import { inject, computed, onMounted, onBeforeMount } from 'vue'
 
 // LOAD STATE
 const store = inject('store');
 
 // PORTOFOLIO
-// const portofolio = computed(() => store.state.portofolio);
+const portofolio = computed(() => store.state.portofolio);
 
 // ACARA
 const acara = computed(() => store.state.acara);
@@ -56,6 +56,9 @@ onBeforeMount(() => {
     store.actions.getAcara();
 });
 
+onMounted(() => {  
+    store.actions.getPortofolio();
+});
 </script>
 
 <style lang="scss" scoped>

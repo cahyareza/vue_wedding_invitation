@@ -17,8 +17,10 @@
                                         <div class="sprocket-mosaic-image-container"></div>
                                     </figure> <br>
 
-                                    <a :href="portofolio.pinsta_link"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
-
+                                    <div v-if="portofolio.pinsta_link">
+                                        <a :href="portofolio.pinsta_link"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
+                                    </div>
+                                    
                                     <!-- <p class="title mt-5 mb-6" v-for="couple in couples.perempuan" :key="couple.id">{{ couple }}</p> -->
                                     <p class="title2 is-size-3 mt-3 mb-6">{{ portofolio.pname }}</p>
 
@@ -35,7 +37,9 @@
                                         <div class="sprocket-mosaic-image-container"></div>
                                     </figure> <br>
 
-                                    <a :href="portofolio.linsta_link"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
+                                    <div v-if="portofolio.linsta_link">
+                                        <a :href="portofolio.linsta_link"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
+                                    </div>
 
                                     <p class="title2 is-size-3 mt-5 mb-6">{{ portofolio.lname }}</p>
 
