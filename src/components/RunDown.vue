@@ -14,7 +14,12 @@
                                                 <p class="title2 is-size-4 mb-3">{{ piece.nama_acara }}</p>
 
                                                 <p class="subtitle2 is-size-7 has-text-weight-bold mb-1">{{ tanggal(piece.tanggal_acara) }}</p>
-                                                <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - {{ waktu(piece.waktu_selesai_acara) }} {{ portofolio.timeZone }}</p>
+                                                <div v-if="piece.waktu_selesai_acara">
+                                                    <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - {{ waktu(piece.waktu_selesai_acara) }} {{ portofolio.timeZone }}</p>
+                                                </div>
+                                                <div v-else>
+                                                    <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - selesai {{ portofolio.timeZone }}</p>
+                                                </div>
                                                 <p class="subtitle2 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ piece.tempat_acara }}</p>
 
                                                 <a class="button is-rounded is-size-7 px-2 mb-2" :href="piece.link_gmap_acara">
