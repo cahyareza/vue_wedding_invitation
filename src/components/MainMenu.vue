@@ -10,13 +10,15 @@
                                 <font-awesome-icon icon="fa-solid fa-music" />
                             </span>
                         </button-music>
-                    
-                        <!--  Amplop    -->
-                        <button-amplop @click="showModal" class="button2 is-rounded p-2">
-                            <span class="icon has-text-dark">
-                                <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
-                            </span>
-                        </button-amplop>
+
+                        <div v-if="dompet.length != 0">
+                            <!--  Amplop    -->
+                            <button-amplop @click="showModal" class="button2 is-rounded p-2">
+                                <span class="icon has-text-dark">
+                                    <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
+                                </span>
+                            </button-amplop>
+                        </div>
                     </div>
 
                     <!--    Modal        -->
