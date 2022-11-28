@@ -52,7 +52,7 @@ const themeproduct = computed(() => store.state.themeproduct);
 
 // METHOD
 const tanggal = (value) => {
-    return moment(value).locale('id').format('dddd, DD-MM-YYYY');
+    return moment(value).locale('id').format('dddd, DD MMMM YYYY');
 }
 
 // LIFECYCLE

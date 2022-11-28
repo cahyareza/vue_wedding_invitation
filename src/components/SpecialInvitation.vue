@@ -3,7 +3,7 @@
         <div :class="theme">
             <section class="hero is-small">
                 <div class="hero-body">
-                    <div class="columns">
+                    <div class="columns is-multiline">
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <div v-if="portofolio.kata_special_invite">
                                 <p class="subtitle is-size-6-tablet is-size-7-mobile">
@@ -16,9 +16,11 @@
                                 </p>
                             </div>
                         </div>
-                        <p class="has-text-weight-bold is-size-6-tablet is-size-7-mobile"> Turut mengundang: </p>
-                        <div v-for="invite in invitation" v-bind:key="invite.id">
-                            <p class="is-size-6-tablet is-size-7-mobile is-capitalized">{{ invite.name_invite }}</p>
+                        <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                            <p class="has-text-weight-bold is-size-6-tablet is-size-7-mobile"> Turut mengundang: </p>
+                            <div v-for="invite in invitation" v-bind:key="invite.id">
+                                <p class="is-size-6-tablet is-size-7-mobile is-capitalized">{{ invite.name_invite }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
