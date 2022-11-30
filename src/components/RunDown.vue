@@ -21,10 +21,11 @@
                                                     <p class="subtitle2 is-size-7 mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - selesai {{ portofolio.timeZone }}</p>
                                                 </div>
                                                 <p class="subtitle2 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ piece.tempat_acara }}</p>
-
-                                                <a class="button is-rounded is-size-7 px-2 mb-2" :href="piece.link_gmap_acara">
-                                                    <font-awesome-icon icon="fa-solid fa-location-dot" />&nbsp;Buka di Google Map
-                                                </a><br>
+                                                <div v-if="piece.link_gmap_acara">
+                                                    <a class="button is-rounded is-size-7 px-2 mb-2" :href="piece.link_gmap_acara">
+                                                        <font-awesome-icon icon="fa-solid fa-location-dot" />&nbsp;Buka di Google Map
+                                                    </a><br>
+                                                </div>
 
                                                 <img class="filter mt-3" :src="themeproduct.theme?.space">
                                             </div>

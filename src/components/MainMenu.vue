@@ -5,18 +5,20 @@
                 <div class="container">
                     <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
                         <!--  Music     -->
-                        <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded is-light p-3">
+                        <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
                             <span class="icon has-text-dark">
                                 <font-awesome-icon icon="fa-solid fa-music" />
                             </span>
                         </button-music>
-                    
-                        <!--  Amplop    -->
-                        <button-amplop @click="showModal" class="button2 is-rounded p-2">
-                            <span class="icon has-text-dark">
-                                <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
-                            </span>
-                        </button-amplop>
+
+                        <div v-if="dompet.length != 0">
+                            <!--  Amplop    -->
+                            <button-amplop @click="showModal" class="button2 is-rounded p-2">
+                                <span class="icon has-text-dark">
+                                    <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
+                                </span>
+                            </button-amplop>
+                        </div>
                     </div>
 
                     <!--    Modal        -->

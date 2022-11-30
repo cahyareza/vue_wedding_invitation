@@ -9,25 +9,27 @@
                                 Cerita Kita<br>
                                 <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>
-                            <swiper
-                                :slidesPerView="2"
-                                :pagination="{
-                                type: 'fraction',
-                                }"
-                                :navigation="true"
-                                class="mySwiper is-paddingless is-marginless"
-                            >
-                                <swiper-slide v-for="stori in story" :key="stori.id">
-                                    <div class="columns is-multiline">
-                                        <div class="column mt-1">
-                                            <p class="subtitle2 has-text-white mb-1">{{ stori.year }}</p>
-                                            <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                                <img class="is-rounded" :src="stori.image">
-                                            </figure>
+                            <div class="box mx-5 pt-1 px-0">
+                                <swiper
+                                    :slidesPerView="2"
+                                    :pagination="{
+                                    type: 'fraction',
+                                    }"
+                                    :navigation="true"
+                                    class="mySwiper is-paddingless is-marginless"
+                                >
+                                    <swiper-slide v-for="stori in story" :key="stori.id">
+                                        <div class="columns is-multiline">
+                                            <div class="column mt-1">
+                                                <p class="subtitle2 has-text-white mb-1">{{ stori.year }}</p>
+                                                <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                                    <img class="is-rounded" :src="stori.image">
+                                                </figure>
+                                            </div>
                                         </div>
-                                    </div>
-                                </swiper-slide>
-                            </swiper>
+                                    </swiper-slide>
+                                </swiper>
+                            </div>
 
                             <SlidePage v-model:visible="showForm"></SlidePage>
                         </div>
@@ -99,7 +101,6 @@ onBeforeMount(() => {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #A5C6DE;;
 
   /* Center slide text vertically */
   display: -webkit-box;

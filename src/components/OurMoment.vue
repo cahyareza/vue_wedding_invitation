@@ -6,7 +6,7 @@
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
                         <section class="section pt-4">
                             <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
-                                Moment yang berharga
+                                Moment yang berharga<br>
                                 <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>
                             <div v-if="portofolio.kata_moment">
