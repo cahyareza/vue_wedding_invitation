@@ -15,10 +15,13 @@
 
 // MIXINS
 @mixin themable ($theme-name, $theme-map){
+    :deep(.notification) {
+        box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
+    }
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             :deep(.product-container) {
-                background-color: rgba($fourth-theme-1, 0.4);
+                background-color: rgba($fourth-theme-1, 0.3);
             }
             :deep(.button) {
                 color: $secondary-theme-1;
@@ -37,6 +40,36 @@
             }
             .filter{
                 filter: $fourth-filter-theme-1;
+            }
+            :deep(.box) {
+                box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
+                background-color: rgba($fourth-theme-1, 0.8);
+            }
+        } @else if ($theme-name == theme-2) {
+            :deep(.product-container) {
+                background-color: rgba($secondary-theme-2, 0.3);
+            }
+            :deep(.button) {
+                color: $secondary-theme-2;
+                border: 1px solid $primary-theme-2;
+            }
+            .hero {
+                background-color: $primary-theme-2;
+            }
+            .title {
+                font-family: $great_vibes;
+                color: $secondary-theme-2;
+            }
+            .subtitle2 {
+                font-family: $playfair;
+                color: $secondary-theme-2;
+            }
+            .filter{
+                filter: $secondary-filter-theme-2;
+            }
+            :deep(.box) {
+                box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
+                background-color: rgba(white, 0.5);
             }
         }
     }

@@ -5,7 +5,7 @@
                 <div class="container">
                     <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
                         <!--  Music     -->
-                        <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded is-light p-3">
+                        <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
                             <span class="icon has-text-dark">
                                 <font-awesome-icon icon="fa-solid fa-music" />
                             </span>

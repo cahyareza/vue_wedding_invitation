@@ -18,7 +18,7 @@
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             :deep(.notification2) {
-                background-color: rgba($primary-theme-1, 0.2);
+                background-color: rgba($secondary-theme-1, 0.2);
             }
             :deep(.iframe) {
                 border: 5px solid $primary-theme-1; 
@@ -65,7 +65,7 @@
             }
         } @else if ($theme-name == theme-2) {
             :deep(.notification2) {
-                background-color: rgba($primary-theme-2, 0.2);
+                background-color: rgba($secondary-theme-2, 0.2);
             }
             :deep(.iframe) {
                 border: 5px solid $secondary-theme-2; 

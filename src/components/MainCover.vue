@@ -9,7 +9,11 @@
 
                             <img class="filter" :src="themeproduct.theme?.cover_fitur">
                             
-                            <p class="title is-size-3 is-capitalized mb-2">{{ portofolio.pname }} & {{ portofolio.lname }}</p>
+                            <p class="title is-size-3 is-capitalized mb-2">
+                                {{ portofolio.pname }} <br>
+                                & <br>
+                                {{ portofolio.lname }}
+                            </p>
 
                             <img class="filter" :src="themeproduct.theme?.cover_fitur" style="transform: rotate(180deg);">
 
