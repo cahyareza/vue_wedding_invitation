@@ -23,6 +23,7 @@
 <script setup>
 import MessageForm from '@/components/parts/messagebox/MessageForm.vue'
 
+
 import { inject, computed, onBeforeMount } from 'vue'
 
 // LOAD STATE

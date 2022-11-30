@@ -28,6 +28,9 @@
                 font-family: $roboto;
                 color: $third-theme-1;
             }
+            .notification {
+                background-color: rgba($secondary-theme-1, 0.2);
+            }
         } @else if ($theme-name == theme-2) {
             .hero {
                 background-color: $primary-theme-2;

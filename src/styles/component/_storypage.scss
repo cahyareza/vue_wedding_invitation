@@ -16,7 +16,7 @@
 // MIXINS
 @mixin themable ($theme-name, $theme-map){
     .swiper-slide {
-        background: rgba(white, 0.2);
+        background: none;
     }
     .box {
         background: rgba(white, 0.5);
