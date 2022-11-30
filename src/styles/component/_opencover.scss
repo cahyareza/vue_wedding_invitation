@@ -17,6 +17,20 @@
 
 // MIXINS
 @mixin themable ($theme-name, $theme-map){
+    #demo {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    #inner-demo {
+    width: 100%;
+    height: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2em;
+    }
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
@@ -54,6 +68,43 @@
             }
             .filter{
                 filter: $primary-filter-theme-1;
+            }
+        } @else if ($theme-name == theme-2) {
+            .hero {
+                background-color: $third-theme-2;
+            }
+            .button {
+                border: 1px solid $secondary-theme-2;
+                width: 215px;
+                height: 38.23px;
+                padding: 9px 38px;
+                background-color: #FFFFFF;
+                
+                font-family: $roboto;
+                font-size: 12px;
+                display: inline-block;
+                align-items: center;
+                text-align: center;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                color: $primary-theme-2;
+                cursor: pointer;
+
+                bottom: 50px;
+                
+                box-shadow: 4px 4px 0 2px white, 4px 4px 0 3px $secondary-theme-2;
+            }
+            .title {
+                font-family: $dancing_script;
+                color: $primary-theme-2;
+                text-transform: uppercase;
+            }
+            .subtitle {
+                font-family: $roboto;
+                color: $primary-theme-2;
+            }
+            .filter{
+                filter: $primary-filter-theme-2;
             }
         }
     }
