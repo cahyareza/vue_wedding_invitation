@@ -2,6 +2,27 @@
     <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
         <div :class="theme">
             <section class="hero is-large">
+                <!-- ANIMATED IMAGE -->
+                <div class="wrapper">
+                    <div class="box-animated">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <!-- ANIMATED IMAGE END -->
                 <div class="columns">
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
                         <section class="section pt-4">
