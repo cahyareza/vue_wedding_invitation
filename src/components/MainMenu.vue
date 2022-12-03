@@ -161,7 +161,7 @@ const { toClipboard } = useClipboard()
 const copy = async (vari) => {
     try {
         await toClipboard(vari)
-        console.log('Copied to clipboard')
+        // console.log('Copied to clipboard')
     } catch (e) {
         console.error(e)
     }

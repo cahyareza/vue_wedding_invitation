@@ -31,10 +31,17 @@
     color: white;
     font-size: 2em;
     }
+    .low-opacity-bg-image {
+        display: grid;
+        position: relative;
+        isolation: isolate;
+        background-size: cover;
+        background-position: center;
+    }
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: $third-theme-1;
+                // background-color: $third-theme-1;
             }
             .button {
                 border: 1px solid $primary-theme-1;
@@ -71,7 +78,7 @@
             }
         } @else if ($theme-name == theme-2) {
             .hero {
-                background-color: $third-theme-2;
+                // background-color: $third-theme-2;
             }
             .button {
                 border: 1px solid $secondary-theme-2;

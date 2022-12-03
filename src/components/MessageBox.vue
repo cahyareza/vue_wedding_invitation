@@ -20,6 +20,11 @@
                         <div></div>
                         <div></div>
                         <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     </div>
                 </div>
                 <!-- ANIMATED IMAGE END -->

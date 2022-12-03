@@ -1,35 +1,37 @@
 <template>
     <div :class="theme">
-        <section class="hero is-fullheight">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns is-multiline">
-                        <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                            <div class="">
-                                <p class="title is-size-3 mb-3">
-                                    {{ portofolio.pname }}
-                                </p>
-                                <img class="filter is-rounded mb-3" :src="themeproduct.theme?.open_fitur">
-                                <p class="title is-size-3">
-                                    {{ portofolio.lname }} 
-                                </p>
+        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portofolio.open_background + ')' }">
+            <section class="hero is-fullheight">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="columns is-multiline">
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                                <div class="">
+                                    <p class="title is-size-3 mb-3">
+                                        {{ portofolio.pname }}
+                                    </p>
+                                    <img class="filter is-rounded mb-3" :src="themeproduct.theme?.open_fitur">
+                                    <p class="title is-size-3">
+                                        {{ portofolio.lname }} 
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="demo">
-                <div id="inner-demo">
-                    <VueParticle domId="demo" :config="obj.particleConfig"/>
+                <div id="demo">
+                    <div id="inner-demo">
+                        <VueParticle domId="demo" :config="obj.particleConfig"/>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-footer">
-                <button class="button">
-                    <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
-                    <!-- <a :href="`/main/${slug}`">Buka Undangan</a> -->
-                </button>
-            </div>
-        </section>
+                <div class="hero-footer">
+                    <button class="button">
+                        <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
+                        <!-- <a :href="`/main/${slug}`">Buka Undangan</a> -->
+                    </button>
+                </div>
+            </section>
+        </div>
     </div>
 </template>
 
@@ -130,19 +132,4 @@ obj.particleConfig = {
 <style lang="scss" scoped>
 @import "../styles/component/opencover.scss";
 // @import "../styles/global.scss";
-
-#demo {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-#inner-demo {
-  width: 100%;
-  height: 0%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2em;
-}
 </style>

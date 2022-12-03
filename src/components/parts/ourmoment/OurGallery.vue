@@ -1,5 +1,5 @@
 <template v-slot:prev-btn="{ prev }">
-  <div class="section">
+  <div class="section pt-3">
     <Carousel :autoplay="6000" :wrap-around="true">
       <Slide v-for="(slide, index) in multiimage" :key="slide">
         <div class="carousel__item">

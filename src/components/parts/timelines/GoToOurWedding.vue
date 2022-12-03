@@ -12,7 +12,7 @@
         <p class="subtitle is-size-7 mt-1 mb-3">{{ portofolio.lokasi }}</p>
         <a class="button is-rounded is-size-7 mb-5" :href="portofolio.link_gmap">
            <font-awesome-icon icon="fa-solid fa-location-dot" />
-           &nbsp;Buka di Google Map
+           &nbsp;Google Map
         </a>
         
     </section>

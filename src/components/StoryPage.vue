@@ -5,7 +5,7 @@
                 <section class="hero is-large">
                     <div class="columns mb-3">
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                            <p class="subtitle2 is-uppercase is-size-5 mt-4">
+                            <p class="subtitle2 is-uppercase is-size-5 mt-4 mb-5">
                                 Cerita Kita<br>
                                 <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>

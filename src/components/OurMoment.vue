@@ -4,7 +4,7 @@
             <section class="hero is-info is-medium">
                 <div class="columns">
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                        <section class="section pt-4">
+                        <section class="section pt-4 pb-3">
                             <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
                                 Moment yang berharga<br>
                                 <img class="filter mt-1" :src="themeproduct.theme?.line">

@@ -5,7 +5,7 @@
                 <div class="column is-half-tablet is-offset-one-quarter-tablet">
                     <section class="section pt-4">
                         <div class="container">
-                            <p class="subtitle2 is-uppercase is-size-5 mt-1 p-1">
+                            <p class="subtitle2 is-uppercase is-size-5 mt-1 p-1 mb-6">
                                 Pengantin<br>
                                 <img class="filter mt-1" :src="themeproduct.theme?.line">
                             </p>
@@ -13,7 +13,7 @@
                             <div class="columns is-multiline is-centered">
                                 <div class="column is-full">
                                     <figure class="image is-inline-block mb-4" style="height:180px; width: 180px;">
-                                        <img class="filter mb-3" :src="portofolio.ppicture" style="height:180px; width: 180px; position: absolute;">
+                                        <img class="mb-3" :src="portofolio.ppicture" style="height:180px; width: 180px; position: absolute;">
                                         <div class="sprocket-mosaic-image-container"></div>
                                     </figure> <br>
 
