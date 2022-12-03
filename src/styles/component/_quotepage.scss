@@ -14,19 +14,39 @@
 @import "../../../node_modules/bulma/sass/layout/section.sass";
 
 // MIXINS
-@mixin themable ($theme-name, $theme-map){
+@mixin themable ($theme-name, $theme-map){    
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: rgba($fourth-theme-1, 0.4);
+                background-color: $fourth-theme-1;
             }
-            .title2 {
-                font-family: $dancing_script;
-                color: $secondary-theme-1;
+            .notification {
+                background-color: rgba($secondary-theme-1, 0.2);
+                padding: 10px;
+                border-radius: 5%;
             }
-            .subtitle2 {
+            .subtitle {
                 font-family: $roboto;
                 color: $third-theme-1;
+            }
+            .filter{
+                filter: $secondary-filter-theme-1;
+            }
+        } @else if ($theme-name == theme-2) {
+            .hero {
+                background-color: $primary-theme-2;
+            }
+            .notification {
+                background-color: rgba($secondary-theme-2, 0.3);
+                padding: 10px;
+                border-radius: 5%;
+            }
+            .subtitle {
+                font-family: $playfair;
+                color: $third-theme-2;
+            }
+            .filter{
+                filter: $secondary-filter-theme-2;
             }
         }
     }

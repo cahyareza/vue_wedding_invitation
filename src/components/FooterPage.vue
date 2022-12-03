@@ -1,6 +1,6 @@
 <template>
     <div :class="theme">
-        <section class="hero is-small  has-background-link">
+        <section class="hero is-small">
             <div class="hero-body">
                 <div class="columns">
                     <div class="column is-half-tablet is-offset-one-quarter-tablet">
@@ -18,16 +18,16 @@
 </template>
 
 <script setup>
-import { inject, onMounted, computed } from "vue";
+import { inject, onBeforeMount, computed } from "vue";
 
-// Theme
+// LOAD STATE
 const store = inject('store');
 
+// THEME
 const theme = computed(() => store.state.theme); 
 
-store.actions.getTheme();
-
-onMounted(() => {  
+// LIFECYCLE
+onBeforeMount(() => {
     store.actions.getTheme();
 });
 

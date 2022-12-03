@@ -1,100 +1,99 @@
 <template>
-    <div class="columns">
-        <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
-            <div class="container">
-                <!--  Music     -->
-                <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded is-light p-3">
-                    <span class="icon has-text-dark">
-                        <font-awesome-icon icon="fa-solid fa-music" />
-                    </span>
-                </button-music>
+    <div :class="theme">
+        <div class="columns">
+            <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
+                <div class="container">
+                    <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+                        <!--  Music     -->
+                        <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
+                            <span class="icon has-text-dark">
+                                <font-awesome-icon icon="fa-solid fa-music" />
+                            </span>
+                        </button-music>
 
-                <!--  Amplop    -->
-                <button-amplop @click="showModal" class="button is-rounded is-primary p-3">
-                    <span class="icon has-text-dark">
-                        <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
-                    </span>
-                </button-amplop>
+                        <div v-if="dompet.length != 0">
+                            <!--  Amplop    -->
+                            <button-amplop @click="showModal" class="button2 is-rounded p-2">
+                                <span class="icon has-text-dark">
+                                    <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
+                                </span>
+                            </button-amplop>
+                        </div>
+                    </div>
 
-                <!--    Modal        -->
-                <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
-                    <div class="modal-background"></div>
-                    <div class="modal-card m-4" style="padding: 4vw;">
-                        <header class="modal-card-head">
-                            <p class="modal-card-title">Amplop Digital</p>
-                            <button class="delete" aria-label="close" @click="cancelModal">></button>
-                        </header>
-                        <section class="modal-card-body">
-                            <p class="has-text-left mb-4">Transfer langsung ke rekening berikut ini;</p>
-                            <div class="columns is-multiline">
-                                <div v-for="info in dompet" :key="info.id">
-                                    <div class="column pb-1 is-gapless has-text-left">
-                                        <p>{{ info.rekening }}</p>
-                                        <p><strong>{{ info.nomor }}</strong> <button class="button-copy" @click="copy(info.nomor)">copy</button></p>
-                                        
-                                        <p>a/n {{ info.pemilik }}</p>
-                                        <hr class="m-1">
+                    <!--    Modal        -->
+                    <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
+                        <div class="modal-background"></div>
+                        <div class="modal-card m-4" style="padding: 4vw;">
+                            <header class="modal-card-head">
+                                <p class="modal-card-title">Amplop Digital</p>
+                                <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
+                            </header>
+                            <section class="modal-card-body">
+                                <p class="has-text-left mb-4">Transfer langsung ke rekening berikut ini;</p>
+                                <div class="columns is-multiline">
+                                    <div v-for="info in dompet" :key="info.id">
+                                        <div class="column pb-1 is-gapless has-text-left">
+                                            <p>{{ info.rekening }}</p>
+                                            <p><strong>{{ info.nomor }}</strong> <button class="button-copy" @click="copy(info.nomor)">copy</button></p>
+                                            
+                                            <p>a/n {{ info.pemilik }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                        <footer class="modal-card-foot">
-                            <!-- <button class="button is-success" @click="okModal">Ok</button>
-                            <button class="button" @click="cancelModal">Cancel</button> -->
-                        </footer>
+                            </section>
+                            <footer class="modal-card-foot">
+                            </footer>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-
-            
-            <div class="container">
-                <div class="notification is-primary p-2">
-                    <span class="icon-text is-paddingless is-marginless">
-                        <!-- <span>Couple</span> -->
-                        <span @click="navPage('groom')" class="icon">
-                            <font-awesome-icon icon="fa-solid fa-heart" />
+                
+                <div class="container">
+                    <div class="notification2 p-2">
+                        <span class="icon-text is-paddingless is-marginless">
+                            <!-- <span>Couple</span> -->
+                            <span @click="navPage('groom')" class="icon">
+                                <font-awesome-icon icon="fa-solid fa-heart" />
+                            </span>
+                            <!-- <span>Date</span> -->
+                            <span @click="navPage('time')" class="icon">
+                                <font-awesome-icon icon="fa-solid fa-map" />
+                            </span>
+                            <!-- <span>Rundown</span> -->
+                            <span @click="navPage('run')" class="icon">
+                                <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                            </span>
+                            <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+                                <!-- <span>Moment</span> -->
+                                <span @click="navPage('moment')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-images" />
+                                </span>
+                            
+                                <!-- <span>Wishes</span> -->
+                                <span @click="navPage('message')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                </span>
+                            </div>
                         </span>
-                        <!-- <span>Date</span> -->
-                        <span @click="navPage('time')" class="icon">
-                            <font-awesome-icon icon="fa-solid fa-map" />
-                        </span>
-                        <!-- <span>Rundown</span> -->
-                        <span @click="navPage('run')" class="icon">
-                            <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                        </span>
-                        <!-- <span>Moment</span> -->
-                        <span @click="navPage('moment')" class="icon">
-                            <font-awesome-icon icon="fa-solid fa-images" />
-                        </span>
-                         <!-- <span>Wishes</span> -->
-                        <span @click="navPage('message')" class="icon">
-                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                        </span>
-                    </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </template>
 
 <script setup>
-import { reactive, inject, computed, onMounted, defineEmits } from "vue";
+import { reactive, inject, computed, onMounted, defineEmits, onBeforeMount } from "vue";
 import trumpetSfx from '../assets/contents/mp3/sample.mp3';
 import useClipboard from 'vue-clipboard3'
 
-const emit = defineEmits(['coba', 'page']);
+const emit = defineEmits(['page']);
 
 // emit
-// const cobaEmit = (value) => {
-//     emit("coba", value)
-// }
-
 const navPage = (value) => {
     emit("page", value)
 }
-
 
 // Audio
 var audio = {
@@ -138,10 +137,18 @@ const cancelModal = () => {
 
 const store = inject('store');
 
+// DOMPET
 const dompet = computed(() => store.state.dompet); 
 
-store.actions.getDompet();
+// THEME
+const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct); 
 
+// LIFECYCLE
+onBeforeMount(() => {
+    store.actions.getTheme();
+    store.actions.getThemeProduct();
+});
 onMounted(() => {
     store.actions.getDompet();
 });
@@ -154,7 +161,7 @@ const { toClipboard } = useClipboard()
 const copy = async (vari) => {
     try {
         await toClipboard(vari)
-        console.log('Copied to clipboard')
+        // console.log('Copied to clipboard')
     } catch (e) {
         console.error(e)
     }
@@ -163,11 +170,13 @@ const copy = async (vari) => {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/component/mainmenu.scss";
 
-.notification {
+
+.notification2 {
     position: fixed;
     height: 40px;
-    bottom: 10px;
+    bottom: 2%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -187,12 +196,11 @@ button-music.button {
     box-shadow: 2px 2px 3px #999;
 }
 
-button-amplop.button {
+button-amplop.button2 {
     position: fixed;
     height: 40px;
     top: 70px;
     right: 20px;
-    color: #fff;
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 2px 2px 3px #999;

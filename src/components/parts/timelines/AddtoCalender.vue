@@ -1,5 +1,5 @@
 <template>
-    <button class= "button is-rounded" ref="default_button">Simpan acara di kalender</button>
+    <button class= "button-2 button mt-5" ref="default_button">Simpan acara di kalender</button>
 </template>
 
 <script setup>

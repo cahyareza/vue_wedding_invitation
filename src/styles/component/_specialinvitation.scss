@@ -18,15 +18,33 @@
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: rgba($fourth-theme-1, 0.4);
+                background-color: $fourth-theme-1;
             }
-            .title2 {
+            .title {
                 font-family: $dancing_script;
                 color: $secondary-theme-1;
             }
-            .subtitle2 {
+            .subtitle {
                 font-family: $roboto;
                 color: $third-theme-1;
+            }
+            .notification {
+                background-color: rgba($secondary-theme-1, 0.2);
+            }
+        } @else if ($theme-name == theme-2) {
+            .hero {
+                background-color: $primary-theme-2;
+            }
+            .title {
+                font-family: $great_vibes;
+                color: $secondary-theme-2;
+            }
+            .subtitle {
+                font-family: $playfair;
+                color: $secondary-theme-2;
+            }
+            .notification {
+                background-color: rgba($secondary-theme-2, 0.2);
             }
         }
     }

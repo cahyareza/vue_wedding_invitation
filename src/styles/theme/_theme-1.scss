@@ -1,14 +1,9 @@
 // THEME-1
 $theme-1: (
-   maincover: (
+   countdown: (
         font: (
-            "title": $parisienne, 
-            "subtitle": $im_fell_english
+            "title": $dancing_script, 
+            "subtitle": $roboto,
         ),
-        hero: (
-            "mobile": url("../assets/contents/background/pink_minimalist_2.png"),
-            "tablet": url("../assets/contents/background/pink_minimalist_3.png"),
-            "desktop": url("../assets/contents/background/pink_minimalist.png")
-        ),
-   ),
+    ),
 );

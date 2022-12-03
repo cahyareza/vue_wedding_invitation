@@ -2,7 +2,6 @@
 @import '../theme/theme-1';
 @import '../theme/theme-2';
 
-
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
 @import "../../../node_modules/bulma/sass/base/_all.sass";
@@ -16,60 +15,64 @@
 
 // MIXINS
 @mixin themable ($theme-name, $theme-map){
-    .low-opacity-bg-image {
-        display: grid;
-        position: relative;
-        isolation: isolate;
-        background-size: cover;
-        background-position: center;
-    }
-    
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
+            .hero {
+                background-color: $primary-theme-1;
+            }
             .icon {
                 color: $fourth-theme-1;
             }
-            .title {
-                font-family: $dancing_script;
-                color: $fourth-theme-1;
+            .notification {
+                background-color: rgba($fourth-theme-1, 0.2);
             }
-            .subtitle {
+            .button {
+                color: $secondary-theme-1;
+                border: 1px solid $secondary-theme-1;
+            }
+            .title2 {
+                font-family: $dancing_script;
+                color: $third-theme-1;
+            }
+            .subtitle2 {
+                font-family: $roboto;
+                color: $secondary-theme-1;
+            }
+            .subtitle3 {
                 font-family: $roboto;
                 color: $fourth-theme-1;
             }
             .filter{
                 filter: $fourth-filter-theme-1;
             }
-            .low-opacity-bg-image::after {
-                content: '';
-                position: absolute;
-                z-index: -1;
-                inset: 0;
-                opacity: .6;
-                background: $primary-theme-1;
-            }
         } @else if ($theme-name == theme-2) {
+            .hero {
+                background-color: $primary-theme-2;
+            }
             .icon {
                 color: $secondary-theme-2;
             }
-            .title {
+            .notification {
+                background-color: rgba($secondary-theme-2, 0.2);
+            }
+            .button {
+                color: $secondary-theme-2;
+                border: 1px solid $secondary-theme-2;
+            }
+            .title2 {
                 font-family: $great_vibes;
                 color: $secondary-theme-2;
             }
-            .subtitle {
+            .subtitle2 {
+                font-family: $playfair;
+                color: $secondary-theme-2;
+            }
+            .subtitle3 {
                 font-family: $playfair;
                 color: $secondary-theme-2;
             }
             .filter{
-                filter: $secondary-theme-2;
-            }
-            .low-opacity-bg-image::after {
-                content: '';
-                position: absolute;
-                z-index: -1;
-                inset: 0;
-                opacity: .6;
-                background: $primary-theme-2;
+                filter: $secondary-filter-theme-2;
             }
         }
     }

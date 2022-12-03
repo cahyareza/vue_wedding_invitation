@@ -3,9 +3,7 @@
     <MainCover></MainCover>
     <QuotePage></QuotePage>
     <div ref="groom">
-      <KeepAlive>
-        <GroomBride></GroomBride>
-      </KeepAlive>
+      <GroomBride></GroomBride>
     </div>
     <div ref="time">
       <TimeLines></TimeLines>
@@ -15,6 +13,7 @@
     </div>
     <SpecialInvitation></SpecialInvitation>
     <LiveStream></LiveStream>
+    <StoryPage></StoryPage>
     <div ref='moment'>
       <OurMoment></OurMoment>
     </div>
@@ -22,7 +21,7 @@
       <MessageBox></MessageBox>
     </div>
     <FooterPage></FooterPage>
-    <MainMenu @coba="onCoba" @page="navigation"></MainMenu>
+    <MainMenu @page="navigation"></MainMenu>
   </section>
 </template>
 
@@ -38,14 +37,9 @@ import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import MainMenu from '@/components/MainMenu.vue'
 import LiveStream from '@/components/LiveStream.vue'
+import StoryPage from '@/components/StoryPage.vue'
 
 import { ref, onMounted } from "vue";
-
-// test
-const onCoba = val => {
-    console.log(val);
-}
-
 
 const groom = ref()
 const time = ref()

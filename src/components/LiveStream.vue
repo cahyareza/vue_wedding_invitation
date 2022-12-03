@@ -1,33 +1,62 @@
 <template>
-    <section class="hero is-danger is-small">
-        <div class="hero-body">
-            <div class="columns">
-                <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                    <p class="title is-size-4-mobile mt-2 p-2 mb-2">Live Streaming</p>
-                    <p class="is-size-6-tablet is-size-7-mobile mt-2 mb-3"> Temui kami secara virtual untuk menyaksikan acara pernikahan kami </p>
-                    <button class="button is-rounded is-size-7 px-2  mb-3">
-                        <a :href="portofolio.livestream"><font-awesome-icon icon="fa-solid fa-video" />&nbsp;Menuju Streaming
-                        </a>
-                    </button>
-                    <hr class="is-paddingless mt-2 mb-3">
-                    <p class="is-size-6-tablet is-size-7-mobile">Silahkan untuk join live streaming.</p>
-                </div>
+    <div v-if="portofolio.livestream">
+        <div v-if="themeproduct.fitur === 'gold'">
+            <div :class="theme">
+                <section class="hero is-danger is-small">
+                    <div class="hero-body">
+                        <div class="columns">
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                                <p class="subtitle2 is-uppercase is-size-5 mt-1 p-1">
+                                    Live Streaming<br>
+                                    <img class="filter mt-1" :src="themeproduct.theme?.line">
+                                </p>
+                                <div v-if="portofolio.kata_live_streaming">
+                                    <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> {{ portofolio.kata_live_streaming }} </p>
+                                </div>
+                                <div v-else>
+                                     <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> Temui kami secara virtual untuk menyaksikan acara pernikahan kami </p>
+                                </div>
+                                
+                                <button class="button is-rounded is-size-7 px-2  mb-3">
+                                    <a :href="portofolio.livestream"><font-awesome-icon icon="fa-solid fa-video" />&nbsp;Menuju Streaming
+                                    </a>
+                                </button>
+                                <p class="subtitle2 is-size-7-tablet is-size-7-mobile">Silahkan untuk join live streaming.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
+    </div>
 </template>
 
 <script setup>
 
-import { inject, computed, onMounted } from 'vue'
+import { inject, computed, onMounted, onBeforeMount } from 'vue'
 
+// LOAD STATE
 const store = inject('store');
 
+// PORTOFOLIO
 const portofolio = computed(() => store.state.portofolio);
+
+// THEME
+const theme = computed(() => store.state.theme); 
+const themeproduct = computed(() => store.state.themeproduct); 
+
+// LIFECYCLE
+onBeforeMount(() => {
+    store.actions.getTheme();
+    store.actions.getThemeProduct();
+});
 
 onMounted(() => {  
     store.actions.getPortofolio();
 });
-
-
 </script>
+
+<style lang="scss" scoped>
+@import "../styles/component/livestream.scss";
+// @import "../styles/global.scss";
+</style>
