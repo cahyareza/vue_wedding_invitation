@@ -1,6 +1,7 @@
 <template>
   <section>
-    <OpenCover id="openCover"></OpenCover>
+    <!-- <OpenCover id="openCover"></OpenCover> -->
+    <OpenCover></OpenCover>
   </section>
 </template>
 

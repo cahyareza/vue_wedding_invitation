@@ -1,4 +1,9 @@
 <template>
+    <form @submit.prevent="submit" class="vl-parent" ref="formContainer">
+        <!-- your form inputs goes here-->
+        <label class="is-hidden"><input type="checkbox" v-model="fullPage">Full page?</label>
+    </form>
+
     <div :class="theme">
         <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portofolio.open_background + ')' }">
             <section class="hero is-fullheight">
@@ -37,7 +42,33 @@
 
 <script setup>
 import VueParticle from 'vue-particlejs';
-import { inject, computed, onMounted, onBeforeMount, reactive } from 'vue'
+import { ref, inject, computed, onMounted, onBeforeMount, reactive } from 'vue'
+import {useLoading} from 'vue-loading-overlay'
+
+// VUE LOADING
+const $loading = useLoading({
+    // options
+});
+
+const fullPage = ref(true)
+
+const submit = () => {
+    const loader = $loading.show({
+        // Optional parameters
+        color: '#ffffff',
+        loader: 'dots',
+        width: 90,
+        height: 90,
+        backgroundColor: 'black',
+        opacity: 0.6,
+        zIndex: 999,
+    });
+    // simulate AJAX
+    setTimeout(() => {
+        loader.hide()
+    }, 5000)
+}
+console.log(submit)
 
 // LOAD STATE
 const store = inject('store');
@@ -56,6 +87,7 @@ const slug = store.actions.getSlug().value;
 onBeforeMount(() => {
     store.actions.getTheme();
     store.actions.getThemeProduct();
+    submit()
 });
 
 onMounted(() => {
@@ -125,7 +157,7 @@ obj.particleConfig = {
         }
     },
     retina_detect: true
-    }
+}
 </script>
 
 
