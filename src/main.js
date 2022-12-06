@@ -11,11 +11,13 @@ import {library} from "@fortawesome/fontawesome-svg-core";
 import {fas} from "@fortawesome/free-solid-svg-icons";
 import {fab} from "@fortawesome/free-brands-svg-icons";
 
+import {LoadingPlugin} from 'vue-loading-overlay';
+
 library.add(fas, fab)
 
 
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
-.use(router)
+.use(router, LoadingPlugin)
 .provide("store", store)
 .mount('#app')
