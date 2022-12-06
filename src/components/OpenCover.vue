@@ -42,8 +42,13 @@
 
 <script setup>
 import VueParticle from 'vue-particlejs';
-import { ref, inject, computed, onMounted, onBeforeMount, reactive } from 'vue'
+import { ref, inject, computed, onBeforeMount, reactive, defineProps } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
+
+// PORTOFOLIO
+defineProps({
+  portofolio: { type: Array },
+});
 
 // VUE LOADING
 const $loading = useLoading({
@@ -68,13 +73,9 @@ const submit = () => {
         loader.hide()
     }, 5000)
 }
-console.log(submit)
 
 // LOAD STATE
 const store = inject('store');
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
 
 // THEME
 const theme = computed(() => store.state.theme);
@@ -89,10 +90,6 @@ onBeforeMount(() => {
     store.actions.getThemeProduct();
     submit()
 });
-
-onMounted(() => {
-    store.actions.getPortofolio();
-})
 
 // PARTICLE
 const obj = reactive({particleConfig: {}})

@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { inject, computed, onMounted, onBeforeMount } from 'vue'
+import { inject, computed, onBeforeMount } from 'vue'
 import moment from 'moment';
 
 // LOAD STATE
@@ -63,10 +63,6 @@ const tanggal = (value) => {
 onBeforeMount(() => {
     store.actions.getTheme();
     store.actions.getThemeProduct();
-});
-
-onMounted(() => {  
-    store.actions.getPortofolio();
 });
 
 </script>

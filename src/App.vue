@@ -1,6 +1,23 @@
 <template>
-  <router-view/>
+  <router-view @slug='navigate' />
+  <!-- <RouterView :portofolio="portofolio" /> -->
 </template>
+
+<script setup>
+import { inject, computed } from 'vue'
+
+// LOAD STATE
+const store = inject('store');
+
+// PORTOFOLIO
+// eslint-disable-next-line no-unused-vars
+const portofolio = computed(() => store.state.portofolio);
+
+const navigate = val => {
+  store.actions.getPortofolio2(val);
+}
+
+</script>
 
 <style lang="scss">
 #app {

@@ -6,7 +6,7 @@ const routes = [
   {
     path: '/:slug',
     name: 'open',
-    component: OpenView
+    component: OpenView,
   },
   {
     path: '/main/:slug',
