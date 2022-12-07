@@ -18,19 +18,12 @@
 </template>
 
 <script setup>
-import { inject, onBeforeMount, computed } from "vue";
+import { defineProps } from "vue";
 
-// LOAD STATE
-const store = inject('store');
-
-// THEME
-const theme = computed(() => store.state.theme); 
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
+// GET PROPS
+defineProps({
+  theme: { type: Object },
 });
-
 </script>
 
 

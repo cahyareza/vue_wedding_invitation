@@ -1,36 +1,38 @@
 <template>
   <section>
     <!-- <OpenCover id="openCover"></OpenCover> -->
-    <OpenCover @onload="getSlug()" :portofolio="portofolio"></OpenCover>
+    <OpenCover 
+      :portofolio="portofolio"
+      :theme="theme"
+      :themeproduct="themeproduct" 
+    >
+    </OpenCover>
   </section>
 </template>
 
 <script setup>
-import { inject, computed, onMounted, defineEmits } from 'vue'
+import { inject, defineEmits, defineProps, onMounted } from 'vue'
 import OpenCover from '@/components/OpenCover.vue'
-
-const emit = defineEmits(['slug']);
-
-// emit
-const getSlug = () => {
-    emit("slug", store.actions.getSlug().value)
-}
 
 // LOAD STATE
 const store = inject('store');
 
-// PORTOFOLIO
-// eslint-disable-next-line no-unused-vars
-const portofolio = computed(() => store.state.portofolio);
-// eslint-disable-next-line no-unused-vars
-const theme = computed(() => store.state.theme); 
-// eslint-disable-next-line no-unused-vars
-const themeproduct = computed(() => store.state.themeproduct); 
+// EMIT
+const emit = defineEmits(['slug']);
+const getSlug = () => {
+    emit("slug", store.actions.getSlug().value)
+}
 
+// GET PROPS
+defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
+});
+
+// LIFECYCLE
 onMounted(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
-    store.actions.getPortofolio();
-})
+    getSlug();
+});
 
 </script>

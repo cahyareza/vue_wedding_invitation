@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/main/:slug',
     name: 'main',
-    component: MainView
+    component: MainView,
   },
 ]
 

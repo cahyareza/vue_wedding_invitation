@@ -60,28 +60,14 @@
 
 
 <script setup>
-import { inject, computed, onMounted, onBeforeMount } from 'vue'
+import { defineProps } from 'vue'
 
-// LOAD STATE
-const store = inject('store');
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct); 
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
+// GET PROPS
+defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
 });
-
-onMounted(() => {  
-    store.actions.getPortofolio();
-});
-
 </script>
 
 <style lang="scss" scoped>

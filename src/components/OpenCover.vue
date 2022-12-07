@@ -42,12 +42,15 @@
 
 <script setup>
 import VueParticle from 'vue-particlejs';
-import { ref, inject, computed, onBeforeMount, reactive, defineProps } from 'vue'
+import { ref, inject, onBeforeMount, reactive, defineProps } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
 
-// PORTOFOLIO
-defineProps({
-  portofolio: { type: Array },
+// GET PROPS
+// eslint-disable-next-line no-unused-vars
+const props = defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
 });
 
 // VUE LOADING
@@ -77,17 +80,11 @@ const submit = () => {
 // LOAD STATE
 const store = inject('store');
 
-// THEME
-const theme = computed(() => store.state.theme);
-const themeproduct = computed(() => store.state.themeproduct); 
-
 // SLUG
 const slug = store.actions.getSlug().value;
 
 // LIFECYCLE
 onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
     submit()
 });
 

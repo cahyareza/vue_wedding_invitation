@@ -84,9 +84,17 @@
 </template>
 
 <script setup>
-import { reactive, inject, computed, onMounted, defineEmits, onBeforeMount } from "vue";
+import { reactive, defineEmits, defineProps } from "vue";
 import trumpetSfx from '../assets/contents/mp3/sample.mp3';
 import useClipboard from 'vue-clipboard3'
+
+
+// GET PROPS
+defineProps({
+  theme: { type: Object },
+  themeproduct: { type: Object },
+  dompet: { type: Object },
+});
 
 const emit = defineEmits(['page']);
 
@@ -133,26 +141,6 @@ const cancelModal = () => {
     modal_data.okPressed = false;
     modal_data.showModalFlag = false;
 }
-
-
-const store = inject('store');
-
-// DOMPET
-const dompet = computed(() => store.state.dompet); 
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct); 
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
-});
-onMounted(() => {
-    store.actions.getDompet();
-});
-
 
 // Copy clipboard
 

@@ -42,21 +42,17 @@
 </template>
 
 <script setup>
-import { inject, computed, onMounted, onBeforeMount } from 'vue'
+import { defineProps } from 'vue'
 import moment from 'moment';
 
-// LOAD STATE
-const store = inject('store');
 
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// ACARA
-const acara = computed(() => store.state.acara);
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct); 
+// GET PORTOFOLIO
+defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
+  acara: { type: Object },
+});
 
 // METHOD
 const tanggal = (value) => {
@@ -65,17 +61,6 @@ const tanggal = (value) => {
 const waktu = (value) => {
     return moment(value, "HH:mm:ss").format("HH:mm");
 }
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
-    store.actions.getAcara();
-});
-
-onMounted(() => {  
-    store.actions.getPortofolio();
-});
 </script>
 
 <style lang="scss" scoped>

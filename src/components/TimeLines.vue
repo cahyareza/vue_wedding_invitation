@@ -24,7 +24,7 @@
             </div>
 
         </section>
-        <GoToOurWedding></GoToOurWedding>
+        <GoToOurWedding :portofolio="portofolio"></GoToOurWedding>
     </div>
 </template>
 
@@ -36,19 +36,13 @@ import GuestBook from '@/components/parts/timelines/GuestBook.vue'
 import GoToOurWedding from '@/components/parts/timelines/GoToOurWedding.vue'
 import AddtoCalender from '@/components/parts/timelines/AddtoCalender.vue'
 
-import { inject, computed, onBeforeMount } from 'vue'
+import { defineProps } from 'vue'
 
-// LOAD STATE
-const store = inject('store');
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct);
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
+// GET PORTOFOLIO
+defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
 });
 </script>
 

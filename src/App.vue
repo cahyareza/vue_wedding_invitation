@@ -1,5 +1,15 @@
 <template>
-  <router-view @slug='navigate' />
+  <router-view 
+    @slug='navigate' 
+    :portofolio="portofolio" 
+    :theme="theme"
+    :themeproduct="themeproduct" 
+    :quote="quote"
+    :acara="acara" 
+    :invitation="invitation"
+    :story="story" 
+    :dompet="dompet" 
+  />
   <!-- <RouterView :portofolio="portofolio" /> -->
 </template>
 
@@ -10,13 +20,37 @@ import { inject, computed } from 'vue'
 const store = inject('store');
 
 // PORTOFOLIO
-// eslint-disable-next-line no-unused-vars
 const portofolio = computed(() => store.state.portofolio);
 
-const navigate = val => {
-  store.actions.getPortofolio2(val);
-}
+// THEME
+const theme = computed(() => store.state.theme);
+const themeproduct = computed(() => store.state.themeproduct); 
 
+// QUOTE
+const quote = computed(() => store.state.quote); 
+
+// ACARA
+const acara = computed(() => store.state.acara);
+
+// INVITATION
+const invitation = computed(() => store.state.invitation);
+
+// STORY
+const story = computed(() => store.state.story); 
+
+// DOMPET
+const dompet = computed(() => store.state.dompet); 
+
+const navigate = (val) => {
+  store.actions.getPortofolio2(val);
+  store.actions.getTheme2(val);
+  store.actions.getThemeProduct2(val);
+  store.actions.getQuote2(val);
+  store.actions.getAcara2(val);
+  store.actions.getInvitation2(val);
+  store.actions.getStory2(val);
+  store.actions.getDompet2(val);
+}
 </script>
 
 <style lang="scss">
