@@ -98,8 +98,16 @@ import MainMenu from '@/components/MainMenu.vue'
 import LiveStream from '@/components/LiveStream.vue'
 import StoryPage from '@/components/StoryPage.vue'
 
-import { ref, onMounted, defineProps } from "vue";
+import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
 
+// LOAD STATE
+const store = inject('store');
+
+// EMIT
+const emit = defineEmits(['slug']);
+const getSlug = () => {
+    emit("slug", store.actions.getSlug().value)
+}
 
 // GET PROPS
 // eslint-disable-next-line no-unused-vars
@@ -141,6 +149,7 @@ const navigation = val => {
 
 onMounted( () => {
   navigation();
+  getSlug();
 })
 
 </script>
