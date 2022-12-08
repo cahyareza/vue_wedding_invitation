@@ -9,7 +9,8 @@ const state = reactive({
     multiimage: [],
     ucapan: [],
     dompet:[],
-    theme: "false",
+    // theme: "false",
+    theme: {},
     themeproduct: [],
     portofolio: [],
     story: [],
@@ -45,6 +46,12 @@ const actions = {
         // console.log(response.data[0])
       });
     },
+    getQuote2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/quote/?portofolio__slug=${slug}`).then((response) => {
+        mutations.updateQuote(response.data[0]);
+        // console.log(response.data[0])
+      });
+    },
     getHadir: () => {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/hadir/?portofolio__slug=${slug.value}`).then((response) => {
@@ -55,6 +62,12 @@ const actions = {
     getInvitation: () => {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/specialinvitation/?portofolio__slug=${slug.value}`)
+      .then((response) => {
+        mutations.updateInvitation(response.data);
+      });
+    },
+    getInvitation2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/specialinvitation/?portofolio__slug=${slug}`)
       .then((response) => {
         mutations.updateInvitation(response.data);
       });
@@ -83,9 +96,22 @@ const actions = {
         mutations.updateDompet(response.data);
       });
     },
+    getDompet2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/dompet/?portofolio__slug=${slug}`) .then((response) => {
+        mutations.updateDompet(response.data);
+      });
+    },
     getTheme: () => {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
+        const theme = { [response.data[0].theme.name]: true }
+        // console.log(theme)
+        mutations.updateTheme(theme);
+      });
+    },
+    getTheme2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug}`) .then((response) => {
+        // console.log(response.data[0])
         const theme = { [response.data[0].theme.name]: true }
         // console.log(theme)
         mutations.updateTheme(theme);
@@ -98,14 +124,37 @@ const actions = {
         mutations.updateThemeProduct(response.data[0]);
       });
     },
+    getThemeProduct2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug}`) .then((response) => {
+        // console.log(response.data[0])
+        mutations.updateThemeProduct(response.data[0]);
+      });
+    },
     getPortofolio: () => {
       actions.getSlug();
       // const route = useRoute();
+      // console.log(route.params)
       // slug.value = route.params.slug
       // console.log(slug.value)
       return axios.get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}`)
       .then((response) => {
-        // console.log(response.data[0]);
+        // console.log(response);
+        if (response.data[0].timeZone) {
+          if (response.data[0].timeZone == 'Asia/Jakarta') {
+            response.data[0].timeZone = "WIB"
+          } else if (response.data[0].timeZone == 'Asia/Makassar') {
+            response.data[0].timeZone = "WITA"
+          } else {
+            response.data[0].timeZone = "WIT"
+          }
+        }
+        mutations.updatePortofolio(response.data[0]);
+      });
+    },
+    getPortofolio2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug}`)
+      .then((response) => {
+        // console.log(response);
         if (response.data[0].timeZone) {
           if (response.data[0].timeZone == 'Asia/Jakarta') {
             response.data[0].timeZone = "WIB"
@@ -125,9 +174,21 @@ const actions = {
         mutations.updateStory(response.data);
       });
     },
+    getStory2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/story/?portofolio__slug=${slug}`) .then((response) => {
+        // console.log(response.data);
+        mutations.updateStory(response.data);
+      });
+    },
     getAcara: () => {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/acara/?portofolio__slug=${slug.value}`) .then((response) => {
+        // console.log(response.data);
+        mutations.updateAcara(response.data);
+      });
+    },
+    getAcara2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/acara/?portofolio__slug=${slug}`) .then((response) => {
         // console.log(response.data);
         mutations.updateAcara(response.data);
       });

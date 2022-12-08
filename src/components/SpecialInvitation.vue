@@ -36,31 +36,14 @@
 </template>
 
 <script setup>
+import { defineProps } from 'vue'
 
-import { inject, computed, onMounted, onBeforeMount } from 'vue'
-
-// LOAD STATE
-const store = inject('store');
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// INVITATION
-const invitation = computed(() => store.state.invitation);
-
-// THEME
-const theme = computed(() => store.state.theme); 
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
+// GET PORTOFOLIO
+defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  invitation: { type: Object },
 });
-
-onMounted(() => {  
-    store.actions.getInvitation();
-    store.actions.getPortofolio();
-});
-
 </script>
 
 <style lang="scss" scoped>

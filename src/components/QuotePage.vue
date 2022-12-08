@@ -36,28 +36,16 @@
 </template>
 
 <script setup>
-import { inject, computed, onMounted, onBeforeMount } from 'vue'
+import { defineProps } from 'vue'
 
-// LOAD STATE
-const store = inject('store');
 
-// QUOTE
-const quote = computed(() => store.state.quote); 
-
-// THEME
-const theme = computed(() => store.state.theme);
-const themeproduct = computed(() => store.state.themeproduct);  
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
+// GET PROPS
+// eslint-disable-next-line no-unused-vars
+const props = defineProps({
+  theme: { type: Object },
+  themeproduct: { type: Object },
+  quote: { type: Object },
 });
-
-onMounted(() => {
-    store.actions.getQuote();
-})
-
 </script>
 
 

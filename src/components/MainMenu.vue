@@ -5,19 +5,19 @@
                 <div class="container">
                     <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
                         <!--  Music     -->
-                        <button-music @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
+                        <div @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
                             <span class="icon has-text-dark">
                                 <font-awesome-icon icon="fa-solid fa-music" />
                             </span>
-                        </button-music>
+                        </div>
 
                         <div v-if="dompet.length != 0">
                             <!--  Amplop    -->
-                            <button-amplop @click="showModal" class="button2 is-rounded p-2">
+                            <div @click="showModal" class="button2 is-rounded p-2">
                                 <span class="icon has-text-dark">
                                     <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
                                 </span>
-                            </button-amplop>
+                            </div>
                         </div>
                     </div>
 
@@ -84,9 +84,17 @@
 </template>
 
 <script setup>
-import { reactive, inject, computed, onMounted, defineEmits, onBeforeMount } from "vue";
+import { reactive, defineEmits, defineProps } from "vue";
 import trumpetSfx from '../assets/contents/mp3/sample.mp3';
 import useClipboard from 'vue-clipboard3'
+
+
+// GET PROPS
+defineProps({
+  theme: { type: Object },
+  themeproduct: { type: Object },
+  dompet: { type: Object },
+});
 
 const emit = defineEmits(['page']);
 
@@ -134,26 +142,6 @@ const cancelModal = () => {
     modal_data.showModalFlag = false;
 }
 
-
-const store = inject('store');
-
-// DOMPET
-const dompet = computed(() => store.state.dompet); 
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct); 
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
-});
-onMounted(() => {
-    store.actions.getDompet();
-});
-
-
 // Copy clipboard
 
 const { toClipboard } = useClipboard()
@@ -185,7 +173,7 @@ const copy = async (vari) => {
     box-shadow: 2px 2px 3px #999;
 }
 
-button-music.button {
+.button {
     position: fixed;
     height: 40px;
     top: 20px;
@@ -196,7 +184,7 @@ button-music.button {
     box-shadow: 2px 2px 3px #999;
 }
 
-button-amplop.button2 {
+.button2 {
     position: fixed;
     height: 40px;
     top: 70px;

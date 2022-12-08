@@ -44,16 +44,16 @@
 <script setup>
 import SlidePage from '@/components/parts/storypage/SlidePage.vue'
 
-import { inject, computed, onBeforeMount, ref } from 'vue'
+import { ref, defineProps } from 'vue'
+
+// GET PORTOFOLIO
+defineProps({
+  story: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
+});
 
 const showForm = ref(false)
-
-// LOAD STATE
-const store = inject('store');
-
-// STORY
-const story = computed(() => store.state.story); 
-
 
 // swiper core
 import SwiperCore, { Pagination, Navigation } from "swiper";
@@ -72,18 +72,6 @@ import "swiper/scss/navigation";
 // import { Pagination, Navigation } from "swiper";
 
 SwiperCore.use([Navigation, Pagination]);
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct); 
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getStory();
-    store.actions.getThemeProduct();
-});
-
 </script>
 
 

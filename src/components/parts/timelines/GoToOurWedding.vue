@@ -20,16 +20,12 @@
 </template>
 
 <script setup>
-import { inject, computed, onMounted } from 'vue'
+import { defineProps } from 'vue'
 
-const store = inject('store');
-
-const portofolio = computed(() => store.state.portofolio);
-
-store.actions.getPortofolio();
-
-onMounted(() => {  
-    store.actions.getPortofolio();
+// GET PORTOFOLIO
+defineProps({
+  portofolio: { type: Object },
 });
+
 
 </script>

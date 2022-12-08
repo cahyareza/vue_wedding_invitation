@@ -9,11 +9,8 @@ import 'add-to-calendar-button/assets/css/atcb.css';
 
 const store = inject('store');
 
-// const addtocalender = computed(() => store.state.addtocalender);
-
+// eslint-disable-next-line no-unused-vars
 const portofolio = computed(() => store.state.portofolio);
-
-console.log(portofolio)
 
 const default_button = ref(null)
 

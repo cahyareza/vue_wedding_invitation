@@ -41,34 +41,20 @@
 </template>
 
 <script setup>
-import { inject, computed, onMounted, onBeforeMount } from 'vue'
+import { defineProps } from 'vue'
 import moment from 'moment';
 
-// LOAD STATE
-const store = inject('store');
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct); 
+// GET PORTOFOLIO
+defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
+});
 
 // METHOD
 const tanggal = (value) => {
     return moment(value).locale('id').format('dddd, DD MMMM YYYY');
 }
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
-});
-
-onMounted(() => {  
-    store.actions.getPortofolio();
-});
-
 </script>
 
 <style lang="scss" scoped>

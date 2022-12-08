@@ -17,7 +17,7 @@
                             </div>
                         </section>
 
-                        <OurVideo></OurVideo>
+                        <OurVideo :portofolio="portofolio"></OurVideo>
                         <OurGallery></OurGallery>
                     </div>
                 </div>
@@ -30,23 +30,13 @@
 import OurVideo from '@/components/parts/ourmoment/OurVideo.vue'
 import OurGallery from '@/components/parts/ourmoment/OurGallery.vue'
 
-import { inject, computed, onBeforeMount } from 'vue'
+import { defineProps } from 'vue'
 
-// LOAD STATE
-const store = inject('store');
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct); 
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
-    store.actions.getPortofolio();
+// GET PORTOFOLIO
+defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
 });
 </script>
 

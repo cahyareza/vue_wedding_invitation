@@ -49,20 +49,12 @@
 <script setup>
 import MessageForm from '@/components/parts/messagebox/MessageForm.vue'
 
+import { defineProps } from 'vue'
 
-import { inject, computed, onBeforeMount } from 'vue'
-
-// LOAD STATE
-const store = inject('store');
-
-// THEME
-const theme = computed(() => store.state.theme); 
-const themeproduct = computed(() => store.state.themeproduct);
-
-// LIFECYCLE
-onBeforeMount(() => {
-    store.actions.getTheme();
-    store.actions.getThemeProduct();
+// GET PORTOFOLIO
+defineProps({
+  theme: { type: Object },
+  themeproduct: { type: Object },
 });
 </script>
 

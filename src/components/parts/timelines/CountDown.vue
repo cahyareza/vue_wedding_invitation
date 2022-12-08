@@ -13,7 +13,7 @@
 
 
 <script setup>
-import { inject, computed, onMounted } from 'vue'
+import { inject, computed } from 'vue'
 import useTimer from "../../../hooks/useTimer";
 
 // LOAD STATE
@@ -30,9 +30,4 @@ const timer = setInterval(() => {
     clearInterval(timer)
   })
 }, 1000)
-
-onMounted(() => {  
-    store.actions.getPortofolio();
-});
-
 </script>

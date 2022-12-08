@@ -1,27 +1,86 @@
 <template>
   <section>
-    <MainCover></MainCover>
-    <QuotePage></QuotePage>
+    <MainCover 
+      :portofolio="portofolio"
+      :theme="theme"
+      :themeproduct="themeproduct"   
+    >
+    </MainCover>
+    <QuotePage
+      :theme="theme"
+      :themeproduct="themeproduct"  
+      :quote="quote"
+    >
+    </QuotePage>
     <div ref="groom">
-      <GroomBride></GroomBride>
+      <GroomBride 
+        :portofolio="portofolio"
+        :theme="theme"
+        :themeproduct="themeproduct"   
+      >
+      </GroomBride>
     </div>
     <div ref="time">
-      <TimeLines></TimeLines>
+      <TimeLines 
+        :portofolio="portofolio"
+        :theme="theme"
+        :themeproduct="themeproduct"   
+      >
+      </TimeLines>
     </div>
     <div ref='run'>
-      <RunDown></RunDown>
+      <RunDown 
+        :portofolio="portofolio"
+        :theme="theme"
+        :themeproduct="themeproduct"
+        :acara="acara"   
+      >
+      </RunDown>
     </div>
-    <SpecialInvitation></SpecialInvitation>
-    <LiveStream></LiveStream>
-    <StoryPage></StoryPage>
+    <SpecialInvitation 
+      :portofolio="portofolio"
+      :theme="theme"
+      :invitation="invitation"
+    >
+    </SpecialInvitation>
+    <LiveStream 
+      :portofolio="portofolio"
+      :theme="theme"
+      :themeproduct="themeproduct"
+    >
+    </LiveStream>
+    <StoryPage
+      :theme="theme"
+      :themeproduct="themeproduct"
+      :story="story"
+    >
+    </StoryPage>
     <div ref='moment'>
-      <OurMoment></OurMoment>
+      <OurMoment 
+        :portofolio="portofolio"
+        :theme="theme"
+        :themeproduct="themeproduct"
+      >
+      </OurMoment>
     </div>
     <div ref='message'>
-      <MessageBox></MessageBox>
+      <MessageBox
+        :theme="theme"
+        :themeproduct="themeproduct"
+      >
+      </MessageBox>
     </div>
-    <FooterPage></FooterPage>
-    <MainMenu @page="navigation"></MainMenu>
+    <FooterPage
+      :theme="theme"
+    >
+    </FooterPage>
+    <MainMenu 
+      @page="navigation"
+      :theme="theme"
+      :themeproduct="themeproduct"
+      :dompet="dompet" 
+    >
+    </MainMenu>
   </section>
 </template>
 
@@ -39,8 +98,32 @@ import MainMenu from '@/components/MainMenu.vue'
 import LiveStream from '@/components/LiveStream.vue'
 import StoryPage from '@/components/StoryPage.vue'
 
-import { ref, onMounted } from "vue";
+import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
 
+// LOAD STATE
+const store = inject('store');
+
+// EMIT
+const emit = defineEmits(['slug']);
+const getSlug = () => {
+    emit("slug", store.actions.getSlug().value)
+}
+
+// GET PROPS
+// eslint-disable-next-line no-unused-vars
+const props = defineProps({
+  portofolio: { type: Object },
+  theme: { type: Object },
+  themeproduct: { type: Object },
+  quote: { type: Object },
+  acara: { type: Object },
+  invitation: { type: Object },
+  story: { type: Object },
+  dompet: { type: Object },
+});
+
+
+// NAVIGATION
 const groom = ref()
 const time = ref()
 const run = ref()
@@ -48,7 +131,7 @@ const moment = ref()
 const message = ref()
 
 
-// // Navigation handler
+// Navigation handler
 const navigation = val => {
   if (val == 'groom') {
     groom.value.scrollIntoView({behavior: "smooth"})
@@ -62,10 +145,11 @@ const navigation = val => {
     message.value.scrollIntoView({behavior: "smooth"})
   }
 }
-
+// NAVIGATION END
 
 onMounted( () => {
   navigation();
+  getSlug();
 })
 
 </script>
