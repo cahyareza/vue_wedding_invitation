@@ -3,7 +3,7 @@
         <div class="columns">
             <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
                 <div class="container">
-                    <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
                         <!--  Music     -->
                         <div @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
                             <span class="icon has-text-dark">

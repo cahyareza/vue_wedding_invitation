@@ -1,6 +1,6 @@
 <template>
     <div v-if="portofolio.livestream">
-        <div v-if="themeproduct.fitur === 'gold'">
+        <div v-if="themeproduct.fitur === 'GOLD'">
             <div :class="theme">
                 <section class="hero is-danger is-small">
                     <div class="hero-body">

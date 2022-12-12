@@ -1,5 +1,5 @@
 <template>
-    <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
         <div :class="theme">
             <section class="hero is-info is-medium">
                 <div class="columns">
