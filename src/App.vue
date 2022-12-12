@@ -9,6 +9,7 @@
     :invitation="invitation"
     :story="story" 
     :dompet="dompet" 
+    :multiimage="multiimage" 
   />
   <!-- <RouterView :portofolio="portofolio" /> -->
 </template>
@@ -41,6 +42,9 @@ const story = computed(() => store.state.story);
 // DOMPET
 const dompet = computed(() => store.state.dompet); 
 
+// MULTIIMAGE
+const multiimage = computed(() => store.state.multiimage); 
+
 const navigate = (val) => {
   store.actions.getPortofolio2(val);
   store.actions.getTheme2(val);
@@ -50,6 +54,7 @@ const navigate = (val) => {
   store.actions.getInvitation2(val);
   store.actions.getStory2(val);
   store.actions.getDompet2(val);
+  store.actions.getMultiimage2(val);
 }
 </script>
 

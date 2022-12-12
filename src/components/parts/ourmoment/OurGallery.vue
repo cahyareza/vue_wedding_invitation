@@ -40,7 +40,7 @@
 // If VueApp is already registered with VueEasyLightbox, there is no need to register it here.
 import VueEasyLightbox from 'vue-easy-lightbox'
 import { ref, defineComponent } from 'vue'
-import { inject, computed, onMounted } from 'vue'
+// import { defineProps } from 'vue'
 
 import { Carousel, Pagination, Slide } from 'vue3-carousel';
 
@@ -54,14 +54,17 @@ export default defineComponent({
     Slide,
     Pagination
   },
+  props: {
+    multiimage: Array,
+  },
   setup() {
-    const store = inject('store');
+    // const store = inject('store');
 
-    const multiimage = computed(() => store.state.multiimage); 
+    // const multiimage = computed(() => store.state.multiimage); 
 
-    onMounted(async() => {  
-      store.actions.getMultiimage();
-    });
+    // onMounted(async() => {  
+    //   store.actions.getMultiimage();
+    // });
 
     const visibleRef = ref(false)
     const indexRef = ref(0) // default 0
@@ -112,7 +115,7 @@ export default defineComponent({
       showSingle,
       showMultiple,
       onHide,
-      multiimage
+      // multiimage
     }
   }
 })

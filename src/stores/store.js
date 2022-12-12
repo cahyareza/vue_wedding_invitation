@@ -84,6 +84,17 @@ const actions = {
         mutations.updateMultiImage(imagelist);
       });
     },
+    getMultiimage2: (slug) => {
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/multiimage/?portofolio__slug=${slug}`)
+      .then((response) => {
+        // console.log(response.data) 
+        const imagelist = []
+        for (let image in response.data) {
+          imagelist.push(response.data[image].image)
+        }
+        mutations.updateMultiImage(imagelist);
+      });
+    },
     getUcapan: () => {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug.value}`) .then((response) => {

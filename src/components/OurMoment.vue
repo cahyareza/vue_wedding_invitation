@@ -19,7 +19,9 @@
                             </section>
 
                             <OurVideo :portofolio="portofolio"></OurVideo>
-                            <OurGallery></OurGallery>
+                            <div v-if="multiimage.length != 0">
+                                <OurGallery :multiimage="multiimage"></OurGallery>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -32,22 +34,14 @@
 import OurVideo from '@/components/parts/ourmoment/OurVideo.vue'
 import OurGallery from '@/components/parts/ourmoment/OurGallery.vue'
 
-import { inject, computed, defineProps, onMounted } from 'vue'
-
-// LOAD STATE
-const store = inject('store');
-
-const multiimage = computed(() => store.state.multiimage); 
-
-onMounted(() => {  
-    store.actions.getMultiimage();
-});
+import { defineProps } from 'vue'
 
 // GET PORTOFOLIO
 defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
+  multiimage: { type: Array },
 });
 </script>
 

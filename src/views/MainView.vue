@@ -60,6 +60,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
+        :multiimage="multiimage"
       >
       </OurMoment>
     </div>
@@ -120,6 +121,7 @@ const props = defineProps({
   invitation: { type: Object },
   story: { type: Object },
   dompet: { type: Object },
+  multiimage: { type: Array },
 });
 
 
