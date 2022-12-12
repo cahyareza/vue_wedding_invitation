@@ -71,7 +71,6 @@ export default defineComponent({
     // 'src' is required
     // allow mixing
 
-
     const onShow = () => {
       visibleRef.value = true
     }
@@ -118,8 +117,6 @@ export default defineComponent({
   }
 })
 </script>
-
-
 
 
 <style lang="scss" scoped>

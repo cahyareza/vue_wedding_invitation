@@ -1,27 +1,29 @@
 <template>
-    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-        <div :class="theme">
-            <section class="hero is-info is-medium">
-                <div class="columns">
-                    <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                        <section class="section pt-4 pb-3">
-                            <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
-                                Moment yang berharga<br>
-                                <img class="filter mt-1" :src="themeproduct.theme?.line">
-                            </p>
-                            <div v-if="portofolio.kata_moment">
-                                <p class="subtitle-3 mt-5 is-size-6">{{ portofolio.kata_moment }}</p>
-                            </div>
-                            <div v-else>
-                                <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
-                            </div>
-                        </section>
+    <div v-if="portofolio.video || multiimage.length != 0">
+        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+            <div :class="theme">
+                <section class="hero is-info is-medium">
+                    <div class="columns">
+                        <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                            <section class="section pt-4 pb-3">
+                                <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
+                                    Moment yang berharga<br>
+                                    <img class="filter mt-1" :src="themeproduct.theme?.line">
+                                </p>
+                                <div v-if="portofolio.kata_moment">
+                                    <p class="subtitle-3 mt-5 is-size-6">{{ portofolio.kata_moment }}</p>
+                                </div>
+                                <div v-else>
+                                    <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
+                                </div>
+                            </section>
 
-                        <OurVideo :portofolio="portofolio"></OurVideo>
-                        <OurGallery></OurGallery>
+                            <OurVideo :portofolio="portofolio"></OurVideo>
+                            <OurGallery></OurGallery>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </div>
 </template>
@@ -30,7 +32,16 @@
 import OurVideo from '@/components/parts/ourmoment/OurVideo.vue'
 import OurGallery from '@/components/parts/ourmoment/OurGallery.vue'
 
-import { defineProps } from 'vue'
+import { inject, computed, defineProps, onMounted } from 'vue'
+
+// LOAD STATE
+const store = inject('store');
+
+const multiimage = computed(() => store.state.multiimage); 
+
+onMounted(() => {  
+    store.actions.getMultiimage();
+});
 
 // GET PORTOFOLIO
 defineProps({

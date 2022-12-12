@@ -64,7 +64,7 @@
                             <span @click="navPage('run')" class="icon">
                                 <font-awesome-icon icon="fa-solid fa-calendar-days" />
                             </span>
-                            <div v-if="themeproduct.fitur === 'platinum' || themeproduct.fitur === 'gold'">
+                            <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
                                 <!-- <span>Moment</span> -->
                                 <span @click="navPage('moment')" class="icon">
                                     <font-awesome-icon icon="fa-solid fa-images" />
