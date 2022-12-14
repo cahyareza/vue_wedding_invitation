@@ -1,81 +1,83 @@
 <template>
     <div :class="theme">
-        <div class="columns">
-            <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
-                <div class="container">
-                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                        <!--  Music     -->
-                        <div @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
-                            <span class="icon has-text-dark">
-                                <font-awesome-icon icon="fa-solid fa-music" />
-                            </span>
-                        </div>
-
-                        <div v-if="dompet.length != 0">
-                            <!--  Amplop    -->
-                            <div @click="showModal" class="button2 is-rounded p-2">
+        <div class="section py-0">
+            <div class="columns">
+                <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
+                    <div class="container">
+                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                            <!--  Music     -->
+                            <div @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
                                 <span class="icon has-text-dark">
-                                    <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
+                                    <font-awesome-icon icon="fa-solid fa-music" />
                                 </span>
                             </div>
-                        </div>
-                    </div>
 
-                    <!--    Modal        -->
-                    <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
-                        <div class="modal-background"></div>
-                        <div class="modal-card m-4" style="padding: 4vw;">
-                            <header class="modal-card-head">
-                                <p class="modal-card-title">Amplop Digital</p>
-                                <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
-                            </header>
-                            <section class="modal-card-body">
-                                <p class="has-text-left mb-4">Transfer langsung ke rekening berikut ini;</p>
-                                <div class="columns is-multiline">
-                                    <div v-for="info in dompet" :key="info.id">
-                                        <div class="column pb-1 is-gapless has-text-left">
-                                            <p>{{ info.rekening }}</p>
-                                            <p><strong>{{ info.nomor }}</strong> <button class="button-copy" @click="copy(info.nomor)">copy</button></p>
-                                            
-                                            <p>a/n {{ info.pemilik }}</p>
+                            <div v-if="dompet.length != 0">
+                                <!--  Amplop    -->
+                                <div @click="showModal" class="button2 is-rounded p-2">
+                                    <span class="icon has-text-dark">
+                                        <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--    Modal        -->
+                        <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
+                            <div class="modal-background"></div>
+                            <div class="modal-card m-4" style="padding: 4vw;">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Amplop Digital</p>
+                                    <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <p class="has-text-left mb-4">Transfer langsung ke rekening berikut ini;</p>
+                                    <div class="columns is-multiline">
+                                        <div v-for="info in dompet" :key="info.id">
+                                            <div class="column pb-1 is-gapless has-text-left">
+                                                <p>{{ info.rekening }}</p>
+                                                <p><strong>{{ info.nomor }}</strong> <button class="button-copy" @click="copy(info.nomor)">copy</button></p>
+                                                
+                                                <p>a/n {{ info.pemilik }}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
-                            <footer class="modal-card-foot">
-                            </footer>
+                                </section>
+                                <footer class="modal-card-foot">
+                                </footer>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                
-                <div class="container">
-                    <div class="notification2 p-2">
-                        <span class="icon-text is-paddingless is-marginless">
-                            <!-- <span>Couple</span> -->
-                            <span @click="navPage('groom')" class="icon">
-                                <font-awesome-icon icon="fa-solid fa-heart" />
-                            </span>
-                            <!-- <span>Date</span> -->
-                            <span @click="navPage('time')" class="icon">
-                                <font-awesome-icon icon="fa-solid fa-map" />
-                            </span>
-                            <!-- <span>Rundown</span> -->
-                            <span @click="navPage('run')" class="icon">
-                                <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                            </span>
-                            <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                <!-- <span>Moment</span> -->
-                                <span @click="navPage('moment')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-images" />
+                    
+                    <div class="container">
+                        <div class="notification2 p-2">
+                            <span class="icon-text is-paddingless is-marginless">
+                                <!-- <span>Couple</span> -->
+                                <span @click="navPage('groom')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-heart" />
                                 </span>
-                            
-                                <!-- <span>Wishes</span> -->
-                                <span @click="navPage('message')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                <!-- <span>Date</span> -->
+                                <span @click="navPage('time')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-map" />
                                 </span>
-                            </div>
-                        </span>
+                                <!-- <span>Rundown</span> -->
+                                <span @click="navPage('run')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                </span>
+                                <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                    <!-- <span>Moment</span> -->
+                                    <span @click="navPage('moment')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-images" />
+                                    </span>
+                                
+                                    <!-- <span>Wishes</span> -->
+                                    <span @click="navPage('message')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>

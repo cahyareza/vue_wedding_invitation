@@ -2,9 +2,9 @@
     <div v-if="acara.length != 0">
         <div :class="theme">
             <section class="hero is-large">
-                <div class="columns">
-                    <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                        <section class="section is-paddingless">
+                <div class="section py-0">
+                    <div class="columns">
+                        <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <div class="container">
                                 <div class="notification m-5">
                                     <img class="filter center mt-1 mb-1" :src="themeproduct.theme?.rundown_fitur">
@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
                 </div>
             </section>

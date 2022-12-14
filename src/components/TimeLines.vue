@@ -1,28 +1,27 @@
 <template>
     <div :class="theme">
         <section class="hero is-light is-large">
-            <div class="columns">
-                <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                    <section class="section pt-3 pb-1">
-                        <div class="container">
-                            <p class="subtitle-2 is-uppercase is-size-5 mt-3 p-3">
-                                Acara Akan Diselenggarakan<br>
-                                <img class="filter mt-1" :src="themeproduct.theme?.line">
-                            </p>
+            <div class="section py-0">
+                <div class="columns">
+                    <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                            <div class="container">
+                                <p class="subtitle-2 is-uppercase is-size-5 mt-3 p-3">
+                                    Acara Akan Diselenggarakan<br>
+                                    <img class="filter mt-1" :src="themeproduct.theme?.line">
+                                </p>
 
-                            <CountDown></CountDown>
+                                <CountDown></CountDown>
 
-                            <AddtoCalender></AddtoCalender>
+                                <AddtoCalender></AddtoCalender>
 
+                            </div>
+                        
+                        <div class="container px-5">
+                            <GuestBook></GuestBook>
                         </div>
-                    </section>
-                    
-                    <div class="container px-5">
-                        <GuestBook></GuestBook>
                     </div>
                 </div>
             </div>
-
         </section>
         <GoToOurWedding :portofolio="portofolio"></GoToOurWedding>
     </div>
