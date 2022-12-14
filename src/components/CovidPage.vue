@@ -5,13 +5,15 @@
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">Protokol Kesehatan Covid-19</p>
-                <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
             </header>
             <section class="modal-card-body">
+                Demi mendukung pencegahan covid 19 dan kesehatn bersama alangkah baiknya para tamu yang akan hadir memenuhi standar protokol kesehatan.
                 <img class="filter is-rounded mb-3" src="../assets/social_distancing.svg">
             </section>
             <footer class="modal-card-foot">
-                Demi mendukung pencegahan covid 19 dan kesehatn bersama alangkah baiknya para tamu yang akan hadir memenuhi standar protokol kesehatan.
+                <div class="container">
+                    <button class="button" aria-label="close" @click="cancelModal">Baik, saya mengerti</button>
+                </div>
             </footer>
         </div>
     </div>
