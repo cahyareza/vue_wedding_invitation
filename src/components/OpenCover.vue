@@ -1,9 +1,4 @@
 <template>
-    <form @submit.prevent="submit" class="vl-parent" ref="formContainer">
-        <!-- your form inputs goes here-->
-        <label class="is-hidden"><input type="checkbox" v-model="fullPage">Full page?</label>
-    </form>
-
     <div :class="theme">
         <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portofolio.open_background + ')' }">
             <section class="hero is-fullheight">
@@ -42,40 +37,7 @@
 
 <script setup>
 import VueParticle from 'vue-particlejs';
-import { ref, inject, onBeforeMount, reactive, defineProps } from 'vue'
-import {useLoading} from 'vue-loading-overlay'
-
-// GET PROPS
-// eslint-disable-next-line no-unused-vars
-const props = defineProps({
-  portofolio: { type: Object },
-  theme: { type: Object },
-  themeproduct: { type: Object },
-});
-
-// VUE LOADING
-const $loading = useLoading({
-    // options
-});
-
-const fullPage = ref(true)
-
-const submit = () => {
-    const loader = $loading.show({
-        // Optional parameters
-        color: '#ffffff',
-        loader: 'dots',
-        width: 90,
-        height: 90,
-        backgroundColor: 'black',
-        opacity: 0.6,
-        zIndex: 999,
-    });
-    // simulate AJAX
-    setTimeout(() => {
-        loader.hide()
-    }, 5000)
-}
+import { inject, reactive, computed } from 'vue'
 
 // LOAD STATE
 const store = inject('store');
@@ -83,10 +45,22 @@ const store = inject('store');
 // SLUG
 const slug = store.actions.getSlug().value;
 
-// LIFECYCLE
-onBeforeMount(() => {
-    submit()
-});
+// PORTOFOLIO
+const portofolio = computed(() => store.state.portofolio);
+
+// THEME
+const theme = computed(() => store.state.theme);
+const themeproduct = computed(() => store.state.themeproduct); 
+
+const getProps = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    store.actions.getPortofolio2(slug);
+    store.actions.getTheme2(slug);
+    store.actions.getThemeProduct2(slug);
+}
+
+await getProps();
 
 // PARTICLE
 const obj = reactive({particleConfig: {}})

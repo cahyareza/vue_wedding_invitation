@@ -1,7 +1,6 @@
 <template>
   <router-view 
     @slug='navigate'
-    @slug2='navigate2' 
     :portofolio="portofolio" 
     :theme="theme"
     :themeproduct="themeproduct" 
@@ -56,11 +55,6 @@ const navigate = (val) => {
   store.actions.getStory2(val);
   store.actions.getDompet2(val);
   store.actions.getMultiimage2(val);
-}
-const navigate2 = (val) => {
-  store.actions.getPortofolio2(val);
-  store.actions.getTheme2(val);
-  store.actions.getThemeProduct2(val);
 }
 </script>
 
