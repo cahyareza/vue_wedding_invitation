@@ -76,7 +76,6 @@
     >
     </FooterPage>
     <MainMenu 
-      @page="navigation"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
@@ -99,16 +98,8 @@ import MainMenu from '@/components/MainMenu.vue'
 import LiveStream from '@/components/LiveStream.vue'
 import StoryPage from '@/components/StoryPage.vue'
 
-import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
+import { ref, onMounted, defineProps, inject, computed } from "vue";
 
-// LOAD STATE
-const store = inject('store');
-
-// EMIT
-const emit = defineEmits(['slug']);
-const getSlug = () => {
-    emit("slug", store.actions.getSlug().value)
-}
 
 // GET PROPS
 // eslint-disable-next-line no-unused-vars
@@ -123,6 +114,12 @@ const props = defineProps({
   dompet: { type: Object },
   multiimage: { type: Array },
 });
+
+// LOAD STATE
+const store = inject('store');
+
+// THEME
+const theme = computed(() => store.state.theme);
 
 
 // NAVIGATION
@@ -151,7 +148,7 @@ const navigation = val => {
 
 onMounted( () => {
   navigation();
-  getSlug();
+  store.actions.getTheme();
 })
 
 </script>
