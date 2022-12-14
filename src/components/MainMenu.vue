@@ -166,7 +166,7 @@ const copy = async (vari) => {
 .notification2 {
     position: fixed;
     height: 40px;
-    bottom: 2%;
+    bottom: 0.1%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -179,7 +179,7 @@ const copy = async (vari) => {
     position: fixed;
     height: 40px;
     top: 20px;
-    right: 20px;
+    right: 10px;
     color: #fff;
     border-radius: 50px;
     cursor: pointer;
@@ -190,7 +190,7 @@ const copy = async (vari) => {
     position: fixed;
     height: 40px;
     top: 70px;
-    right: 20px;
+    right: 10px;
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 2px 2px 3px #999;

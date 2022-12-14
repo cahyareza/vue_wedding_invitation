@@ -14,7 +14,7 @@
                 >
                     <swiper-slide v-for="stori in story" :key="stori.id">
                         <div class="columns is-multiline">
-                            <div class="column mt-1">
+                            <div class="column mt-6 pt-6">
                                 <p class="title has-text-white">{{ stori.year }}</p>
                                 <p class="subtitle has-text-white">{{ stori.cerita }}</p>
                                 <figure class="image is-480x480">
