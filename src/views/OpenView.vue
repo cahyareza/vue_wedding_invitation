@@ -18,9 +18,9 @@ import OpenCover from '@/components/OpenCover.vue'
 const store = inject('store');
 
 // EMIT
-const emit = defineEmits(['slug']);
-const getSlug = () => {
-    emit("slug", store.actions.getSlug().value)
+const emit = defineEmits(['slug2']);
+const getSlug2 = () => {
+    emit("slug2", store.actions.getSlug().value)
 }
 
 // GET PROPS
@@ -32,7 +32,7 @@ defineProps({
 
 // LIFECYCLE
 onMounted(() => {
-    getSlug();
+    getSlug2();
 });
 
 </script>

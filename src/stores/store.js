@@ -10,7 +10,7 @@ const state = reactive({
     ucapan: [],
     dompet:[],
     // theme: "false",
-    theme: {},
+    theme: [],
     themeproduct: [],
     portofolio: [],
     story: [],

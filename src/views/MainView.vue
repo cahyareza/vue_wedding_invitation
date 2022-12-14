@@ -1,5 +1,8 @@
 <template>
   <section>
+    <CovidPage>
+      
+    </CovidPage>
     <MainCover 
       :portofolio="portofolio"
       :theme="theme"
@@ -86,18 +89,20 @@
 </template>
 
 <script setup>
-import QuotePage from '@/components/QuotePage.vue'
+import CovidPage from '@/components/CovidPage.vue'
 import MainCover from '@/components/MainCover.vue'
+import QuotePage from '@/components/QuotePage.vue'
 import GroomBride from '@/components/GroomBride.vue'
 import TimeLines from '@/components/TimeLines.vue'
 import RunDown from '@/components/RunDown.vue'
 import SpecialInvitation from '@/components/SpecialInvitation.vue'
+import LiveStream from '@/components/LiveStream.vue'
+import StoryPage from '@/components/StoryPage.vue'
 import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import MainMenu from '@/components/MainMenu.vue'
-import LiveStream from '@/components/LiveStream.vue'
-import StoryPage from '@/components/StoryPage.vue'
+
 
 import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
 

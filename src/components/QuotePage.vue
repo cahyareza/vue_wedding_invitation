@@ -2,9 +2,9 @@
     <div :class="theme">
         <section class="hero is-small">
             <div class="hero-body">
-                <div class="columns">
-                    <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                        <section class="section is-paddingless">
+                <div class="section py-0">
+                    <div class="columns">
+                        <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <div class="container">
                                 <img class="filter" :src="themeproduct.theme?.quote_fitur">
                                 <div class="notification mt-2">
@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
                 </div>
             </div>
