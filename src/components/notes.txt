@@ -1,157 +1,275 @@
 <template>
-  <section>
-    <MainCover 
-      :portofolio="portofolio"
-      :theme="theme"
-      :themeproduct="themeproduct"   
-    >
-    </MainCover>
-    <QuotePage
-      :theme="theme"
-      :themeproduct="themeproduct"  
-      :quote="quote"
-    >
-    </QuotePage>
-    <div ref="groom">
-      <GroomBride 
-        :portofolio="portofolio"
-        :theme="theme"
-        :themeproduct="themeproduct"   
-      >
-      </GroomBride>
+    <div :class="theme">
+        <div class="section py-0">
+            <div class="columns">
+                <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
+                    <div class="container">
+                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                            <!--  Music     -->
+                            <!-- <div @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
+                                <span class="icon has-text-dark">
+                                    <font-awesome-icon icon="fa-solid fa-music" />
+                                </span>
+                            </div> -->
+                            <div>
+                                <audio
+                                    hidden="true"
+                                    ref="audio"
+                                >
+                                    <source  :src="portofolio.track.url" type="audio/mpeg">
+                                </audio>
+                            </div>
+
+                            <div v-if="dompet.length != 0">
+                                <!--  Amplop    -->
+                                <div @click="showModal" class="button2 is-rounded p-2">
+                                    <span class="icon has-text-dark">
+                                        <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--    Modal        -->
+                        <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
+                            <div class="modal-background"></div>
+                            <div class="modal-card m-4" style="padding: 4vw;">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Amplop Digital</p>
+                                    <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <p class="has-text-left mb-4">Transfer langsung ke rekening berikut ini;</p>
+                                    <div class="columns is-multiline">
+                                        <div v-for="info in dompet" :key="info.id">
+                                            <div class="column pb-1 is-gapless has-text-left">
+                                                <p>{{ info.rekening }}</p>
+                                                <p><strong>{{ info.nomor }}</strong> <button class="button-copy" @click="copy(info.nomor)">copy</button></p>
+                                                
+                                                <p>a/n {{ info.pemilik }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <footer class="modal-card-foot">
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="container">
+                        <div class="notification2 p-2">
+                            <span class="icon-text is-paddingless is-marginless">
+                                <!-- <span>Couple</span> -->
+                                <span @click="navPage('groom')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-heart" />
+                                </span>
+                                <!-- <span>Date</span> -->
+                                <span @click="navPage('time')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-map" />
+                                </span>
+                                <!-- <span>Rundown</span> -->
+                                <span @click="navPage('run')" class="icon">
+                                    <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                </span>
+                                <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                    <!-- <span>Moment</span> -->
+                                    <span @click="navPage('moment')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-images" />
+                                    </span>
+                                
+                                    <!-- <span>Wishes</span> -->
+                                    <span @click="navPage('message')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    </span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div ref="time">
-      <TimeLines 
-        :portofolio="portofolio"
-        :theme="theme"
-        :themeproduct="themeproduct"   
-      >
-      </TimeLines>
-    </div>
-    <div ref='run'>
-      <RunDown 
-        :portofolio="portofolio"
-        :theme="theme"
-        :themeproduct="themeproduct"
-        :acara="acara"   
-      >
-      </RunDown>
-    </div>
-    <SpecialInvitation 
-      :portofolio="portofolio"
-      :theme="theme"
-      :invitation="invitation"
-    >
-    </SpecialInvitation>
-    <LiveStream 
-      :portofolio="portofolio"
-      :theme="theme"
-      :themeproduct="themeproduct"
-    >
-    </LiveStream>
-    <StoryPage
-      :theme="theme"
-      :themeproduct="themeproduct"
-      :story="story"
-    >
-    </StoryPage>
-    <div ref='moment'>
-      <OurMoment 
-        :portofolio="portofolio"
-        :theme="theme"
-        :themeproduct="themeproduct"
-        :multiimage="multiimage"
-      >
-      </OurMoment>
-    </div>
-    <div ref='message'>
-      <MessageBox
-        :theme="theme"
-        :themeproduct="themeproduct"
-      >
-      </MessageBox>
-    </div>
-    <FooterPage
-      :theme="theme"
-    >
-    </FooterPage>
-    <MainMenu 
-      @page="navigation"
-      :theme="theme"
-      :themeproduct="themeproduct"
-      :dompet="dompet" 
-    >
-    </MainMenu>
-  </section>
 </template>
 
 <script setup>
-import QuotePage from '@/components/QuotePage.vue'
-import MainCover from '@/components/MainCover.vue'
-import GroomBride from '@/components/GroomBride.vue'
-import TimeLines from '@/components/TimeLines.vue'
-import RunDown from '@/components/RunDown.vue'
-import SpecialInvitation from '@/components/SpecialInvitation.vue'
-import OurMoment from '@/components/OurMoment.vue'
-import MessageBox from '@/components/MessageBox.vue'
-import FooterPage from '@/components/FooterPage.vue'
-import MainMenu from '@/components/MainMenu.vue'
-import LiveStream from '@/components/LiveStream.vue'
-import StoryPage from '@/components/StoryPage.vue'
-
-import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
+import { reactive, inject, defineEmits, computed, defineProps, onMounted } from "vue";
+// import trumpetSfx from '../assets/contents/mp3/sample.mp3';
+import useClipboard from 'vue-clipboard3'
 
 // LOAD STATE
 const store = inject('store');
 
-// EMIT
-const emit = defineEmits(['slug']);
-const getSlug = () => {
-    emit("slug", store.actions.getSlug().value)
-}
+// PORTOFOLIO
+const portofolio = computed(() => store.state.portofolio);
+console.log(portofolio.value.track)
 
 // GET PROPS
-// eslint-disable-next-line no-unused-vars
-const props = defineProps({
-  portofolio: { type: Object },
+defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
-  quote: { type: Object },
-  acara: { type: Object },
-  invitation: { type: Object },
-  story: { type: Object },
   dompet: { type: Object },
-  multiimage: { type: Array },
 });
 
 
-// NAVIGATION
-const groom = ref()
-const time = ref()
-const run = ref()
-const moment = ref()
-const message = ref()
+const emit = defineEmits(['page']);
 
-
-// Navigation handler
-const navigation = val => {
-  if (val == 'groom') {
-    groom.value.scrollIntoView({behavior: "smooth"})
-  } else if (val == 'time') {
-    time.value.scrollIntoView({behavior: "smooth"})
-  } else if (val == 'run') {
-    run.value.scrollIntoView({behavior: "smooth"})
-  } else if (val == 'moment') {
-    moment.value.scrollIntoView({behavior: "smooth"})
-  } else if (val == 'message') {
-    message.value.scrollIntoView({behavior: "smooth"})
-  }
+// emit
+const navPage = (value) => {
+    emit("page", value)
 }
-// NAVIGATION END
+
+// // Audio
+// var audio = {
+//     // file: new Audio(trumpetSfx),
+//     file: new Audio(trumpetSfx),
+//     isPlaying: false
+// }
+
+// const play = () => {
+//     audio.isPlaying = true;
+//     audio.file.play();
+//     // // set to default
+//     // audio.isPlaying = false;
+// }
+
+// const pause = () => {
+//     audio.isPlaying = false;
+//     audio.file.pause();
+// }
+
+// Dompet
+
+const modal_data = reactive({
+    showModalFlag: false,
+    okPressed: false,
+    message: "Press 'Ok' or 'Cancel'."
+})
+
+const showModal= () => {
+    modal_data.okPressed = false;
+    modal_data.showModalFlag = true;
+}
+// const okModal = () => {
+//     modal_data.okPressed = true;
+//     modal_data.showModalFlag = false;
+// }
+const cancelModal = () => {
+    modal_data.okPressed = false;
+    modal_data.showModalFlag = false;
+}
+
+// Copy clipboard
+
+const { toClipboard } = useClipboard()
+
+const copy = async (vari) => {
+    try {
+        await toClipboard(vari)
+        // console.log('Copied to clipboard')
+    } catch (e) {
+        console.error(e)
+    }
+}
+
+
+const audio = new Audio()
 
 onMounted( () => {
-  navigation();
-  getSlug();
+    // play();
+    console.log(audio);
+    //@ts-ignore
+    audio.value?.play()
 })
 
 </script>
+
+<style lang="scss" scoped>
+@import "../styles/component/mainmenu.scss";
+
+
+.notification2 {
+    position: fixed;
+    height: 40px;
+    bottom: 0.1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.button {
+    position: fixed;
+    height: 40px;
+    top: 20px;
+    right: 10px;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #999;
+}
+
+.button2 {
+    position: fixed;
+    height: 40px;
+    top: 70px;
+    right: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #999;
+}
+
+
+.button-copy{
+  position: relative;
+  background-color: #D3D3D3;
+  border-radius: 4em;
+  font-size: 12px;
+  color: black;
+  padding: 0.1em 0.4em;
+  cursor:pointer;
+  user-select:none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+.button-copy:hover {
+  transition-duration: 0.1s;
+  background-color: #3A3A3A;
+}
+
+.button-copy:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+
+.button-copy:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.button-copy:active {
+  top: 1px;
+}
+
+</style>
