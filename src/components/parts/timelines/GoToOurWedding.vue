@@ -1,9 +1,8 @@
 <template>
   <section class="hero is-large">
     <section class="container mt-7">
-        <div class="mt-4">
+        <div class="mt-4" data-aos="zoom-in" data-aos-duration="1000">
         <iframe 
-            data-aos="zoom-in" data-aos-duration="1000"
             class="iframe mx-auto mt-4 mb-1" height="300" 
             :src= "portofolio.link_iframe"
             frameborder="0" scrolling="no" 
