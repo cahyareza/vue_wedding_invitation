@@ -11,10 +11,14 @@
                                         Live Streaming<br>
                                         <img class="filter mt-1" :src="themeproduct.theme?.line">
                                     </p>
-                                    <div v-if="portofolio.kata_live_streaming">
+                                    <div v-if="portofolio.kata_live_streaming" data-aos="fade-right"
+                                        data-aos-offset="300" data-aos-duration="1000"
+                                        data-aos-easing="ease-in-sine" data-aos-delay="500">
                                         <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> {{ portofolio.kata_live_streaming }} </p>
                                     </div>
-                                    <div v-else>
+                                    <div v-else data-aos="fade-right"
+                                        data-aos-offset="300" data-aos-duration="1000"
+                                        data-aos-easing="ease-in-sine" data-aos-delay="500">
                                         <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> Temui kami secara virtual untuk menyaksikan acara pernikahan kami </p>
                                     </div>
                                     
