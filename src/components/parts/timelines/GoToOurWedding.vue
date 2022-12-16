@@ -3,7 +3,7 @@
     <section class="container mt-7">
         <div class="mt-4">
         <iframe 
-            data-aos="zoom-in"
+            data-aos="zoom-in" data-aos-duration="1000"
             class="iframe mx-auto mt-4 mb-1" height="300" 
             :src= "portofolio.link_iframe"
             frameborder="0" scrolling="no" 

@@ -15,7 +15,8 @@
 </template>
 
 <script setup>
-import { inject, computed } from 'vue'
+import { inject, computed, onMounted } from 'vue'
+import AOS from "aos";
 
 // LOAD STATE
 const store = inject('store');
@@ -56,6 +57,10 @@ const navigate = (val) => {
   store.actions.getDompet2(val);
   store.actions.getMultiimage2(val);
 }
+
+onMounted(() => {
+    AOS.init();
+})
 </script>
 
 <style lang="scss">

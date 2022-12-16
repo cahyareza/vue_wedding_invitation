@@ -7,7 +7,7 @@
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <div class="container">
                                 <img class="filter" :src="themeproduct.theme?.quote_fitur">
-                                <div class="notification mt-2">
+                                <div class="notification mt-2" data-aos="zoom-in" data-aos-duration="1000">
                                     <div v-if="quote.kutipan">
                                         <p class="subtitle is-size-4-tablet is-size-7-mobile">
                                             "{{ quote.kutipan }}"

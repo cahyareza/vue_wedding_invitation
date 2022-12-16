@@ -7,7 +7,7 @@
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <section class="section is-paddingless">
                                 <div class="container">
-                                    <div class="notification m-5 p-2">
+                                    <div class="notification m-5 p-2" data-aos="fade-up" data-aos-duration="1000">
                                         <div class="column is-12">
                                             <div v-if="portofolio.kata_special_invite">
                                                 <p class="subtitle is-size-6-tablet is-size-7-mobile">
