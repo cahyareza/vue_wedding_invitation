@@ -10,7 +10,9 @@
 
                                 <img class="filter" :src="themeproduct.theme?.cover_fitur">
                                 
-                                <p class="title is-size-3 is-capitalized mb-2">
+                                <p class="title is-size-3 is-capitalized mb-2" data-aos="flip-left"
+                                    data-aos-easing="ease-out-cubic"
+                                    data-aos-duration="2000" data-aos-delay="4000">
                                     {{ portofolio.pname }} <br>
                                     & <br>
                                     {{ portofolio.lname }}

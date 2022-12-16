@@ -1,5 +1,6 @@
 <template>
-  <div class="columns is-centered mt-3 mb-6 is-mobile">
+  <div class="columns is-centered mt-3 mb-6 is-mobile" data-aos="fade-down"
+    data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="300">
     <div v-for="(value, name, index) in countdown" :key="index">
       <div class="column">
         <div class="conto">
