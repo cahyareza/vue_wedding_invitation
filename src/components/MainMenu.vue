@@ -2,8 +2,8 @@
     <div :class="theme">
         <div class="section py-0">
             <div class="columns">
-                <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
-                    <div class="container">
+                <div class="column is-marginless is-paddingless">
+                    <div class="container is-marginless is-paddingless">
                         <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
                             <!--  Music     -->
                             <div @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
