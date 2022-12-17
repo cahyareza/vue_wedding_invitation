@@ -11,7 +11,7 @@
                                         Live Streaming<br>
                                         <img class="filter mt-1" :src="themeproduct.theme?.line">
                                     </p>
-                                    <div data-aos="flip-down" data-aos-duration="1000" data-aos-delay="100">
+                                    <div data-aos="flip-down" data-aos-duration="1000" data-aos-delay="300">
                                         <div v-if="portofolio.kata_live_streaming">
                                             <p class="subtitle2 is-size-6-tablet is-size-6-mobile mt-2 mb-3"> {{ portofolio.kata_live_streaming }} </p>
                                         </div>
