@@ -12,7 +12,7 @@
 
                             <div class="columns is-0 is-multiline">
                                 <div class="column is-full">
-                                    <figure class="image is-inline-block mb-4" style="height:180px; width: 180px;" data-aos="fade-right" data-aos-offset="300"
+                                    <figure class="image is-inline-block mb-4" style="height:180px; width: 180px;" data-aos="fade-down" data-aos-offset="300"
                                         data-aos-easing="ease-in-sine" data-aos-duration="1000">
                                         <img class="mb-3" :src="portofolio.ppicture" style="height:180px; width: 180px; position: absolute;">
                                         <div class="sprocket-mosaic-image-container"></div>
@@ -31,8 +31,8 @@
                                     <p class="subtitle2 is-size-5 has-text-weight-bold mt-3">&</p>
                                 </div>
                                 <div class="column is-full mt-4">
-                                    <figure class="image is-inline-block mb-4" style="height:180px; width: 180px;" data-aos="fade-left" data-aos-offset="300"
-                                        data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-delay="300">
+                                    <figure class="image is-inline-block mb-4" style="height:180px; width: 180px;" data-aos="fade-up" data-aos-offset="300"
+                                        data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-delay="100">
                                         <img class="mb-3" :src="portofolio.lpicture" style="height:180px; width: 180px; position: absolute;">
                                         <div class="sprocket-mosaic-image-container"></div>
                                     </figure> <br>

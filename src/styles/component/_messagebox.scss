@@ -24,8 +24,9 @@
             .wrapper {
                 position: absolute;
                 width: 100%;
-                height: 100%;
+                height: 60%;
                 overflow: hidden;
+                box-sizing: border-box;
             }
             
             .box-animated {
@@ -157,11 +158,10 @@
                 background-color: rgba($fourth-theme-1, 0.3);
             }
             :deep(.button) {
-                color: $secondary-theme-1;
                 border: 1px solid $primary-theme-1;
             }
             .hero {
-                background-color: $primary-theme-1;
+                background-color: $secondary-theme-1;
             }
             .title {
                 font-family: $dancing_script;

@@ -24,7 +24,7 @@
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: $primary-theme-1;
+                background-color: $secondary-theme-1;
             }
             .title {
                 font-family: $dancing_script;

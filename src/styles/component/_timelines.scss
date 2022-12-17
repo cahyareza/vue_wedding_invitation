@@ -25,7 +25,6 @@
                 border-radius: 4px;
             }
             :deep(.button) {
-                color: $secondary-theme-1;
                 border: 1px solid $primary-theme-1;
             }
             .hero {
@@ -53,7 +52,6 @@
                 text-align: center;
 
                 text-transform: uppercase;
-                color: $secondary-theme-1;
                 cursor: pointer;
 
                 bottom: 50px;

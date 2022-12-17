@@ -18,7 +18,7 @@
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: $primary-theme-1;
+                background-color: $secondary-theme-1;
             }
             .icon {
                 color: $fourth-theme-1;
@@ -27,12 +27,11 @@
                 background-color: rgba($fourth-theme-1, 0.2);
             }
             .button {
-                color: $secondary-theme-1;
                 border: 1px solid $secondary-theme-1;
             }
             .title2 {
                 font-family: $dancing_script;
-                color: $third-theme-1;
+                color: $fourth-theme-1;
             }
             .subtitle2 {
                 font-family: $roboto;

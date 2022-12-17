@@ -80,6 +80,7 @@
     </FooterPage>
     <MainMenu 
       @page="navigation"
+      :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
