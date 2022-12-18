@@ -183,8 +183,7 @@
                 background-color: rgba($secondary-theme-2, 0.3);
             }
             :deep(.button) {
-                color: $secondary-theme-2;
-                border: 1px solid $primary-theme-2;
+                border: 1px solid $secondary-theme-2;
             }
             .hero {
                 background-color: $primary-theme-2;

@@ -18,12 +18,12 @@
     <div class="container m-4 mt-2 mb-6">
         <div class="box">
             <form class="form" v-on:submit.prevent>
-                <p class="has-text-weight-bold mb-4"> Kirim ucapan:</p>
+                <p class="has-text-weight-bold mb-4"> Kirim Ucapan</p>
                 <!-- New Item Field -->
                 <div class="field">
                     <div class="control">
                         <input class="input" v-model="fields.nama" type="text" placeholder="Nama lengkap">
-                        <span style="color: red">{{ fieldErrors.nama }}</span>
+                        <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.nama }}</span>
                     </div>
                 </div>
 
@@ -31,7 +31,7 @@
                 <div class="field">
                     <div class="control">
                         <input class="input" v-model="fields.alamat" type="text" placeholder="Alamat">
-                        <span style="color: red">{{ fieldErrors.alamat }}</span>
+                        <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.alamat }}</span>
                     </div>
                 </div>  
 
@@ -39,11 +39,11 @@
                 <div class="field">
                     <div class="control">
                         <input class="textarea" v-model="fields.pesan" placeholder="Pesan">
-                        <span style="color: red">{{ fieldErrors.pesan }}</span>
+                        <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.pesan }}</span>
                     </div>
                 </div>
                                 
-                <button @click="confirmUcapan" class="button is-rounded is-size-6">Kirim sekarang</button>
+                <button @click="confirmUcapan" class="button is-rounded is-size-6">Kirim</button>
             </form>
         </div>
     </div>
@@ -72,28 +72,54 @@ const fields = reactive({
 const fieldErrors = reactive({
     nama: undefined,
     alamat: undefined,
-    pesan: undefined
+    pesan: undefined,
+    error: 0
 });
 
 
 const confirmUcapan = () => {
+    fieldErrors.nama= undefined;
+    fieldErrors.alamat= undefined;
+    fieldErrors.pesan= undefined;
+    fieldErrors.error= 0;
+
+    validateForm(fields);
+    console.log(fieldErrors)
+    if (fieldErrors.error != 0) return;
 
     axios
         .post(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug}`, fields)
         .then(() => {
             console.log('berhasil post');
-            fields.nama = "";
-            fields.alamat = "";
-            fields.pesan = "";
+            fields.nama = null;
+            fields.alamat = null;
+            fields.pesan = null;
+
 
             axios.get(`http://127.0.0.1:8000/portofolio/api/ucapan/?portofolio__slug=${slug}`).then((response) => {
-                console.log(response.data)
+                // console.log(response.data)
                 store.mutations.updateUcapan(response.data);
             });
 
         })
         .catch((err) => console.log(err));
 }
+
+const validateForm = (fields) => {
+    if (!fields.nama) {
+        fieldErrors.nama = "Nama Required";
+        fieldErrors.error += 1;
+    }
+    if (!fields.alamat) {
+        fieldErrors.alamat = "Alamat Required"; 
+        fieldErrors.error += 1;
+    }
+    if (!fields.pesan) {
+        fieldErrors.pesan = "Pesan Required"; 
+        fieldErrors.error += 1;
+    }
+};
+    
 
 </script>
 

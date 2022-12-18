@@ -11,7 +11,7 @@
                                     <div v-for="piece in acara" :key="piece.id">
                                         <div class="columns is-multiline">
                                             <div class="column is-12">
-                                                <p class="title2 is-size-3-tablet is-size-4-mobile mb-3">{{ piece.nama_acara }}</p>
+                                                <p class="title2 is-size-3-tablet is-size-3-mobile mb-3">{{ piece.nama_acara }}</p>
 
                                                 <p class="subtitle3 is-size-5-tablet is-size-6-mobile has-text-weight-bold mb-1">{{ tanggal(piece.tanggal_acara) }}</p>
                                                 <div v-if="piece.waktu_selesai_acara">
