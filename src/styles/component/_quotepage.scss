@@ -30,6 +30,10 @@
                 font-family: $roboto;
                 color: $third-theme-1;
             }
+            img {
+                width:120px; 
+                height:150px;
+            }
             .filter{
                 filter: $secondary-filter-theme-1;
             }

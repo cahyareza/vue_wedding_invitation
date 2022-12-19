@@ -6,8 +6,9 @@
                     <div class="columns">
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <div class="container">
+                                <img class="filter center mt-5 mb-0" :src="themeproduct.theme?.rundown_fitur">
+                                <img class="ornament center mt-5 mb-0" :src="themeproduct.theme?.ornament_1">
                                 <div class="notification m-5" data-aos="zoom-out-down" data-aos-duration="1000">
-                                    <img class="filter center mt-1 mb-1" :src="themeproduct.theme?.rundown_fitur">
                                     <div v-for="piece in acara" :key="piece.id">
                                         <div class="columns is-multiline">
                                             <div class="column is-12">
