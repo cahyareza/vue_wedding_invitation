@@ -31,12 +31,12 @@ const fullPage = ref(true)
 const submit = () => {
     const loader = $loading.show({
         // Optional parameters
-        color: '#ffffff',
+        color:'black',
         loader: 'dots',
         width: 90,
         height: 90,
-        backgroundColor: 'black',
-        opacity: 0.6,
+        backgroundColor:'#ffffff',
+        opacity: 1,
         zIndex: 999,
     });
     // simulate AJAX

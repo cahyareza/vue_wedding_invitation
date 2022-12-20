@@ -15,10 +15,17 @@
 
 // MIXINS
 @mixin themable ($theme-name, $theme-map){
+    .low-opacity-bg-image {
+        display: grid;
+        position: relative;
+        isolation: isolate;
+        background-size: cover;
+        background-position: center;
+    }
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
-                background-color: $secondary-theme-1;
+                background-color: $primary-theme-1;
             }
             .icon {
                 color: $fourth-theme-1;
@@ -54,8 +61,20 @@
             .notification {
                 background-color: rgba($secondary-theme-2, 0.2);
             }
+            .ornament{
+                position: absolute;
+                left: 0; 
+                right: 0; 
+                margin-left: auto; 
+                margin-right: auto; 
+                padding-bottom: 10%; 
+                padding-top: 50px; 
+                width: 300px;
+                height: 800px;
+                filter: $third-filter-theme-2;
+                opacity: 0.1;
+            }
             .button {
-                color: $secondary-theme-2;
                 border: 1px solid $secondary-theme-2;
             }
             .title2 {

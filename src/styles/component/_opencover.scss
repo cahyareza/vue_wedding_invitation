@@ -44,7 +44,7 @@
                 // background-color: $third-theme-1;
             }
             .button {
-                border: 1px solid $primary-theme-1;
+                border: 1px solid $secondary-theme-1;
                 width: 200px;
                 height: 38.23px;
                 padding: 9px 38px;
@@ -77,10 +77,11 @@
             }
             .button {
                 border: 1px solid $secondary-theme-2;
-                width: 215px;
+                width: 200px;
                 height: 38.23px;
                 padding: 9px 38px;
                 background-color: #FFFFFF;
+                opacity: 0.6;
                 
                 font-family: $roboto;
                 font-size: 12px;
@@ -93,20 +94,18 @@
                 cursor: pointer;
 
                 bottom: 50px;
-                
-                box-shadow: 4px 4px 0 2px white, 4px 4px 0 3px $secondary-theme-2;
             }
             .title {
                 font-family: $dancing_script;
-                color: $primary-theme-2;
+                color: $secondary-theme-2;
                 text-transform: uppercase;
             }
             .subtitle {
                 font-family: $roboto;
-                color: $primary-theme-2;
+                color: $secondary-theme-2;
             }
             .filter{
-                filter: $primary-filter-theme-2;
+                filter: $secondary-filter-theme-2;
             }
         }
     }
