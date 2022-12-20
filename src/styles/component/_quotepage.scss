@@ -15,6 +15,13 @@
 
 // MIXINS
 @mixin themable ($theme-name, $theme-map){    
+    .low-opacity-bg-image {
+        display: grid;
+        position: relative;
+        isolation: isolate;
+        background-size: cover;
+        background-position: center;
+    }
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             .hero {
@@ -39,7 +46,7 @@
             }
         } @else if ($theme-name == theme-2) {
             .hero {
-                background-color: $primary-theme-2;
+                // background-color: $fourth-theme-2;
             }
             .notification {
                 background-color: rgba($secondary-theme-2, 0.3);

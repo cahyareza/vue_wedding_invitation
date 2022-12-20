@@ -15,6 +15,13 @@
 
 // MIXINS
 @mixin themable ($theme-name, $theme-map){
+    .low-opacity-bg-image {
+        display: grid;
+        position: relative;
+        isolation: isolate;
+        background-size: cover;
+        background-position: center;
+    }
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
             :deep(.notification2) {
@@ -73,8 +80,8 @@
                 border: 1px solid $secondary-theme-2;
             }
             .hero {
-                background-color: $fourth-theme-2;
-                // background-image: $backg;
+                // background-color: $fourth-theme-2;
+                // background-image: url("../assets/contents/border.png")
             }
             .title {
                 font-family: $great_vibes;

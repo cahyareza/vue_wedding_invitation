@@ -1,41 +1,43 @@
 <template>
     <div :class="theme">
-        <section class="hero is-small">
-            <div class="hero-body is-paddingless">
-                <div class="section py-5 is-marginless">
-                    <div class="columns">
-                        <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                            <div class="container">
-                                <img class="filter" :src="themeproduct.theme?.quote_fitur">
-                                <!-- <div class="notification mt-2" data-aos="zoom-in" data-aos-duration="1000"> -->
-                                    <div v-if="quote.kutipan" data-aos="fade-right"
-                                        data-aos-offset="300" data-aos-duration="1000"
-                                        data-aos-easing="ease-in-sine" data-aos-delay="100">
-                                        <p class="subtitle is-size-6-tablet is-size-7-mobile">
-                                            "{{ quote.kutipan }}"
-                                        </p>
-                                        <p class="subtitle is-size-5-tablet is-size-6-mobile is-capitalized is-italic"> {{ quote.ayat }} </p>       
-                                    </div>
-                                    <div v-else data-aos="fade-right"
-                                        data-aos-offset="300" data-aos-duration="1000"
-                                        data-aos-easing="ease-in-sine" data-aos-delay="100">
-                                        <p class="subtitle is-size-4-tablet is-size-7-mobile mb-1">
-                                            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
-                                        </p>
-                                        <p class="subtitle is-size-4-tablet is-size-7-mobile mt-1 mb-2">
-                                            Assalamu’alaikum Warrahmatullahi Wabarakatuh
-                                        </p>
-                                        <p class="subtitle is-size-4-tablet is-size-7-mobile mt-2">
-                                            Dengan memohon Ridho dan Rahmat Allah SWT. Ya Allah, dengan segala kemurahan hati-Mu, kami hendak memohon Ridha-Mu, dan melaksanakan Sunnah Rasul-Mu, untuk menyelenggarakan acara pernikahan putra dan putri kami, untuk membentuk keluarga yang sakinah, mawaddah, warahmah.
-                                        </p>
-                                    </div>
-                                <!-- </div> -->
+        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + themeproduct.theme?.background_1 + ')' }">
+            <section class="hero is-small">
+                <div class="hero-body is-paddingless">
+                    <div class="section py-5 is-marginless">
+                        <div class="columns">
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                                <div class="container">
+                                    <img class="filter" :src="themeproduct.theme?.quote_fitur">
+                                    <!-- <div class="notification mt-2" data-aos="zoom-in" data-aos-duration="1000"> -->
+                                        <div v-if="quote.kutipan" data-aos="fade-right"
+                                            data-aos-offset="300" data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                "{{ quote.kutipan }}"
+                                            </p>
+                                            <p class="subtitle is-size-5-tablet is-size-6-mobile is-capitalized is-italic"> {{ quote.ayat }} </p>       
+                                        </div>
+                                        <div v-else data-aos="fade-right"
+                                            data-aos-offset="300" data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p class="subtitle is-size-4-tablet is-size-7-mobile mb-1">
+                                                بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+                                            </p>
+                                            <p class="subtitle is-size-4-tablet is-size-7-mobile mt-1 mb-2">
+                                                Assalamu’alaikum Warrahmatullahi Wabarakatuh
+                                            </p>
+                                            <p class="subtitle is-size-4-tablet is-size-7-mobile mt-2">
+                                                Dengan memohon Ridho dan Rahmat Allah SWT. Ya Allah, dengan segala kemurahan hati-Mu, kami hendak memohon Ridha-Mu, dan melaksanakan Sunnah Rasul-Mu, untuk menyelenggarakan acara pernikahan putra dan putri kami, untuk membentuk keluarga yang sakinah, mawaddah, warahmah.
+                                            </p>
+                                        </div>
+                                    <!-- </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 </template>
 

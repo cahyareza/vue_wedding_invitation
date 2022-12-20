@@ -1,29 +1,31 @@
 <template>
     <div :class="theme">
-        <section class="hero is-light is-large">
-            <div class="section py-0">
-                <div class="columns">
-                    <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                            <div class="container">
-                                <p class="subtitle-2 is-uppercase is-size-5 mt-3 p-3">
-                                    Acara Akan Diselenggarakan<br>
-                                    <img class="filter mt-1" :src="themeproduct.theme?.line">
-                                </p>
+        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + themeproduct.theme?.background_3 + ')' }">
+            <section class="hero is-large">
+                <div class="section py-0">
+                    <div class="columns">
+                        <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                                <div class="container">
+                                    <p class="subtitle-2 is-uppercase is-size-5 mt-3 p-3">
+                                        Acara Akan Diselenggarakan<br>
+                                        <img class="filter mt-1" :src="themeproduct.theme?.line">
+                                    </p>
 
-                                <CountDown></CountDown>
+                                    <CountDown></CountDown>
 
-                                <AddtoCalender></AddtoCalender>
+                                    <AddtoCalender></AddtoCalender>
 
+                                </div>
+                            
+                            <div class="container px-5">
+                                <GuestBook></GuestBook>
                             </div>
-                        
-                        <div class="container px-5">
-                            <GuestBook></GuestBook>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <GoToOurWedding :portofolio="portofolio"></GoToOurWedding>
+            </section>
+            <GoToOurWedding :portofolio="portofolio"></GoToOurWedding>
+        </div>
     </div>
 </template>
 
