@@ -22,7 +22,7 @@
                                         <swiper-slide v-for="stori in story" :key="stori.id">
                                             <div class="columns is-multiline">
                                                 <div class="column mt-1">
-                                                    <p class="subtitle2 has-text-white mb-1">{{ stori.year }}</p>
+                                                    <p class="subtitle3 mb-1">{{ stori.year }}</p>
                                                     <figure @click="showForm = true" class="image is-128x128 mt-1">
                                                         <img class="is-rounded" :src="stori.image">
                                                     </figure>

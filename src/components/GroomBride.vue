@@ -1,7 +1,7 @@
 <template>
     <div :class="theme">
         <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + themeproduct.theme?.background_2 + ')' }">
-            <section class="hero is-info is-fullheight">
+            <section class="hero is-fullheight">
                 <div class="section py-5">
                     <div class="columns is-0">
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">

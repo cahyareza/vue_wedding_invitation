@@ -35,16 +35,20 @@
                 border: 1px solid $primary-theme-1;
             }
             .hero {
-                background-color: $fourth-theme-1;
+                // background-color: $fourth-theme-1;
                 // background-image: $backg;
             }
             .title {
                 font-family: $dancing_script;
                 color: $secondary-theme-1;
             }
-            .subtitle-2 , :deep(.subtitle-2) {
+            .subtitle-2 {
                 font-family: $roboto;
                 color: $secondary-theme-1;
+            }
+            :deep(.subtitle-3) {
+                font-family: $roboto;
+                color: $third-theme-1;
             }
             :deep(.button-2) {
                 border: 1px solid $primary-theme-1;
@@ -63,7 +67,7 @@
 
                 bottom: 50px;
                 
-                box-shadow: 4px 4px 0 2px white, 4px 4px 0 3px $primary-theme-1;
+                background-color: rgba($secondary-theme-1, 0.2);
             }
             .filter{
                 filter: $secondary-filter-theme-1;
@@ -87,7 +91,7 @@
                 font-family: $great_vibes;
                 color: $secondary-theme-2;
             }
-            .subtitle-2 , :deep(.subtitle-2) {
+            .subtitle-2 , :deep(.subtitle-3) {
                 font-family: $playfair;
                 color: $fourth-theme-2;
             }
