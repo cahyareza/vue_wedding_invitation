@@ -70,10 +70,10 @@
             }
         } @else if ($theme-name == theme-2) {
             :deep(.notification2) {
-                background-color: rgba($secondary-theme-2, 0.2);
+                background-color: rgba($fifth-theme-2, 0.5);
             }
             :deep(.iframe) {
-                border: 5px solid $secondary-theme-2; 
+                border: 5px solid $primary-theme-2; 
                 border-radius: 4px;
             }
             :deep(.button) {
@@ -89,7 +89,7 @@
             }
             .subtitle-2 , :deep(.subtitle-2) {
                 font-family: $playfair;
-                color: $secondary-theme-2;
+                color: $fourth-theme-2;
             }
             :deep(.button-2) {
                 border: 1px solid $secondary-theme-2;
@@ -111,7 +111,7 @@
                 box-shadow: 4px 4px 0 2px white, 4px 4px 0 3px $secondary-theme-2;
             }
             .filter{
-                filter: $secondary-filter-theme-2;
+                filter: $fourth-filter-theme-2;
             }
         }
     }

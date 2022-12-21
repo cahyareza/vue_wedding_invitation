@@ -8,7 +8,7 @@
             frameborder="0" scrolling="no" 
             marginheight="0" marginwidth="0"></iframe>
         </div>
-        <p class="subtitle is-size-7 mt-1 mb-3">{{ portofolio.lokasi }}</p>
+        <p class="subtitle-2 is-size-7 mt-1 mb-3">{{ portofolio.lokasi }}</p>
         <a class="button is-rounded is-size-7 mb-5" :href="portofolio.link_gmap">
            <font-awesome-icon icon="fa-solid fa-location-dot" />
            &nbsp;Google Map
