@@ -2,6 +2,7 @@
 @import '../theme/theme-1';
 @import '../theme/theme-2';
 @import '../theme/theme-3';
+@import '../theme/theme-4';
 
 
 // Import only what you need from Bulma
@@ -84,6 +85,28 @@
             .box {
                 background: rgba($secondary-theme-3, 0.4);
             }
+        } @else if ($theme-name == theme-4) {
+            .hero {
+                background-color: $primary-theme-4;
+            }
+            .title {
+                font-family: $great_vibes;
+                color: $secondary-theme-4;
+            }
+            .subtitle2 {
+                font-family: $playfair;
+                color: $secondary-theme-4 !important;
+            }
+            .subtitle3 {
+                font-family: $playfair;
+                color: $third-theme-4 !important;
+            }
+            .filter{
+                filter: $secondary-filter-theme-4;
+            }
+            .box {
+                background: rgba($third-theme-4, 0.4);
+            }
         }
     }
 }
@@ -96,3 +119,6 @@
 
 // Call for theme-3
 @include themable(theme-3, $theme-3);
+
+// Call for theme-4
+@include themable(theme-4, $theme-4);

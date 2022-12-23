@@ -8,7 +8,7 @@
                             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                                 <div class="container">
                                     <img class="filter" :src="themeproduct.theme?.quote_fitur">
-                                    <div v-if="themeproduct.theme?.name == 'theme-3' ">
+                                    <div v-if="themeproduct.theme?.name == 'theme-3' || themeproduct.theme?.name == 'theme-4'">
                                         <div class="notification mt-2" data-aos="zoom-in" data-aos-duration="1000">
                                             <div v-if="quote.kutipan" data-aos="fade-right"
                                                 data-aos-offset="300" data-aos-duration="1000"

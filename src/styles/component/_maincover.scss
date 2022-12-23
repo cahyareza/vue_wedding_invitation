@@ -2,6 +2,7 @@
 @import '../theme/theme-1';
 @import '../theme/theme-2';
 @import '../theme/theme-3';
+@import '../theme/theme-4';
 
 
 // Import only what you need from Bulma
@@ -95,6 +96,29 @@
                 opacity: 0.5;
                 background: $primary-theme-3;
             }
+        } @else if ($theme-name == theme-4) {
+            .icon {
+                color: $secondary-theme-4;
+            }
+            .title {
+                font-family: $great_vibes;
+                color: $secondary-theme-4;
+            }
+            .subtitle {
+                font-family: $playfair;
+                color: $secondary-theme-4;
+            }
+            .filter{
+                filter: $secondary-theme-4;
+            }
+            .low-opacity-bg-image::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                opacity: 0.5;
+                background: $primary-theme-4;
+            }
         }
     }
 }
@@ -107,3 +131,6 @@
 
 // Call for theme-3
 @include themable(theme-3, $theme-3);
+
+// Call for theme-4
+@include themable(theme-4, $theme-4);
