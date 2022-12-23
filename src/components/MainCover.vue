@@ -5,7 +5,7 @@
                 <section class="hero is-fullheight">
                     <div class="section pt-2">
                         <div class="columns is-multiline">
-                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-4">
                                 <section class="section">
                                     <p class="subtitle is-uppercase is-size-5">Undangan Pernikahan</p>
 
