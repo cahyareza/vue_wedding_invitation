@@ -10,7 +10,12 @@
                                     <p class="title is-size-3 mb-3">
                                         {{ portofolio.pname }}
                                     </p>
-                                    <img class="filter is-rounded mb-3" :src="themeproduct.theme?.open_fitur">
+                                    <div v-if="themeproduct.theme?.open_fitur">
+                                        <img class="filter is-rounded mb-3" :src="themeproduct.theme?.open_fitur">
+                                    </div>
+                                    <div v-else>
+                                        <p class="title is-size-3 mb-3">&</p>
+                                    </div>
                                     <p class="title is-size-3">
                                         {{ portofolio.lname }} 
                                     </p>

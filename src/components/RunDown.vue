@@ -24,7 +24,7 @@
                                                     </div>
                                                     <p class="subtitle3 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ piece.tempat_acara }}</p>
                                                     <div v-if="piece.link_gmap_acara">
-                                                        <a class="button is-light is-rounded is-size-7 px-2 mb-2" :href="piece.link_gmap_acara">
+                                                        <a class="button is-rounded is-size-7 px-2 mb-2" :href="piece.link_gmap_acara">
                                                             <font-awesome-icon icon="fa-solid fa-location-dot" />&nbsp;Google Map
                                                         </a><br>
                                                     </div>

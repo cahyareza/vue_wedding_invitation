@@ -16,6 +16,12 @@ $great_vibes: 'Great Vibes', cursive;
 $playfair: 'Playfair Display', serif;
 
 
+// Umum
+$fourth-theme-1: #FFFFFF;
+$fourth-theme-2: #FFFFFF;
+$fourth-filter-theme-1: invert(99%) sepia(1%) saturate(266%) hue-rotate(237deg) brightness(117%) contrast(100%);
+$fourth-filter-theme-2: invert(99%) sepia(1%) saturate(266%) hue-rotate(237deg) brightness(117%) contrast(100%);
+
 // Text color
 // Theme-1
 $primary-theme-1: #B0D6F5;
@@ -37,3 +43,13 @@ $primary-filter-theme-2: invert(97%) sepia(79%) saturate(235%) hue-rotate(67deg)
 $secondary-filter-theme-2: invert(37%) sepia(14%) saturate(3688%) hue-rotate(122deg) brightness(94%) contrast(94%);
 $third-filter-theme-2: invert(35%) sepia(17%) saturate(97%) hue-rotate(314deg) brightness(99%) contrast(85%);
 $fourth-filter-theme-2: invert(99%) sepia(1%) saturate(266%) hue-rotate(237deg) brightness(117%) contrast(100%);
+
+// Theme-3
+$primary-theme-3: #231F20;
+$secondary-theme-3: #8E793E;
+$third-theme-3: #AD974F;
+$fourth-theme-3: #EAEAEA;
+$primary-filter-theme-3: invert(6%) sepia(2%) saturate(3413%) hue-rotate(295deg) brightness(95%) contrast(85%);
+$secondary-filter-theme-3: invert(47%) sepia(34%) saturate(582%) hue-rotate(7deg) brightness(93%) contrast(92%);
+$third-filter-theme-3: invert(68%) sepia(13%) saturate(1501%) hue-rotate(9deg) brightness(86%) contrast(85%);
+$fourth-filter-theme-3: invert(99%) sepia(1%) saturate(9%) hue-rotate(86deg) brightness(114%) contrast(84%);
