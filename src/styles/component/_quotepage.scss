@@ -1,6 +1,7 @@
 @import '../variables';
 @import '../theme/theme-1';
 @import '../theme/theme-2';
+@import '../theme/theme-3';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -60,6 +61,23 @@
             .filter{
                 filter: $secondary-filter-theme-2;
             }
+        } @else if ($theme-name == theme-3) {
+            .hero {
+                background-color: $primary-theme-3;
+            }
+            .notification {
+                background-color: rgba($secondary-theme-3, 0.3);
+                padding: 10px;
+                border-radius: 5%;
+                border: 3px dashed $secondary-theme-3;
+            }
+            .subtitle {
+                font-family: $playfair;
+                color: $third-theme-3;
+            }
+            .filter{
+                filter: $secondary-filter-theme-3;
+            }
         }
     }
 }
@@ -69,3 +87,6 @@
 
 // Call for theme-2
 @include themable(theme-2, $theme-2);
+
+// Call for theme-3
+@include themable(theme-3, $theme-3);

@@ -18,7 +18,7 @@
     <div class="container m-4 mt-2 mb-6">
         <div class="box">
             <form class="form" v-on:submit.prevent>
-                <p class="has-text-weight-bold mb-4"> Kirim Ucapan</p>
+                <p class="subtitle3 has-text-weight-bold mb-4"> Kirim Ucapan</p>
                 <!-- New Item Field -->
                 <div class="field">
                     <div class="control">

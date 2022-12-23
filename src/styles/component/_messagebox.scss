@@ -1,6 +1,7 @@
 @import '../variables';
 @import '../theme/theme-1';
 @import '../theme/theme-2';
+@import '../theme/theme-3';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -337,6 +338,43 @@
                 box-shadow: 0px 4px 4px 5px rgba(0, 0, 0, 0.25);
                 background-color: rgba($fifth-theme-2, 0.8);
             }
+        } @else if ($theme-name == theme-3) {
+
+            :deep(.product-container) {
+                background-color: rgba($third-theme-3, 1);
+            }
+            :deep(.button) {
+                border: 1px solid $secondary-theme-3;
+            }
+            :deep(.subtitle3) {
+                font-family: $playfair;
+                color: $secondary-theme-3;
+            }
+            :deep(.input) {
+                background-color: rgba($fourth-theme-3, 0.5);
+                border: 1px solid $secondary-theme-3;
+            }
+            :deep(.textarea) {
+                background-color: rgba($fourth-theme-3, 0.5);
+                border: 1px solid $secondary-theme-3;
+            }
+            .hero {
+                background-color: $primary-theme-3;
+            }
+            .title {
+                font-family: $great_vibes;
+                color: $secondary-theme-3;
+            }
+            .subtitle2 {
+                font-family: $playfair;
+                color: $secondary-theme-3;
+            }
+            .filter{
+                filter: $secondary-filter-theme-3;
+            }
+            :deep(.box) {
+                background-color: rgba($primary-theme-3, 1);
+            }
         }
     }
 }
@@ -346,3 +384,6 @@
 
 // Call for theme-2
 @include themable(theme-2, $theme-2);
+
+// Call for theme-3
+@include themable(theme-3, $theme-3);

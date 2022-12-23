@@ -8,6 +8,32 @@
                             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                                 <div class="container">
                                     <img class="filter" :src="themeproduct.theme?.quote_fitur">
+                                    <div v-if="themeproduct.theme?.name == 'theme-3' ">
+                                        <div class="notification mt-2" data-aos="zoom-in" data-aos-duration="1000">
+                                            <div v-if="quote.kutipan" data-aos="fade-right"
+                                                data-aos-offset="300" data-aos-duration="1000"
+                                                data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                                <p class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                    "{{ quote.kutipan }}"
+                                                </p>
+                                                <p class="subtitle is-size-5-tablet is-size-6-mobile is-capitalized is-italic"> {{ quote.ayat }} </p>       
+                                            </div>
+                                            <div v-else data-aos="fade-right"
+                                                data-aos-offset="300" data-aos-duration="1000"
+                                                data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                                <p class="subtitle is-size-4-tablet is-size-7-mobile mb-1">
+                                                    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+                                                </p>
+                                                <p class="subtitle is-size-4-tablet is-size-7-mobile mt-1 mb-2">
+                                                    Assalamu’alaikum Warrahmatullahi Wabarakatuh
+                                                </p>
+                                                <p class="subtitle is-size-4-tablet is-size-7-mobile mt-2">
+                                                    Dengan memohon Ridho dan Rahmat Allah SWT. Ya Allah, dengan segala kemurahan hati-Mu, kami hendak memohon Ridha-Mu, dan melaksanakan Sunnah Rasul-Mu, untuk menyelenggarakan acara pernikahan putra dan putri kami, untuk membentuk keluarga yang sakinah, mawaddah, warahmah.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div v-else>
                                     <!-- <div class="notification mt-2" data-aos="zoom-in" data-aos-duration="1000"> -->
                                         <div v-if="quote.kutipan" data-aos="fade-right"
                                             data-aos-offset="300" data-aos-duration="1000"
@@ -31,6 +57,7 @@
                                             </p>
                                         </div>
                                     <!-- </div> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
