@@ -43,6 +43,7 @@
     <SpecialInvitation 
       :portofolio="portofolio"
       :theme="theme"
+      :themeproduct="themeproduct"
       :invitation="invitation"
     >
     </SpecialInvitation>

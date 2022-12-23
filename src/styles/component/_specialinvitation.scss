@@ -60,7 +60,8 @@
                 color: $third-theme-3;
             }
             .notification {
-                background-color: rgba($secondary-theme-3, 0.2);
+                background-color: rgba($primary-theme-3, 0.2);
+                border: 3px dashed $secondary-theme-3;
             }
         }
     }
