@@ -346,7 +346,7 @@
             :deep(.button) {
                 border: 1px solid $secondary-theme-3;
             }
-            :deep(.subtitle3) {
+            :deep(.subtitle3), :deep(.subtitle)  {
                 font-family: $playfair;
                 color: $secondary-theme-3;
             }
@@ -372,7 +372,7 @@
             .filter{
                 filter: $secondary-filter-theme-3;
             }
-            :deep(.box) {
+            :deep(.box), :deep(.commentlist) {
                 background-color: rgba($primary-theme-3, 1);
             }
         }

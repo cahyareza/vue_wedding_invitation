@@ -6,8 +6,8 @@
                     <!-- <div class="product-image"> -->
                     <article class="media is-paddingless is-marginless">
                         <div class="content is-paddingless is-marginless">
-                            <p class="subtitle is-size-7 has-text-black has-text-weight-bold has-text-left mb-1">{{ piece.nama }} <small> - {{ piece.alamat }}</small></p>
-                            <p class="subtitle is-size-7 has-text-black has-text-left mt-2">{{ piece.pesan }}</p>
+                            <p class="subtitle is-size-7 has-text-weight-bold has-text-left mb-1">{{ piece.nama }} <small> - {{ piece.alamat }}</small></p>
+                            <p class="subtitle is-size-7 has-text-left mt-2">{{ piece.pesan }}</p>
                         </div>
                     </article>
                     <!-- </div> -->
