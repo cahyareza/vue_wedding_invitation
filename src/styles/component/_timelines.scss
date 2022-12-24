@@ -31,25 +31,26 @@
                 background-color: rgba($secondary-theme-1, 0.2);
             }
             :deep(.iframe) {
-                border: 5px solid $primary-theme-1; 
+                border: 5px solid $secondary-theme-1; 
                 border-radius: 4px;
             }
             :deep(.button) {
-                border: 1px solid $primary-theme-1;
+                border: 1px solid $secondary-theme-1;
+                background-color: rgba(#FFFFFF, 0.5);
             }
             .hero {
-                // background-color: $fourth-theme-1;
+                background-color: $primary-theme-1;
                 // background-image: $backg;
             }
             .title {
                 font-family: $dancing_script;
                 color: $secondary-theme-1;
             }
-            .subtitle-2 {
+            .subtitle-2 , :deep(.subtitle-3){
                 font-family: $roboto;
-                color: $secondary-theme-1;
+                color: $fourth-theme-1;
             }
-            :deep(.subtitle-3) {
+            :deep(.subtitle-4), :deep(.subtitle-5) {
                 font-family: $roboto;
                 color: $third-theme-1;
             }
@@ -57,7 +58,6 @@
                 border: 1px solid $primary-theme-1;
                 width: 215px;
                 height: 38.23px;
-                background-color: #FFFFFF;
                 
                 font-family: $roboto;
                 font-size: 12px;
@@ -70,10 +70,10 @@
 
                 bottom: 50px;
                 
-                background-color: rgba($secondary-theme-1, 0.2);
+                background-color: rgba(#FFFFFF, 0.5);
             }
             .filter{
-                filter: $secondary-filter-theme-1;
+                filter: $fourth-filter-theme-1;
             }
         } @else if ($theme-name == theme-2) {
             :deep(.notification2) {
@@ -139,7 +139,7 @@
                 font-family: $great_vibes;
                 color: $secondary-theme-3;
             }
-            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-2) {
+            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-5) {
                 font-family: $playfair;
                 color: $secondary-theme-3;
             }
@@ -188,7 +188,7 @@
                 font-family: $great_vibes;
                 color: $secondary-theme-4;
             }
-            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-2) {
+            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-5) {
                 font-family: $playfair;
                 color: $secondary-theme-4;
             }
@@ -237,7 +237,7 @@
                 font-family: $great_vibes;
                 color: $secondary-theme-5;
             }
-            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-2) {
+            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-5) {
                 font-family: $playfair;
                 color: $secondary-theme-5;
             }

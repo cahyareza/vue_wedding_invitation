@@ -7,7 +7,7 @@
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <section class="section is-paddingless">
                                 <div class="container">
-                                    <div v-if="themeproduct.theme?.name == 'theme-3' || themeproduct.theme?.name == 'theme-4' || themeproduct.theme?.name == 'theme-5'">
+                                    <div v-if="themeproduct.theme?.name == 'theme-3' || themeproduct.theme?.name == 'theme-4' || themeproduct.theme?.name == 'theme-5' || themeproduct.theme?.name == 'theme-1'">
                                         <div class="notification m-2 p-1">
                                             <div class="column is-12">
                                                 <div v-if="portofolio.kata_special_invite">
