@@ -3,6 +3,7 @@
 @import '../theme/theme-2';
 @import '../theme/theme-3';
 @import '../theme/theme-4';
+@import '../theme/theme-5';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -140,7 +141,7 @@
                 background-color: $primary-theme-4;
             }
             .icon {
-                color: $secondary-theme-3;
+                color: $secondary-theme-4;
             }
             .notification {
                 background-color: rgba($secondary-theme-4, 0.2);
@@ -176,6 +177,54 @@
             .filter{
                 filter: $third-filter-theme-4;
             }
+        } @else if ($theme-name == theme-5) {
+            .hero {
+                // background-color: $primary-theme-5;
+            }
+            .icon {
+                color: $secondary-theme-5;
+            }
+            .notification {
+                background-color: rgba($secondary-theme-5, 0.2);
+            }
+            .ornament{
+                position: absolute;
+                left: 0; 
+                right: 0; 
+                margin-left: auto; 
+                margin-right: auto; 
+                padding-bottom: 10%; 
+                padding-top: 50px; 
+                width: 300px;
+                height: 800px;
+                filter: $third-filter-theme-5;
+                opacity: 0.0;
+            }
+            .button {
+                border: 1px solid $secondary-theme-5;
+            }
+            .title2 {
+                font-family: $great_vibes;
+                color: $secondary-theme-5;
+            }
+            .subtitle2 {
+                font-family: $playfair;
+                color: $secondary-theme-5;
+            }
+            .subtitle3 {
+                font-family: $playfair;
+                color: $secondary-theme-5;
+            }
+            .filter{
+                filter: $third-filter-theme-5;
+            }
+            .low-opacity-bg-image {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
         }
     }
 }
@@ -191,3 +240,6 @@
 
 // Call for theme-4
 @include themable(theme-4, $theme-4);
+
+// Call for theme-5
+@include themable(theme-5, $theme-5);

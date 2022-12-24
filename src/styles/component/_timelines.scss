@@ -3,6 +3,7 @@
 @import '../theme/theme-2';
 @import '../theme/theme-3';
 @import '../theme/theme-4';
+@import '../theme/theme-5';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -217,6 +218,55 @@
             .filter{
                 filter: $secondary-filter-theme-4;
             }
+        } @else if ($theme-name == theme-5) {
+            :deep(.notification2) {
+                background-color: rgba($third-theme-5, 0.5);
+            }
+            :deep(.iframe) {
+                border: 5px solid $secondary-theme-5; 
+                border-radius: 4px;
+            }
+            :deep(.button) {
+                border: 1px solid $secondary-theme-5;
+            }
+            .hero {
+                background-color: $primary-theme-5;
+                // background-image: url("../assets/contents/border.png")
+            }
+            .title {
+                font-family: $great_vibes;
+                color: $secondary-theme-5;
+            }
+            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-2) {
+                font-family: $playfair;
+                color: $secondary-theme-5;
+            }
+            :deep(.subtitle-4) {
+                font-family: $playfair;
+                color: $secondary-theme-5;
+            }
+            :deep(.button-2) {
+                border: 1px solid $secondary-theme-5;
+                width: 215px;
+                height: 38.23px;
+                background-color: #FFFFFF;
+                
+                font-family: $roboto;
+                font-size: 12px;
+                display: inline-block;
+                align-items: center;
+                text-align: center;
+
+                text-transform: uppercase;
+                cursor: pointer;
+
+                bottom: 50px;
+                
+                box-shadow: 4px 4px 0 2px white, 4px 4px 0 3px $secondary-theme-5;
+            }
+            .filter{
+                filter: $secondary-filter-theme-5;
+            }
         }
     }
 }
@@ -232,3 +282,6 @@
 
 // Call for theme-4
 @include themable(theme-4, $theme-4);
+
+// Call for theme-5
+@include themable(theme-5, $theme-5);

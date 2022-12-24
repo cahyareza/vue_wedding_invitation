@@ -3,6 +3,7 @@
 @import '../theme/theme-2';
 @import '../theme/theme-3';
 @import '../theme/theme-4';
+@import '../theme/theme-5';
 
 
 // Import only what you need from Bulma
@@ -81,6 +82,22 @@
                 background-color: rgba($primary-theme-4, 0.2);
                 border: 3px dashed $secondary-theme-4;
             }
+        } @else if ($theme-name == theme-5) {
+            .hero {
+                background-color: $primary-theme-5;
+            }
+            .title {
+                font-family: $great_vibes;
+                color: $secondary-theme-5;
+            }
+            .subtitle {
+                font-family: $playfair;
+                color: $third-theme-5;
+            }
+            .notification {
+                background-color: rgba($primary-theme-5, 0.2);
+                border: 3px dashed $secondary-theme-5;
+            }
         }
     }
 }
@@ -96,3 +113,6 @@
 
 // Call for theme-4
 @include themable(theme-4, $theme-4);
+
+// Call for theme-5
+@include themable(theme-5, $theme-5);
