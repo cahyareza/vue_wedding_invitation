@@ -213,18 +213,16 @@
                 
                 border-style:solid;
                 border-width: 80px 80px 80px 80px;
-                -moz-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                -webkit-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                -o-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
+                -moz-border-image: url("../assets/contents/border_4.png") 84 65 83 69 stretch;
+                -webkit-border-image: url("../assets/contents/border_4.png") 84 65 83 69 stretch;
+                -o-border-image: url("../assets/contents/border_4.png") 84 65 83 69 stretch;
+                border-image: url("../assets/contents/border_4.png") 84 65 83 69 stretch;
                 border-image-outset: 7px 12px 7px 12px;
                 
                 /** define the origin so the image would be under the border **/
                 background-origin: border-box;
                 
                 z-index:1;
-
-                filter: $secondary-filter-theme-4;
             }
             
             .sprocket-mosaic .sprocket-mosaic-image {
@@ -264,7 +262,7 @@
                 box-sizing: border-box; 
                 
                 border-style:solid;
-                border-width: 80px 80px 80px 80px;
+                border-width: 60px 60px 60px 60px;
                 -moz-border-image: url("../assets/contents/border_5.svg") 84 80 83 75 stretch;
                 -webkit-border-image: url("../assets/contents/border_5.svg") 84 80 83 75 stretch;
                 -o-border-image: url("../assets/contents/border_5.svg") 84 80 83 75 stretch;
