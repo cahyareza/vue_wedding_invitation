@@ -2,35 +2,37 @@
     <div v-if="portofolio.video || multiimage.length != 0">
         <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
             <div :class="theme">
-                <section class="hero is-info is-medium">
-                    <div class="section py-0">
-                        <div class="columns">
-                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                                <section class="section pt-4 pb-3">
-                                    <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
-                                        Moment yang berharga<br>
-                                        <img class="filter mt-1" :src="themeproduct.theme?.line">
-                                    </p>
-                                    <div v-if="portofolio.kata_moment" data-aos="fade-right"
-                                        data-aos-offset="300" data-aos-duration="1000"
-                                        data-aos-easing="ease-in-sine" data-aos-delay="100">
-                                        <p class="subtitle-3 mt-5 is-size-6">{{ portofolio.kata_moment }}</p>
-                                    </div>
-                                    <div v-else data-aos="fade-right"
-                                        data-aos-offset="300" data-aos-duration="1000"
-                                        data-aos-easing="ease-in-sine" data-aos-delay="100">
-                                        <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
-                                    </div>
-                                </section>
+                <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + themeproduct.theme?.background_5 + ')' }">
+                    <section class="hero is-medium">
+                        <div class="section py-0">
+                            <div class="columns">
+                                <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                                    <section class="section pt-4 pb-3">
+                                        <p class="subtitle-2 is-uppercase is-size-5 mt-1 p-1">
+                                            Moment yang berharga<br>
+                                            <img class="filter mt-1" :src="themeproduct.theme?.line">
+                                        </p>
+                                        <div v-if="portofolio.kata_moment" data-aos="fade-right"
+                                            data-aos-offset="300" data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p class="subtitle-3 mt-5 is-size-6">{{ portofolio.kata_moment }}</p>
+                                        </div>
+                                        <div v-else data-aos="fade-right"
+                                            data-aos-offset="300" data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p class="subtitle-3 mt-5 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
+                                        </div>
+                                    </section>
 
-                                <OurVideo :portofolio="portofolio"></OurVideo>
-                                <div v-if="multiimage.length != 0">
-                                    <OurGallery :multiimage="multiimage"></OurGallery>
+                                    <OurVideo :portofolio="portofolio"></OurVideo>
+                                    <div v-if="multiimage.length != 0">
+                                        <OurGallery :multiimage="multiimage"></OurGallery>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
