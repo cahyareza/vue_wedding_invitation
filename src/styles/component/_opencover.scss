@@ -43,9 +43,9 @@
     }
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
-            .hero {
-                // background-color: $third-theme-1;
-            }
+            // .hero {
+            //     background-color: $third-theme-1;
+            // }
             .button {
                 border: 1px solid $secondary-theme-1;
                 width: 200px;
@@ -70,14 +70,15 @@
                 font-family: $dancing_script;
                 color: $secondary-theme-1;
                 text-transform: uppercase;
+                text-shadow: 0 0 3px $primary-theme-1, 0 0 5px $primary-theme-1;
             }
             .filter{
                 filter: $secondary-filter-theme-1;
             }
         } @else if ($theme-name == theme-2) {
-            .hero {
-                // background-color: $third-theme-2;
-            }
+            // .hero {
+            //     background-color: $third-theme-2;
+            // }
             .button {
                 border: 1px solid $secondary-theme-2;
                 width: 200px;
@@ -102,14 +103,15 @@
                 font-family: $dancing_script;
                 color: $secondary-theme-2;
                 text-transform: uppercase;
+                text-shadow: 0 0 3px $primary-theme-2, 0 0 5px $primary-theme-2;
             }
             .filter{
                 filter: $secondary-filter-theme-2;
             }
         } @else if ($theme-name == theme-3) {
-            .hero {
-                // background-color: $secondary-theme-3;
-            }
+            // .hero {
+            //     background-color: $secondary-theme-3;
+            // }
             .button {
                 border: 1px solid $secondary-theme-3;
                 width: 200px;
@@ -134,15 +136,15 @@
                 font-family: $dancing_script;
                 color: $third-theme-3;
                 text-transform: uppercase;
-                text-shadow: 0 0 3px $primary-theme-3, 0 0 5px $primary-theme-3;
+                text-shadow: 0 0 3px $fourth-theme-3, 0 0 5px $fourth-theme-3;
             }
             .filter{
                 filter: $secondary-filter-theme-2;
             }
         } @else if ($theme-name == theme-4) {
-            .hero {
-                // background-color: $secondary-theme-3;
-            }
+            // .hero {
+            //     background-color: $secondary-theme-3;
+            // }
             .button {
                 border: 1px solid $secondary-theme-4;
                 width: 200px;
@@ -167,14 +169,15 @@
                 font-family: $dancing_script;
                 color: $secondary-theme-4;
                 text-transform: uppercase;
+                text-shadow: 0 0 3px $primary-theme-4, 0 0 5px $primary-theme-4;
             }
             .filter{
                 filter: $secondary-filter-theme-4;
             }
         } @else if ($theme-name == theme-5) {
-            .hero {
-                // background-color: $secondary-theme-3;
-            }
+            // .hero {
+            //     background-color: $secondary-theme-3;
+            // }
             .button {
                 border: 1px solid $secondary-theme-5;
                 width: 200px;
@@ -199,6 +202,7 @@
                 font-family: $dancing_script;
                 color: $secondary-theme-5;
                 text-transform: uppercase;
+                text-shadow: 0 0 3px $primary-theme-5, 0 0 5px $primary-theme-5;
             }
             .filter{
                 filter: $secondary-filter-theme-5;

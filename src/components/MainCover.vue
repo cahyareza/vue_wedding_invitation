@@ -11,7 +11,7 @@
 
                                     <img class="filter" :src="themeproduct.theme?.cover_fitur">
                                     
-                                    <p class="title is-size-2 is-capitalized mb-2">
+                                    <p class="title is-size-3 is-capitalized mb-2">
                                         {{ portofolio.pname }} <br>
                                         & <br>
                                         {{ portofolio.lname }}

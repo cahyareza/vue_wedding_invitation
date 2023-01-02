@@ -7,7 +7,7 @@
                         <div class="columns is-multiline">
                             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                                 <div class="">
-                                    <p class="title is-size-3 mb-3">
+                                    <p class="title is-size-4 mb-3">
                                         {{ portofolio.pname }}
                                     </p>
                                     <div v-if="themeproduct.theme?.open_fitur">
@@ -16,7 +16,7 @@
                                     <div v-else>
                                         <p class="title is-size-3 mb-3">&</p>
                                     </div>
-                                    <p class="title is-size-3">
+                                    <p class="title is-size-4">
                                         {{ portofolio.lname }} 
                                     </p>
                                 </div>

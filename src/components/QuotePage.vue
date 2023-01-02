@@ -13,6 +13,9 @@
                                             <div v-if="quote.kutipan" data-aos="fade-right"
                                                 data-aos-offset="300" data-aos-duration="1000"
                                                 data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                                <p v-if="quote.pembuka" class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                    {{ quote.pembuka }}
+                                                </p>
                                                 <p class="subtitle is-size-6-tablet is-size-7-mobile">
                                                     "{{ quote.kutipan }}"
                                                 </p>
@@ -38,6 +41,9 @@
                                         <div v-if="quote.kutipan" data-aos="fade-right"
                                             data-aos-offset="300" data-aos-duration="1000"
                                             data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p v-if="quote.pembuka" class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                {{ quote.pembuka }}
+                                            </p>
                                             <p class="subtitle is-size-6-tablet is-size-7-mobile">
                                                 "{{ quote.kutipan }}"
                                             </p>

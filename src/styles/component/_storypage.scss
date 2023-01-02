@@ -64,6 +64,9 @@
             .filter{
                 filter: $secondary-filter-theme-2;
             }
+            .box {
+                background: rgba($secondary-theme-2, 0.4);
+            }
         } @else if ($theme-name == theme-3) {
             .hero {
                 background-color: $primary-theme-3;
