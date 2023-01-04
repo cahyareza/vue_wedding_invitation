@@ -19,6 +19,7 @@ const state = reactive({
 });
 
 const slug = ref('');
+const to = ref('');
 
 const mutations = {
     updateQuote: (payload) => state.quote = payload,
@@ -40,6 +41,11 @@ const actions = {
       const route = useRoute();
       slug.value = route.params.slug
       return slug
+    },
+    getTo: () => {
+      const route = useRoute();
+      to.value = route.params.to
+      return to
     },
     getQuote: () => {
       actions.getSlug();

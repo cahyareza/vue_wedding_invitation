@@ -6,6 +6,12 @@
                     <div class="container">
                         <div class="columns is-multiline">
                             <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                            </div>
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
+                                <p class="title is-uppercase is-size-4">Undangan Pernikahan</p>
+                            </div>
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
                                     <p class="title is-size-4 mb-3">
                                         {{ portofolio.pname }}
@@ -30,10 +36,24 @@
                     </div>
                 </div>
                 <div class="hero-footer">
-                    <button class="button">
-                        <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
-                        <!-- <a :href="`/main/${slug}`">Buka Undangan</a> -->
-                    </button>
+                    <div class="container">
+                        <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
+                            <div v-if="direction">
+                                <div class="notification mt-6 mx-6 mb-3">
+                                    <p class="subtitle is-size-7-mobile is-size-6-tablet mb-2">
+                                        Kepada Yth. Bapak/Ibu/Sdr/i
+                                    </p>
+                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-2">
+                                        {{ direction }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div><br>
+                        <button class="button mt-4">
+                            <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
+                            <!-- <a :href="`/main/${slug}`">Buka Undangan</a> -->
+                        </button>
+                    </div>
                 </div>
             </section>
         </div>
@@ -42,7 +62,13 @@
 
 <script setup>
 import VueParticle from 'vue-particlejs';
-import { inject, reactive, computed } from 'vue'
+import { inject, reactive, computed, defineProps } from 'vue'
+
+// GET PROPS
+// eslint-disable-next-line no-unused-vars
+defineProps({
+  direction: { type: Object },
+});
 
 // LOAD STATE
 const store = inject('store');
