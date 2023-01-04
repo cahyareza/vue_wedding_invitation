@@ -15,6 +15,7 @@ const state = reactive({
     portofolio: [],
     story: [],
     acara: [],
+    audio: [],
 });
 
 const slug = ref('');
@@ -31,6 +32,7 @@ const mutations = {
     updatePortofolio: (payload) => state.portofolio = payload,
     updateStory: (payload) => state.story = payload,
     updateAcara: (payload) => state.acara = payload,
+    updateAudio: (payload) => state.audio = payload,
 }
 
 const actions = {
@@ -115,7 +117,7 @@ const actions = {
     getTheme: () => {
       actions.getSlug();
       return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
-        const theme = { [response.data[0].theme.name]: true }
+        const theme = { [response.data[0].theme.slug]: true }
         // console.log(theme)
         mutations.updateTheme(theme);
       });
@@ -123,7 +125,7 @@ const actions = {
     getTheme2: (slug) => {
       return axios.get(`http://127.0.0.1:8000/portofolio/api/themeproduct/?portofolio__slug=${slug}`) .then((response) => {
         // console.log(response.data[0])
-        const theme = { [response.data[0].theme.name]: true }
+        const theme = { [response.data[0].theme.slug]: true }
         // console.log(theme)
         mutations.updateTheme(theme);
       });
@@ -202,6 +204,21 @@ const actions = {
       return axios.get(`http://127.0.0.1:8000/portofolio/api/acara/?portofolio__slug=${slug}`) .then((response) => {
         // console.log(response.data);
         mutations.updateAcara(response.data);
+      });
+    },
+    getAudio: () => {
+      actions.getSlug();
+      return axios.get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}`) .then((response) => {
+        // console.log(response.data[0].track.url)
+        // eslint-disable-next-line
+        let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-]+)\&?/i
+        // console.log(response.data[0].track)
+        let text = response.data[0].track.url
+        let result = text.match(myregex)[1]
+        // console.log(result)
+        let audio1 = new Audio(`"https://docs.google.com/uc?export=open&id=${result}"`)
+        // console.log(audio1)
+        mutations.updateAudio(audio1);
       });
     },
 };
