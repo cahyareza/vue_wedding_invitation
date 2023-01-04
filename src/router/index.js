@@ -9,6 +9,11 @@ const routes = [
     component: OpenView,
   },
   {
+    path: '/:slug/:to',
+    name: 'opento',
+    component: OpenView,
+  },
+  {
     path: '/main/:slug',
     name: 'main',
     component: MainView,

@@ -3,14 +3,15 @@
     <!-- <OpenCover id="openCover"></OpenCover> -->
     <Suspense>
       <template #default>
-        <OpenCover></OpenCover>
+        <OpenCover 
+          :direction="direction">
+        </OpenCover>
       </template>
       <template #fallback>
         <form @submit.prevent="submit" class="vl-parent" ref="formContainer">
         <!-- your form inputs goes here-->
         <label class="is-hidden"><input type="checkbox" v-model="fullPage">Full page?</label>
-    </form>
-
+        </form>
       </template>
     </Suspense>
   </section>
@@ -18,8 +19,14 @@
 
 <script setup>
 import OpenCover from '@/components/OpenCover.vue'
-import { ref, onBeforeMount } from 'vue'
+import { ref, onBeforeMount, inject } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
+
+// LOAD STATE
+const store = inject('store');
+
+// TO PARAMS
+const direction = store.actions.getTo().value
 
 // VUE LOADING
 const $loading = useLoading({
