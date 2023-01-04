@@ -6,11 +6,27 @@
                     <div class="container is-marginless is-paddingless">
                         <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
                             <!--  Music     -->
-                            <div @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
-                                <span class="icon has-text-dark">
-                                    <font-awesome-icon icon="fa-solid fa-music" />
-                                </span>
+                            <div v-if="audio.isPlaying">
+                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
+                                    <span class="icon has-text-dark">
+                                        <font-awesome-icon icon="fa-solid fa-volume-high" />
+                                    </span>
+                                </div>
                             </div>
+                            <div v-else>
+                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
+                                    <span class="icon has-text-dark">
+                                        <font-awesome-icon icon="fa-solid fa-volume-xmark" />
+                                    </span>
+                                </div>
+                            </div>
+                            <audio 
+                                ref="player_audio"
+                                :src="audio.file" 
+                                controls 
+                                loop 
+                                class="is-hidden">
+                            </audio>
 
                             <div v-if="dompet.length != 0">
                                 <!--  Amplop    -->
@@ -86,9 +102,10 @@
 </template>
 
 <script setup>
-import { reactive, defineEmits, defineProps } from "vue";
-import trumpetSfx from '../assets/contents/mp3/sample.mp3';
+import { reactive, defineEmits, defineProps, onMounted, inject, ref } from "vue";
+// import trumpetSfx from '../assets/contents/mp3/sample.mp3';
 import useClipboard from 'vue-clipboard3'
+import axios from 'axios';
 
 
 // GET PROPS
@@ -96,6 +113,7 @@ defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
   dompet: { type: Object },
+  portofolio: { type: Object },
 });
 
 const emit = defineEmits(['page']);
@@ -105,26 +123,46 @@ const navPage = (value) => {
     emit("page", value)
 }
 
-// Audio
-var audio = {
-    file: new Audio(trumpetSfx),
-    isPlaying: false
-}
+
+// audio
+const player_audio = ref(null)
 
 const play = () => {
+    player_audio.value.play();
     audio.isPlaying = true;
-    audio.file.play();
-    // // set to default
-    // audio.isPlaying = false;
 }
 
 const pause = () => {
+    player_audio.value.pause();
     audio.isPlaying = false;
-    audio.file.pause();
 }
 
-// Dompet
 
+var store = inject('store');
+
+var slug = store.actions.getSlug().value;
+
+// ("https://docs.google.com/uc?export=open&id=1ZpoE6Vl6ypE4dpppG12dxQtVIHPzYruo"),
+const audio = reactive({
+    file: null,
+    isPlaying: false,
+})
+
+
+onMounted(() => {
+    axios
+        .get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug}`)
+        .then((response) => {
+            // eslint-disable-next-line
+            let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-]+)\&?/i
+            let text = response.data[0].track.url
+            let result = text.match(myregex)[1]
+            audio.file = `https://docs.google.com/uc?export=open&id=${result}`
+        })
+        .catch((err) => console.log(err));
+})
+
+// Dompet
 const modal_data = reactive({
     showModalFlag: false,
     okPressed: false,
@@ -156,6 +194,10 @@ const copy = async (vari) => {
         console.error(e)
     }
 }
+
+onMounted(() => {
+    play();
+})
 
 </script>
 
