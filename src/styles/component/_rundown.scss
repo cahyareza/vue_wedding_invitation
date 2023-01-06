@@ -27,9 +27,9 @@
     }
     .#{$theme-name} {
         @if ($theme-name == theme-1) {
-            .hero {
-                // background-color: $primary-theme-1;
-            }
+            // .hero {
+            //     background-color: $primary-theme-1;
+            // }
             .icon {
                 color: $secondary-theme-1;
             }
@@ -178,9 +178,9 @@
                 filter: $third-filter-theme-4;
             }
         } @else if ($theme-name == theme-5) {
-            .hero {
-                // background-color: $primary-theme-5;
-            }
+            // .hero {
+            //     background-color: $primary-theme-5;
+            // }
             .icon {
                 color: $secondary-theme-5;
             }
