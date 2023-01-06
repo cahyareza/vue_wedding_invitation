@@ -75,12 +75,12 @@
       >
       </MessageBox>
     </div>
-    <ThankPage
+    <HappyPage
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
     >
-    </ThankPage>
+    </HappyPage>
     <FooterPage
       :theme="theme"
     >
@@ -110,7 +110,7 @@ import StoryPage from '@/components/StoryPage.vue'
 import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
-import ThankPage from '@/components/ThankPage.vue'
+import HappyPage from '@/components/HappyPage.vue'
 
 
 
