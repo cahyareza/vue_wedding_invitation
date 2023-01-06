@@ -158,15 +158,15 @@ const actions = {
       return axios.get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug.value}`)
       .then((response) => {
         // console.log(response);
-        if (response.data[0].timeZone) {
-          if (response.data[0].timeZone == 'Asia/Jakarta') {
-            response.data[0].timeZone = "WIB"
-          } else if (response.data[0].timeZone == 'Asia/Makassar') {
-            response.data[0].timeZone = "WITA"
-          } else {
-            response.data[0].timeZone = "WIT"
-          }
-        }
+        // if (response.data[0].timeZone) {
+        //   if (response.data[0].timeZone == 'Asia/Jakarta') {
+        //     response.data[0].timeZone = "WIB"
+        //   } else if (response.data[0].timeZone == 'Asia/Makassar') {
+        //     response.data[0].timeZone = "WITA"
+        //   } else {
+        //     response.data[0].timeZone = "WIT"
+        //   }
+        // }
         mutations.updatePortofolio(response.data[0]);
       });
     },

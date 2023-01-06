@@ -6,18 +6,20 @@
                     <div class="container is-marginless is-paddingless">
                         <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
                             <!--  Music     -->
-                            <div v-if="audio.isPlaying">
-                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
-                                    <span class="icon has-text-dark">
-                                        <font-awesome-icon icon="fa-solid fa-volume-high" />
-                                    </span>
+                            <div v-if="portofolio.track">
+                                <div v-if="audio.isPlaying">
+                                    <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
+                                        <span class="icon has-text-dark">
+                                            <font-awesome-icon icon="fa-solid fa-volume-high" />
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div v-else>
-                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
-                                    <span class="icon has-text-dark">
-                                        <font-awesome-icon icon="fa-solid fa-volume-xmark" />
-                                    </span>
+                                <div v-else>
+                                    <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
+                                        <span class="icon has-text-dark">
+                                            <font-awesome-icon icon="fa-solid fa-volume-xmark" />
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <audio 
@@ -155,9 +157,11 @@ onMounted(() => {
         .then((response) => {
             // eslint-disable-next-line
             let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-]+)\&?/i
-            let text = response.data[0].track.url
-            let result = text.match(myregex)[1]
-            audio.file = `https://docs.google.com/uc?export=open&id=${result}`
+            if (response.data[0].track !== null) {
+                let text = response.data[0].track.url
+                let result = text.match(myregex)[1]
+                audio.file = `https://docs.google.com/uc?export=open&id=${result}`
+            }
         })
         .catch((err) => console.log(err));
 })
