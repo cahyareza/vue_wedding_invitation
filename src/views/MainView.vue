@@ -75,6 +75,12 @@
       >
       </MessageBox>
     </div>
+    <ThankPage
+      :portofolio="portofolio"
+      :theme="theme"
+      :themeproduct="themeproduct"
+    >
+    </ThankPage>
     <FooterPage
       :theme="theme"
     >
@@ -91,6 +97,7 @@
 </template>
 
 <script setup>
+import MainMenu from '@/components/MainMenu.vue'
 import CovidPage from '@/components/CovidPage.vue'
 import MainCover from '@/components/MainCover.vue'
 import QuotePage from '@/components/QuotePage.vue'
@@ -103,7 +110,8 @@ import StoryPage from '@/components/StoryPage.vue'
 import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
-import MainMenu from '@/components/MainMenu.vue'
+import ThankPage from '@/components/ThankPage.vue'
+
 
 
 import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
