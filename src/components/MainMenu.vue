@@ -4,34 +4,34 @@
             <div class="columns">
                 <div class="column is-marginless is-paddingless">
                     <div class="container is-marginless is-paddingless">
-                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                            <!--  Music     -->
-                            <div v-if="portofolio.track">
-                                <div v-if="audio.isPlaying">
-                                    <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
-                                        <span class="icon has-text-dark">
-                                            <font-awesome-icon icon="fa-solid fa-volume-high" />
-                                        </span>
-                                    </div>
-                                </div>
-                                <div v-else>
-                                    <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
-                                        <span class="icon has-text-dark">
-                                            <font-awesome-icon icon="fa-solid fa-volume-xmark" />
-                                        </span>
-                                    </div>
+                        <!--  Music     -->
+                        <div v-if="portofolio.track">
+                            <div v-if="audio.isPlaying">
+                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
+                                    <span class="icon has-text-dark">
+                                        <font-awesome-icon icon="fa-solid fa-volume-high" />
+                                    </span>
                                 </div>
                             </div>
-                            <audio 
-                                ref="player_audio"
-                                :src="audio.file" 
-                                controls 
-                                loop 
-                                class="is-hidden">
-                            </audio>
+                            <div v-else>
+                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
+                                    <span class="icon has-text-dark">
+                                        <font-awesome-icon icon="fa-solid fa-volume-xmark" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <audio 
+                            ref="player_audio"
+                            :src="audio.file" 
+                            controls 
+                            loop 
+                            class="is-hidden">
+                        </audio>
 
+                        <!--  Amplop    -->
+                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
                             <div v-if="dompet.length != 0">
-                                <!--  Amplop    -->
                                 <div @click="showModal" class="button2 is-rounded p-2">
                                     <span class="icon has-text-dark">
                                         <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
