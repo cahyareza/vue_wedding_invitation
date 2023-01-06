@@ -20,7 +20,7 @@
                                         </figure> <br>
 
                                         <div v-if="portofolio.pinsta_link">
-                                            <a :href="portofolio.pinsta_link"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
+                                            <a :href="portofolio.pinsta_link" target="_blank"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
                                         </div>
                                         
                                         <!-- <p class="title mt-5 mb-6" v-for="couple in couples.perempuan" :key="couple.id">{{ couple }}</p> -->
@@ -39,7 +39,7 @@
                                         </figure> <br>
 
                                         <div v-if="portofolio.linsta_link">
-                                            <a :href="portofolio.linsta_link"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
+                                            <a :href="portofolio.linsta_link" target="_blank"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
                                         </div>
 
                                         <p class="title2 is-capitalized is-size-3 mt-3 mb-4">{{ portofolio.lname }}</p>

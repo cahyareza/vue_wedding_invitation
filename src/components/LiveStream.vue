@@ -20,7 +20,7 @@
                                         </div>
                                         
                                         <button class="button is-rounded is-size-7 px-2  mb-3">
-                                            <a :href="portofolio.livestream"><font-awesome-icon icon="fa-solid fa-video" />&nbsp;Menuju Streaming
+                                            <a :href="portofolio.livestream" target="_blank"><font-awesome-icon icon="fa-solid fa-video" />&nbsp;Menuju Streaming
                                             </a>
                                         </button>
                                         <p class="subtitle2 is-size-7-tablet is-size-7-mobile">Silahkan untuk join live streaming.</p>
