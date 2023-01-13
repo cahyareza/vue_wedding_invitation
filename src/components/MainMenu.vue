@@ -110,6 +110,7 @@ import useClipboard from 'vue-clipboard3'
 import axios from 'axios';
 
 
+
 // GET PROPS
 defineProps({
   theme: { type: Object },
