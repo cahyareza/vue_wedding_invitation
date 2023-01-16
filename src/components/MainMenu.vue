@@ -154,7 +154,7 @@ const audio = reactive({
 
 onMounted(() => {
     axios
-        .get(`http://127.0.0.1:8000/portofolio/api/portofolio/?slug=${slug}`)
+        .get(`https://www.myproject.192.168.56.6.nip.io/home/portofolio/api/portofolio/?slug=${slug}`)
         .then((response) => {
             // eslint-disable-next-line
             let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-]+)\&?/i
