@@ -50,7 +50,7 @@
                             </div>
                         </div><br>
                         <button class="button mt-4">
-                            <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
+                            <router-link :to="`/open/main/${slug}`">Buka Undangan</router-link>
                             <!-- <a :href="`/main/${slug}`">Buka Undangan</a> -->
                         </button>
                     </div>
@@ -67,7 +67,7 @@ import { inject, reactive, computed, defineProps } from 'vue'
 // GET PROPS
 // eslint-disable-next-line no-unused-vars
 defineProps({
-  direction: { type: Object },
+  direction: { type: String },
 });
 
 // LOAD STATE

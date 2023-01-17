@@ -63,14 +63,14 @@ var jumlahHadir = computed(() => {
 
 const confirmHadir = () => {
     axios
-        .post(`https://www.myproject.192.168.56.6.nip.io/home/portofolio/api/hadir/?portofolio__slug=${slug}`, konfirmasi)
+        .post(`https://www.myproject.192.168.56.6.nip.io/portofolio/api/hadir/?portofolio__slug=${slug}`, konfirmasi)
         .then(() => {
             console.log('berhasil post');
             showhidebutton();
             konfirmasi.name = "";
             konfirmasi.hadir = "";
                 
-            axios.get(`https://www.myproject.192.168.56.6.nip.io/home/portofolio/api/hadir/?portofolio__slug=${slug}`).then((response) => {
+            axios.get(`https://www.myproject.192.168.56.6.nip.io/portofolio/api/hadir/?portofolio__slug=${slug}`).then((response) => {
                 store.mutations.updateHadir(response.data);
             });
         })
