@@ -4,17 +4,17 @@ import MainView from '../views/MainView.vue'
 
 const routes = [
   {
-    path: '/open/:slug',
+    path: '/:slug',
     name: 'open',
     component: OpenView,
   },
   {
-    path: '/open/:slug/:to',
+    path: '/:slug/:to',
     name: 'opento',
     component: OpenView,
   },
   {
-    path: '/open/main/:slug',
+    path: '/main/:slug',
     name: 'main',
     component: MainView,
   },
