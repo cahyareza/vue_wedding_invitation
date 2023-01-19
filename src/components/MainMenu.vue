@@ -109,7 +109,7 @@ import { reactive, defineEmits, defineProps, onMounted, inject, ref } from "vue"
 import useClipboard from 'vue-clipboard3'
 import axios from 'axios';
 
-
+var web_url = process.env.VUE_APP_WEB_URL_FIX
 
 // GET PROPS
 defineProps({
@@ -154,7 +154,7 @@ const audio = reactive({
 
 onMounted(() => {
     axios
-        .get(`https://www.myproject.192.168.56.6.nip.io/portofolio/api/portofolio/?slug=${slug}`)
+        .get(`${web_url}portofolio/api/portofolio/?slug=${slug}`)
         .then((response) => {
             // eslint-disable-next-line
             let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-]+)\&?/i

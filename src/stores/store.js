@@ -2,7 +2,7 @@ import { reactive, readonly, ref } from 'vue';
 import axios from 'axios';
 import { useRoute } from 'vue-router';
 
-var web_url = "https://www.myproject.192.168.56.6.nip.io/"
+var web_url = process.env.VUE_APP_WEB_URL_FIX
 
 const state = reactive({
     quote: [],

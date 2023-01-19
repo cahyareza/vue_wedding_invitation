@@ -53,6 +53,8 @@
 import { reactive, inject, computed } from "vue";
 import axios from 'axios';
 
+var web_url = process.env.VUE_APP_WEB_URL_FIX
+
 
 const store = inject('store');
 const ucapan = computed(() => store.state.ucapan); 
@@ -84,11 +86,10 @@ const confirmUcapan = () => {
     fieldErrors.error= 0;
 
     validateForm(fields);
-    console.log(fieldErrors)
     if (fieldErrors.error != 0) return;
 
     axios
-        .post(`https://www.myproject.192.168.56.6.nip.io/portofolio/api/ucapan/?portofolio__slug=${slug}`, fields)
+        .post(`${web_url}portofolio/api/ucapan/?portofolio__slug=${slug}`, fields)
         .then(() => {
             console.log('berhasil post');
             fields.nama = null;
@@ -96,7 +97,7 @@ const confirmUcapan = () => {
             fields.pesan = null;
 
 
-            axios.get(`https://www.myproject.192.168.56.6.nip.io/portofolio/api/ucapan/?portofolio__slug=${slug}`).then((response) => {
+            axios.get(`${web_url}portofolio/api/ucapan/?portofolio__slug=${slug}`).then((response) => {
                 // console.log(response.data)
                 store.mutations.updateUcapan(response.data);
             });
