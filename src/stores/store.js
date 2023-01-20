@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useRoute } from 'vue-router';
 
 var web_url = process.env.VUE_APP_WEB_URL_FIX
+console.log(web_url)
+
 
 const state = reactive({
     quote: [],
