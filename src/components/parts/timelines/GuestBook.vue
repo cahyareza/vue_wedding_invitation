@@ -34,6 +34,8 @@
 import { ref, reactive, inject, computed, onMounted } from "vue";
 import axios from 'axios';
 
+var web_url = process.env.VUE_APP_WEB_URL_FIX
+
 var store = inject('store');
 const show = ref(false);
 
@@ -63,14 +65,14 @@ var jumlahHadir = computed(() => {
 
 const confirmHadir = () => {
     axios
-        .post(`http://127.0.0.1:8000/portofolio/api/hadir/?portofolio__slug=${slug}`, konfirmasi)
+        .post(`${web_url}portofolio/api/hadir/?portofolio__slug=${slug}`, konfirmasi)
         .then(() => {
             console.log('berhasil post');
             showhidebutton();
             konfirmasi.name = "";
             konfirmasi.hadir = "";
                 
-            axios.get(`http://127.0.0.1:8000/portofolio/api/hadir/?portofolio__slug=${slug}`).then((response) => {
+            axios.get(`${web_url}portofolio/api/hadir/?portofolio__slug=${slug}`).then((response) => {
                 store.mutations.updateHadir(response.data);
             });
         })
