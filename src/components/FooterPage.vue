@@ -8,7 +8,10 @@
                             <section class="section is-paddingless">
                                 <div class="container">
                                     <p class="subtitle2 is-size-7 mb-1">presented by</p>
-                                    <p class="subtitle2 is-size-6 has-text-weigth-bold mt-1">The progesio</p>
+                                    <!-- <a class="subtitle2 is-size-6 has-text-weigth-bold mt-1" :href="web_url">einvitation.net</a> -->
+                                    <a :href="web_url" target="_blank">
+                                        <img src="../assets/logo_fix2.svg" width="112" height="28">
+                                    </a>
                                 </div>
                             </section>
                         </div>
@@ -21,6 +24,8 @@
 
 <script setup>
 import { defineProps } from "vue";
+
+var web_url = process.env.VUE_APP_WEB_URL_FIX
 
 // GET PROPS
 defineProps({
