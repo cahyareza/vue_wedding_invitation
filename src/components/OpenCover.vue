@@ -9,11 +9,11 @@
                             </div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
-                                <p class="title is-uppercase is-size-4">Undangan Pernikahan</p>
+                                <p class="title is-uppercase is-size-4-mobile is-size-2-tablet">Undangan Pernikahan</p>
                             </div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
-                                    <p class="title is-size-4 mb-3">
+                                    <p class="title is-size-4-mobile is-size-2-tablet mb-3">
                                         {{ portofolio.pname }}
                                     </p>
                                     <div v-if="themeproduct.theme?.open_fitur">
@@ -22,7 +22,7 @@
                                     <div v-else>
                                         <p class="title is-size-3 mb-3">&</p>
                                     </div>
-                                    <p class="title is-size-4">
+                                    <p class="title is-size-4-mobile is-size-2-tablet">
                                         {{ portofolio.lname }} 
                                     </p>
                                 </div>
