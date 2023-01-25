@@ -27,9 +27,9 @@
             background-position: center;
         }
         @if ($theme-name == theme-1) {
-            .hero {
-                // background-color: $primary-theme-1;
-            }
+            // .hero {
+            //     background-color: $primary-theme-1;
+            // }
             .title2 {
                 font-family: $dancing_script;
                 color: $secondary-theme-1;
@@ -131,9 +131,9 @@
                 filter: $secondary-filter-theme-2;
             }
         } @else if ($theme-name == theme-3) {
-            .hero {
-                // background-color: $primary-theme-3;
-            }
+            // .hero {
+            //     background-color: $primary-theme-3;
+            // }
             .title2 {
                 font-family: $great_vibes;
                 color: $secondary-theme-3;
@@ -183,9 +183,9 @@
                 filter: $secondary-filter-theme-3;
             }
         } @else if ($theme-name == theme-4) {
-            .hero {
-                // background-color: $primary-theme-3;
-            }
+            // .hero {
+            //     background-color: $primary-theme-3;
+            // }
             .title2 {
                 font-family: $great_vibes;
                 color: $secondary-theme-4;
@@ -233,9 +233,9 @@
                 filter: $secondary-filter-theme-4;
             }
         } @else if ($theme-name == theme-5) {
-            .hero {
-                // background-color: $primary-theme-5;
-            }
+            // .hero {
+            //     background-color: $primary-theme-5;
+            // }
             .title2 {
                 font-family: $great_vibes;
                 color: $secondary-theme-5;
