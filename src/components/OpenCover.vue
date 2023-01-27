@@ -9,7 +9,7 @@
                             </div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
-                                <p class="title is-uppercase is-size-4-mobile is-size-2-tablet">Undangan Pernikahan</p>
+                                <p class="title is-uppercase is-size-5-mobile is-size-3-tablet">Undangan Pernikahan</p>
                             </div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
