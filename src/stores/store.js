@@ -221,7 +221,7 @@ const actions = {
       return axios.get(`${web_url}portofolio/api/portofolio/?slug=${slug.value}`) .then((response) => {
         // console.log(response.data[0].track.url)
         // eslint-disable-next-line
-        let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-]+)\&?/i
+        let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-_]+)\&?/i
         // console.log(response.data[0].track)
         let text = response.data[0].track.url
         let result = text.match(myregex)[1]
