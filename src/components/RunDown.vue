@@ -7,8 +7,12 @@
                         <div class="columns">
                             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                                 <div class="container">
-                                    <img class="filter center mt-5 mb-0" :src="themeproduct.theme?.rundown_fitur">
-                                    <img class="ornament center mt-5 mb-0" :src="themeproduct.theme?.ornament_3">
+                                    <div v-if="themeproduct.theme?.rundown_fitur">
+                                        <img class="filter center mt-5 mb-0" :src="themeproduct.theme?.rundown_fitur">
+                                    </div>
+                                    <div v-if="themeproduct.theme?.ornament_3">
+                                        <img class="ornament center mt-5 mb-0" :src="themeproduct.theme?.ornament_3">
+                                    </div>
                                     <div class="notification m-5" data-aos="zoom-out-down" data-aos-duration="1000">
                                         <div v-for="piece in acara" :key="piece.id">
                                             <div class="columns is-multiline">
