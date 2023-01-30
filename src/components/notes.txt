@@ -1,275 +1,159 @@
 <template>
     <div :class="theme">
-        <div class="section py-0">
-            <div class="columns">
-                <div class="column is-half-tablet is-offset-one-quarter-tablet is-marginless is-paddingless">
+        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portofolio.open_background + ')' }">
+            <section class="hero is-fullheight">
+                <div class="hero-body">
                     <div class="container">
-                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                            <!--  Music     -->
-                            <!-- <div @onload="play" @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-3">
-                                <span class="icon has-text-dark">
-                                    <font-awesome-icon icon="fa-solid fa-music" />
-                                </span>
-                            </div> -->
-                            <div>
-                                <audio
-                                    hidden="true"
-                                    ref="audio"
-                                >
-                                    <source  :src="portofolio.track.url" type="audio/mpeg">
-                                </audio>
+                        <div class="columns is-multiline">
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             </div>
-
-                            <div v-if="dompet.length != 0">
-                                <!--  Amplop    -->
-                                <div @click="showModal" class="button2 is-rounded p-2">
-                                    <span class="icon has-text-dark">
-                                        <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
-                                    </span>
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-2">
+                                <div v-if="direction">
+                                    <p class="subtitle is-size-7-mobile is-size-6-tablet mb-0 has-text-white">
+                                        Kepada Yth.
+                                    </p>
+                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-0 has-text-white">
+                                        {{ direction }}
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-
-                        <!--    Modal        -->
-                        <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
-                            <div class="modal-background"></div>
-                            <div class="modal-card m-4" style="padding: 4vw;">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">Amplop Digital</p>
-                                    <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
-                                </header>
-                                <section class="modal-card-body">
-                                    <p class="has-text-left mb-4">Transfer langsung ke rekening berikut ini;</p>
-                                    <div class="columns is-multiline">
-                                        <div v-for="info in dompet" :key="info.id">
-                                            <div class="column pb-1 is-gapless has-text-left">
-                                                <p>{{ info.rekening }}</p>
-                                                <p><strong>{{ info.nomor }}</strong> <button class="button-copy" @click="copy(info.nomor)">copy</button></p>
-                                                
-                                                <p>a/n {{ info.pemilik }}</p>
-                                            </div>
-                                        </div>
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                                <div class="">
+                                    <p class="title is-size-4-mobile is-size-2-tablet mb-1 has-text-white">
+                                        {{ portofolio.pname }}
+                                    </p>
+                                    <div v-if="themeproduct.theme?.open_fitur">
+                                        <img class="filter is-rounded mb-1" :src="themeproduct.theme?.open_fitur">
                                     </div>
-                                </section>
-                                <footer class="modal-card-foot">
-                                </footer>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                    <div class="container">
-                        <div class="notification2 p-2">
-                            <span class="icon-text is-paddingless is-marginless">
-                                <!-- <span>Couple</span> -->
-                                <span @click="navPage('groom')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-heart" />
-                                </span>
-                                <!-- <span>Date</span> -->
-                                <span @click="navPage('time')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-map" />
-                                </span>
-                                <!-- <span>Rundown</span> -->
-                                <span @click="navPage('run')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                                </span>
-                                <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                    <!-- <span>Moment</span> -->
-                                    <span @click="navPage('moment')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-images" />
-                                    </span>
-                                
-                                    <!-- <span>Wishes</span> -->
-                                    <span @click="navPage('message')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                    </span>
+                                    <div v-else>
+                                        <p class="title is-size-3 mb-1 has-text-white">&</p>
+                                    </div>
+                                    <p class="title is-size-4-mobile is-size-2-tablet has-text-white">
+                                        {{ portofolio.lname }} 
+                                    </p>
                                 </div>
-                            </span>
+                            </div>
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-5">
+                                <button class="button mt-4" style="border:none">
+                                    <router-link :to="`/main/${slug}`">Buka Undangan</router-link>
+                                    <!-- <a :href="`/main/${slug}`">Buka Undangan</a> -->
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div id="demo">
+                    <div id="inner-demo">
+                        <VueParticle domId="demo" :config="obj.particleConfig"/>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </template>
 
 <script setup>
-import { reactive, inject, defineEmits, computed, defineProps, onMounted } from "vue";
-// import trumpetSfx from '../assets/contents/mp3/sample.mp3';
-import useClipboard from 'vue-clipboard3'
+import VueParticle from 'vue-particlejs';
+import { inject, reactive, computed, defineProps } from 'vue'
+
+// GET PROPS
+// eslint-disable-next-line no-unused-vars
+defineProps({
+  direction: { type: Object },
+});
 
 // LOAD STATE
 const store = inject('store');
 
+// SLUG
+const slug = store.actions.getSlug().value;
+
 // PORTOFOLIO
 const portofolio = computed(() => store.state.portofolio);
-console.log(portofolio.value.track)
 
-// GET PROPS
-defineProps({
-  theme: { type: Object },
-  themeproduct: { type: Object },
-  dompet: { type: Object },
-});
+// THEME
+const theme = computed(() => store.state.theme);
+const themeproduct = computed(() => store.state.themeproduct); 
 
+const getProps = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
-const emit = defineEmits(['page']);
-
-// emit
-const navPage = (value) => {
-    emit("page", value)
+    store.actions.getPortofolio2(slug);
+    store.actions.getTheme2(slug);
+    store.actions.getThemeProduct2(slug);
 }
 
-// // Audio
-// var audio = {
-//     // file: new Audio(trumpetSfx),
-//     file: new Audio(trumpetSfx),
-//     isPlaying: false
-// }
+await getProps();
 
-// const play = () => {
-//     audio.isPlaying = true;
-//     audio.file.play();
-//     // // set to default
-//     // audio.isPlaying = false;
-// }
+// PARTICLE
+const obj = reactive({particleConfig: {}})
 
-// const pause = () => {
-//     audio.isPlaying = false;
-//     audio.file.pause();
-// }
-
-// Dompet
-
-const modal_data = reactive({
-    showModalFlag: false,
-    okPressed: false,
-    message: "Press 'Ok' or 'Cancel'."
-})
-
-const showModal= () => {
-    modal_data.okPressed = false;
-    modal_data.showModalFlag = true;
+obj.particleConfig = {
+    particles: {
+        number: { value: 300, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: {
+        type: "circle",
+        stroke: { width: 0, color: "#000000" },
+        polygon: { nb_sides: 5 },
+        image: { src: "img/github.svg", width: 100, height: 100 }
+        },
+        opacity: {
+        value: 0.5,
+        random: false,
+        anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+        },
+        size: {
+        value: 3,
+        random: true,
+        anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+        },
+        line_linked: {
+        enable: false,
+        distance: 150,
+        color: "#ffffff",
+        opacity: 0.4,
+        width: 1
+        },
+        move: {
+        enable: true,
+        speed: 2,
+        direction: "none",
+        random: false,
+        straight: false,
+        out_mode: "out",
+        bounce: false,
+        attract: { enable: false, rotateX: 600, rotateY: 1200 }
+        }
+    },
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+        onhover: { enable: true, mode: "repulse" },
+        onclick: { enable: true, mode: "push" },
+        resize: true
+        },
+        modes: {
+        grab: { distance: 400, line_linked: { opacity: 1 } },
+        bubble: {
+            distance: 400,
+            size: 40,
+            duration: 2,
+            opacity: 8,
+            speed: 3
+        },
+        repulse: { distance: 200, duration: 0.4 },
+        push: { particles_nb: 4 },
+        remove: { particles_nb: 2 }
+        }
+    },
+    retina_detect: true
 }
-// const okModal = () => {
-//     modal_data.okPressed = true;
-//     modal_data.showModalFlag = false;
-// }
-const cancelModal = () => {
-    modal_data.okPressed = false;
-    modal_data.showModalFlag = false;
-}
-
-// Copy clipboard
-
-const { toClipboard } = useClipboard()
-
-const copy = async (vari) => {
-    try {
-        await toClipboard(vari)
-        // console.log('Copied to clipboard')
-    } catch (e) {
-        console.error(e)
-    }
-}
-
-
-const audio = new Audio()
-
-onMounted( () => {
-    // play();
-    console.log(audio);
-    //@ts-ignore
-    audio.value?.play()
-})
-
 </script>
 
+
 <style lang="scss" scoped>
-@import "../styles/component/mainmenu.scss";
-
-
-.notification2 {
-    position: fixed;
-    height: 40px;
-    bottom: 0.1%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 2px 2px 3px #999;
-}
-
-.button {
-    position: fixed;
-    height: 40px;
-    top: 20px;
-    right: 10px;
-    color: #fff;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 2px 2px 3px #999;
-}
-
-.button2 {
-    position: fixed;
-    height: 40px;
-    top: 70px;
-    right: 10px;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 2px 2px 3px #999;
-}
-
-
-.button-copy{
-  position: relative;
-  background-color: #D3D3D3;
-  border-radius: 4em;
-  font-size: 12px;
-  color: black;
-  padding: 0.1em 0.4em;
-  cursor:pointer;
-  user-select:none;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s; /* Safari */
-}
-
-.button-copy:hover {
-  transition-duration: 0.1s;
-  background-color: #3A3A3A;
-}
-
-.button-copy:after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 4em;
-  left: 0;
-  top:0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: all 0.5s;
-  box-shadow: 0 0 10px 40px white;
-}
-
-.button-copy:active:after {
-  box-shadow: 0 0 0 0 white;
-  position: absolute;
-  border-radius: 4em;
-  left: 0;
-  top:0;
-  opacity: 1;
-  transition: 0s;
-}
-
-.button-copy:active {
-  top: 1px;
-}
-
+@import "../styles/component/opencover.scss";
+// @import "../styles/global.scss";
 </style>
