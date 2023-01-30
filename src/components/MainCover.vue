@@ -7,7 +7,7 @@
                         <div class="columns is-multiline">
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-4">
                                 <section class="section">
-                                    <p class="subtitle is-uppercase is-size-5">Undangan Pernikahan</p>
+                                    <p class="subtitle is-uppercase is-size-5">THE WEDDING OF</p>
 
                                     <img class="filter" :src="themeproduct.theme?.cover_fitur">
                                     
@@ -19,7 +19,7 @@
 
                                     <img class="filter" :src="themeproduct.theme?.cover_fitur" style="transform: rotate(180deg);">
 
-                                    <p class="subtitle mt-4 is-size-6">{{ tanggal(portofolio.tanggal_countdown) }}</p>
+                                    <p class="subtitle mt-0 is-size-6 is-uppercase">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                                 </section>
                             </div>
                         </div>
@@ -48,11 +48,11 @@
                         <div class="columns is-multiline">
                             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                                 <section class="section">
-                                    <p class="subtitle is-uppercase is-size-5">Undangan Pernikahan</p>
+                                    <p class="subtitle is-uppercase is-size-5">THE WEDDING OF</p>
 
                                     <img class="filter" :src="themeproduct.theme?.cover_fitur">
                                     
-                                    <p class="title is-size-2 is-capitalized mb-2">
+                                    <p class="title is-size-3 is-capitalized mb-2">
                                         {{ portofolio.pname }} <br>
                                         & <br>
                                         {{ portofolio.lname }}

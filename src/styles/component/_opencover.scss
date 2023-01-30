@@ -47,10 +47,8 @@
             //     background-color: $third-theme-1;
             // }
             .button {
-                border: 1px solid $secondary-theme-1;
-                width: 200px;
+                width: 150px;
                 height: 38.23px;
-                padding: 9px 38px;
                 background-color: #FFFFFF;
                 opacity: 0.6;
                 
@@ -68,9 +66,6 @@
             }
             .title {
                 font-family: $dancing_script;
-                color: $fourth-theme-1;
-                text-transform: uppercase;
-                text-shadow: 0 0 3px $secondary-theme-2, 0 0 5px $secondary-theme-2;
             }
             .filter{
                 filter: $fourth-filter-theme-1;
@@ -81,17 +76,15 @@
                 z-index: -1;
                 inset: 0;
                 opacity: 0.4;
-                background: $secondary-theme-1;
+                background: $primary-theme-3;
             }
         } @else if ($theme-name == theme-2) {
             // .hero {
             //     background-color: $third-theme-2;
             // }
             .button {
-                border: 1px solid $secondary-theme-2;
-                width: 200px;
+                width: 150px;
                 height: 38.23px;
-                padding: 9px 38px;
                 background-color: #FFFFFF;
                 opacity: 0.6;
                 
@@ -109,12 +102,9 @@
             }
             .title {
                 font-family: $dancing_script;
-                color: $secondary-theme-2;
-                text-transform: uppercase;
-                text-shadow: 0 0 3px $primary-theme-2, 0 0 5px $primary-theme-2;
             }
             .filter{
-                filter: $secondary-filter-theme-2;
+                filter: $fourth-filter-theme-1;
             }
             .low-opacity-bg-image::after {
                 content: '';
@@ -122,17 +112,15 @@
                 z-index: -1;
                 inset: 0;
                 opacity: 0.4;
-                background: $primary-theme-2;
+                background: $primary-theme-3;
             }
         } @else if ($theme-name == theme-3) {
             // .hero {
             //     background-color: $secondary-theme-3;
             // }
             .button {
-                border: 1px solid $secondary-theme-3;
-                width: 200px;
+                width: 150px;
                 height: 38.23px;
-                padding: 9px 38px;
                 background-color: #FFFFFF;
                 opacity: 0.6;
                 
@@ -150,12 +138,9 @@
             }
             .title {
                 font-family: $dancing_script;
-                color: $third-theme-3;
-                text-transform: uppercase;
-                text-shadow: 0 0 3px $primary-theme-3, 0 0 5px $primary-theme-3;
             }
             .filter{
-                filter: $secondary-filter-theme-2;
+                filter: $fourth-filter-theme-1;
             }
             .low-opacity-bg-image::after {
                 content: '';
@@ -171,9 +156,8 @@
             // }
             .button {
                 border: 1px solid $secondary-theme-4;
-                width: 200px;
+                width: 150px;
                 height: 38.23px;
-                padding: 9px 38px;
                 background-color: #FFFFFF;
                 opacity: 0.6;
                 
@@ -191,12 +175,9 @@
             }
             .title {
                 font-family: $dancing_script;
-                color: $secondary-theme-4;
-                text-transform: uppercase;
-                text-shadow: 0 0 3px $primary-theme-4, 0 0 5px $primary-theme-4;
             }
             .filter{
-                filter: $secondary-filter-theme-4;
+                filter: $fourth-filter-theme-1;
             }
             .low-opacity-bg-image::after {
                 content: '';
@@ -204,17 +185,16 @@
                 z-index: -1;
                 inset: 0;
                 opacity: 0.4;
-                background: $primary-theme-4;
+                background: $primary-theme-3;
             }
         } @else if ($theme-name == theme-5) {
             // .hero {
             //     background-color: $secondary-theme-3;
             // }
             .button {
-                border: 1px solid $secondary-theme-5;
-                width: 200px;
+                // border: 1px solid $secondary-theme-5;
+                width: 150px;
                 height: 38.23px;
-                padding: 9px 38px;
                 background-color: #FFFFFF;
                 opacity: 0.6;
                 
@@ -232,12 +212,9 @@
             }
             .title {
                 font-family: $dancing_script;
-                color: $secondary-theme-5;
-                text-transform: uppercase;
-                text-shadow: 0 0 3px $primary-theme-5, 0 0 5px $primary-theme-5;
             }
             .filter{
-                filter: $secondary-filter-theme-5;
+                filter: $fourth-filter-theme-1;
             }
             .low-opacity-bg-image::after {
                 content: '';
@@ -245,7 +222,7 @@
                 z-index: -1;
                 inset: 0;
                 opacity: 0.4;
-                background: $primary-theme-5;
+                background: $primary-theme-3;
             }
         }
     }

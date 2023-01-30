@@ -9,22 +9,20 @@
                             </div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
-                                <p class="title is-uppercase is-size-5-mobile is-size-3-tablet">Undangan Pernikahan</p>
-                            </div>
-                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
-                                    <p class="title is-size-4-mobile is-size-2-tablet mb-3">
+                                    <p class="title is-size-4-mobile is-size-2-tablet mb-1 has-text-white">
                                         {{ portofolio.pname }}
                                     </p>
                                     <div v-if="themeproduct.theme?.open_fitur">
-                                        <img class="filter is-rounded mb-3" :src="themeproduct.theme?.open_fitur">
+                                        <img class="filter is-rounded mb-1" :src="themeproduct.theme?.open_fitur">
                                     </div>
                                     <div v-else>
-                                        <p class="title is-size-3 mb-3">&</p>
+                                        <p class="title is-size-3 mb-1 has-text-white">&</p>
                                     </div>
-                                    <p class="title is-size-4-mobile is-size-2-tablet">
+                                    <p class="title is-size-4-mobile is-size-2-tablet has-text-white">
                                         {{ portofolio.lname }} 
                                     </p>
+                                    <p class="subtitle mt-4 is-size-6 has-text-white">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                                 </div>
                             </div>
                         </div>
@@ -39,11 +37,11 @@
                     <div class="container">
                         <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                             <div v-if="direction">
-                                <div class="notification mt-6 mx-6 mb-3">
-                                    <p class="subtitle is-size-7-mobile is-size-6-tablet mb-2">
-                                        Kepada Yth. Bapak/Ibu/Sdr/i
+                                <div class="mt-6 mx-6 mb-3">
+                                    <p class="subtitle is-size-7-mobile is-size-6-tablet mb-0 has-text-white">
+                                        Kepada Yth.
                                     </p>
-                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-2">
+                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-0 has-text-white">
                                         {{ direction }}
                                     </p>
                                 </div>
@@ -63,6 +61,7 @@
 <script setup>
 import VueParticle from 'vue-particlejs';
 import { inject, reactive, computed, defineProps } from 'vue'
+import moment from 'moment';
 
 // GET PROPS
 // eslint-disable-next-line no-unused-vars
@@ -92,6 +91,11 @@ const getProps = async () => {
 }
 
 await getProps();
+
+// METHOD
+const tanggal = (value) => {
+    return moment(value).locale('id').format('dddd, DD MMMM YYYY');
+}
 
 // PARTICLE
 const obj = reactive({particleConfig: {}})
