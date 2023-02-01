@@ -7,7 +7,9 @@
                         <div class="columns">
                             <div class="column is-half-tablet is-offset-one-quarter-tablet">
                                 <div class="container">
-                                    <img class="filter" :src="themeproduct.theme?.quote_fitur">
+                                    <div v-if="themeproduct.theme?.quote_fitur">
+                                        <img class="filter" :src="themeproduct.theme?.quote_fitur">
+                                    </div>
                                     <div v-if="themeproduct.theme?.slug == 'theme-3' || themeproduct.theme?.slug == 'theme-4'">
                                         <div class="notification mt-2" data-aos="zoom-in" data-aos-duration="1000">
                                             <div v-if="quote.kutipan" data-aos="fade-right"

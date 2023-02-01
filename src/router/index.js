@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import OpenView from '../views/OpenView.vue'
 import MainView from '../views/MainView.vue'
+import CardoView from '../views/CardoView.vue'
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
     path: '/main/:slug',
     name: 'main',
     component: MainView,
+  },
+  {
+    path: '/cardo/:slug',
+    name: 'cardo',
+    component: CardoView,
   },
 ]
 

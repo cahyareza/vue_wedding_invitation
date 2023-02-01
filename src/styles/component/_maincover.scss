@@ -4,7 +4,7 @@
 @import '../theme/theme-3';
 @import '../theme/theme-4';
 @import '../theme/theme-5';
-
+@import '../theme/theme-6';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -49,7 +49,7 @@
                 z-index: -1;
                 inset: 0;
                 opacity: .5;
-                background: $primary-theme-;
+                background: $primary-theme-3;
             }
         } @else if ($theme-name == theme-2) {
             .icon {
@@ -143,6 +143,49 @@
                 opacity: 0.5;
                 background: $primary-theme-5;
             }
+        } @else if ($theme-name == theme-6) {
+            :deep(.title) {
+                font-family: $great_vibes;
+                color: $fourth-theme-1;
+                position: absolute;
+                z-index: 2;
+                bottom: 40px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            :deep(.subtitle1) {
+                font-family: $playfair;
+                color: $fourth-theme-1;
+                position: absolute;
+                z-index: 2;
+                bottom: 210px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            :deep(.subtitle2) {
+                font-family: $playfair;
+                color: $fourth-theme-1;
+                position: absolute;
+                z-index: 2;
+                bottom: 80px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            :deep(.low-opacity-bg-image) {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
+            :deep(.low-opacity-bg-image::after) {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                inset: 0;
+                opacity: 0.4;
+                background: $primary-theme-3;
+            }
         }
     }
 }
@@ -161,3 +204,6 @@
 
 // Call for theme-5
 @include themable(theme-5, $theme-5);
+
+// Call for theme-6
+@include themable(theme-6, $theme-6);
