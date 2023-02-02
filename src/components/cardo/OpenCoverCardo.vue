@@ -10,7 +10,7 @@
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
-                                    <p class="title is-size-3-mobile is-capitalized  is-size-2-tablet mb-1 has-text-white">
+                                    <p class="title is-size-3-mobile is-capitalized is-size-2-tablet mb-1 has-text-white">
                                         {{ portofolio.pname }}
                                     </p>
                                     <div v-if="themeproduct.theme?.open_fitur">
@@ -19,7 +19,7 @@
                                     <div v-else>
                                         <p class="title is-size-3 mb-1 has-text-white">&</p>
                                     </div>
-                                    <p class="title is-size-3-mobile is-capitalized is-size-2-tablet has-text-white">
+                                    <p class="title is-size-3-mobile is-capitalized  is-size-2-tablet has-text-white">
                                         {{ portofolio.lname }} 
                                     </p>
                                     <p class="subtitle mt-4 is-size-6 has-text-white">{{ tanggal(portofolio.tanggal_countdown) }}</p>
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div><br>
-                        <router-link :to="`/main/${slug}`" class="button mt-4">
+                        <router-link :to="`/main/cardo/${slug}`" class="button mt-4">
                             Buka Undangan
                         </router-link>
                     </div>
@@ -164,6 +164,6 @@ obj.particleConfig = {
 
 
 <style lang="scss" scoped>
-@import "../styles/component/opencover.scss";
+@import "../../styles/component/opencover.scss";
 // @import "../styles/global.scss";
 </style>

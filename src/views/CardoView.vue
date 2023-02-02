@@ -1,8 +1,7 @@
 <template>
   <section>
-    <!-- <CovidPage>
-      
-    </CovidPage> -->
+    <CovidPage>
+    </CovidPage>
     <MainCoverCardo 
       :portofolio="portofolio"
       :theme="theme"
@@ -103,7 +102,7 @@
 
 <script setup>
 import MainMenuCardo from '@/components/cardo/MainMenuCardo.vue'
-// import CovidPage from '@/components/CovidPage.vue'
+import CovidPage from '@/components/CovidPage.vue'
 import MainCoverCardo from '@/components/cardo/MainCoverCardo.vue'
 import QuotePageCardo from '@/components/cardo/QuotePageCardo.vue'
 import GroomBridgeCardo from '@/components/cardo/GroomBridgeCardo.vue'
