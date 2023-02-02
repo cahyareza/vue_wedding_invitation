@@ -4,6 +4,7 @@
 @import '../theme/theme-3';
 @import '../theme/theme-4';
 @import '../theme/theme-5';
+@import '../theme/theme-6';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -267,6 +268,59 @@
             .filter{
                 filter: $secondary-filter-theme-5;
             }
+        } @else if ($theme-name == theme-6) {
+            :deep(.notification2) {
+                background-color: $primary-theme-6;
+            }
+            :deep(.iframe) {
+                border: 5px solid $secondary-theme-6; 
+                border-radius: 4px;
+            }
+            :deep(.button) {
+                border: 1px solid $third-theme-6;
+                background-color: $third-theme-6;
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: $primary-theme-6;
+            }
+            .hero {
+                background-color: $secondary-theme-6;
+                // background-image: url("../assets/contents/border.png")
+            }
+            .title {
+                font-family: $quicksand;
+                color: $third-theme-6;
+                font-weight: bold;
+            }
+            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-5) {
+                font-family: $quicksand;
+                color: $third-theme-6;
+                font-weight: bold;
+            }
+            :deep(.subtitle-4) {
+                font-family: $quicksand;
+                color: $third-theme-6;
+            }
+            :deep(.button-2) {
+                border: 1px solid $third-theme-6;
+                width: 250px;
+                height: 38.23px;
+                background-color: $third-theme-6;
+                
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: $primary-theme-6;
+                display: inline-block;
+                align-items: center;
+                text-align: center;
+
+                text-transform: uppercase;
+                cursor: pointer;
+
+                bottom: 50px;
+            }
         }
     }
 }
@@ -285,3 +339,6 @@
 
 // Call for theme-5
 @include themable(theme-5, $theme-5);
+
+// Call for theme-6
+@include themable(theme-6, $theme-6);

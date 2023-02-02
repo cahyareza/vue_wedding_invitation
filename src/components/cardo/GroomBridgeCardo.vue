@@ -157,9 +157,6 @@ img {
 
 .vertical {
     grid-row: span 2;
-}
-
-.vertical {
     border: solid 10px #E9CBBB;
 }
 

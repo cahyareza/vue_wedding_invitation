@@ -4,6 +4,7 @@
 @import '../theme/theme-3';
 @import '../theme/theme-4';
 @import '../theme/theme-5';
+@import '../theme/theme-6';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -69,6 +70,19 @@
             .icon {
                 color: $secondary-theme-5;
             }
+        } @else if ($theme-name == theme-6) {
+            .button2 {
+                background-color: $third-theme-6;
+            }
+            .button1 {
+                background-color: #FFF;
+            }
+            // .notification2 {
+            //     background-color: $primary-theme-3;
+            // }
+            .icon {
+                color: $third-theme-6;
+            }
         }
     }
 }
@@ -87,3 +101,6 @@
 
 // Call for theme-5
 @include themable(theme-5, $theme-5);
+
+// Call for theme-6
+@include themable(theme-6, $theme-6);

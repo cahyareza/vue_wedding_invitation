@@ -26,21 +26,22 @@
       </GroomBridgeCardo>
     </div>
     <div ref="time">
-      <TimeLines 
+      <TimeLinesCardo 
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"   
+        :multiimage="multiimage"  
       >
-      </TimeLines>
+      </TimeLinesCardo>
     </div>
     <div ref='run'>
-      <RunDown 
+      <RunDownCardo 
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
         :acara="acara"   
       >
-      </RunDown>
+      </RunDownCardo>
     </div>
     <SpecialInvitation 
       :portofolio="portofolio"
@@ -49,27 +50,28 @@
       :invitation="invitation"
     >
     </SpecialInvitation>
-    <LiveStream 
+    <LiveStreamCardo 
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
+      :multiimage="multiimage"
     >
-    </LiveStream>
-    <StoryPage
-      :theme="theme"
-      :themeproduct="themeproduct"
-      :story="story"
-    >
-    </StoryPage>
+    </LiveStreamCardo>
     <div ref='moment'>
-      <OurMoment 
+      <OurMomentCardo 
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
         :multiimage="multiimage"
       >
-      </OurMoment>
+      </OurMomentCardo>
     </div>
+    <StoryPageCardo
+      :theme="theme"
+      :themeproduct="themeproduct"
+      :story="story"
+    >
+    </StoryPageCardo>
     <div ref='message'>
       <MessageBox
         :theme="theme"
@@ -77,42 +79,43 @@
       >
       </MessageBox>
     </div>
-    <HappyPage
+    <HappyPageCardo
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
+      :multiimage="multiimage" 
     >
-    </HappyPage>
+    </HappyPageCardo>
     <FooterPage
       :theme="theme"
     >
     </FooterPage>
-    <MainMenu 
+    <MainMenuCardo 
       @page="navigation"
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
     >
-    </MainMenu>
+    </MainMenuCardo>
   </section>
 </template>
 
 <script setup>
-import MainMenu from '@/components/MainMenu.vue'
+import MainMenuCardo from '@/components/cardo/MainMenuCardo.vue'
 // import CovidPage from '@/components/CovidPage.vue'
 import MainCoverCardo from '@/components/cardo/MainCoverCardo.vue'
 import QuotePageCardo from '@/components/cardo/QuotePageCardo.vue'
 import GroomBridgeCardo from '@/components/cardo/GroomBridgeCardo.vue'
-import TimeLines from '@/components/TimeLines.vue'
-import RunDown from '@/components/RunDown.vue'
+import TimeLinesCardo from '@/components/cardo/TimeLinesCardo.vue'
+import RunDownCardo from '@/components/cardo/RunDownCardo.vue'
 import SpecialInvitation from '@/components/SpecialInvitation.vue'
-import LiveStream from '@/components/LiveStream.vue'
-import StoryPage from '@/components/StoryPage.vue'
-import OurMoment from '@/components/OurMoment.vue'
+import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
+import StoryPageCardo from '@/components/cardo/StoryPageCardo.vue'
+import OurMomentCardo from '@/components/cardo/OurMomentCardo.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
-import HappyPage from '@/components/HappyPage.vue'
+import HappyPageCardo from '@/components/cardo/HappyPageCardo.vue'
 
 
 
