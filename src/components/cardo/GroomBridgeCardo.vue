@@ -6,38 +6,52 @@
                     <div class="columns is-vcentered is-multiline">
                         <div class="column 
                         is-full-mobile
-                        is-4-tablet
+                        is-4-tablets
                         ">
-                            <p class="subtitle2 is-size-2-tablet is-size-3-mobile has-text-weight-bold">
-                                The Groom<br>
+                           <p class="subtitle2 is-size-2-tablet is-size-3-mobile has-text-weight-bold">
+                                The Bride<br>
                             </p>
                         </div>
                         <div class="column 
                         is-full-mobile
-                        is-8-tablet">
+                        is-8-tablets">
+
                             <div class="columns is-multiline">
-                                <div class="card p-4" style="background:#E9CBBB">
+                                <div class="card p-4">
                                     <div class="column
                                     is-full
                                     ">
                                         <div class="columns is-mobile">
                                             <div class="column
-                                            is-12 p-0 is-marginless
+                                            is-6 is-paddingless is-marginless
                                             ">
-                                                <div class="wrapper">
-                                                    <div class="a horizontal">
-                                                        <img :src="multiimage[0]">
+                                                <figure class="image is-3by4">
+                                                    <img :src="multiimage[0]">
+                                                </figure>
+                                            </div>
+                                            <div class="column
+                                            is-6
+                                            ">
+                                                <div class="columns is-multiline">
+                                                    <div class="column
+                                                    is-full is-paddingless is-marginless
+                                                    ">
+                                                        <figure class="image is-3by2">
+                                                            <img :src="multiimage[2]">
+                                                        </figure>
                                                     </div>
-                                                    <div class="b">
-                                                        <img :src="multiimage[1]">
-                                                    </div>
-                                                    <div id="c">                
-                                                        <img :src="multiimage[2]">  
+                                                    <div class="column
+                                                    is-full is-paddingless is-marginless
+                                                    ">
+                                                        <figure class="image is-3by2">
+                                                            <img :src="multiimage[1]">
+                                                        </figure>
                                                     </div>
                                                 </div>
-                                            </div>                          
+                                            </div>                                       
                                         </div>
                                     </div>
+                                    
                                     <div class="column
                                     is-full has-text-left
                                     ">                                    
@@ -61,23 +75,22 @@
                         is-4-tablet
                         ">
                             <p class="subtitle2 is-size-2-tablet is-size-3-mobile has-text-weight-bold">
-                                The Bride<br>
+                                The Groom<br>
                             </p>
                         </div>
                         <div class="column 
                         is-8-tablet
                         is-full-mobile">
                             <div class="columns is-vcentered is-mobile">
-                                
-                                    <div class="column
-                                    is-6-tablet
-                                    is-6-mobile is-paddingless">
-                                        <div class="wrapper">
-                                            <div class="vertical">
-                                                <img :src="multiimage[5]">
-                                            </div>
-                                        </div>
+                                <div class="column
+                                is-6-tablet
+                                is-6-mobile is-paddingless">
+                                    <div class="card p-4">
+                                        <figure class="image is-3by4">
+                                            <img :src="multiimage[5]">
+                                        </figure>
                                     </div>
+                                </div>
                                 <div class="column
                                 is-6-tablet
                                 is-6-mobile has-text-left">

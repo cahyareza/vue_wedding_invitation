@@ -49,13 +49,13 @@
                                     <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
                                 </header>
                                 <section class="modal-card-body">
-                                    <p class="has-text-left mb-4 has-text-centered">Doa restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah, namun jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentunya semakin melengkapi kebahagiaan kami.;</p>
+                                    <p class="has-text-left mb-4">Doa restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah, namun jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentunya semakin melengkapi kebahagiaan kami.;</p>
                                     <div class="columns is-multiline is-mobile mt-4">
                                         <div v-for="info in dompet" :key="info.id" class="column is-one-half has-text-center">
-                                            <p class="mb-6">{{ info.rekening }}</p>
-                                            <p class="mb-6"><strong>{{ info.nomor }}</strong></p>
+                                            <p class="subtitle is-size-6-mobile is-size-5-tablet mb-6"><strong>{{ info.rekening }}</strong></p>
+                                            <p class="subtitle is-size-6-mobile is-size-5-tablet mb-6">{{ info.nomor }}</p>
                                             
-                                            <p>a/n {{ info.pemilik }}</p>
+                                            <p class="subtitle is-size-6-mobile is-size-5-tablet">a/n {{ info.pemilik }}</p>
                                             <button @click="copy(info.nomor)" class="button is-black mt-3">Salin Nomor</button>
                                             
                                         </div>
