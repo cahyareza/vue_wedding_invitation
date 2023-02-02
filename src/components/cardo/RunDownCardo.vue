@@ -16,10 +16,10 @@
 
                                                 <p class="subtitle3 is-size-6-tablet is-size-6-mobile mb-1">{{ tanggal(piece.tanggal_acara) }}</p>
                                                 <div v-if="piece.waktu_selesai_acara">
-                                                    <p class="subtitle3 is-size-7-tablet is-size-7-mobile mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - {{ waktu(piece.waktu_selesai_acara) }} {{ portofolio.timeZone }}</p>
+                                                    <p class="subtitle3 is-size-7-tablet is-size-7-mobile mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - {{ waktu(piece.waktu_selesai_acara) }} {{ change_timezone(portofolio.timeZone) }}</p>
                                                 </div>
                                                 <div v-else>
-                                                    <p class="subtitle3 is-size-7-tablet is-size-7-mobile mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - selesai {{ portofolio.timeZone }}</p>
+                                                    <p class="subtitle3 is-size-7-tablet is-size-7-mobile mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - selesai {{ change_timezone(portofolio.timeZone) }}</p>
                                                 </div>
                                                 <p class="subtitle3 is-size-7 mt-1 mb-3"><font-awesome-icon icon="fa-solid fa-location-pin" /> {{ piece.tempat_acara }}</p>
                                                 <div v-if="piece.link_gmap_acara">
@@ -67,6 +67,18 @@ const tanggal = (value) => {
 }
 const waktu = (value) => {
     return moment(value, "HH:mm:ss").format("HH:mm");
+}
+
+const change_timezone = (value) => {
+    if (value == 'Asia/Jakarta') {
+        return "WIB"
+    } else if (value == 'Asia/Makassar') {
+        return "WITA"
+    } else if (value == 'Asia/Jayapura'){
+        return "WIT"
+    } else {
+        return value
+    }
 }
 </script>
 

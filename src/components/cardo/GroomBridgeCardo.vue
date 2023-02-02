@@ -26,7 +26,7 @@
                                             is-6 is-paddingless is-marginless
                                             ">
                                                 <figure class="image is-3by4">
-                                                    <img :src="multiimage[0]">
+                                                    <img :src="portofolio.ppicture">
                                                 </figure>
                                             </div>
                                             <div class="column
@@ -87,7 +87,7 @@
                                 is-6-mobile is-paddingless">
                                     <div class="card p-4">
                                         <figure class="image is-3by4">
-                                            <img :src="multiimage[5]">
+                                            <img :src="portofolio.lpicture">
                                         </figure>
                                     </div>
                                 </div>
