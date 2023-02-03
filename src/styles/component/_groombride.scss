@@ -1,20 +1,21 @@
-@import '../variables';
-@import '../theme/theme-1';
-@import '../theme/theme-2';
-@import '../theme/theme-3';
-@import '../theme/theme-4';
-@import '../theme/theme-5';
+@import '~/src/styles/variables';
+@import '~/src/styles/theme/theme-1';
+@import '~/src/styles/theme/theme-2';
+@import '~/src/styles/theme/theme-3';
+@import '~/src/styles/theme/theme-4';
+@import '~/src/styles/theme/theme-5';
+@import '~/src/styles/theme/theme-6';
 
 // Import only what you need from Bulma
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
-@import "../../../node_modules/bulma/sass/base/_all.sass";
-@import "../../../node_modules/bulma/sass/elements/button.sass";
-@import "../../../node_modules/bulma/sass/elements/container.sass";
-@import "../../../node_modules/bulma/sass/elements/title.sass";
-@import "../../../node_modules/bulma/sass/form/_all.sass";
-@import "../../../node_modules/bulma/sass/components/navbar.sass";
-@import "../../../node_modules/bulma/sass/layout/hero.sass";
-@import "../../../node_modules/bulma/sass/layout/section.sass";
+@import "~/node_modules/bulma/sass/utilities/_all.sass";
+@import "~/node_modules/bulma/sass/base/_all.sass";
+@import "~/node_modules/bulma/sass/elements/button.sass";
+@import "~/node_modules/bulma/sass/elements/container.sass";
+@import "~/node_modules/bulma/sass/elements/title.sass";
+@import "~/node_modules/bulma/sass/form/_all.sass";
+@import "~/node_modules/bulma/sass/components/navbar.sass";
+@import "~/node_modules/bulma/sass/layout/hero.sass";
+@import "~/node_modules/bulma/sass/layout/section.sass";
 
 // MIXINS
 @mixin themable ($theme-name, $theme-map){
@@ -57,10 +58,10 @@
                 
                 border-style:solid;
                 border-width: 45px 30px 35px 33px;
-                -moz-border-image: url("../assets/contents/border_1.svg") 84 65 83 69 stretch;
-                -webkit-border-image: url("../assets/contents/border_1.svg") 84 65 83 69 stretch;
-                -o-border-image: url("../assets/contents/border_1.svg") 84 65 83 69 stretch;
-                border-image: url("../assets/contents/border_1.svg") 84 65 83 69 stretch;
+                -moz-border-image: url("~/src/assets/contents/border_1.svg") 84 65 83 69 stretch;
+                -webkit-border-image: url("~/src/assets/contents/border_1.svg") 84 65 83 69 stretch;
+                -o-border-image: url("~/src/assets/contents/border_1.svg") 84 65 83 69 stretch;
+                border-image: url("~/src/assets/contents/border_1.svg") 84 65 83 69 stretch;
                 border-image-outset: 20px 18px 20px 18px;
                 
                 /** define the origin so the image would be under the border **/
@@ -109,10 +110,10 @@
                 
                 border-style:solid;
                 border-width: 80px 80px 80px 80px;
-                -moz-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                -webkit-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                -o-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
+                -moz-border-image: url("~/src/assets/contents/border_2.png") 84 65 83 69 stretch;
+                -webkit-border-image: url("~/src/assets/contents/border_2.png") 84 65 83 69 stretch;
+                -o-border-image: url("~/src/assets/contents/border_2.png") 84 65 83 69 stretch;
+                border-image: url("~/src/assets/contents/border_2.png") 84 65 83 69 stretch;
                 border-image-outset: 7px 12px 7px 12px;
                 
                 /** define the origin so the image would be under the border **/
@@ -161,10 +162,10 @@
                 
                 border-style:solid;
                 border-width: 80px 80px 80px 80px;
-                -moz-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                -webkit-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                -o-border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
-                border-image: url("../assets/contents/border_2.png") 84 65 83 69 stretch;
+                -moz-border-image: url("~/src/assets/contents/border_2.png") 84 65 83 69 stretch;
+                -webkit-border-image: url("~/src/assets/contents/border_2.png") 84 65 83 69 stretch;
+                -o-border-image: url("~/src/assets/contents/border_2.png") 84 65 83 69 stretch;
+                border-image: url("~/src/assets/contents/border_2.png") 84 65 83 69 stretch;
                 border-image-outset: 7px 12px 7px 12px;
                 
                 /** define the origin so the image would be under the border **/
@@ -213,10 +214,10 @@
                 
                 border-style:solid;
                 border-width: 80px 80px 80px 80px;
-                -moz-border-image: url("../assets/contents/border_4.png") 84 65 83 69 stretch;
-                -webkit-border-image: url("../assets/contents/border_4.png") 84 65 83 69 stretch;
-                -o-border-image: url("../assets/contents/border_4.png") 84 65 83 69 stretch;
-                border-image: url("../assets/contents/border_4.png") 84 65 83 69 stretch;
+                -moz-border-image: url("~/src/assets/contents/border_4.png") 84 65 83 69 stretch;
+                -webkit-border-image: url("~/src/assets/contents/border_4.png") 84 65 83 69 stretch;
+                -o-border-image: url("~/src/assets/contents/border_4.png") 84 65 83 69 stretch;
+                border-image: url("~/src/assets/contents/border_4.png") 84 65 83 69 stretch;
                 border-image-outset: 7px 12px 7px 12px;
                 
                 /** define the origin so the image would be under the border **/
@@ -263,10 +264,10 @@
                 
                 border-style:solid;
                 border-width: 60px 60px 60px 60px;
-                -moz-border-image: url("../assets/contents/border_5.svg") 84 80 83 75 stretch;
-                -webkit-border-image: url("../assets/contents/border_5.svg") 84 80 83 75 stretch;
-                -o-border-image: url("../assets/contents/border_5.svg") 84 80 83 75 stretch;
-                border-image: url("../assets/contents/border_5.svg") 84 80 83 75 stretch;
+                -moz-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
+                -webkit-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
+                -o-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
+                border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
                 border-image-outset: 7px 12px 7px 12px;
                 
                 /** define the origin so the image would be under the border **/
@@ -283,6 +284,61 @@
             }
             .filter{
                 filter: $secondary-filter-theme-5;
+            }
+        } @else if ($theme-name == theme-6) {
+            .hero {
+                background-color: $primary-theme-6;
+            }
+            .title2 {
+                font-family: $quicksand;
+                color: #000;
+            }
+            .subtitle2 {
+                font-family: $quicksand;
+                color: $third-theme-6;
+            }
+            .subtitle3 {
+                font-family: $quicksand;
+                color: #000;
+            }
+            .icon {
+                color: #000;
+            }
+            .sprocket-mosaic-image-container {
+                position: absolute;
+                
+                 /** define width and height of the image **/
+                width: 180px;
+                height: 180px;
+                
+                /** set the box sizing so the border dimensions would be part of the width and height **/
+                box-sizing: border-box; 
+                
+                border-style:solid;
+                border-width: 60px 60px 60px 60px;
+                -moz-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
+                -webkit-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
+                -o-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
+                border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
+                border-image-outset: 7px 12px 7px 12px;
+                
+                /** define the origin so the image would be under the border **/
+                background-origin: border-box;
+                
+                z-index:1;
+
+                filter: $secondary-filter-theme-5;
+            }
+            
+            .sprocket-mosaic .sprocket-mosaic-image {
+                position:relative;
+                 z-index:0;
+            }
+            .filter{
+                filter: $secondary-filter-theme-5;
+            }
+            .card {
+                background-color: $secondary-theme-6;
             }
         }
     }
@@ -302,3 +358,6 @@
 
 // Call for theme-5
 @include themable(theme-5, $theme-5);
+
+// Call for theme-6
+@include themable(theme-6, $theme-6);

@@ -4,6 +4,7 @@
 @import '../theme/theme-3';
 @import '../theme/theme-4';
 @import '../theme/theme-5';
+@import '../theme/theme-6';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -225,6 +226,42 @@
                 background-size: cover;
                 background-position: center;
             }
+        } @else if ($theme-name == theme-6) {
+            .hero {
+                background-color: $primary-theme-6;
+            }
+            .notification {
+                background-color: $secondary-theme-6
+            }
+            .button {
+                border: 1px solid $third-theme-6;
+                background: $third-theme-6;
+                color: $primary-theme-6;
+            }
+            .title2 {
+                font-family: $quicksand;
+                color: $third-theme-6;
+            }
+            .subtitle2 {
+                font-family: $quicksand;
+                color: $third-theme-6;
+            }
+            .subtitle3 {
+                font-family: $quicksand;
+                color: #000;
+            }
+            :deep(.iframe) {
+                border: 5px solid $third-theme-6; 
+                border-radius: 4px;
+            }
+            :deep(.button) {
+                border: 1px solid $third-theme-6;
+                background-color: $third-theme-6;
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: $primary-theme-6;
+            }
         }
     }
 }
@@ -243,3 +280,6 @@
 
 // Call for theme-5
 @include themable(theme-5, $theme-5);
+
+// Call for theme-6
+@include themable(theme-6, $theme-6);

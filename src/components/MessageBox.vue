@@ -34,9 +34,11 @@
                             <section class="section pt-4">
                                 <div class="container">
                                     <p class="subtitle2 is-uppercase is-size-5">
-                                        Ucapan<br>
-                                        <img class="filter mt-1" :src="themeproduct.theme?.line">
+                                        Ucapan
                                     </p>
+                                    <div v-if="themeproduct.theme?.line">
+                                        <img class="filter mt-1" :src="themeproduct.theme?.line">
+                                    </div>
                                 </div>
                             </section>
                             <MessageForm></MessageForm>

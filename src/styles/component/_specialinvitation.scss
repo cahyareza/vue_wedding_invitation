@@ -4,6 +4,7 @@
 @import '../theme/theme-3';
 @import '../theme/theme-4';
 @import '../theme/theme-5';
+@import '../theme/theme-6';
 
 
 // Import only what you need from Bulma
@@ -99,6 +100,18 @@
                 background-color: rgba($primary-theme-5, 0.2);
                 border: 3px dashed $secondary-theme-5;
             }
+        } @else if ($theme-name == theme-6) {
+            .hero {
+                background-color: $secondary-theme-6;
+            }
+            .title {
+                font-family: $quicksand;
+                color: $primary-theme-6;
+            }
+            .subtitle {
+                font-family: $quicksand;
+                color: $third-theme-6;
+            }
         }
     }
 }
@@ -117,3 +130,6 @@
 
 // Call for theme-5
 @include themable(theme-5, $theme-5);
+
+// Call for theme-6
+@include themable(theme-6, $theme-6);

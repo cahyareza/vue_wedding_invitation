@@ -6,6 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+// font theme-6
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+
 // Fonts
 // theme-1
 $dancing_script: 'Dancing Script', cursive;
@@ -15,6 +19,8 @@ $roboto: 'Roboto', sans-serif;
 $great_vibes: 'Great Vibes', cursive;
 $playfair: 'Playfair Display', serif;
 
+// theme-6
+$quicksand: 'Quicksand', sans-serif;
 
 // Umum
 $fourth-theme-1: #FFFFFF;
@@ -71,3 +77,9 @@ $third-theme-5: #D58CAF;
 $primary-filter-theme-5: invert(87%) sepia(21%) saturate(239%) hue-rotate(287deg) brightness(105%) contrast(97%);
 $secondary-filter-theme-5: invert(23%) sepia(54%) saturate(1044%) hue-rotate(287deg) brightness(99%) contrast(89%);
 $third-filter-theme-5: invert(77%) sepia(6%) saturate(2924%) hue-rotate(291deg) brightness(84%) contrast(99%);
+
+// Theme-6
+$primary-theme-6: #F6E9E2;
+$secondary-theme-6: #E9CBBB;
+$third-theme-6: #92794F;
+$fourth-theme-6: #54595F;

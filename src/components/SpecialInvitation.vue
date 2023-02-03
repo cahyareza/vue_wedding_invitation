@@ -11,20 +11,20 @@
                                         <div class="notification m-2 p-1">
                                             <div class="column is-12">
                                                 <div v-if="portofolio.kata_special_invite">
-                                                    <p class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                    <p class="subtitle is-size-6-mobile is-size-7-mobile">
                                                         {{ portofolio.kata_special_invite }}
                                                     </p>
                                                 </div>
                                                 <div v-else>
-                                                    <p class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                    <p class="subtitle is-size-6-mobile">
                                                         Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="column is-12" data-aos="fade-up" data-aos-duration="1000">
-                                                <p class="subtitle mb-3 has-text-weight-bold is-size-6-tablet is-size-7-mobile"> Turut mengundang: </p>
+                                                <p class="subtitle mb-3 has-text-weight-bold is-size-6-mobile"> Turut mengundang: </p>
                                                 <div v-for="invite in invitation" v-bind:key="invite.id">
-                                                    <p class="subtitle is-size-6-tablet is-size-7-mobile is-capitalized">{{ invite.name_invite }}</p>
+                                                    <p class="subtitle is-size-6-mobile is-capitalized">{{ invite.name_invite }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -38,15 +38,15 @@
                                                 </p>
                                             </div>
                                             <div v-else>
-                                                <p class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                <p class="subtitle is-size-6-mobile">
                                                     Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
                                                 </p>
                                             </div>
                                         </div>
                                         <div class="column is-12" data-aos="fade-up" data-aos-duration="1000">
-                                            <p class="subtitle mb-3 has-text-weight-bold is-size-6-tablet is-size-7-mobile"> Turut mengundang: </p>
+                                            <p class="subtitle mb-3 has-text-weight-bold is-size-6-mobile"> Turut mengundang: </p>
                                             <div v-for="invite in invitation" v-bind:key="invite.id">
-                                                <p class="subtitle is-size-6-tablet is-size-7-mobile is-capitalized">{{ invite.name_invite }}</p>
+                                                <p class="subtitle is-size-6-mobile is-capitalized">{{ invite.name_invite }}</p>
                                             </div>
                                         </div>
                                         <!-- </div> -->

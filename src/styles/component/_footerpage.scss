@@ -2,6 +2,7 @@
 @import '../theme/theme-1';
 @import '../theme/theme-2';
 @import '../theme/theme-3';
+@import '../theme/theme-6';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -41,6 +42,18 @@
                 font-family: $roboto;
                 color: $third-theme-3;
             }
+        } @else if ($theme-name == theme-6) {
+            .hero {
+                background-color: rgba(#FFF, 1);
+            }
+            .title2 {
+                font-family: $quicksand;
+                color: $secondary-theme-3;
+            }
+            .subtitle2 {
+                font-family: $quicksand;
+                color: #000;
+            }
         }
     }
 }
@@ -53,3 +66,6 @@
 
 // Call for theme-3
 @include themable(theme-3, $theme-3);
+
+// Call for theme-6
+@include themable(theme-6, $theme-6);
