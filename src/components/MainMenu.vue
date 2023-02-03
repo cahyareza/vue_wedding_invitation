@@ -7,14 +7,14 @@
                         <!--  Music     -->
                         <div v-if="portofolio.track">
                             <div v-if="audio.isPlaying">
-                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
+                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button1 is-rounded p-2">
                                     <span class="icon has-text-dark">
                                         <font-awesome-icon icon="fa-solid fa-volume-high" />
                                     </span>
                                 </div>
                             </div>
                             <div v-else>
-                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button is-rounded p-4">
+                                <div @click.prevent="audio.isPlaying ? pause() : play()" class="button1 is-rounded p-2">
                                     <span class="icon has-text-dark">
                                         <font-awesome-icon icon="fa-solid fa-volume-xmark" />
                                     </span>
@@ -34,30 +34,30 @@
                             <div v-if="dompet.length != 0">
                                 <div @click="showModal" class="button2 is-rounded p-2">
                                     <span class="icon has-text-dark">
-                                        <font-awesome-icon icon="fa-solid fa-money-bill-wave" />
+                                        <font-awesome-icon icon="fa-solid fa-gift" />
                                     </span>
                                 </div>
                             </div>
                         </div>
 
                         <!--    Modal        -->
-                        <div class="modal p-3" :class="{'is-active': modal_data.showModalFlag}">
+                        <div class="modal" :class="{'is-active': modal_data.showModalFlag}">
                             <div class="modal-background"></div>
-                            <div class="modal-card m-4" style="padding: 4vw;">
+                            <div class="modal-card">
                                 <header class="modal-card-head">
-                                    <p class="modal-card-title">Amplop Digital</p>
+                                    <p class="modal-card-title">Tanda Kasih</p>
                                     <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
                                 </header>
                                 <section class="modal-card-body">
-                                    <p class="has-text-left mb-4">Transfer langsung ke rekening berikut ini;</p>
-                                    <div class="columns is-multiline">
-                                        <div v-for="info in dompet" :key="info.id">
-                                            <div class="column pb-1 is-gapless has-text-left">
-                                                <p>{{ info.rekening }}</p>
-                                                <p><strong>{{ info.nomor }}</strong> <button class="button-copy" @click="copy(info.nomor)">copy</button></p>
-                                                
-                                                <p>a/n {{ info.pemilik }}</p>
-                                            </div>
+                                    <p class="has-text-left mb-4">Doa restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah, namun jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentunya semakin melengkapi kebahagiaan kami.;</p>
+                                    <div class="columns is-multiline is-mobile mt-4">
+                                        <div v-for="info in dompet" :key="info.id" class="column is-one-half has-text-center">
+                                            <p class="subtitle is-size-6-mobile is-size-5-tablet mb-6"><strong>{{ info.rekening }}</strong></p>
+                                            <p class="subtitle is-size-6-mobile is-size-5-tablet mb-6">{{ info.nomor }}</p>
+                                            
+                                            <p class="subtitle is-size-6-mobile is-size-5-tablet">a/n {{ info.pemilik }}</p>
+                                            <button @click="copy(info.nomor)" class="button is-black mt-3">Salin Nomor</button>
+                                            
                                         </div>
                                     </div>
                                 </section>
@@ -222,13 +222,13 @@ onMounted(() => {
     box-shadow: 2px 2px 3px #999;
 }
 
-.button {
+.button1 {
     position: fixed;
     height: 40px;
     top: 20px;
     right: 10px;
     color: #fff;
-    border-radius: 50px;
+    border-radius: 20px;
     cursor: pointer;
     box-shadow: 2px 2px 3px #999;
 }

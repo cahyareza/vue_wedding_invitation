@@ -40,7 +40,7 @@ const move = () => {
 const create = () => {
     setInterval(() => {
         move();
-    }, 20000);
+    }, 10000);
 }
 
 onMounted(() => {

@@ -24,6 +24,9 @@
             .button2 {
                 background-color: $secondary-theme-1;
             }
+            .button1 {
+                background-color: #FFF;
+            }
             .notification2 {
                 background-color: rgba($fourth-theme-1, 0.7);
             }
@@ -33,6 +36,9 @@
         } @else if ($theme-name == theme-2) {
             .button2 {
                 background-color: $secondary-theme-2;
+            }
+            .button1 {
+                background-color: #FFF;
             }
             // .notification2 {
             //     background-color: $primary-theme-2;
@@ -44,6 +50,9 @@
             .button2 {
                 background-color: $secondary-theme-3;
             }
+            .button1 {
+                background-color: #FFF;
+            }
             // .notification2 {
             //     background-color: $primary-theme-3;
             // }
@@ -54,6 +63,9 @@
             .button2 {
                 background-color: $secondary-theme-4;
             }
+            .button1 {
+                background-color: #FFF;
+            }
             // .notification2 {
             //     background-color: $primary-theme-3;
             // }
@@ -63,6 +75,9 @@
         } @else if ($theme-name == theme-5) {
             .button2 {
                 background-color: $secondary-theme-5;
+            }
+            .button1 {
+                background-color: #FFF;
             }
             // .notification2 {
             //     background-color: $primary-theme-3;
