@@ -4,8 +4,7 @@
     <div v-for="(value, name, index) in countdown" :key="index">
       <div class="column">
         <div class="conto">
-          <p class="subtitle-5  is-size-5-mobile is-size-4-tablet mb-1">{{ value }}</p>
-          <p class="subtitle-5  is-size-5-mobile is-size-4-tablet mt-1">{{ name }}</p>
+          <p class="subtitle-5  is-size-5-mobile is-size-4-tablet mb-1">{{ value }}<br>{{ name }}</p>
         </div>
       </div>
     </div>

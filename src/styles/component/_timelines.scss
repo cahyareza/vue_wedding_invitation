@@ -5,6 +5,7 @@
 @import '../theme/theme-4';
 @import '../theme/theme-5';
 @import '../theme/theme-6';
+@import '../theme/theme-7';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -272,10 +273,6 @@
             :deep(.notification2) {
                 background-color: $primary-theme-6;
             }
-            :deep(.iframe) {
-                border: 5px solid $secondary-theme-6; 
-                border-radius: 4px;
-            }
             :deep(.button) {
                 border: 1px solid $third-theme-6;
                 background-color: $third-theme-6;
@@ -321,6 +318,61 @@
 
                 bottom: 50px;
             }
+        } @else if ($theme-name == theme-7) {
+            :deep(.notification2) {
+                background-color: $secondary-theme-7;
+            }
+            :deep(.button) {
+                border: 1px solid $primary-theme-7;
+                background-color: $primary-theme-7;
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: $secondary-theme-7;
+            }
+            .hero {
+                background: rgb(122,122,122);
+                background: linear-gradient(180deg, rgba(122,122,122,1) 0%, rgba(179,179,179,1) 81%); 
+            }
+            .title {
+                font-family: $quicksand;
+                color: $secondary-theme-7;
+                font-weight: bold;
+            }
+            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-5) {
+                font-family: $quicksand;
+                color: $secondary-theme-7;
+                font-weight: bold;
+            }
+            :deep(.subtitle-4) {
+                font-family: $quicksand;
+                color: $primary-theme-7;
+            }
+            :deep(.subtitle-5) {
+                font-family: $quicksand;
+                color: $secondary-theme-7;
+                background: $primary-theme-7;
+                padding: 5px;
+            }
+            :deep(.button-2) {
+                border: 1px solid $primary-theme-7;
+                width: 250px;
+                height: 38.23px;
+                background-color: $primary-theme-7;
+                
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: $secondary-theme-7;
+                display: inline-block;
+                align-items: center;
+                text-align: center;
+
+                text-transform: uppercase;
+                cursor: pointer;
+
+                bottom: 50px;
+            }
         }
     }
 }
@@ -342,3 +394,6 @@
 
 // Call for theme-6
 @include themable(theme-6, $theme-6);
+
+// Call for theme-7
+@include themable(theme-7, $theme-7);

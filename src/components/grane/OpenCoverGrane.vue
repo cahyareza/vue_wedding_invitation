@@ -9,6 +9,21 @@
                             </div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
+                                <div v-if="direction">
+                                    <div class="mt-6">
+                                        <p class="subtitle is-size-5 mb-0 has-text-white">
+                                            Kepada Yth.
+                                        </p>
+                                        <p class="subtitle is-size-5 mt-0 has-text-white mb-1">
+                                            {{ direction }}
+                                        </p>
+                                        <p class="is-size-7 has-text-white mt-1 is-italic">
+                                            Mohon maaf apabila ada kesalahan penulisan nama/gelar
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
                                 <div class="">
                                     <p class="title is-size-3-mobile is-capitalized is-size-2-tablet mb-1 has-text-white">
                                         {{ portofolio.pname }}
@@ -35,22 +50,7 @@
                 </div>
                 <div class="hero-footer">
                     <div class="container">
-                        <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
-                            <div v-if="direction">
-                                <div class="mt-6 mx-6 mb-3">
-                                    <p class="subtitle is-size-5 mb-0 has-text-white">
-                                        Kepada Yth.
-                                    </p>
-                                    <p class="subtitle is-size-5 mt-0 has-text-white mb-1">
-                                        {{ direction }}
-                                    </p>
-                                    <p class="is-size-7 has-text-white mt-1 is-italic">
-                                        Mohon maaf apabila ada kesalahan penulisan nama/gelar
-                                    </p>
-                                </div>
-                            </div>
-                        </div><br>
-                        <router-link :to="`/main/cardo/${slug}`" class="button mt-4">
+                        <router-link :to="`/main/grane/${slug}/${direction}`" class="button mt-4">
                             Buka Undangan
                         </router-link>
                     </div>

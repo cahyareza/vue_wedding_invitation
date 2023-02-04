@@ -5,6 +5,7 @@
 @import '../theme/theme-4';
 @import '../theme/theme-5';
 @import '../theme/theme-6';
+@import '../theme/theme-7';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -233,11 +234,6 @@
             .notification {
                 background-color: $secondary-theme-6
             }
-            .button {
-                border: 1px solid $third-theme-6;
-                background: $third-theme-6;
-                color: $primary-theme-6;
-            }
             .title2 {
                 font-family: $quicksand;
                 color: $third-theme-6;
@@ -262,6 +258,55 @@
                 font-weight: bold;
                 color: $primary-theme-6;
             }
+        } @else if ($theme-name == theme-7) {
+            .hero {
+                background-color: #000;
+                :deep(.hero) {
+                    background-color: #FFF;
+                }
+            }
+            .notification {
+                background-color: $secondary-theme-7;
+            }
+            .title2 {
+                font-family: $quicksand;
+                color: #FFF;
+            }
+            .subtitle2 {
+                font-family: $quicksand;
+                color: #000;
+            }
+            .subtitle3 {
+                font-family: $quicksand;
+                color: #FFF;
+            }
+            :deep(.iframe) {
+                border: 5px solid $primary-theme-7; 
+                border-radius: 4px;
+            }
+            :deep(.button) {
+                border: 1px solid $primary-theme-7;
+                background-color: $primary-theme-7;
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: $secondary-theme-7;
+            }
+            .low-opacity-bg-image {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
+            .low-opacity-bg-image::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                opacity: 0.8;
+                background: $primary-theme-3;
+            }
         }
     }
 }
@@ -283,3 +328,6 @@
 
 // Call for theme-6
 @include themable(theme-6, $theme-6);
+
+// Call for theme-7
+@include themable(theme-7, $theme-7);
