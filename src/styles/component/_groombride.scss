@@ -5,6 +5,7 @@
 @import '~/src/styles/theme/theme-4';
 @import '~/src/styles/theme/theme-5';
 @import '~/src/styles/theme/theme-6';
+@import '~/src/styles/theme/theme-7';
 
 // Import only what you need from Bulma
 @import "~/node_modules/bulma/sass/utilities/_all.sass";
@@ -304,41 +305,32 @@
             .icon {
                 color: #000;
             }
-            .sprocket-mosaic-image-container {
-                position: absolute;
-                
-                 /** define width and height of the image **/
-                width: 180px;
-                height: 180px;
-                
-                /** set the box sizing so the border dimensions would be part of the width and height **/
-                box-sizing: border-box; 
-                
-                border-style:solid;
-                border-width: 60px 60px 60px 60px;
-                -moz-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
-                -webkit-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
-                -o-border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
-                border-image: url("~/src/assets/contents/border_5.svg") 84 80 83 75 stretch;
-                border-image-outset: 7px 12px 7px 12px;
-                
-                /** define the origin so the image would be under the border **/
-                background-origin: border-box;
-                
-                z-index:1;
-
-                filter: $secondary-filter-theme-5;
-            }
-            
-            .sprocket-mosaic .sprocket-mosaic-image {
-                position:relative;
-                 z-index:0;
-            }
-            .filter{
-                filter: $secondary-filter-theme-5;
-            }
             .card {
                 background-color: $secondary-theme-6;
+            }
+        } @else if ($theme-name == theme-7) {
+            // gradient #b3b3b3 and #7a7a7a
+            .hero {
+                background: rgb(122,122,122);
+                background: linear-gradient(180deg, rgba(122,122,122,1) 0%, rgba(179,179,179,1) 81%); 
+            }
+            .title2 {
+                font-family: $quicksand;
+                color: $secondary-theme-7;
+            }
+            .subtitle2 {
+                font-family: $quicksand;
+                color: $secondary-theme-7;
+            }
+            .subtitle3 {
+                font-family: $quicksand;
+                color: $secondary-theme-7;
+            }
+            .icon {
+                color: $secondary-theme-7;
+            }
+            .image {
+                box-shadow: 20px -20px 0 2px rgba(white,0.1), 20px -20px 0 2px rgba(white,0.1);
             }
         }
     }
@@ -361,3 +353,6 @@
 
 // Call for theme-6
 @include themable(theme-6, $theme-6);
+
+// Call for theme-7
+@include themable(theme-7, $theme-7);

@@ -5,6 +5,7 @@
 @import '../theme/theme-4';
 @import '../theme/theme-5';
 @import '../theme/theme-6';
+@import '../theme/theme-7';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -145,7 +146,7 @@
             }
         } @else if ($theme-name == theme-6) {
             :deep(.title) {
-                font-family: $great_vibes;
+                font-family: $playfair;
                 color: $fourth-theme-1;
                 position: absolute;
                 z-index: 2;
@@ -186,6 +187,39 @@
                 opacity: 0.4;
                 background: $primary-theme-3;
             }
+        } @else if ($theme-name == theme-7) {
+            :deep(.section) {
+                position: absolute;
+                z-index: 2;
+                bottom: 20%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                .title {
+                    color: $fourth-theme-1;
+                    font-family: $theme7font;
+
+                }
+                .subtitle1 {
+                    color: $fourth-theme-1;
+                    font-family: $theme7font;
+                }
+            }
+            :deep(.low-opacity-bg-image) {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
+            :deep(.low-opacity-bg-image::after) {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                inset: 0;
+                opacity: 0.4;
+                background: $primary-theme-3;
+            }
         }
     }
 }
@@ -207,3 +241,6 @@
 
 // Call for theme-6
 @include themable(theme-6, $theme-6);
+
+// Call for theme-7
+@include themable(theme-7, $theme-7);
