@@ -6,6 +6,7 @@
 @import '../theme/theme-5';
 @import '../theme/theme-6';
 @import '../theme/theme-7';
+@import '../theme/theme-8';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -534,6 +535,56 @@
             :deep(.box), :deep(.commentlist) {
                 background-color: rgba($secondary-theme-7, 1);
             }
+        } @else if ($theme-name == theme-8) {
+
+            :deep(.product-container) {
+                background-color: rgba($primary-theme-7, 0.5);
+            }
+            :deep(.button) {
+                border: 1px solid $primary-theme-7;
+                background: $secondary-theme-7;
+                color: $primary-theme-7;
+            }
+            :deep(.subtitle) {
+                font-family: $quicksand;
+                color: #FFF;
+                font-size: 20px;  
+            }
+            :deep(.subtitle3)  {
+                font-family: $quicksand;
+                color: #FFF;
+                font-size: 20px;
+            }
+            :deep(.input) {
+                background-color: transparent;
+                border: 1px solid #FFF;
+            }
+            :deep(.textarea) {
+                background-color: transparent;
+                border: 1px solid #FFF;
+            }
+            .hero {
+                background: $primary-theme-8;
+            }
+            .title {
+                font-family: $quicksand;
+                color: #FFF;
+            }
+            :deep(.label) {
+                font-family: $quicksand;
+                color: #FFF;
+            }
+            .subtitle2 {
+                font-family: $quicksand;
+                color: $secondary-theme-7;
+                font-size: 25px !important;
+                text-transform: capitalize !important;
+                font-weight: bold;
+            }
+            :deep(.commentlist) {
+                background-color: transparent;
+                border-bottom: solid 1px #FFF;
+            }
         }
     }
 }
@@ -558,3 +609,6 @@
 
 // Call for theme-7
 @include themable(theme-7, $theme-7);
+
+// Call for theme-8
+@include themable(theme-8, $theme-8);

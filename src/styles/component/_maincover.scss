@@ -6,6 +6,7 @@
 @import '../theme/theme-5';
 @import '../theme/theme-6';
 @import '../theme/theme-7';
+@import '../theme/theme-8';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -220,6 +221,60 @@
                 opacity: 0.4;
                 background: $primary-theme-3;
             }
+        } @else if ($theme-name == theme-8) {
+            :deep(.hero-head) {
+                .section {
+                    position: absolute;
+                    z-index: 2;
+                    top: 20%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 90%;
+
+                    .title {
+                        color: $fourth-theme-1;
+                        font-family: $theme7font;
+
+                    }
+                    .subtitle1 {
+                        color: $fourth-theme-1;
+                        font-family: $theme7font;
+                    }
+                }
+            }
+            :deep(.hero-foot) {
+                position: absolute;
+                z-index: 2;
+                bottom: 0%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                .button {
+                    color: #FFF;
+                    font-family: $quicksand;
+                    background-color: transparent ;
+                }
+            }
+            :deep(.low-opacity-bg-image) {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
+            :deep(.low-opacity-bg-image::after) {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                inset: 0;
+                opacity: 0.4;
+                background: $primary-theme-3;
+            }
+            :deep(.subtitle-5) {
+                font-family: $quicksand;
+                color: #FFF;
+                padding: 5px;
+                border: solid 1px #FFF;
+            }
         }
     }
 }
@@ -244,3 +299,6 @@
 
 // Call for theme-7
 @include themable(theme-7, $theme-7);
+
+// Call for theme-8
+@include themable(theme-8, $theme-8);

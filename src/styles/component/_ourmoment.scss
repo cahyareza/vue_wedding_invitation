@@ -6,6 +6,7 @@
 @import '../theme/theme-5';
 @import '../theme/theme-6';
 @import '../theme/theme-7';
+@import '../theme/theme-8';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -148,6 +149,22 @@
                 font-family: $quicksand;
                 color: $primary-theme-7;
             }
+        } @else if ($theme-name == theme-8) {
+            .hero {
+                background-color: $primary-theme-8;
+            }
+            .title {
+                font-family: $quicksand;
+                color: #FFF;
+            }
+            .subtitle-2 , :deep(.subtitle-2) {
+                font-family: $quicksand;
+                color: #FFF;
+            }
+            .subtitle-3 {
+                font-family: $quicksand;
+                color: #FFF;
+            }
         }
     }
 }
@@ -172,3 +189,6 @@
 
 // Call for theme-7
 @include themable(theme-7, $theme-7);
+
+// Call for theme-8
+@include themable(theme-8, $theme-8);
