@@ -19,15 +19,15 @@
       >
       </GroomBridgeCosmos>
     </div>
-    <div ref="time">
-      <!-- <TimeLinesCardo 
-        :portofolio="portofolio"
-        :theme="theme"
-        :themeproduct="themeproduct"   
-        :multiimage="multiimage"  
-      >
-      </TimeLinesCardo> -->
-    </div>
+
+    <!-- <TimeLinesCardo 
+    :portofolio="portofolio"
+    :theme="theme"
+    :themeproduct="themeproduct"   
+    :multiimage="multiimage"  
+    >
+    </TimeLinesCardo> -->
+
     <div ref='run'>
       <RunDownCosmos
         :portofolio="portofolio"
@@ -46,13 +46,15 @@
       :invitation="invitation"
     >
     </SpecialInvitation> -->
-    <LiveStreamCardo 
-      :portofolio="portofolio"
-      :theme="theme"
-      :themeproduct="themeproduct"
-      :multiimage="multiimage"
-    >
-    </LiveStreamCardo>
+    <div ref="time">
+        <LiveStreamCardo 
+        :portofolio="portofolio"
+        :theme="theme"
+        :themeproduct="themeproduct"
+        :multiimage="multiimage"
+        >
+        </LiveStreamCardo>
+    </div>
     <StoryPageCosmos
       :theme="theme"
       :themeproduct="themeproduct"
@@ -87,19 +89,19 @@
       :theme="theme"
     >
     </FooterPage>
-    <MainMenuCardo 
+    <MainMenuCosmos 
       @page="navigation"
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
     >
-    </MainMenuCardo>
+    </MainMenuCosmos>
   </section>
 </template>
 
 <script setup>
-import MainMenuCardo from '@/components/cardo/MainMenuCardo.vue'
+import MainMenuCosmos from '@/components/cosmos/MainMenuCosmos.vue'
 // import CovidPage from '@/components/CovidPage.vue'
 import MainCoverCosmos from '@/components/cosmos/MainCoverCosmos.vue'
 import GroomBridgeCosmos from '@/components/cosmos/GroomBridgeCosmos.vue'
