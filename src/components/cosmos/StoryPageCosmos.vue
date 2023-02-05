@@ -2,23 +2,23 @@
     <div v-if="story.length != 0">
         <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
             <div :class="theme">
-                <section class="hero is-large">
-                    <div class="section py-0">
-                        <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3">
-                            Cerita Kita<br>
-                        </p>
-                        <div class="section">
-                            <div class="columns is-multiline">
-                                <div v-for="stori in story" :key="stori" class="column is-one-third-desktop is-one-half-tablet is-full-mobile">
-                                    <div class="box p-1">
+                 <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + themeproduct.theme?.background_1 + ')' }">
+                    <section class="hero is-large">
+                        <div class="section py-0">
+                            <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3">
+                                Cerita Kita<br>
+                            </p>
+                            <div class="section">
+                                <div class="columns is-multiline">
+                                    <div v-for="stori in story" :key="stori" class="column is-one-third-desktop is-one-half-tablet is-full-mobile">
                                         <p class="subtitle3 is-size-5-tablet is-size-6-mobile has-text-weight-bold">{{ stori.year}}</p>
                                         <p class="subtitle3 is-size-6-tablet is-size-7-mobile">{{ stori.cerita}}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                 </div>
             </div>
         </div>
     </div>
@@ -34,6 +34,7 @@ defineProps({
   story: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
+  portofolio: { type: Object },
 });
 
 </script>

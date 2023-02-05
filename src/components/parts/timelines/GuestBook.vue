@@ -15,13 +15,13 @@
             <div class="field has-text-left">
                 <p>konfirmasi kehadiran:</p>
                     <label class="radio">
-                        <input type="radio" name="rsvp" value="iya" v-model="konfirmasi.hadir">
-                        Iya, saya akan datang
+                        <p><input type="radio" name="rsvp" value="iya" v-model="konfirmasi.hadir">
+                        Iya, saya akan datang</p>
                     </label>
                     <br/>
                     <label class="radio">
-                        <input type="radio" name="rsvp" value="tidak" v-model="konfirmasi.hadir">
-                        Maaf, sepertinya tidak bisa
+                        <p><input type="radio" name="rsvp" value="tidak" v-model="konfirmasi.hadir">
+                        Maaf, sepertinya tidak bisa</p>
                     </label>
             </div>  
             <button @click="confirmHadir" class="button is-rounded is-size-6">Kirim sekarang</button>

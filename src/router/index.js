@@ -5,8 +5,30 @@ import CardoView from '../views/CardoView.vue'
 import CardoOpenView from '../views/CardoOpenView.vue'
 import GraneView from '../views/GraneView.vue'
 import GraneOpenView from '../views/GraneOpenView.vue'
+import CosmosView from '../views/CosmosView.vue'
+import CosmosOpenView from '../views/CosmosOpenView.vue'
 
 const routes = [
+  {
+    path: '/cosmos/:slug',
+    name: 'cosmosopen',
+    component: CosmosOpenView,
+  },
+  {
+    path: '/cosmos/:slug/:to',
+    name: 'cosmosopento',
+    component: CosmosOpenView,
+  },
+  {
+    path: '/main/cosmos/:slug',
+    name: 'maincosmos',
+    component: CosmosView,
+  },
+  {
+    path: '/main/cosmos/:slug/:to',
+    name: 'maincosmosto',
+    component: CosmosView,
+  },
   {
     path: '/grane/:slug',
     name: 'graneopen',
