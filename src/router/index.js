@@ -7,8 +7,30 @@ import GraneView from '../views/GraneView.vue'
 import GraneOpenView from '../views/GraneOpenView.vue'
 import CosmosView from '../views/CosmosView.vue'
 import CosmosOpenView from '../views/CosmosOpenView.vue'
+import OceanView from '../views/OceanView.vue'
+import OceanOpenView from '../views/OceanOpenView.vue'
 
 const routes = [
+  {
+    path: '/ocean/:slug',
+    name: 'oceanopen',
+    component: OceanOpenView,
+  },
+  {
+    path: '/ocean/:slug/:to',
+    name: 'oceanopento',
+    component: OceanOpenView,
+  },
+  {
+    path: '/main/ocean/:slug',
+    name: 'mainocean',
+    component: OceanView,
+  },
+  {
+    path: '/main/ocean/:slug/:to',
+    name: 'mainoceanto',
+    component: OceanView,
+  },
   {
     path: '/cosmos/:slug',
     name: 'cosmosopen',

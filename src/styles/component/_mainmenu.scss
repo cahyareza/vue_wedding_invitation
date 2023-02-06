@@ -7,6 +7,7 @@
 @import '../theme/theme-6';
 @import '../theme/theme-7';
 @import '../theme/theme-8';
+@import '../theme/theme-9';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -120,14 +121,25 @@
             .button1 {
                 background-color: $primary-theme-8;
             }
-            // .notification2 {
-            //     background-color: $primary-theme-3;
-            // }
             .icon {
                 color: #FFF !important;
             }
             .notification2 {
                 z-index: 2;
+            }
+        } @else if ($theme-name == theme-9) {
+            .button2 {
+                background-color: #FFF;
+            }
+            .button1 {
+                background-color: #FFF;
+            }
+            .icon {
+                color: $primary-theme-9 !important;
+            }
+            .notification2 {
+                z-index: 2;
+                background-color: #FFF;
             }
         }
     }
@@ -156,3 +168,6 @@
 
 // Call for theme-8
 @include themable(theme-8, $theme-8);
+
+// Call for theme-9
+@include themable(theme-9, $theme-9);
