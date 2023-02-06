@@ -4,7 +4,7 @@
             <div :class="theme">
                 <section class="hero is-large">
                     <div class="section py-0">
-                        <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3">
+                        <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3 mb-3">
                             Cerita Kita<br>
                         </p>
                         <figure class="image is-3by2">

@@ -46,7 +46,12 @@
                         is-12-mobile">
                             <GoToOurWedding :portofolio="portofolio"></GoToOurWedding>
 
-                            <GuestBook></GuestBook>
+                            <div class="column 
+                            is-half
+                            is-offset-one-quarter
+                            ">
+                                <GuestBook></GuestBook>
+                            </div>
                         </div>
                     </div>
                 </div>
