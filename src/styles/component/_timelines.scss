@@ -6,6 +6,7 @@
 @import '../theme/theme-5';
 @import '../theme/theme-6';
 @import '../theme/theme-7';
+@import '../theme/theme-9';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -373,6 +374,63 @@
 
                 bottom: 50px;
             }
+        } @else if ($theme-name == theme-9) {
+            :deep(.notification2) {
+                background-color: $primary-theme-6;
+            }
+            :deep(.button) {
+                border: 1px solid $primary-theme-9;
+                background-color: transparent;
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: $primary-theme-9;
+            }
+            .hero {
+                background-size: 50px 100px,
+                                 100px 50px;
+                background-image: linear-gradient(0deg, rgba(#7A7A7A, .4) 25%, transparent 26%, transparent 75%, rgba(#7A7A7A, .4) 76%, rgba(#7A7A7A, .4)),
+                                  linear-gradient(90deg, rgba(#7A7A7A, .2) 25%, transparent 26%, transparent 75%, rgba(#7A7A7A, .2) 76%, rgba(#7A7A7A, .2) 25%);
+            }
+            .title {
+                font-family: $quicksand;
+                color: $primary-theme-9;
+                font-weight: bold;
+            }
+            .subtitle-2 , :deep(.subtitle-3), :deep(.subtitle-5) {
+                font-family: $quicksand;
+                color: $primary-theme-9;
+                font-weight: bold;
+            }
+            :deep(.subtitle-4) {
+                font-family: $quicksand;
+                color: $primary-theme-9;
+            }
+            :deep(.subtitle-5) {
+                font-family: $quicksand;
+                color: #FFF;
+                background: $primary-theme-9;
+                padding: 5px;
+            }
+            :deep(.button-2) {
+                border: 1px solid $primary-theme-9;
+                width: 250px;
+                height: 38.23px;
+                background-color: transparent;
+                
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: $primary-theme-9;
+                display: inline-block;
+                align-items: center;
+                text-align: center;
+
+                text-transform: uppercase;
+                cursor: pointer;
+
+                bottom: 50px;
+            }
         }
     }
 }
@@ -397,3 +455,6 @@
 
 // Call for theme-7
 @include themable(theme-7, $theme-7);
+
+// Call for theme-9
+@include themable(theme-9, $theme-9);

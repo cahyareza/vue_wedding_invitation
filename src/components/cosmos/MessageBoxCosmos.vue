@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <!-- ANIMATED IMAGE END -->
-                <div class="section py-0">
+                <div class="section py-3">
                         <section class="section pt-4">
                             <div class="container">
                                 <p class="subtitle2 is-uppercase is-size-5">

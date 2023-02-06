@@ -7,6 +7,7 @@
 @import '../theme/theme-6';
 @import '../theme/theme-7';
 @import '../theme/theme-8';
+@import '../theme/theme-9';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -556,11 +557,11 @@
                 font-size: 20px;
             }
             :deep(.input) {
-                background-color: transparent;
+                background-color: rgba(#FFF, 0.5);
                 border: 1px solid #FFF;
             }
             :deep(.textarea) {
-                background-color: transparent;
+                background-color: rgba(#FFF, 0.5);
                 border: 1px solid #FFF;
             }
             .hero {
@@ -583,6 +584,56 @@
             }
             :deep(.commentlist) {
                 background-color: transparent;
+                border-bottom: solid 1px #FFF;
+            }
+        } @else if ($theme-name == theme-9) {
+
+            :deep(.product-container) {
+                background-color: #FFF
+            }
+            :deep(.button) {
+                border: 1px solid #FFF;
+                background: #FFF;
+                color: $primary-theme-9;
+            }
+            :deep(.subtitle) {
+                font-family: $quicksand;
+                color: #FFF;
+                font-size: 20px;  
+            }
+            :deep(.subtitle3)  {
+                font-family: $quicksand;
+                color: #FFF;
+                font-size: 20px;
+            }
+            :deep(.input) {
+                background-color: rgba(#FFF, 0.5);
+                border: 1px solid #FFF;
+            }
+            :deep(.textarea) {
+                background-color: rgba(#FFF, 0.5);
+                border: 1px solid #FFF;
+            }
+            .hero {
+                background: $primary-theme-9;
+            }
+            .title {
+                font-family: $quicksand;
+                color: #FFF;
+            }
+            :deep(.label) {
+                font-family: $quicksand;
+                color: #FFF;
+            }
+            .subtitle2 {
+                font-family: $quicksand;
+                color: $secondary-theme-7;
+                font-size: 25px !important;
+                text-transform: capitalize !important;
+                font-weight: bold;
+            }
+            :deep(.commentlist) {
+                background-color: $primary-theme-9;
                 border-bottom: solid 1px #FFF;
             }
         }
@@ -612,3 +663,6 @@
 
 // Call for theme-8
 @include themable(theme-8, $theme-8);
+
+// Call for theme-9
+@include themable(theme-9, $theme-9);
