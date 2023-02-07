@@ -20,7 +20,7 @@
                                 <div class="column
                                 is-6
                                 ">                                    
-                                    <p class="title2 is-capitalized has-text-weight-bold is-size-3">{{ portofolio.pname }}</p>
+                                    <p class="title2 is-capitalized has-text-weight-bold is-size-3-tablet is-size-4-mobile">{{ portofolio.pname }}</p>
 
                                     <p class="subtitle3 is-size-6-mobile is-size-5-tablet has-text-weight-bold mb-1">Putri {{ portofolio.panak_ke }} dari</p>
                                     <p class="subtitle3 is-size-6-mobile is-size-5-tablet mt-1">Bapak {{ portofolio.pnama_ayah }} &</p>
@@ -49,7 +49,7 @@
                                 <div class="column
                                 is-6
                                 ">
-                                    <p class="title2 is-capitalized has-text-weight-bold is-size-3">{{ portofolio.lname }}</p>
+                                    <p class="title2 is-capitalized has-text-weight-bold is-size-3-tablet is-size-4-mobile">{{ portofolio.lname }}</p>
 
                                     <p class="subtitle3 is-size-6-mobile is-size-5-tablet has-text-weight-bold mb-1">Putra {{ portofolio.lanak_ke }} dari</p>
                                     <p class="subtitle3 is-size-6-mobile is-size-5-tablet mt-1">Bapak {{ portofolio.lnama_ayah }} &</p>

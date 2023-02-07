@@ -5,7 +5,7 @@
                 <div class="hero-body">
                     <div class="section py-0">
                         <section class="section is-paddingless" data-aos="fade-down" data-aos-duration="1000">
-                            <div class="columns is-multiline">
+                            <div class="columns is-multiline is-vcentered">
                                 <div class="column is-6-tablet is-12-mobile">
                                     <div class="container">
                                         <p class="subtitle2 is-capitalized is-size-5-mobile is-size-4-tablet mb-2">Terimakasih</p>

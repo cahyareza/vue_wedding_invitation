@@ -1,7 +1,7 @@
 <template>
   <section>
-    <!-- <CovidPage>
-    </CovidPage> -->
+    <CovidPage>
+    </CovidPage>
     <MainCoverOcean 
       :portofolio="portofolio"
       :theme="theme"
@@ -34,13 +34,13 @@
       >
       </RunDownOcean>
     </div>
-    <!-- <SpecialInvitation 
+    <SpecialInvitationCardo 
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :invitation="invitation"
     >
-    </SpecialInvitation> -->
+    </SpecialInvitationCardo>
     <LiveStreamCardo 
       :portofolio="portofolio"
       :theme="theme"
@@ -105,13 +105,13 @@
 
 <script setup>
 import MainMenuOcean from '@/components/ocean/MainMenuOcean.vue'
-// import CovidPage from '@/components/CovidPage.vue'
+import CovidPage from '@/components/CovidPage.vue'
 import MainCoverOcean from '@/components/ocean/MainCoverOcean.vue'
 import QuotePageOcean from '@/components/ocean/QuotePageOcean.vue'
 import GroomBridgeOcean from '@/components/ocean/GroomBridgeOcean.vue'
 import TimeLinesOcean from '@/components/ocean/TimeLinesOcean.vue'
 import RunDownOcean from '@/components/ocean/RunDownOcean.vue'
-// import SpecialInvitation from '@/components/SpecialInvitation.vue'
+import SpecialInvitationCardo from '@/components/cardo/SpecialInvitationCardo.vue'
 import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
 import StoryPageOcean from '@/components/ocean/StoryPageOcean.vue'
 import OurMomentOcean from '@/components/ocean/OurMomentOcean.vue'
