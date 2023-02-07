@@ -35,13 +35,13 @@
       >
       </RunDownGrane>
     </div>
-    <!-- <SpecialInvitation 
+    <SpecialInvitationCardo 
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :invitation="invitation"
     >
-    </SpecialInvitation> -->
+    </SpecialInvitationCardo>
     <LiveStreamCardo 
       :portofolio="portofolio"
       :theme="theme"
@@ -110,7 +110,7 @@ import QuotePageGrane from '@/components/grane/QuotePageGrane.vue'
 import GroomBridgeGrane from '@/components/grane/GroomBridgeGrane.vue'
 import TimeLinesGrane from '@/components/grane/TimeLinesGrane.vue'
 import RunDownGrane from '@/components/grane/RunDownGrane.vue'
-// import SpecialInvitation from '@/components/SpecialInvitation.vue'
+import SpecialInvitationCardo from '@/components/cardo/SpecialInvitationCardo.vue'
 import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
 import StoryPageCardo from '@/components/cardo/StoryPageCardo.vue'
 import OurMomentCardo from '@/components/cardo/OurMomentCardo.vue'

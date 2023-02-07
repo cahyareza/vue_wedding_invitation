@@ -11,7 +11,7 @@
                             <section class="section">
                                 <p class="subtitle1 is-uppercase is-size-6-mobile is-size-5-tablet mb-3">PERNIKAHAN</p>
                                 
-                                <p class="title is-size-1 is-capitalized mt-4">
+                                <p class="title is-size-3-ipad is-size4-mobile is-capitalized mt-4">
                                     {{ portofolio.pname }} <br>
                                     & <br>
                                     {{ portofolio.lname }}
