@@ -39,13 +39,13 @@
       >
       </RunDownCosmos>
     </div>
-    <!-- <SpecialInvitation 
+    <SpecialInvitationCardo 
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :invitation="invitation"
     >
-    </SpecialInvitation> -->
+    </SpecialInvitationCardo>
     <div ref="time">
         <LiveStreamCardo 
         :portofolio="portofolio"
@@ -107,7 +107,7 @@ import MainCoverCosmos from '@/components/cosmos/MainCoverCosmos.vue'
 import GroomBridgeCosmos from '@/components/cosmos/GroomBridgeCosmos.vue'
 // import TimeLinesCardo from '@/components/cardo/TimeLinesCardo.vue'
 import RunDownCosmos from '@/components/cosmos/RunDownCosmos.vue'
-// import SpecialInvitation from '@/components/SpecialInvitation.vue'
+import SpecialInvitationCardo from '@/components/cardo/SpecialInvitationCardo.vue'
 import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
 import StoryPageCosmos from '@/components/cosmos/StoryPageCosmos.vue'
 import OurMomentCosmos from '@/components/cosmos/OurMomentCosmos.vue'
