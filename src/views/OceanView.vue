@@ -31,6 +31,7 @@
         :themeproduct="themeproduct"
         :acara="acara"   
         :multiimage="multiimage"
+        :direction="direction"   
       >
       </RunDownOcean>
     </div>
@@ -125,6 +126,9 @@ import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
 
 // LOAD STATE
 const store = inject('store');
+
+// TO PARAMS
+const direction = store.actions.getTo().value
 
 // EMIT
 const emit = defineEmits(['slug']);

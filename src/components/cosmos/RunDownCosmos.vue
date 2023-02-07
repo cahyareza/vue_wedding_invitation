@@ -27,7 +27,7 @@
                                             </div>
                                             <div class="card-content">
                                                 <div class="content">
-                                                    <p class="title2 is-size-3-tablet is-size-3-mobile mb-3 has-text-weight-bold">{{ piece.nama_acara }}</p>
+                                                    <p class="title2 is-size-3-tablet is-size-3-mobile is-capitalized mb-3 has-text-weight-bold">{{ piece.nama_acara }}</p>
                                                     <p class="subtitle3 is-size-5-tablet is-size-5-mobile mb-1">{{ tanggal(piece.tanggal_acara) }}</p>
                                                     <div v-if="piece.waktu_selesai_acara">
                                                         <p class="subtitle3 is-size-6-tablet is-size-6-mobile mt-1 mb-1"><font-awesome-icon icon="fa-solid fa-clock" /> pukul {{ waktu(piece.waktu_mulai_acara) }} - {{ waktu(piece.waktu_selesai_acara) }} {{ change_timezone(portofolio.timeZone) }}</p>
