@@ -47,9 +47,32 @@
                                 </div>
                             </div>
                         </div><br>
-                        <router-link :to="`/main/${slug}`" class="button mt-4">
-                            Buka Undangan
-                        </router-link>
+                        <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
+                            || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5'">
+                            <router-link :to="`/main/${slug}`" class="button mt-4">
+                                Buka Undangan
+                            </router-link>
+                        </div>
+                        <div v-else-if="themeproduct.theme?.slug === 'theme-6'"> 
+                            <router-link :to="`/main/cardo/${slug}`" class="button mt-4">
+                                Buka Undangan
+                            </router-link>
+                        </div>
+                        <div v-else-if="themeproduct.theme?.slug === 'theme-7'"> 
+                            <router-link :to="`/main/grane/${slug}`" class="button mt-4">
+                                Buka Undangan
+                            </router-link>
+                        </div>
+                        <div v-else-if="themeproduct.theme?.slug === 'theme-8'"> 
+                            <router-link :to="`/main/cosmos/${slug}`" class="button mt-4">
+                                Buka Undangan
+                            </router-link>
+                        </div>
+                        <div v-else> 
+                            <router-link :to="`/main/ocean/${slug}`" class="button mt-4">
+                                Buka Undangan
+                            </router-link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -66,6 +89,7 @@ import moment from 'moment';
 // eslint-disable-next-line no-unused-vars
 defineProps({
   direction: { type: Object },
+  themeproduct: { type: Object },
 });
 
 // LOAD STATE

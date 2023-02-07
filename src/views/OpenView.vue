@@ -3,9 +3,34 @@
     <!-- <OpenCover id="openCover"></OpenCover> -->
     <Suspense>
       <template #default>
-        <OpenCover 
-          :direction="direction">
-        </OpenCover>
+        <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
+          || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5'">
+          <OpenCover 
+            :direction="direction"
+            :themeproduct="themeproduct" 
+            >
+          </OpenCover>
+        </div>
+         <div v-else-if="themeproduct.theme?.slug === 'theme-6'">
+          <OpenCoverCardo 
+            :direction="direction">
+          </OpenCoverCardo>
+        </div>
+        <div v-else-if="themeproduct.theme?.slug === 'theme-7'"> 
+          <OpenCoverGrane 
+            :direction="direction">
+          </OpenCoverGrane>
+        </div>
+        <div v-else-if="themeproduct.theme?.slug === 'theme-8'"> 
+          <OpenCoverCosmos 
+            :direction="direction">
+          </OpenCoverCosmos>
+        </div>
+        <div v-else>
+          <OpenCoverOcean 
+            :direction="direction">
+          </OpenCoverOcean>
+        </div>
       </template>
       <template #fallback>
         <form @submit.prevent="submit" class="vl-parent" ref="formContainer">
@@ -19,7 +44,11 @@
 
 <script setup>
 import OpenCover from '@/components/OpenCover.vue'
-import { ref, onBeforeMount, inject } from 'vue'
+import OpenCoverCardo from '@/components/cardo/OpenCoverCardo.vue'
+import OpenCoverCosmos from '@/components/cosmos/OpenCoverCosmos.vue'
+import OpenCoverGrane from '@/components/grane/OpenCoverGrane.vue'
+import OpenCoverOcean from '@/components/ocean/OpenCoverOcean.vue'
+import { ref, onMounted, inject, computed } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
 
 // LOAD STATE
@@ -27,6 +56,11 @@ const store = inject('store');
 
 // TO PARAMS
 const direction = store.actions.getTo().value
+
+// defineProps ({
+//     themeproduct: { type: Object },
+// })
+const themeproduct = computed(() => store.state.themeproduct); 
 
 // VUE LOADING
 const $loading = useLoading({
@@ -53,8 +87,9 @@ const submit = () => {
 }
 
 // LIFECYCLE
-onBeforeMount(() => {
-    submit()
+onMounted(() => {
+    store.actions.getThemeProduct();
+    submit();
 });
 
 </script>

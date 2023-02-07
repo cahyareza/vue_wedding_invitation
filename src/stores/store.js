@@ -177,7 +177,7 @@ const actions = {
     getPortofolio2: (slug) => {
       return axios.get(`${web_url}portofolio/api/portofolio/?slug=${slug}`)
       .then((response) => {
-        // console.log(response);
+        console.log(response);
         if (response.data[0].timeZone) {
           if (response.data[0].timeZone == 'Asia/Jakarta') {
             response.data[0].timeZone = "WIB"
