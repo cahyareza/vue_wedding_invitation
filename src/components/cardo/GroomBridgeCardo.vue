@@ -55,7 +55,7 @@
                                     <div class="column
                                     is-full has-text-left
                                     ">                                    
-                                        <p class="title2 is-capitalized is-size-3 mt-3 mb-4">{{ portofolio.pname }}</p>
+                                        <p class="title2 is-capitalized is-size-3-tablet is-size-4-mobile mt-3 mb-4">{{ portofolio.pname }}</p>
 
                                         <p class="subtitle3 is-size-6 has-text-weight-bold mb-1">Putri {{ portofolio.panak_ke }} dari</p>
                                         <p class="subtitle3 is-size-6 mt-1">Bapak {{ portofolio.pnama_ayah }} & Ibu {{ portofolio.pnama_ibu }}</p>
@@ -85,7 +85,7 @@
                                 <div class="column
                                 is-6-tablet
                                 is-6-mobile is-paddingless">
-                                    <div class="card p-4">
+                                    <div class="card p-1">
                                         <figure class="image is-3by4">
                                             <img :src="portofolio.lpicture">
                                         </figure>
@@ -94,7 +94,7 @@
                                 <div class="column
                                 is-6-tablet
                                 is-6-mobile has-text-left">
-                                    <p class="title2 is-capitalized is-size-3 mt-3 mb-4">{{ portofolio.lname }}</p>
+                                    <p class="title2 is-capitalized is-size-3-tablet is-size-4-mobile mt-3 mb-4">{{ portofolio.lname }}</p>
 
                                     <p class="subtitle3 is-size-6 has-text-weight-bold mb-1">Putra {{ portofolio.lanak_ke }} dari</p>
                                     <p class="subtitle3 is-size-6 mt-1">Bapak {{ portofolio.lnama_ayah }} & Ibu {{ portofolio.lnama_ibu }}</p>

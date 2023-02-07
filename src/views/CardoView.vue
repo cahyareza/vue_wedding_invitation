@@ -42,13 +42,13 @@
       >
       </RunDownCardo>
     </div>
-    <SpecialInvitation 
+    <SpecialInvitationCardo 
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :invitation="invitation"
     >
-    </SpecialInvitation>
+    </SpecialInvitationCardo>
     <LiveStreamCardo 
       :portofolio="portofolio"
       :theme="theme"
@@ -108,7 +108,7 @@ import QuotePageCardo from '@/components/cardo/QuotePageCardo.vue'
 import GroomBridgeCardo from '@/components/cardo/GroomBridgeCardo.vue'
 import TimeLinesCardo from '@/components/cardo/TimeLinesCardo.vue'
 import RunDownCardo from '@/components/cardo/RunDownCardo.vue'
-import SpecialInvitation from '@/components/SpecialInvitation.vue'
+import SpecialInvitationCardo from '@/components/cardo/SpecialInvitationCardo.vue'
 import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
 import StoryPageCardo from '@/components/cardo/StoryPageCardo.vue'
 import OurMomentCardo from '@/components/cardo/OurMomentCardo.vue'

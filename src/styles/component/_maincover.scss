@@ -147,32 +147,29 @@
                 background: $primary-theme-5;
             }
         } @else if ($theme-name == theme-6) {
-            :deep(.title) {
-                font-family: $playfair;
-                color: $fourth-theme-1;
-                position: absolute;
-                z-index: 2;
-                bottom: 40px;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            :deep(.subtitle1) {
-                font-family: $playfair;
-                color: $fourth-theme-1;
-                position: absolute;
-                z-index: 2;
-                bottom: 210px;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            :deep(.subtitle2) {
-                font-family: $playfair;
-                color: $fourth-theme-1;
-                position: absolute;
-                z-index: 2;
-                bottom: 80px;
-                left: 50%;
-                transform: translate(-50%, -50%);
+            :deep(.hero-footer) {
+                .section {
+                    position: absolute;
+                    z-index: 2;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 95%;
+
+                    .title {
+                        color: $fourth-theme-1;
+                        font-family: $theme7font;
+
+                    }
+                    .subtitle1 {
+                        color: $fourth-theme-1;
+                        font-family: $theme7font;
+                    }
+                    .subtitle2 {
+                        color: $fourth-theme-1;
+                        font-family: $theme7font;
+                    }
+                }
             }
             :deep(.low-opacity-bg-image) {
                 display: grid;
