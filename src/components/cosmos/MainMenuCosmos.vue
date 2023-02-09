@@ -50,14 +50,25 @@
                                 </header>
                                 <section class="modal-card-body">
                                     <p class="has-text-left mb-4">Doa restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah, namun jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentunya semakin melengkapi kebahagiaan kami.;</p>
-                                    <div class="columns is-multiline is-mobile mt-4">
-                                        <div v-for="info in dompet" :key="info.id" class="column is-one-half has-text-center">
-                                            <p class="subtitle is-size-6-mobile is-size-5-tablet mb-6"><strong>{{ info.rekening }}</strong></p>
-                                            <p class="subtitle is-size-6-mobile is-size-5-tablet mb-6">{{ info.nomor }}</p>
-                                            
-                                            <p class="subtitle is-size-6-mobile is-size-5-tablet">a/n {{ info.pemilik }}</p>
-                                            <button @click="copy(info.nomor)" class="button is-black mt-3">Salin Nomor</button>
-                                            
+                                    <div class="section is-paddingless is-marginless">
+                                        <div class="container is-paddingless is-marginless">
+                                            <div class="columns is-multiline is-mobile is-centered mt-4">
+                                                <div class="column is-12 has-text-center">
+                                                    <p class="mb-2">{{ portofolio.alamat_rumah }}</p>
+                                                    <button @click="copy(portofolio.alamat_rumah)" class="button is-black mt-2">Salin Alamat</button>
+                                                </div>
+                                                <div v-for="info in dompet" :key="info.id" class="column is-one-half has-text-center">
+                                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1"><strong>{{ info.rekening }}</strong></p>
+                                                    <div v-if="info.bar_code">
+                                                        <figure class="image is-1by1">
+                                                            <img :src="info.bar_code">
+                                                        </figure>
+                                                    </div>
+                                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1 mt-1">{{ info.nomor }}</p>
+                                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1">a/n {{ info.pemilik }}</p>
+                                                    <button @click="copy(info.nomor)" class="button is-black mt-1">Salin Nomor</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </section>
