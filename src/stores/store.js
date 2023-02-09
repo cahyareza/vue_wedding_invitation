@@ -20,6 +20,7 @@ const state = reactive({
     story: [],
     acara: [],
     audio: [],
+    dana: [],
 });
 
 const slug = ref('');
@@ -38,6 +39,7 @@ const mutations = {
     updateStory: (payload) => state.story = payload,
     updateAcara: (payload) => state.acara = payload,
     updateAudio: (payload) => state.audio = payload,
+    updateDana: (payload) => state.dana = payload,
 }
 
 const actions = {
@@ -229,6 +231,13 @@ const actions = {
         let audio1 = new Audio(`"https://docs.google.com/uc?export=open&id=${result}"`)
         // console.log(audio1)
         mutations.updateAudio(audio1);
+      });
+    },
+    getDana: () => {
+      actions.getSlug();
+      return axios.get(`${web_url}portofolio/api/dana/?portofolio__slug=${slug.value}`) .then((response) => {
+        // console.log(response.data);
+        mutations.updateDana(response.data);
       });
     },
 };
