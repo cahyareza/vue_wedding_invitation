@@ -6,8 +6,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-// font theme-6
+// Quicksand
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+// Sacramento
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Sacramento&display=swap');
+
+// Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Quicksand:wght@300&display=swap');
 
 
 // Fonts
@@ -30,6 +36,11 @@ $theme8font: 'Quicksand', sans-serif;
 
 // theme-9
 $theme9font: 'Quicksand', sans-serif;
+
+// theme-10
+$theme10font1: 'Playfair Display', serif;
+$theme10font2: 'Sacramento', cursive;
+$theme10font3: 'Poppins', sans-serif;
 
 // Umum
 $fourth-theme-1: #FFFFFF;
@@ -108,3 +119,8 @@ $secondary-theme-8: #DEBE9D;
 // Theme-9
 $primary-theme-9: #343F75;
 $secondary-theme-9: #DEBE9D;
+
+// Theme-10
+$primary-theme-10: #a68f61;
+$secondary-theme-10: #666;
+$secondary-filter-theme-10: invert(35%) sepia(0%) saturate(641%) hue-rotate(180deg) brightness(109%) contrast(87%);

@@ -8,6 +8,7 @@
 @import '../theme/theme-7';
 @import '../theme/theme-8';
 @import '../theme/theme-9';
+@import '../theme/theme-10';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -405,6 +406,102 @@
                     color: #FFF;
                 }
             }
+        }@else if ($theme-name == theme-10) {
+            .hero {
+                background-color: #FFF;
+            }
+            .title {
+                font-family: $theme10font2;
+                color: #FFF;
+            }
+            :deep(.notification2) {
+                background-color: $primary-theme-10;
+                .subtitle-4, p, radio{
+                    color: #FFF;
+                }
+                border:solid 1px #FFF;
+            }
+            :deep(.iframe) {
+                border: 5px solid $primary-theme-10; 
+                border-radius: 4px;
+            }
+            .title2 {
+                font-family: $theme10font2;
+                color: $primary-theme-10;
+                font-weight: bold;
+            }
+            .subtitle3 {
+                font-family: $theme10font3;
+                color: $secondary-theme-10;
+                font-weight: bold;
+            }
+            .low-opacity-bg-image {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
+            .low-opacity-bg-image::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                opacity: 0.7;
+                background: #FFF;
+            }
+            .button {
+                border: 1px solid $primary-theme-10;
+                background-color: $primary-theme-10;
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: #FFF;
+            }
+            :deep(.subtitle-5) {
+                font-family: $theme10font1;
+                color: #FFF;
+                font-weight: bold;
+            }
+            .custom-shape-divider-top-1676040590 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                overflow: hidden;
+                line-height: 0;
+            }
+            
+            .custom-shape-divider-top-1676040590 svg {
+                position: relative;
+                display: block;
+                width: calc(100% + 1.3px);
+                height: 11px;
+            }
+            
+            .custom-shape-divider-top-1676040590 .shape-fill {
+                fill: #FFFFFF;
+            }
+            .custom-shape-divider-bottom-1676040656 {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                overflow: hidden;
+                line-height: 0;
+                transform: rotate(180deg);
+            }
+            
+            .custom-shape-divider-bottom-1676040656 svg {
+                position: relative;
+                display: block;
+                width: calc(100% + 1.3px);
+                height: 11px;
+            }
+            
+            .custom-shape-divider-bottom-1676040656 .shape-fill {
+                fill: #FFFFFF;
+            }
         }
     }
 }
@@ -435,3 +532,6 @@
 
 // Call for theme-9
 @include themable(theme-9, $theme-9);
+
+// Call for theme-10
+@include themable(theme-10, $theme-10);

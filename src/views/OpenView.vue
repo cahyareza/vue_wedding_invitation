@@ -26,10 +26,15 @@
             :direction="direction">
           </OpenCoverCosmos>
         </div>
-        <div v-else>
+        <div v-else-if="themeproduct.theme?.slug === 'theme-9'">
           <OpenCoverOcean 
             :direction="direction">
           </OpenCoverOcean>
+        </div>
+        <div v-else>
+          <OpenCoverBright
+            :direction="direction">
+          </OpenCoverBright>
         </div>
       </template>
       <template #fallback>
@@ -48,6 +53,7 @@ import OpenCoverCardo from '@/components/cardo/OpenCoverCardo.vue'
 import OpenCoverCosmos from '@/components/cosmos/OpenCoverCosmos.vue'
 import OpenCoverGrane from '@/components/grane/OpenCoverGrane.vue'
 import OpenCoverOcean from '@/components/ocean/OpenCoverOcean.vue'
+import OpenCoverBright from '@/components/bright/OpenCoverBright.vue'
 import { ref, onMounted, inject, computed } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
 

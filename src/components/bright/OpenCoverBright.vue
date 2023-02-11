@@ -38,16 +38,19 @@
                         <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                             <div v-if="direction">
                                 <div class="mt-6 mx-6 mb-3">
-                                    <p class="subtitle is-size-7-mobile is-size-6-tablet mb-0 has-text-white">
+                                    <p class="subtitle is-size-7-mobile is-size-6-tablet mb-1 has-text-white">
                                         Kepada Yth.
                                     </p>
-                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-0 has-text-white">
+                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-1 mb-1 has-text-white">
                                         {{ direction }}
+                                    </p>
+                                    <p class="is-size-7 has-text-white mt-1 is-italic">
+                                        Mohon maaf apabila ada kesalahan penulisan nama/gelar
                                     </p>
                                 </div>
                             </div>
                         </div><br>
-                        <router-link :to="`/main/${slug}`" class="button mt-4">
+                        <router-link :to="`/main/bright/${slug}`" class="button mt-4">
                             Buka Undangan
                         </router-link>
                     </div>
@@ -165,6 +168,6 @@ obj.particleConfig = {
 
 
 <style lang="scss" scoped>
-@import "../styles/component/opencover.scss";
+@import "@/styles/component/opencover.scss";
 // @import "../styles/global.scss";
 </style>
