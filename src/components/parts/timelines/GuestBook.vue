@@ -31,17 +31,13 @@
 
 <script setup>
 
-import { ref, reactive, inject, computed, onMounted } from "vue";
+import { ref, reactive, computed, onMounted } from "vue";
 import axios from 'axios';
+import injectStore from '@/hooks/injectStore.js'
 
-var web_url = process.env.VUE_APP_WEB_URL_FIX
+const {store, web_url, slug, hadir} = injectStore()
 
-var store = inject('store');
 const show = ref(false);
-
-var slug = store.actions.getSlug().value;
-
-const hadir = computed(() => store.state.hadir); 
 
 const showhidebutton = () => {
     show.value = !show.value

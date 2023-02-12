@@ -29,13 +29,10 @@
 </template>
 
 <script setup>
-import { defineProps, inject, computed, onBeforeMount } from 'vue'
+import { defineProps, onBeforeMount } from 'vue'
+import injectStore from '@/hooks/injectStore.js'
 
-// LOAD STATE
-const store = inject('store');
-
-// STORY
-const story = computed(() => store.state.story); 
+const {store, story} = injectStore()
 
 
 // MODAL

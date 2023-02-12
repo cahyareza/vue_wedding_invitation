@@ -72,5 +72,4 @@ defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/component/groombride.scss";
-// @import "../styles/global.scss";
 </style>

@@ -50,8 +50,9 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import moment from 'moment';
+import useMethod from '@/hooks/useMethod.js'
 
+const {tanggal, waktu} = useMethod()
 
 // GET PORTOFOLIO
 defineProps({
@@ -60,17 +61,8 @@ defineProps({
   themeproduct: { type: Object },
   acara: { type: Object },
 });
-
-// METHOD
-const tanggal = (value) => {
-    return moment(value).locale('id').format('dddd, DD MMMM YYYY');
-}
-const waktu = (value) => {
-    return moment(value, "HH:mm:ss").format("HH:mm");
-}
 </script>
 
 <style lang="scss" scoped>
 @import "../styles/component/rundown.scss";
-// @import "../styles/global.scss";
 </style>

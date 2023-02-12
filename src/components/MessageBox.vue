@@ -64,6 +64,5 @@ defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/component/messagebox.scss";
-// @import "../styles/global.scss";
 </style>
 

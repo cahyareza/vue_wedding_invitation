@@ -25,6 +25,4 @@ import { defineProps } from 'vue'
 defineProps({
   portofolio: { type: Object },
 });
-
-
 </script>

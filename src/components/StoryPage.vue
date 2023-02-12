@@ -45,7 +45,6 @@
 
 <script setup>
 import SlidePage from '@/components/parts/storypage/SlidePage.vue'
-
 import { ref, defineProps } from 'vue'
 
 // GET PORTOFOLIO
@@ -81,7 +80,6 @@ SwiperCore.use([Navigation, Pagination]);
 
 <style lang="scss" scoped>
 @import "../styles/component/storypage.scss";
-// @import "../styles/global.scss";
 
 .swiper {
   width: 100%;

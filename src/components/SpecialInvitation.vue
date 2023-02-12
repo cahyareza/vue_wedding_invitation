@@ -75,5 +75,4 @@ defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/component/specialinvitation.scss";
-// @import "../styles/global.scss";
 </style>

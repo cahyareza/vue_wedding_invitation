@@ -132,7 +132,7 @@
                                                             </div>
                                                         </div><br> -->
                                                                         
-                                                        <button @click="confirmDana" class="button is-rounded is-size-6">Kirim</button>
+                                                        <button @click="confirmDana(web_url, store, slug, fieldErrors, fields)" class="button is-rounded is-size-6">Kirim</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -183,18 +183,13 @@
 </template>
 
 <script setup>
-import { reactive, defineEmits, defineProps, onMounted, inject, ref, computed } from "vue";
-// import trumpetSfx from '../assets/contents/mp3/sample.mp3';
-import useClipboard from 'vue-clipboard3'
+import { reactive, defineEmits, defineProps, onMounted, ref } from "vue";
+import injectStore from '@/hooks/injectStore.js'
+import useMethod from '@/hooks/useMethod.js'
 import axios from 'axios';
 
-var web_url = process.env.VUE_APP_WEB_URL_FIX
-
-var store = inject('store');
-
-var slug = store.actions.getSlug().value;
-
-var dompets = computed(() => store.state.dompet);
+const {slug, dompets, web_url} = injectStore()
+const {confirmDana, copy} = useMethod()
 
 // FORMS
 const fields = reactive({
@@ -214,70 +209,6 @@ const fieldErrors = reactive({
     error: 0
 });
 
-const confirmDana = () => {
-    fieldErrors.nama= undefined;
-    fieldErrors.jumlah= undefined;
-    fieldErrors.pesan= undefined;
-    fieldErrors.ditransfer_ke= undefined;
-    fieldErrors.error= 0;
-
-    validateForm(fields);
-    if (fieldErrors.error != 0) return;
-
-    axios
-        .post(`${web_url}portofolio/api/dana/?portofolio__slug=${slug}`, fields)
-        .then(() => {
-            console.log('berhasil post');
-            fields.nama = null;
-            fields.jumlah = null;
-            fields.pesan = null;
-            fields.ditransfer_ke = null;
-
-
-            axios.get(`${web_url}portofolio/api/dana/?portofolio__slug=${slug}`).then((response) => {
-                // console.log(response.data)
-                store.mutations.updateDana(response.data);
-            });
-
-            fields.message = "Terimakasih telah mengisi form"
-
-        })
-        .catch((err) => console.log(err));
-}
-
-const validateForm = (fields) => {
-    const errors = {};
-
-    if (!fields.nama) {
-        fieldErrors.nama = "Nama Required";
-        fieldErrors.error += 1;
-    }
-    if (!fields.jumlah) {
-        fieldErrors.jumlah = "Jumlah Required"; 
-        fieldErrors.error += 1;
-    }
-    if (!fields.pesan) {
-        fieldErrors.pesan = "Pesan Required"; 
-        fieldErrors.error += 1;
-    }
-    if (!fields.ditransfer_ke) {
-        fieldErrors.ditransfer_ke = "Ditransfer Required"; 
-        fieldErrors.error += 1;
-    }
-
-    if (fields.jumlah && !numbervalid(fields.jumlah)) {
-        fieldErrors.jumlah = "Just number required!";
-        fieldErrors.error += 1;
-    }
-
-    return errors;
-};
-
-const numbervalid = (numberfield) => {
-    const re = /^\d+\.?\d*$/;
-    return re.test(numberfield);
-}
-
 // GET PROPS
 defineProps({
   theme: { type: Object },
@@ -286,13 +217,11 @@ defineProps({
   portofolio: { type: Object },
 });
 
-const emit = defineEmits(['page']);
-
 // emit
+const emit = defineEmits(['page']);
 const navPage = (value) => {
     emit("page", value)
 }
-
 
 // audio
 const player_audio = ref(null)
@@ -313,37 +242,17 @@ const audio = reactive({
     isPlaying: false,
 })
 
-
-onMounted(() => {
-    axios
-        .get(`${web_url}portofolio/api/portofolio/?slug=${slug}`)
-        .then((response) => {
-            // eslint-disable-next-line
-            let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-_]+)\&?/i
-            if (response.data[0].track !== null) {
-                let text = response.data[0].track.url
-                let result = text.match(myregex)[1]
-                audio.file = `https://docs.google.com/uc?export=open&id=${result}`
-            }
-        })
-        .catch((err) => console.log(err));
-})
-
 // Dompet
 const modal_data = reactive({
     showModalFlag: false,
-    okPressed: false,
-    // notif dompet
     showNotifFlag: false,
 })
 
 const showModal= () => {
-    modal_data.okPressed = false;
     modal_data.showModalFlag = true;
 }
 
 const cancelModal = () => {
-    modal_data.okPressed = false;
     modal_data.showModalFlag = false;
 }
 
@@ -355,24 +264,25 @@ const hideNotif = () => {
     modal_data.showNotifFlag = false;
 }
 
-// Copy clipboard
-
-const { toClipboard } = useClipboard()
-
-const copy = async (vari) => {
-    try {
-        await toClipboard(vari)
-        // console.log('Copied to clipboard')
-    } catch (e) {
-        console.error(e)
-    }
-}
-
 onMounted(() => {
     play();
+
     setTimeout(() => {
         showNotif();
     }, 10000);
+
+    axios
+    .get(`${web_url}portofolio/api/portofolio/?slug=${slug}`)
+    .then((response) => {
+        // eslint-disable-next-line
+        let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-_]+)\&?/i
+        if (response.data[0].track !== null) {
+            let text = response.data[0].track.url
+            let result = text.match(myregex)[1]
+            audio.file = `https://docs.google.com/uc?export=open&id=${result}`
+        }
+    })
+    .catch((err) => console.log(err));
 })
 
 </script>

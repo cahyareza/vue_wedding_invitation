@@ -92,5 +92,4 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/component/quotepage.scss";
-// @import "../styles/global.scss";
 </style>

@@ -13,14 +13,10 @@
 
 
 <script setup>
-import { inject, computed } from 'vue'
 import useTimer from "../../../hooks/useTimer";
+import injectStore from '@/hooks/injectStore.js'
 
-// LOAD STATE
-const store = inject('store');
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
+const {portofolio} = injectStore()
 
 // HOOKS
 const { createTimer, countdown } = useTimer();

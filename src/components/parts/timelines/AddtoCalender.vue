@@ -3,14 +3,12 @@
 </template>
 
 <script setup>
-import { onMounted, ref, inject, computed, toRaw } from "vue";
+import { onMounted, ref, toRaw } from "vue";
 import { atcb_action } from 'add-to-calendar-button';
 import 'add-to-calendar-button/assets/css/atcb.css';
+import injectStore from '@/hooks/injectStore.js'
 
-const store = inject('store');
-
-// eslint-disable-next-line no-unused-vars
-const portofolio = computed(() => store.state.portofolio);
+const {store, portofolio} = injectStore()
 
 const default_button = ref(null)
 

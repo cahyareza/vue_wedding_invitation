@@ -49,5 +49,4 @@ defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/component/timelines.scss";
-// @import "../styles/global.scss";
 </style>

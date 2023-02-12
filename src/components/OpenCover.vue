@@ -20,7 +20,7 @@
                                         <p class="title is-size-3 mb-1 has-text-white">&</p>
                                     </div>
                                     <p class="title is-size-3-mobile is-capitalized is-size-2-tablet has-text-white">
-                                        {{ portofolio.lname }} 
+                                        {{ portofolio.lname }}
                                     </p>
                                     <p class="subtitle mt-4 is-size-6 has-text-white">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                                 </div>
@@ -59,28 +59,17 @@
 
 <script setup>
 import VueParticle from 'vue-particlejs';
-import { inject, reactive, computed, defineProps } from 'vue'
+import {reactive, defineProps } from 'vue'
+import injectStore from '@/hooks/injectStore.js'
 import moment from 'moment';
 
 // GET PROPS
-// eslint-disable-next-line no-unused-vars
 defineProps({
   direction: { type: Object },
   themeproduct: { type: Object },
 });
 
-// LOAD STATE
-const store = inject('store');
-
-// SLUG
-const slug = store.actions.getSlug().value;
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// THEME
-const theme = computed(() => store.state.theme);
-const themeproduct = computed(() => store.state.themeproduct); 
+const {store, slug, portofolio, theme, themeproduct} = injectStore()
 
 const getProps = async () => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -166,5 +155,4 @@ obj.particleConfig = {
 
 <style lang="scss" scoped>
 @import "../styles/component/opencover.scss";
-// @import "../styles/global.scss";
 </style>

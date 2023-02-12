@@ -39,7 +39,7 @@
 
 import { defineProps } from 'vue'
 
-// GET PORTOFOLIO
+// PROPS
 defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
@@ -49,5 +49,4 @@ defineProps({
 
 <style lang="scss" scoped>
 @import "../styles/component/livestream.scss";
-// @import "../styles/global.scss";
 </style>
