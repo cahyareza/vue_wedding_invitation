@@ -173,7 +173,9 @@ const actions = {
         //     response.data[0].timeZone = "WIT"
         //   }
         // }
+        response.data[0].datetime_countdown = response.data[0].datetime_countdown.replace(/-/g, "/");
         mutations.updatePortofolio(response.data[0]);
+        console.log(state.portofolio);
       });
     },
     getPortofolio2: (slug) => {
@@ -189,6 +191,7 @@ const actions = {
             response.data[0].timeZone = "WIT"
           }
         }
+        response.data[0].datetime_countdown = response.data[0].datetime_countdown.replace(/-/g, "/");
         mutations.updatePortofolio(response.data[0]);
       });
     },

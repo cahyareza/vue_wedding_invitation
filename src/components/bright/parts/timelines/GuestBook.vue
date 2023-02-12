@@ -70,7 +70,7 @@ var jumlahHadir = computed(() => {
 
 const confirmHadir = () => {
     axios
-        .post(`${web_url}portofolio/api/hadir/?portofolio__slug=${slug}`, JSON.stringify(konfirmasi))
+        .post(`${web_url}portofolio/api/hadir/?portofolio__slug=${slug}`, konfirmasi)
         .then(() => {
             console.log('berhasil post');
             showhidebutton();
