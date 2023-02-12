@@ -2,14 +2,16 @@
   <section>
     <!-- <CovidPage>
     </CovidPage> -->
-    <MainCoverCosmos 
-      :portofolio="portofolio"
-      :theme="theme"
-      :themeproduct="themeproduct"
-      :multiimage="multiimage"
-      :quote="quote"   
-    >
-    </MainCoverCosmos>
+     <div ref="time">
+      <MainCoverCosmos 
+        :portofolio="portofolio"
+        :theme="theme"
+        :themeproduct="themeproduct"
+        :multiimage="multiimage"
+        :quote="quote"   
+      >
+      </MainCoverCosmos>
+     </div>
     <div ref="groom">
       <GroomBridgeCosmos 
         :portofolio="portofolio"
@@ -46,15 +48,13 @@
       :invitation="invitation"
     >
     </SpecialInvitationCardo>
-    <div ref="time">
-        <LiveStreamCardo 
-        :portofolio="portofolio"
-        :theme="theme"
-        :themeproduct="themeproduct"
-        :multiimage="multiimage"
-        >
-        </LiveStreamCardo>
-    </div>
+    <LiveStreamCardo 
+    :portofolio="portofolio"
+    :theme="theme"
+    :themeproduct="themeproduct"
+    :multiimage="multiimage"
+    >
+    </LiveStreamCardo>
     <StoryPageCosmos
       :theme="theme"
       :themeproduct="themeproduct"

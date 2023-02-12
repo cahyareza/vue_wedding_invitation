@@ -38,6 +38,12 @@
                                     </span>
                                 </div>
                             </div>
+                            <div v-if="modal_data.showNotifFlag">
+                                <div class="notification">
+                                    <button @click="hideNotif" class="delete"></button>
+                                    Bagi yang ingin mengirimkan tanda kasih pernikahan dapat mengklik fitur disamping.
+                                </div>
+                            </div>
                         </div>
 
                         <!--    Modal        -->
@@ -150,7 +156,7 @@
                                 </span>
                                 <!-- <span>Date</span> -->
                                 <span @click="navPage('time')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-map" />
+                                    <font-awesome-icon icon="fa-solid fa-clock" />
                                 </span>
                                 <!-- <span>Rundown</span> -->
                                 <span @click="navPage('run')" class="icon">
@@ -327,20 +333,26 @@ onMounted(() => {
 const modal_data = reactive({
     showModalFlag: false,
     okPressed: false,
-    message: "Press 'Ok' or 'Cancel'."
+    // notif dompet
+    showNotifFlag: false,
 })
 
 const showModal= () => {
     modal_data.okPressed = false;
     modal_data.showModalFlag = true;
 }
-// const okModal = () => {
-//     modal_data.okPressed = true;
-//     modal_data.showModalFlag = false;
-// }
+
 const cancelModal = () => {
     modal_data.okPressed = false;
     modal_data.showModalFlag = false;
+}
+
+const showNotif = () => {
+    modal_data.showNotifFlag = true;
+}
+
+const hideNotif = () => {
+    modal_data.showNotifFlag = false;
 }
 
 // Copy clipboard
@@ -358,6 +370,9 @@ const copy = async (vari) => {
 
 onMounted(() => {
     play();
+    setTimeout(() => {
+        showNotif();
+    }, 10000);
 })
 
 </script>
@@ -365,6 +380,19 @@ onMounted(() => {
 <style lang="scss" scoped>
 @import "@/styles/component/mainmenu.scss";
 
+.notification {
+    position: fixed;
+    height: 60px;
+    width: 220px;
+    font-size: 10px;
+    top: 85px;
+    right: 55px;
+    z-index: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 10px;
+}
 
 .notification2 {
     position: fixed;

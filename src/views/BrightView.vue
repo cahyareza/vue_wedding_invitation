@@ -1,16 +1,16 @@
 <template>
   <section>
-    <!-- <CovidPage>
+    <CovidPage>
       
-    </CovidPage> -->
-    <MainMenu 
+    </CovidPage>
+    <MainMenuBright 
       @page="navigation"
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
     >
-    </MainMenu>
+    </MainMenuBright>
     <MainCoverBright 
       :portofolio="portofolio"
       :theme="theme"
@@ -42,14 +42,26 @@
       >
       </RunDownBright>
     </div>
-    <div ref="time">
+    <SpecialInvitationCardo 
+      :portofolio="portofolio"
+      :theme="theme"
+      :themeproduct="themeproduct"
+      :invitation="invitation"
+    >
+    </SpecialInvitationCardo>
+    <LiveStreamCardo 
+      :portofolio="portofolio"
+      :theme="theme"
+      :themeproduct="themeproduct"
+      :multiimage="multiimage"
+    >
+    </LiveStreamCardo>
       <!-- <TimeLines 
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"   
       >
       </TimeLines> -->
-    </div>
     <StoryPageBright
       :theme="theme"
       :themeproduct="themeproduct"
@@ -72,6 +84,15 @@
       >
       </MessageBoxBright>
     </div>
+    <div ref="time">
+      <DompetPage
+        :portofolio="portofolio"
+        :theme="theme"
+        :themeproduct="themeproduct"
+        :dompet="dompet" 
+      >
+      </DompetPage>
+    </div>
     <HappyPageBright
       :portofolio="portofolio"
       :theme="theme"
@@ -87,18 +108,21 @@
 </template>
 
 <script setup>
-import MainMenu from '@/components/MainMenu.vue'
-// import CovidPage from '@/components/CovidPage.vue'
+import MainMenuBright from '@/components/bright/MainMenuBright.vue'
+import CovidPage from '@/components/CovidPage.vue'
 import MainCoverBright from '@/components/bright/MainCoverBright.vue'
 import QuotePageBright from '@/components/bright/QuotePageBright.vue'
 import GroomBrideBright from '@/components/bright/GroomBrideBright.vue'
 // import TimeLines from '@/components/TimeLines.vue'
 import RunDownBright from '@/components/bright/RunDownBright.vue'
+import SpecialInvitationCardo from '@/components/cardo/SpecialInvitationCardo.vue'
+import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
 import StoryPageBright from '@/components/bright/StoryPageBright.vue'
 import OurMomentBright from '@/components/bright/OurMomentBright.vue'
 import MessageBoxBright from '@/components/bright/MessageBoxBright.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import HappyPageBright from '@/components/bright/HappyPageBright.vue'
+import DompetPage from '@/components/DompetPage.vue'
 
 
 

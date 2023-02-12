@@ -33,7 +33,7 @@ const move = () => {
     }
     chooseImage.value = flag
     chooseImage.id = flag
-    console.log(chooseImage.value)
+    // console.log(chooseImage.value)
 }
 
 

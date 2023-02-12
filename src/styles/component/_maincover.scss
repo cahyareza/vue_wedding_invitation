@@ -302,14 +302,14 @@
                 font-family: $theme10font1;
                 color: #FFF;
             }
-            // .low-opacity-bg-image::after {
-            //     content: '';
-            //     position: absolute;
-            //     z-index: -1;
-            //     inset: 0;
-            //     opacity: 0.5;
-            //     background: $primary-theme-4;
-            // }
+            .low-opacity-bg-image::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                opacity: 0.2;
+                background: #000;
+            }
             .custom-shape-divider-bottom-1676016784 {
                 position: absolute;
                 bottom: 0;
