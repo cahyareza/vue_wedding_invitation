@@ -61,10 +61,11 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import moment from 'moment';
 import GoToOurWedding from '@/components/parts/timelines/GoToOurWedding.vue'
 import GuestBook from '@/components/parts/timelines/GuestBook.vue'
+import useMethod from '@/hooks/useMethod.js'
 
+const {tanggal, waktu, change_timezone} = useMethod()
 
 // GET PORTOFOLIO
 defineProps({
@@ -75,29 +76,8 @@ defineProps({
   multiimage: { type: Array },
   direction: { type: Object },
 });
-
-// METHOD
-const tanggal = (value) => {
-    return moment(value).locale('id').format('dddd, DD MMMM YYYY');
-}
-const waktu = (value) => {
-    return moment(value, "HH:mm:ss").format("HH:mm");
-}
-
-const change_timezone = (value) => {
-    if (value == 'Asia/Jakarta') {
-        return "WIB"
-    } else if (value == 'Asia/Makassar') {
-        return "WITA"
-    } else if (value == 'Asia/Jayapura'){
-        return "WIT"
-    } else {
-        return value
-    }
-}
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/component/rundown.scss";
-// @import "../styles/global.scss";
+@import "@/styles/component/rundown.scss";
 </style>

@@ -1,6 +1,5 @@
 import useClipboard from 'vue-clipboard3'
 import moment from 'moment';
-import axios from 'axios';
 
 export default function useMethod(){
     // COPY METHOD
@@ -25,75 +24,34 @@ export default function useMethod(){
         return moment(value, "HH:mm:ss").format("HH:mm");
     }
 
-    // FORMS DANA
-    const confirmDana = (web_url, store, slug, fieldErrors, fields) => {
-        fieldErrors.nama= undefined;
-        fieldErrors.jumlah= undefined;
-        fieldErrors.pesan= undefined;
-        fieldErrors.ditransfer_ke= undefined;
-        fieldErrors.error= 0;
-
-        validateForm(fields);
-        if (fieldErrors.error != 0) return;
-
-        axios
-            .post(`${web_url}portofolio/api/dana/?portofolio__slug=${slug}`, fields)
-            .then(() => {
-                console.log('berhasil post');
-                fields.nama = null;
-                fields.jumlah = null;
-                fields.pesan = null;
-                fields.ditransfer_ke = null;
-
-
-                axios.get(`${web_url}portofolio/api/dana/?portofolio__slug=${slug}`).then((response) => {
-                    // console.log(response.data)
-                    store.mutations.updateDana(response.data);
-                });
-
-                fields.message = "Terimakasih telah mengisi form"
-
-            })
-            .catch((err) => console.log(err));
+    // MOVE METHOD
+    const move = (val, multiimage) => {
+        var flag = val.value;
+        flag++;
+        if(flag >= multiimage.length){
+            flag = 0;
+        }
+        val.value = flag
+        val.id = flag
     }
 
-    const validateForm = (fields, fieldErrors) => {
-        const errors = {};
-
-        if (!fields.nama) {
-            fieldErrors.nama = "Nama Required";
-            fieldErrors.error += 1;
+    const change_timezone = (value) => {
+        if (value == 'Asia/Jakarta') {
+            return "WIB"
+        } else if (value == 'Asia/Makassar') {
+            return "WITA"
+        } else if (value == 'Asia/Jayapura'){
+            return "WIT"
+        } else {
+            return value
         }
-        if (!fields.jumlah) {
-            fieldErrors.jumlah = "Jumlah Required"; 
-            fieldErrors.error += 1;
-        }
-        if (!fields.pesan) {
-            fieldErrors.pesan = "Pesan Required"; 
-            fieldErrors.error += 1;
-        }
-        if (!fields.ditransfer_ke) {
-            fieldErrors.ditransfer_ke = "Ditransfer Required"; 
-            fieldErrors.error += 1;
-        }
-
-        if (fields.jumlah && !numbervalid(fields.jumlah)) {
-            fieldErrors.jumlah = "Just number required!";
-            fieldErrors.error += 1;
-        }
-
-        return errors;
-    };
-
-    const numbervalid = (numberfield) => {
-        const re = /^\d+\.?\d*$/;
-        return re.test(numberfield);
     }
     
     return {
         copy,
         tanggal,
         waktu,
-        confirmDana,
+        move,
+        change_timezone
     }
 }

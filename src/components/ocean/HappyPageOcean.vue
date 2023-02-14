@@ -38,5 +38,5 @@ defineProps({
 
 
 <style lang="scss" scoped>
-@import "../../styles/component/happypage.scss";
+@import "@/styles/component/happypage.scss";
 </style>

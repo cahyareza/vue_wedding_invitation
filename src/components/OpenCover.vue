@@ -5,9 +5,24 @@
                 <div class="hero-body">
                     <div class="container">
                         <div class="columns is-multiline">
-                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
+                                <div v-if="themeproduct.theme?.slug === 'theme-7'">
+                                    <div v-if="direction">
+                                        <div class="mt-6">
+                                            <p class="subtitle is-size-5 mb-1 has-text-white">
+                                                Kepada Yth.
+                                            </p>
+                                            <p class="subtitle is-size-5 mt-1 mb-1 has-text-white mb-1">
+                                                {{ direction }}
+                                            </p>
+                                            <p class="is-size-7 has-text-white mt-1 is-italic">
+                                                Mohon maaf apabila ada kesalahan penulisan nama/gelar
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
+
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
                                     <p class="title is-size-3-mobile is-capitalized  is-size-2-tablet mb-1 has-text-white">
@@ -33,23 +48,62 @@
                         <VueParticle domId="demo" :config="obj.particleConfig"/>
                     </div>
                 </div>
-                <div class="hero-footer">
-                    <div class="container">
-                        <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
-                            <div v-if="direction">
-                                <div class="mt-6 mx-6 mb-3">
-                                    <p class="subtitle is-size-7-mobile is-size-6-tablet mb-0 has-text-white">
-                                        Kepada Yth.
-                                    </p>
-                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-0 has-text-white">
-                                        {{ direction }}
-                                    </p>
+                <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
+                    || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5' || themeproduct.theme?.slug === 'theme-6'
+                    || themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9' || themeproduct.theme?.slug === 'theme-10'">
+                    <div class="hero-footer">
+                        <div class="container">
+                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
+                                <div v-if="direction">
+                                    <div class="mt-6 mx-6 mb-3">
+                                        <p class="subtitle is-size-7-mobile is-size-6-tablet mb-1 has-text-white">
+                                            Kepada Yth.
+                                        </p>
+                                        <p class="subtitle is-size-6-mobile is-size-5-tablet mt-1 mb-1 has-text-white">
+                                            {{ direction }}
+                                        </p>
+                                        <p class="is-size-7 has-text-white mt-1 is-italic">
+                                            Mohon maaf apabila ada kesalahan penulisan nama/gelar
+                                        </p>
+                                    </div>
                                 </div>
+                            </div><br>
+                            <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
+                                || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5'">
+                                <router-link :to="`/main/${slug}`" class="button mt-4">
+                                    Buka Undangan
+                                </router-link>
                             </div>
-                        </div><br>
-                        <router-link :to="`/main/${slug}`" class="button mt-4">
-                            Buka Undangan
-                        </router-link>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-6'"> 
+                                <router-link :to="`/main/cardo/${slug}`" class="button mt-4">
+                                    Buka Undangan
+                                </router-link>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-8'"> 
+                                <router-link :to="`/main/cosmos/${slug}/${direction}`" class="button mt-4">
+                                    Buka Undangan
+                                </router-link>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-9'"> 
+                                <router-link :to="`/main/ocean/${slug}/${direction}`" class="button mt-4">
+                                    Buka Undangan
+                                </router-link>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-10'"> 
+                                <router-link :to="`/main/bright/${slug}`" class="button mt-4">
+                                    Buka Undangan
+                                </router-link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div v-else-if="themeproduct.theme?.slug === 'theme-7'">
+                    <div class="hero-footer">
+                        <div class="container">
+                            <router-link :to="`/main/grane/${slug}/${direction}`" class="button mt-4">
+                                Buka Undangan
+                            </router-link>
+                        </div>
                     </div>
                 </div>
             </section>

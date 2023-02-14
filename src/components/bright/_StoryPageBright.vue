@@ -43,7 +43,7 @@ defineProps({
 
 
 <style lang="scss" scoped>
-@import "../../styles/component/storypage.scss";
+@import "@/styles/component/storypage.scss";
 // @import "../styles/global.scss";
 
 .swiper {

@@ -132,7 +132,7 @@
                                                             </div>
                                                         </div><br> -->
                                                                         
-                                                        <button @click="confirmDana(web_url, store, slug, fieldErrors, fields)" class="button is-rounded is-size-6">Kirim</button>
+                                                        <button @click="confirmDana" class="button is-rounded is-size-6">Kirim</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -149,31 +149,144 @@
                     
                     <div class="container">
                         <div class="notification2 p-2">
-                            <span class="icon-text is-paddingless is-marginless">
-                                <!-- <span>Couple</span> -->
-                                <span @click="navPage('groom')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-heart" />
-                                </span>
-                                <!-- <span>Date</span> -->
-                                <span @click="navPage('time')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-map" />
-                                </span>
-                                <!-- <span>Rundown</span> -->
-                                <span @click="navPage('run')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                                </span>
-                                <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                    <!-- <span>Moment</span> -->
-                                    <span @click="navPage('moment')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-images" />
+                            
+                            <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
+                                || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5'">
+                                <span class="icon-text is-paddingless is-marginless">   
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
                                     </span>
-                                
-                                    <!-- <span>Wishes</span> -->
-                                    <span @click="navPage('message')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    <!-- <span>Date</span> -->
+                                    <span @click="navPage('time')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-map" />
                                     </span>
-                                </div>
-                            </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+                                    
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-6'">
+                                <span class="icon-text is-paddingless is-marginless">  
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Date</span> -->
+                                    <span @click="navPage('time')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-clock" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+                                    
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-7'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+
+                                        <!-- <span>Date</span> -->
+                                        <span @click="navPage('time')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-clock" />
+                                        </span>
+                                    
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-8'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Date</span> -->
+                                    <span @click="navPage('time')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-clock" />
+                                    </span>
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-9'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+
+                                        <!-- <span>Date</span> -->
+                                        <span @click="navPage('time')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-clock" />
+                                        </span>
+                                    
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -188,8 +301,8 @@ import injectStore from '@/hooks/injectStore.js'
 import useMethod from '@/hooks/useMethod.js'
 import axios from 'axios';
 
-const {slug, dompets, web_url} = injectStore()
-const {confirmDana, copy} = useMethod()
+const {store, slug, dompets, web_url} = injectStore()
+const {copy} = useMethod()
 
 // FORMS
 const fields = reactive({
@@ -208,6 +321,70 @@ const fieldErrors = reactive({
     ditransfer_ke: undefined,
     error: 0
 });
+
+const confirmDana = () => {
+    fieldErrors.nama= undefined;
+    fieldErrors.jumlah= undefined;
+    fieldErrors.pesan= undefined;
+    fieldErrors.ditransfer_ke= undefined;
+    fieldErrors.error= 0;
+
+    validateForm(fields);
+    if (fieldErrors.error != 0) return;
+
+    axios
+        .post(`${web_url}portofolio/api/dana/?portofolio__slug=${slug}`, fields)
+        .then(() => {
+            console.log('berhasil post');
+            fields.nama = null;
+            fields.jumlah = null;
+            fields.pesan = null;
+            fields.ditransfer_ke = null;
+
+
+            axios.get(`${web_url}portofolio/api/dana/?portofolio__slug=${slug}`).then((response) => {
+                // console.log(response.data)
+                store.mutations.updateDana(response.data);
+            });
+
+            fields.message = "Terimakasih telah mengisi form"
+
+        })
+        .catch((err) => console.log(err));
+}
+
+const validateForm = (fields) => {
+    const errors = {};
+
+    if (!fields.nama) {
+        fieldErrors.nama = "Nama Required";
+        fieldErrors.error += 1;
+    }
+    if (!fields.jumlah) {
+        fieldErrors.jumlah = "Jumlah Required"; 
+        fieldErrors.error += 1;
+    }
+    if (!fields.pesan) {
+        fieldErrors.pesan = "Pesan Required"; 
+        fieldErrors.error += 1;
+    }
+    if (!fields.ditransfer_ke) {
+        fieldErrors.ditransfer_ke = "Ditransfer Required"; 
+        fieldErrors.error += 1;
+    }
+
+    if (fields.jumlah && !numbervalid(fields.jumlah)) {
+        fieldErrors.jumlah = "Just number required!";
+        fieldErrors.error += 1;
+    }
+
+    return errors;
+};
+
+const numbervalid = (numberfield) => {
+    const re = /^\d+\.?\d*$/;
+    return re.test(numberfield);
+}
 
 // GET PROPS
 defineProps({

@@ -1,6 +1,6 @@
 <template>
     <div :class="theme">
-        <div class="">
+        <div v-if="themeproduct.theme?.slug === 'theme-6'"> 
             <SlidePage 
             :image="multiimage[chooseImage.value]"
             :portofolio="portofolio"
@@ -8,12 +8,35 @@
             >
             </SlidePage>
         </div>
+        <div v-else-if="themeproduct.theme?.slug === 'theme-7'">
+            <SlidePageGrane 
+            :image="multiimage[chooseImage.value]"
+            :portofolio="portofolio"
+            :id="chooseImage.id"
+            >
+            </SlidePageGrane>
+        </div>
+        <div v-else-if="themeproduct.theme?.slug === 'theme-8'">
+            <SlidePageCosmos
+            :image="multiimage[chooseImage.value]"
+            :portofolio="portofolio"
+            :id="chooseImage.id"
+            :quote="quote" 
+            >
+            </SlidePageCosmos>
+        </div>
+
     </div>
 </template>
 
 <script setup>
 import { defineProps, reactive, onMounted } from 'vue'
-import SlidePage from './parts/maincovercardo/SlidePage.vue'
+import SlidePage from '@/components/cardo/parts/maincovercardo/SlidePage.vue'
+import SlidePageGrane from '@/components/grane/parts/maincovergrane/SlidePage.vue'
+import SlidePageCosmos from '@/components/cosmos/parts/maincovercosmos/SlidePage.vue'
+import useMethod from '@/hooks/useMethod.js'
+
+const {move} = useMethod()
 
 // GET PORTOFOLIO
 const props = defineProps({
@@ -21,35 +44,19 @@ const props = defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
   multiimage: { type: Array },
+  quote: { type: Object },
 });
 
 const chooseImage = reactive({id:0, value:0})
 
-const move = () => {
-    var flag = chooseImage.value;
-    flag++;
-    if(flag >= props.multiimage.length){
-        flag = 0;
-    }
-    chooseImage.value = flag
-    chooseImage.id = flag
-    // console.log(chooseImage.value)
-}
-
-
-const create = () => {
-    setInterval(() => {
-        move();
-    }, 10000);
-}
-
 onMounted(() => {
-    create();
+    setInterval(() => {
+        move(chooseImage, props.multiimage);
+    }, 10000);
 })
-
 
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/component/maincover.scss";
+@import "@/styles/component/maincover.scss";
 </style>

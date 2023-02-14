@@ -2,19 +2,19 @@
   <section>
     <CovidPage>
     </CovidPage>
-    <MainCoverOcean 
+    <MainCover
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
     >
-    </MainCoverOcean>
-    <QuotePageOcean
+    </MainCover>
+    <QuotePage
       :theme="theme"
       :themeproduct="themeproduct"  
       :quote="quote"
       :multiimage="multiimage"  
     >
-    </QuotePageOcean>
+    </QuotePage>
     <div ref="groom">
       <GroomBridgeOcean 
         :portofolio="portofolio"
@@ -35,13 +35,13 @@
       >
       </RunDownOcean>
     </div>
-    <SpecialInvitationCardo 
+    <SpecialInvitation
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :invitation="invitation"
     >
-    </SpecialInvitationCardo>
+    </SpecialInvitation>
     <LiveStreamCardo 
       :portofolio="portofolio"
       :theme="theme"
@@ -50,13 +50,13 @@
     >
     </LiveStreamCardo>
     <div ref='moment'>
-      <OurMomentOcean
+      <OurMoment
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
         :multiimage="multiimage"
       >
-      </OurMomentOcean>
+      </OurMoment>
     </div>
     <StoryPageOcean
       :theme="theme"
@@ -75,11 +75,11 @@
       </TimeLinesOcean>
     </div>
     <div ref='message'>
-      <MessageBoxCosmos
+      <MessageBox
         :theme="theme"
         :themeproduct="themeproduct"
       >
-      </MessageBoxCosmos>
+      </MessageBox>
     </div>
     <HappyPageOcean
       :portofolio="portofolio"
@@ -93,30 +93,30 @@
       :multiimage="multiimage" 
     >
     </FooterPage>
-    <MainMenuOcean
+    <MainMenu
       @page="navigation"
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
     >
-    </MainMenuOcean>
+    </MainMenu>
   </section>
 </template>
 
 <script setup>
-import MainMenuOcean from '@/components/ocean/MainMenuOcean.vue'
+import MainMenu from '@/components/MainMenu.vue'
 import CovidPage from '@/components/CovidPage.vue'
-import MainCoverOcean from '@/components/ocean/MainCoverOcean.vue'
-import QuotePageOcean from '@/components/ocean/QuotePageOcean.vue'
+import MainCover from '@/components/MainCover.vue'
+import QuotePage from '@/components/QuotePage.vue'
 import GroomBridgeOcean from '@/components/ocean/GroomBridgeOcean.vue'
 import TimeLinesOcean from '@/components/ocean/TimeLinesOcean.vue'
 import RunDownOcean from '@/components/ocean/RunDownOcean.vue'
-import SpecialInvitationCardo from '@/components/cardo/SpecialInvitationCardo.vue'
+import SpecialInvitation from '@/components/SpecialInvitation.vue'
 import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
 import StoryPageOcean from '@/components/ocean/StoryPageOcean.vue'
-import OurMomentOcean from '@/components/ocean/OurMomentOcean.vue'
-import MessageBoxCosmos from '@/components/cosmos/MessageBoxCosmos.vue'
+import OurMoment from '@/components/OurMoment.vue'
+import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import HappyPageOcean from '@/components/ocean/HappyPageOcean.vue'
 

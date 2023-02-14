@@ -1,16 +1,16 @@
 <template>
   <section>
-    <!-- <CovidPage>
-    </CovidPage> -->
+    <CovidPage>
+    </CovidPage>
      <div ref="time">
-      <MainCoverCosmos 
+      <MainCoverCardo
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
         :multiimage="multiimage"
         :quote="quote"   
       >
-      </MainCoverCosmos>
+      </MainCoverCardo>
      </div>
     <div ref="groom">
       <GroomBridgeCosmos 
@@ -21,15 +21,6 @@
       >
       </GroomBridgeCosmos>
     </div>
-
-    <!-- <TimeLinesCardo 
-    :portofolio="portofolio"
-    :theme="theme"
-    :themeproduct="themeproduct"   
-    :multiimage="multiimage"  
-    >
-    </TimeLinesCardo> -->
-
     <div ref='run'>
       <RunDownCosmos
         :portofolio="portofolio"
@@ -41,13 +32,13 @@
       >
       </RunDownCosmos>
     </div>
-    <SpecialInvitationCardo 
+    <SpecialInvitation
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :invitation="invitation"
     >
-    </SpecialInvitationCardo>
+    </SpecialInvitation>
     <LiveStreamCardo 
     :portofolio="portofolio"
     :theme="theme"
@@ -63,20 +54,20 @@
     >
     </StoryPageCosmos>
     <div ref='message'>
-      <MessageBoxCosmos
+      <MessageBox
         :theme="theme"
         :themeproduct="themeproduct"
       >
-      </MessageBoxCosmos>
+      </MessageBox>
     </div>
     <div ref='moment'>
-      <OurMomentCosmos 
+      <OurMoment 
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
         :multiimage="multiimage"
       >
-      </OurMomentCosmos>
+      </OurMoment>
     </div>
     <HappyPageCosmos
       :portofolio="portofolio"
@@ -89,29 +80,28 @@
       :theme="theme"
     >
     </FooterPage>
-    <MainMenuCosmos 
+    <MainMenu
       @page="navigation"
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
     >
-    </MainMenuCosmos>
+    </MainMenu>
   </section>
 </template>
 
 <script setup>
-import MainMenuCosmos from '@/components/cosmos/MainMenuCosmos.vue'
-// import CovidPage from '@/components/CovidPage.vue'
-import MainCoverCosmos from '@/components/cosmos/MainCoverCosmos.vue'
+import MainMenu from '@/components/MainMenu.vue'
+import CovidPage from '@/components/CovidPage.vue'
+import MainCoverCardo from '@/components/cardo/MainCoverCardo.vue'
 import GroomBridgeCosmos from '@/components/cosmos/GroomBridgeCosmos.vue'
-// import TimeLinesCardo from '@/components/cardo/TimeLinesCardo.vue'
 import RunDownCosmos from '@/components/cosmos/RunDownCosmos.vue'
-import SpecialInvitationCardo from '@/components/cardo/SpecialInvitationCardo.vue'
+import SpecialInvitation from '@/components/SpecialInvitation.vue'
 import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
 import StoryPageCosmos from '@/components/cosmos/StoryPageCosmos.vue'
-import OurMomentCosmos from '@/components/cosmos/OurMomentCosmos.vue'
-import MessageBoxCosmos from '@/components/cosmos/MessageBoxCosmos.vue'
+import OurMoment from '@/components/OurMoment.vue'
+import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import HappyPageCosmos from '@/components/cosmos/HappyPageCosmos.vue'
 

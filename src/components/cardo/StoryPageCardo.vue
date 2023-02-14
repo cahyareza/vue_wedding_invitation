@@ -42,8 +42,8 @@ defineProps({
 
 
 <style lang="scss" scoped>
-@import "../../styles/component/storypage.scss";
-// @import "../styles/global.scss";
+@import "@/styles/component/storypage.scss";
+
 
 .swiper {
   width: 100%;

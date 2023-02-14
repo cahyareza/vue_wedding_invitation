@@ -27,7 +27,10 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import moment from 'moment';
+import useMethod from '@/hooks/useMethod.js'
+
+const {tanggal} = useMethod()
+
 
 // GET PORTOFOLIO
 defineProps({
@@ -35,11 +38,6 @@ defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
 });
-
-// METHOD
-const tanggal = (value) => {
-    return moment(value).locale('id').format('dddd, DD MMMM YYYY');
-}
 </script>
 
 <style lang="scss" scoped>

@@ -9,12 +9,12 @@
       :multiimage="multiimage"   
     >
     </MainCoverCardo>
-    <QuotePageCardo
+    <QuotePage
       :theme="theme"
       :themeproduct="themeproduct"  
       :quote="quote"
     >
-    </QuotePageCardo>
+    </QuotePage>
     <div ref="groom">
       <GroomBridgeCardo 
         :portofolio="portofolio"
@@ -42,13 +42,13 @@
       >
       </RunDownCardo>
     </div>
-    <SpecialInvitationCardo 
+    <SpecialInvitation
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :invitation="invitation"
     >
-    </SpecialInvitationCardo>
+    </SpecialInvitation>
     <LiveStreamCardo 
       :portofolio="portofolio"
       :theme="theme"
@@ -57,13 +57,13 @@
     >
     </LiveStreamCardo>
     <div ref='moment'>
-      <OurMomentCardo 
+      <OurMoment
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
         :multiimage="multiimage"
       >
-      </OurMomentCardo>
+      </OurMoment>
     </div>
     <StoryPageCardo
       :theme="theme"
@@ -89,29 +89,29 @@
       :theme="theme"
     >
     </FooterPage>
-    <MainMenuCardo 
+    <MainMenu
       @page="navigation"
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
     >
-    </MainMenuCardo>
+    </MainMenu>
   </section>
 </template>
 
 <script setup>
-import MainMenuCardo from '@/components/cardo/MainMenuCardo.vue'
+import MainMenu from '@/components/MainMenu.vue'
 import CovidPage from '@/components/CovidPage.vue'
 import MainCoverCardo from '@/components/cardo/MainCoverCardo.vue'
-import QuotePageCardo from '@/components/cardo/QuotePageCardo.vue'
+import QuotePage from '@/components/QuotePage.vue'
 import GroomBridgeCardo from '@/components/cardo/GroomBridgeCardo.vue'
 import TimeLinesCardo from '@/components/cardo/TimeLinesCardo.vue'
 import RunDownCardo from '@/components/cardo/RunDownCardo.vue'
-import SpecialInvitationCardo from '@/components/cardo/SpecialInvitationCardo.vue'
+import SpecialInvitation from '@/components/SpecialInvitation.vue'
 import LiveStreamCardo from '@/components/cardo/LiveStreamCardo.vue'
 import StoryPageCardo from '@/components/cardo/StoryPageCardo.vue'
-import OurMomentCardo from '@/components/cardo/OurMomentCardo.vue'
+import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import HappyPageCardo from '@/components/cardo/HappyPageCardo.vue'
