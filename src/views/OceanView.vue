@@ -122,10 +122,11 @@ import HappyPageOcean from '@/components/ocean/HappyPageOcean.vue'
 
 
 
-import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
+import { ref, onMounted, defineProps, defineEmits } from "vue";
+import {useCounterStore} from '@/stores/store'
 
 // LOAD STATE
-const store = inject('store');
+const store = useCounterStore();
 
 // TO PARAMS
 const direction = store.actions.getTo().value

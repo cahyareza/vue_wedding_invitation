@@ -1,9 +1,10 @@
-import { inject, computed } from 'vue'
+import { computed } from 'vue'
+import {useCounterStore} from '@/stores/store'
 
 
 export default function useStore(){
     // LOAD STATE
-    const store = inject('store');
+    const store = useCounterStore();
 
     // SLUG
     const slug = store.actions.getSlug().value;

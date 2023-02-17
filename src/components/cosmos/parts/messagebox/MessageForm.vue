@@ -48,13 +48,15 @@
 </template>
 
 <script setup>
-import { reactive, inject, computed } from "vue";
+import { reactive, computed } from "vue";
 import axios from 'axios';
+import {useCounterStore} from '@/stores/store'
+
+// LOAD STATE
+const store = useCounterStore();
 
 var web_url = process.env.VUE_APP_WEB_URL_FIX
 
-
-const store = inject('store');
 const ucapan = computed(() => store.state.ucapan); 
 
 

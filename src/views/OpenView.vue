@@ -27,11 +27,12 @@
 
 <script setup>
 import OpenCover from '@/components/OpenCover.vue'
-import { ref, onMounted, inject, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
+import {useCounterStore} from '@/stores/store'
 
 // LOAD STATE
-const store = inject('store');
+const store = useCounterStore();
 
 // TO PARAMS
 const direction = store.actions.getTo().value

@@ -118,10 +118,11 @@ import HappyPageCardo from '@/components/cardo/HappyPageCardo.vue'
 
 
 
-import { ref, inject, onMounted, defineProps, defineEmits } from "vue";
+import { ref, onMounted, defineProps, defineEmits } from "vue";
+import {useCounterStore} from '@/stores/store'
 
 // LOAD STATE
-const store = inject('store');
+const store = useCounterStore();
 
 // EMIT
 const emit = defineEmits(['slug']);

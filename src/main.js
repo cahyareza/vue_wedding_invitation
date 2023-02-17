@@ -2,7 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
-import store from './stores/store'
+// import store from './stores/store'
+import { createPinia } from 'pinia'
 
 import '@/styles/_main.scss'
 
@@ -18,6 +19,7 @@ library.add(fas, fab)
 
 createApp(App)
 .component('font-awesome-icon', FontAwesomeIcon)
+.use(createPinia())
 .use(router, LoadingPlugin)
-.provide("store", store)
+// .provide("store", store)
 .mount('#app')
