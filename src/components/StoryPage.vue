@@ -4,37 +4,33 @@
             <div :class="theme">
                 <section class="hero is-large">
                     <div class="section py-0">
-                        <div class="columns mb-3">
-                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                                <p class="subtitle2 is-uppercase is-size-5 mt-4 mb-5">
-                                    Cerita Kita<br>
-                                    <img class="filter mt-1" :src="themeproduct.theme?.line">
-                                </p>
-                                <div class="box mx-1 pt-1 px-0">
-                                    <swiper
-                                        :slidesPerView="2"
-                                        :pagination="{
-                                        type: 'fraction',
-                                        }"
-                                        :navigation="true"
-                                        class="mySwiper is-paddingless is-marginless"
-                                    >
-                                        <swiper-slide v-for="stori in story" :key="stori.id">
-                                            <div class="columns is-multiline">
-                                                <div class="column mt-1">
-                                                    <p class="subtitle3 mb-1">{{ stori.year }}</p>
-                                                    <figure @click="showForm = true" class="image is-128x128 mt-1">
-                                                        <img class="is-rounded" :src="stori.image">
-                                                    </figure>
-                                                </div>
-                                            </div>
-                                        </swiper-slide>
-                                    </swiper>
-                                </div>
-
-                                <SlidePage v-model:visible="showForm"></SlidePage>
-                            </div>
+                        <p class="subtitle2 is-uppercase is-size-5 mt-4 mb-5">
+                            Cerita Kita<br>
+                            <img class="filter mt-1" :src="themeproduct.theme?.line">
+                        </p>
+                        <div class="box mx-1 pt-1 px-0">
+                            <swiper
+                                :slidesPerView="2"
+                                :pagination="{
+                                type: 'fraction',
+                                }"
+                                :navigation="true"
+                                class="mySwiper is-paddingless is-marginless"
+                            >
+                                <swiper-slide v-for="stori in story" :key="stori.id">
+                                    <div class="columns is-multiline">
+                                        <div class="column mt-1">
+                                            <p class="subtitle3 mb-1">{{ stori.year }}</p>
+                                            <figure @click="showForm = true" class="image is-128x128 mt-1">
+                                                <img class="is-rounded" :src="stori.image">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </swiper-slide>
+                            </swiper>
                         </div>
+
+                        <SlidePage v-model:visible="showForm"></SlidePage>
                     </div>
                 </section>
             </div>
@@ -45,7 +41,6 @@
 
 <script setup>
 import SlidePage from '@/components/parts/storypage/SlidePage.vue'
-
 import { ref, defineProps } from 'vue'
 
 // GET PORTOFOLIO
@@ -81,7 +76,6 @@ SwiperCore.use([Navigation, Pagination]);
 
 <style lang="scss" scoped>
 @import "../styles/component/storypage.scss";
-// @import "../styles/global.scss";
 
 .swiper {
   width: 100%;

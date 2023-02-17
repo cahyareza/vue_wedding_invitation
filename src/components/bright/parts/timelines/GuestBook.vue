@@ -36,12 +36,15 @@
 
 <script setup>
 
-import { ref, reactive, inject, computed, onMounted } from "vue";
+import { ref, reactive, computed, onMounted } from "vue";
 import axios from 'axios';
+import {useCounterStore} from '@/stores/store'
+
+// LOAD STATE
+const store = useCounterStore();
 
 var web_url = process.env.VUE_APP_WEB_URL_FIX
 
-var store = inject('store');
 const show = ref(false);
 
 var slug = store.actions.getSlug().value;

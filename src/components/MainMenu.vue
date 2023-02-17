@@ -149,31 +149,144 @@
                     
                     <div class="container">
                         <div class="notification2 p-2">
-                            <span class="icon-text is-paddingless is-marginless">
-                                <!-- <span>Couple</span> -->
-                                <span @click="navPage('groom')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-heart" />
-                                </span>
-                                <!-- <span>Date</span> -->
-                                <span @click="navPage('time')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-map" />
-                                </span>
-                                <!-- <span>Rundown</span> -->
-                                <span @click="navPage('run')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                                </span>
-                                <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                    <!-- <span>Moment</span> -->
-                                    <span @click="navPage('moment')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-images" />
+                            
+                            <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
+                                || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5'">
+                                <span class="icon-text is-paddingless is-marginless">   
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
                                     </span>
-                                
-                                    <!-- <span>Wishes</span> -->
-                                    <span @click="navPage('message')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    <!-- <span>Date</span> -->
+                                    <span @click="navPage('time')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-map" />
                                     </span>
-                                </div>
-                            </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+                                    
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-6'">
+                                <span class="icon-text is-paddingless is-marginless">  
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Date</span> -->
+                                    <span @click="navPage('time')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-clock" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+                                    
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-7'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+
+                                        <!-- <span>Date</span> -->
+                                        <span @click="navPage('time')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-clock" />
+                                        </span>
+                                    
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-8'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Date</span> -->
+                                    <span @click="navPage('time')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-clock" />
+                                    </span>
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-9'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+
+                                        <!-- <span>Date</span> -->
+                                        <span @click="navPage('time')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-clock" />
+                                        </span>
+                                    
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,18 +296,13 @@
 </template>
 
 <script setup>
-import { reactive, defineEmits, defineProps, onMounted, inject, ref, computed } from "vue";
-// import trumpetSfx from '../assets/contents/mp3/sample.mp3';
-import useClipboard from 'vue-clipboard3'
+import { reactive, defineEmits, defineProps, onMounted, ref } from "vue";
+import injectStore from '@/hooks/injectStore.js'
+import useMethod from '@/hooks/useMethod.js'
 import axios from 'axios';
 
-var web_url = process.env.VUE_APP_WEB_URL_FIX
-
-var store = inject('store');
-
-var slug = store.actions.getSlug().value;
-
-var dompets = computed(() => store.state.dompet);
+const {store, slug, dompets, web_url} = injectStore()
+const {copy} = useMethod()
 
 // FORMS
 const fields = reactive({
@@ -286,13 +394,11 @@ defineProps({
   portofolio: { type: Object },
 });
 
-const emit = defineEmits(['page']);
-
 // emit
+const emit = defineEmits(['page']);
 const navPage = (value) => {
     emit("page", value)
 }
-
 
 // audio
 const player_audio = ref(null)
@@ -313,37 +419,17 @@ const audio = reactive({
     isPlaying: false,
 })
 
-
-onMounted(() => {
-    axios
-        .get(`${web_url}portofolio/api/portofolio/?slug=${slug}`)
-        .then((response) => {
-            // eslint-disable-next-line
-            let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-_]+)\&?/i
-            if (response.data[0].track !== null) {
-                let text = response.data[0].track.url
-                let result = text.match(myregex)[1]
-                audio.file = `https://docs.google.com/uc?export=open&id=${result}`
-            }
-        })
-        .catch((err) => console.log(err));
-})
-
 // Dompet
 const modal_data = reactive({
     showModalFlag: false,
-    okPressed: false,
-    // notif dompet
     showNotifFlag: false,
 })
 
 const showModal= () => {
-    modal_data.okPressed = false;
     modal_data.showModalFlag = true;
 }
 
 const cancelModal = () => {
-    modal_data.okPressed = false;
     modal_data.showModalFlag = false;
 }
 
@@ -355,24 +441,25 @@ const hideNotif = () => {
     modal_data.showNotifFlag = false;
 }
 
-// Copy clipboard
-
-const { toClipboard } = useClipboard()
-
-const copy = async (vari) => {
-    try {
-        await toClipboard(vari)
-        // console.log('Copied to clipboard')
-    } catch (e) {
-        console.error(e)
-    }
-}
-
 onMounted(() => {
     play();
+
     setTimeout(() => {
         showNotif();
     }, 10000);
+
+    axios
+    .get(`${web_url}portofolio/api/portofolio/?slug=${slug}`)
+    .then((response) => {
+        // eslint-disable-next-line
+        let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-_]+)\&?/i
+        if (response.data[0].track !== null) {
+            let text = response.data[0].track.url
+            let result = text.match(myregex)[1]
+            audio.file = `https://docs.google.com/uc?export=open&id=${result}`
+        }
+    })
+    .catch((err) => console.log(err));
 })
 
 </script>

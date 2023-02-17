@@ -100,5 +100,5 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/component/groombride.scss";
+@import "@/styles/component/groombride.scss";
 </style>

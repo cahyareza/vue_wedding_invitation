@@ -24,8 +24,9 @@
 
 <script setup>
 import { defineProps } from "vue";
+import injectStore from '@/hooks/injectStore.js'
 
-var web_url = process.env.VUE_APP_WEB_URL_FIX
+const {web_url} = injectStore()
 
 // GET PROPS
 defineProps({

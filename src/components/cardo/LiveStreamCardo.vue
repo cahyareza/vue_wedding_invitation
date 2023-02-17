@@ -46,6 +46,5 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/component/livestream.scss";
-// @import "../styles/global.scss";
+@import "@/styles/component/livestream.scss";
 </style>

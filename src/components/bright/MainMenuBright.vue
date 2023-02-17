@@ -68,14 +68,11 @@
 </template>
 
 <script setup>
-import { reactive, defineEmits, defineProps, onMounted, inject, ref } from "vue";
+import { reactive, defineEmits, defineProps, onMounted, ref } from "vue";
 import axios from 'axios';
+import injectStore from '@/hooks/injectStore.js'
 
-var web_url = process.env.VUE_APP_WEB_URL_FIX
-
-var store = inject('store');
-
-var slug = store.actions.getSlug().value;
+const {slug, web_url} = injectStore()
 
 // GET PROPS
 defineProps({
@@ -91,7 +88,6 @@ const emit = defineEmits(['page']);
 const navPage = (value) => {
     emit("page", value)
 }
-
 
 // audio
 const player_audio = ref(null)
@@ -126,9 +122,7 @@ onMounted(() => {
             }
         })
         .catch((err) => console.log(err));
-})
 
-onMounted(() => {
     play();
 })
 

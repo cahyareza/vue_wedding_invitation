@@ -4,115 +4,117 @@
             <div v-if="dompet.length != 0">
                 <div class="hero is-medium">
                     <div class="section py-0">
-                        <div class="columns">
-                            <div class="column">
-                                <div class="container m-3 mt-5">
-                                    <span class="icon has-text-grey is-large">
-                                        <font-awesome-icon icon="fa-solid fa-gift" />
-                                    </span>
-                                    <p class="title is-capitalized is-size-3-mobile is-size-2-tablet mt-5 mb-3">Wedding Gift</p>
-                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-3">Bagi keluarga dan kerabat yang ingin mengirimkan tanda kasih, silahkan mengirimkan melalui tautan berikut</p>
-                                    
-                                    <div @click="showModal" class="button p-2">
-                                        Kirim
-                                    </div>
-                                    
-                                    <!--    Modal        -->
-                                    <div class="modal" :class="{'is-active': modal_data.showModalFlag}">
-                                        <div class="modal-background"></div>
-                                        <div class="modal-card">
-                                            <header class="modal-card-head">
-                                                <p class="modal-card-title">Wedding Gift</p>
-                                                <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
-                                            </header>
-                                            <section class="modal-card-body">
-                                                <p class="has-text-left mb-4">Doa restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah, namun jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentunya semakin melengkapi kebahagiaan kami.;</p>
-                                                <div class="section is-paddingless is-marginless">
-                                                    <div class="container is-paddingless is-marginless">
-                                                        <div class="columns is-multiline is-mobile is-centered mt-4">
-                                                            <div v-if="portofolio.alamat_rumah">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="container m-3 mt-5">
+                                        <span class="icon has-text-grey is-large">
+                                            <font-awesome-icon icon="fa-solid fa-gift" />
+                                        </span>
+                                        <p class="title is-capitalized is-size-3-mobile is-size-2-tablet mt-5 mb-3">Wedding Gift</p>
+                                        <p class="subtitle is-size-6-mobile is-size-5-tablet mt-3">Bagi keluarga dan kerabat yang ingin mengirimkan tanda kasih, silahkan mengirimkan melalui tautan berikut</p>
+                                        
+                                        <div @click="showModal" class="button p-2">
+                                            Kirim
+                                        </div>
+                                        
+                                        <!--    Modal        -->
+                                        <div class="modal" :class="{'is-active': modal_data.showModalFlag}">
+                                            <div class="modal-background"></div>
+                                            <div class="modal-card">
+                                                <header class="modal-card-head">
+                                                    <p class="modal-card-title">Wedding Gift</p>
+                                                    <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
+                                                </header>
+                                                <section class="modal-card-body">
+                                                    <p class="has-text-left mb-4">Doa restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah, namun jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentunya semakin melengkapi kebahagiaan kami.;</p>
+                                                    <div class="section is-paddingless is-marginless">
+                                                        <div class="container is-paddingless is-marginless">
+                                                            <div class="columns is-multiline is-mobile is-centered mt-4">
+                                                                <div v-if="portofolio.alamat_rumah">
+                                                                    <div class="column is-12 has-text-center">
+                                                                        <p class="mb-2">{{ portofolio.alamat_rumah }}</p>
+                                                                        <button @click="copy(portofolio.alamat_rumah)" class="button is-black mt-2">Salin Alamat</button>
+                                                                    </div>
+                                                                </div>
+                                                                <div v-for="info in dompet" :key="info.id" class="column is-one-half has-text-center">
+                                                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1"><strong>{{ info.rekening }}</strong></p>
+                                                                    <div v-if="info.bar_code">
+                                                                        <figure class="image is-1by1">
+                                                                            <img :src="info.bar_code">
+                                                                        </figure>
+                                                                    </div>
+                                                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1 mt-1">{{ info.nomor }}</p>
+                                                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1">a/n {{ info.pemilik }}</p>
+                                                                    <button @click="copy(info.nomor)" class="button is-black mt-1">Salin Nomor</button>
+                                                                </div>
                                                                 <div class="column is-12 has-text-center">
-                                                                    <p class="mb-2">{{ portofolio.alamat_rumah }}</p>
-                                                                    <button @click="copy(portofolio.alamat_rumah)" class="button is-black mt-2">Salin Alamat</button>
-                                                                </div>
-                                                            </div>
-                                                            <div v-for="info in dompet" :key="info.id" class="column is-one-half has-text-center">
-                                                                <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1"><strong>{{ info.rekening }}</strong></p>
-                                                                <div v-if="info.bar_code">
-                                                                    <figure class="image is-1by1">
-                                                                        <img :src="info.bar_code">
-                                                                    </figure>
-                                                                </div>
-                                                                <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1 mt-1">{{ info.nomor }}</p>
-                                                                <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1">a/n {{ info.pemilik }}</p>
-                                                                <button @click="copy(info.nomor)" class="button is-black mt-1">Salin Nomor</button>
-                                                            </div>
-                                                            <div class="column is-12 has-text-center">
-                                                                <form class="form" v-on:submit.prevent>
-                                                                    <p class="subtitle3 has-text-weight-bold mb-4"> Mohon isi form di bawah ini</p>
-                                                                    <!-- New Item Field -->
-                                                                    <div class="field">
-                                                                        <div class="control">
-                                                                            <input class="input" v-model="fields.nama" type="text" placeholder="Nama lengkap">
-                                                                            <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.nama }}</span>
+                                                                    <form class="form" v-on:submit.prevent>
+                                                                        <p class="subtitle3 has-text-weight-bold mb-4"> Mohon isi form di bawah ini</p>
+                                                                        <!-- New Item Field -->
+                                                                        <div class="field">
+                                                                            <div class="control">
+                                                                                <input class="input" v-model="fields.nama" type="text" placeholder="Nama lengkap">
+                                                                                <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.nama }}</span>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
 
-                                                                    <!-- Email Field -->
-                                                                    <div class="field">
-                                                                        <div class="control">
-                                                                            <input class="input" v-model="fields.jumlah" type="text" placeholder="Jumlah">
-                                                                            <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.jumlah }}</span>
+                                                                        <!-- Email Field -->
+                                                                        <div class="field">
+                                                                            <div class="control">
+                                                                                <input class="input" v-model="fields.jumlah" type="text" placeholder="Jumlah">
+                                                                                <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.jumlah }}</span>
+                                                                            </div>
+                                                                        </div>  
+
+                                                                        <!-- Urgency Field -->
+                                                                        <div class="field">
+                                                                            <div class="control">
+                                                                                <input class="input" v-model="fields.pesan" placeholder="Pesan">
+                                                                                <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.pesan }}</span>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>  
 
-                                                                    <!-- Urgency Field -->
-                                                                    <div class="field">
-                                                                        <div class="control">
-                                                                            <input class="input" v-model="fields.pesan" placeholder="Pesan">
-                                                                            <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.pesan }}</span>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <!-- Urgency Field -->
-                                                                    <!-- <div class="field">
-                                                                        <div class="control">
-                                                                            <input class="input" v-model="fields.ditransfer_ke" placeholder="Ditransfer ke-">
+                                                                        <!-- Urgency Field -->
+                                                                        <!-- <div class="field">
+                                                                            <div class="control">
+                                                                                <input class="input" v-model="fields.ditransfer_ke" placeholder="Ditransfer ke-">
+                                                                                <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.ditransfer_ke }}</span>
+                                                                            </div>
+                                                                        </div> -->
+                                                                        
+                                                                        <div class="field has-text-left">
+                                                                            <p>Dikirim ke-:</p>
+                                                                            <div v-for="dompet in dompets" :key="dompet.id">
+                                                                                <label class="radio">
+                                                                                    <input type="radio" name="rsvp" :value="dompet.rekening" v-model="fields.ditransfer_ke">
+                                                                                    {{ dompet.rekening}} a/n {{ dompet.pemilik }}
+                                                                                </label>
+                                                                            </div>
                                                                             <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.ditransfer_ke }}</span>
                                                                         </div>
-                                                                    </div> -->
-                                                                    
-                                                                    <div class="field has-text-left">
-                                                                        <p>Dikirim ke-:</p>
-                                                                        <div v-for="dompet in dompets" :key="dompet.id">
-                                                                            <label class="radio">
-                                                                                <input type="radio" name="rsvp" :value="dompet.rekening" v-model="fields.ditransfer_ke">
-                                                                                {{ dompet.rekening}} a/n {{ dompet.pemilik }}
-                                                                            </label>
-                                                                        </div>
-                                                                        <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.ditransfer_ke }}</span>
-                                                                    </div>
 
-                                                                    <!-- <div class="select">
-                                                                        <div v-for="dompet in dompets" :key="dompet.id">
-                                                                            <select v-model="fields.ditransfer_ke">  
-                                                                                <option>Select dropdown</option>
-                                                                                <option value="{{ dompet }}">{{ dompet.rekening}} a/n {{ dompet.pemilik }}</option> 
-                                                                            </select>
-                                                                            <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.ditransfer_ke }}</span>
-                                                                        </div>
-                                                                    </div><br> -->
-                                                                                    
-                                                                    <button @click="confirmDana" class="button is-rounded is-size-6">Kirim</button>
-                                                                </form>
+                                                                        <!-- <div class="select">
+                                                                            <div v-for="dompet in dompets" :key="dompet.id">
+                                                                                <select v-model="fields.ditransfer_ke">  
+                                                                                    <option>Select dropdown</option>
+                                                                                    <option value="{{ dompet }}">{{ dompet.rekening}} a/n {{ dompet.pemilik }}</option> 
+                                                                                </select>
+                                                                                <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.ditransfer_ke }}</span>
+                                                                            </div>
+                                                                        </div><br> -->
+                                                                                        
+                                                                        <button @click="confirmDana(web_url, store, slug, fieldErrors, fields)" class="button is-rounded is-size-6">Kirim</button>
+                                                                    </form>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </section>
-                                            <footer class="modal-card-foot">
-                                                <p class="subtitle has-text-danger">{{ fields.message }}</p>
-                                            </footer>
+                                                </section>
+                                                <footer class="modal-card-foot">
+                                                    <p class="subtitle has-text-danger">{{ fields.message }}</p>
+                                                </footer>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -126,18 +128,21 @@
 </template>
 
 <script setup>
-import { reactive, defineProps, inject, computed } from "vue";
-// import trumpetSfx from '../assets/contents/mp3/sample.mp3';
-import useClipboard from 'vue-clipboard3'
+import { reactive, defineProps } from "vue";
+import injectStore from '@/hooks/injectStore.js'
+import useMethod from '@/hooks/useMethod.js'
 import axios from 'axios';
 
-var web_url = process.env.VUE_APP_WEB_URL_FIX
+// GET PROPS
+defineProps({
+  theme: { type: Object },
+  themeproduct: { type: Object },
+  dompet: { type: Object },
+  portofolio: { type: Object },
+});
 
-var store = inject('store');
-
-var slug = store.actions.getSlug().value;
-
-var dompets = computed(() => store.state.dompet);
+const {store, slug, dompets, web_url} = injectStore()
+const {copy} = useMethod()
 
 // FORMS
 const fields = reactive({
@@ -221,41 +226,17 @@ const numbervalid = (numberfield) => {
     return re.test(numberfield);
 }
 
-// GET PROPS
-defineProps({
-  theme: { type: Object },
-  themeproduct: { type: Object },
-  dompet: { type: Object },
-  portofolio: { type: Object },
-});
-
 // Dompet
 const modal_data = reactive({
     showModalFlag: false,
-    okPressed: false,
 })
 
 const showModal= () => {
-    modal_data.okPressed = false;
     modal_data.showModalFlag = true;
 }
 
 const cancelModal = () => {
-    modal_data.okPressed = false;
     modal_data.showModalFlag = false;
-}
-
-// Copy clipboard
-
-const { toClipboard } = useClipboard()
-
-const copy = async (vari) => {
-    try {
-        await toClipboard(vari)
-        // console.log('Copied to clipboard')
-    } catch (e) {
-        console.error(e)
-    }
 }
 
 </script>

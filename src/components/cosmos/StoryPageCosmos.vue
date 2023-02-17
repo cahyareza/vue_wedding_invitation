@@ -5,9 +5,19 @@
                  <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + themeproduct.theme?.background_1 + ')' }">
                     <section class="hero is-large">
                         <div class="section py-0">
-                            <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3">
-                                Cerita Kita<br>
-                            </p>
+                            <div v-if="themeproduct.theme?.slug === 'theme-10'">
+                                <p class="title2 is-size-2-mobile is-size-1-tablet">
+                                    guestbook
+                                </p>
+                                <p class="subtitle is-size-7">
+                                    Leave your message here
+                                </p>
+                            </div>
+                            <div v-else>
+                                <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3">
+                                    Cerita Kita<br>
+                                </p>
+                            </div>
                             <div class="section">
                                 <div class="columns is-multiline">
                                     <div v-for="stori in story" :key="stori" class="column is-one-third-desktop is-one-half-tablet is-full-mobile">
@@ -43,8 +53,7 @@ defineProps({
 
 
 <style lang="scss" scoped>
-@import "../../styles/component/storypage.scss";
-// @import "../styles/global.scss";
+@import "@/styles/component/storypage.scss";
 
 .swiper {
   width: 100%;

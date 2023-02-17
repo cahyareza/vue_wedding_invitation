@@ -45,6 +45,5 @@ defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/component/timelines.scss";
-// @import "../styles/global.scss";
+@import "@/styles/component/timelines.scss";
 </style>

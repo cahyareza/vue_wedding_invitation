@@ -41,7 +41,9 @@
 import CountDown from '@/components/parts/timelines/CountDown.vue'
 import GuestBook from '@/components/parts/timelines/GuestBook.vue'
 import AddtoCalender from '@/components/parts/timelines/AddtoCalender.vue'
-import moment from 'moment';
+import useMethod from '@/hooks/useMethod.js'
+
+const {tanggal} = useMethod()
 
 import { defineProps } from 'vue'
 
@@ -52,14 +54,8 @@ defineProps({
   themeproduct: { type: Object },
   multiimage: { type: Array },
 });
-
-// METHOD
-const tanggal = (value) => {
-    return moment(value).locale('id').format('dddd, DD MMMM YYYY');
-}
 </script>
 
 <style lang="scss" scoped>
-@import "../../styles/component/timelines.scss";
-// @import "../styles/global.scss";
+@import "@/styles/component/timelines.scss";
 </style>

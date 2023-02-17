@@ -1,28 +1,23 @@
 <template>
-    <!-- <div id="slides"> -->
-        <!-- <div class=""> -->
-
-            <transition-group name="fade" mode="out-in" tag="div" id="slides">
-                <div class="low-opacity-bg-image">
-                    <div class="hero slideImage is-fullheight" :style="setBackgroundImage" :key="id">
-                        <div class="hero-body">
-                        </div>
-                        <div class="hero-footer mb-4 p-2"> 
-                            <section class="section">
-                                <p class="subtitle1 is-uppercase is-size-6-mobile is-size-5-tablet mb-3">PERNIKAHAN</p>
-                                
-                                <p class="title is-size-3-ipad is-size4-mobile is-capitalized mt-4">
-                                    {{ portofolio.pname }} <br>
-                                    & <br>
-                                    {{ portofolio.lname }}
-                                </p>
-                            </section>
-                        </div>
-                    </div>
+    <transition-group name="fade" mode="out-in" tag="div" id="slides">
+        <div class="low-opacity-bg-image">
+            <div class="hero slideImage is-fullheight" :style="setBackgroundImage" :key="id">
+                <div class="hero-body">
                 </div>
-            </transition-group>
-        <!-- </div> -->
-    <!-- </div> -->
+                <div class="hero-footer mb-4 p-2"> 
+                    <section class="section">
+                        <p class="subtitle1 is-uppercase is-size-6-mobile is-size-5-tablet mb-3">PERNIKAHAN</p>
+                        
+                        <p class="title is-size-3-ipad is-size4-mobile is-capitalized mt-4">
+                            {{ portofolio.pname }} <br>
+                            & <br>
+                            {{ portofolio.lname }}
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </transition-group>
 </template>
 
 <script setup>

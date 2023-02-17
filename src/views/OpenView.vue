@@ -4,37 +4,15 @@
     <Suspense>
       <template #default>
         <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
-          || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5'">
+          || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5' || themeproduct.theme?.slug === 'theme-6'
+          || themeproduct.theme?.slug === 'theme-7' || themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9'
+          || themeproduct.theme?.slug === 'theme-10'">
           <OpenCover 
             :direction="direction"
             :themeproduct="themeproduct" 
+            :quote="quote"
             >
           </OpenCover>
-        </div>
-         <div v-else-if="themeproduct.theme?.slug === 'theme-6'">
-          <OpenCoverCardo 
-            :direction="direction">
-          </OpenCoverCardo>
-        </div>
-        <div v-else-if="themeproduct.theme?.slug === 'theme-7'"> 
-          <OpenCoverGrane 
-            :direction="direction">
-          </OpenCoverGrane>
-        </div>
-        <div v-else-if="themeproduct.theme?.slug === 'theme-8'"> 
-          <OpenCoverCosmos 
-            :direction="direction">
-          </OpenCoverCosmos>
-        </div>
-        <div v-else-if="themeproduct.theme?.slug === 'theme-9'">
-          <OpenCoverOcean 
-            :direction="direction">
-          </OpenCoverOcean>
-        </div>
-        <div v-else>
-          <OpenCoverBright
-            :direction="direction">
-          </OpenCoverBright>
         </div>
       </template>
       <template #fallback>
@@ -49,16 +27,12 @@
 
 <script setup>
 import OpenCover from '@/components/OpenCover.vue'
-import OpenCoverCardo from '@/components/cardo/OpenCoverCardo.vue'
-import OpenCoverCosmos from '@/components/cosmos/OpenCoverCosmos.vue'
-import OpenCoverGrane from '@/components/grane/OpenCoverGrane.vue'
-import OpenCoverOcean from '@/components/ocean/OpenCoverOcean.vue'
-import OpenCoverBright from '@/components/bright/OpenCoverBright.vue'
-import { ref, onMounted, inject, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
+import {useCounterStore} from '@/stores/store'
 
 // LOAD STATE
-const store = inject('store');
+const store = useCounterStore();
 
 // TO PARAMS
 const direction = store.actions.getTo().value

@@ -15,36 +15,12 @@
 </template>
 
 <script setup>
-import { inject, computed, onMounted } from 'vue'
+import { onMounted } from 'vue'
+import injectStore from '@/hooks/injectStore.js'
 import AOS from "aos";
 
-// LOAD STATE
-const store = inject('store');
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// THEME
-const theme = computed(() => store.state.theme);
-const themeproduct = computed(() => store.state.themeproduct); 
-
-// QUOTE
-const quote = computed(() => store.state.quote); 
-
-// ACARA
-const acara = computed(() => store.state.acara);
-
-// INVITATION
-const invitation = computed(() => store.state.invitation);
-
-// STORY
-const story = computed(() => store.state.story); 
-
-// DOMPET
-const dompet = computed(() => store.state.dompet); 
-
-// MULTIIMAGE
-const multiimage = computed(() => store.state.multiimage); 
+const {store, portofolio, theme, themeproduct, quote, acara, 
+  invitation, story, dompet, multiimage } = injectStore()
 
 const navigate = (val) => {
   store.actions.getPortofolio2(val);
