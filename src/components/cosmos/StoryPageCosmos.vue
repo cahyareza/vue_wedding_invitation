@@ -6,7 +6,7 @@
                     <section class="hero is-large">
                         <div class="section py-0">
                             <div v-if="themeproduct.theme?.slug === 'theme-10'">
-                                <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3">
+                                <p class="title2 is-size-3-mobile is-size-2-tablet">
                                     Story
                                 </p>
                             </div>
