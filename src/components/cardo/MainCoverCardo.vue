@@ -25,7 +25,15 @@
             >
             </SlidePageCosmos>
         </div>
-
+        <div v-else-if="themeproduct.theme?.slug === 'theme-11'">
+            <SlidePageBraun
+            :image="multiimage[chooseImage.value]"
+            :portofolio="portofolio"
+            :id="chooseImage.id"
+            :quote="quote" 
+            >
+            </SlidePageBraun>
+        </div>
     </div>
 </template>
 
@@ -34,6 +42,7 @@ import { defineProps, reactive, onMounted } from 'vue'
 import SlidePage from '@/components/cardo/parts/maincovercardo/SlidePage.vue'
 import SlidePageGrane from '@/components/grane/parts/maincovergrane/SlidePage.vue'
 import SlidePageCosmos from '@/components/cosmos/parts/maincovercosmos/SlidePage.vue'
+import SlidePageBraun from '@/components/braun/parts/maincoverbraun/SlidePage.vue'
 import useMethod from '@/hooks/useMethod.js'
 
 const {move} = useMethod()

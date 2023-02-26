@@ -33,32 +33,63 @@
                     
                     <div class="container">
                         <div class="notification2 p-2">
-                            <span class="icon-text is-paddingless is-marginless">
-                                <!-- <span>Couple</span> -->
-                                <span @click="navPage('groom')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-heart" />
-                                </span>
-                                <!-- <span>Rundown</span> -->
-                                <span @click="navPage('run')" class="icon">
-                                    <font-awesome-icon icon="fa-solid fa-calendar-days" />
-                                </span>
-                                <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                    <!-- <span>Moment</span> -->
-                                    <span @click="navPage('moment')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-images" />
+                            <div v-if="themeproduct.theme?.slug === 'theme-10'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
                                     </span>
-                                
-                                    <!-- <span>Wishes</span> -->
-                                    <span @click="navPage('message')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
                                     </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
                                     
-                                    <!-- <span>Date</span> -->
-                                    <span @click="navPage('time')" class="icon">
-                                        <font-awesome-icon icon="fa-solid fa-gift" />
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                        
+                                        <!-- <span>Date</span> -->
+                                        <span @click="navPage('time')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-gift" />
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-11'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
                                     </span>
-                                </div>
-                            </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                        <!-- <span>Moment</span> -->
+                                        <span @click="navPage('moment')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-images" />
+                                        </span>
+
+                                        <!-- <span>Date</span> -->
+                                        <span @click="navPage('time')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-gift" />
+                                        </span>
+                                        
+                                        <!-- <span>Wishes</span> -->
+                                        <span @click="navPage('message')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                        </span>
+                                        
+                                    </div>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

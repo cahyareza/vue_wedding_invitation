@@ -3,15 +3,22 @@
         <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
             <div :class="theme">
                  <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + themeproduct.theme?.background_1 + ')' }">
-                    <section class="hero is-large">
-                        <div class="section py-0">
+                    <section class="hero is-large" style="position: relative;">
+                        <div v-if="themeproduct.theme?.slug === 'theme-11'">
+                            <div class="custom-shape-divider-bottom-1677268738">
+                                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                                    <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="section py-3">
                             <div v-if="themeproduct.theme?.slug === 'theme-10'">
                                 <p class="title2 is-size-3-mobile is-size-2-tablet">
                                     Story
                                 </p>
                             </div>
                             <div v-else>
-                                <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3">
+                                <p class="subtitle2 is-size-3-tablet is-size-3-mobile mt-3">
                                     Cerita Kita<br>
                                 </p>
                             </div>

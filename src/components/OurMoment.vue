@@ -54,7 +54,7 @@
                                     || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5' || themeproduct.theme?.slug === 'theme-10'">
                                     <OurGallery :multiimage="multiimage"></OurGallery>
                                 </div>
-                                <div v-else-if="themeproduct.theme?.slug === 'theme-6' || themeproduct.theme?.slug === 'theme-7'">
+                                <div v-else-if="themeproduct.theme?.slug === 'theme-6' || themeproduct.theme?.slug === 'theme-7' || themeproduct.theme?.slug === 'theme-11'">
                                     <OurGalleryCardo :multiimage="multiimage"></OurGalleryCardo>
                                 </div>
                                 <div v-else-if="themeproduct.theme?.slug === 'theme-8'">

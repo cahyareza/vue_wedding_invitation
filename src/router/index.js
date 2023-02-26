@@ -10,8 +10,19 @@ import CosmosView from '../views/CosmosView.vue'
 import OceanView from '../views/OceanView.vue'
 // import OceanOpenView from '../views/OceanOpenView.vue'
 import BrightView from '../views/BrightView.vue'
+import BraunView from '../views/BraunView.vue'
 
 const routes = [
+  {
+    path: '/main/braun/:slug',
+    name: 'mainbraun',
+    component: BraunView,
+  },
+  {
+    path: '/main/braun/:slug/:to',
+    name: 'mainbraunto',
+    component: BraunView,
+  },
   {
     path: '/main/bright/:slug',
     name: 'mainbright',

@@ -15,6 +15,8 @@
 // Poppins
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Quicksand:wght@300&display=swap');
 
+// Barlow
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap');
 
 // Fonts
 // theme-1
@@ -41,6 +43,11 @@ $theme9font: 'Quicksand', sans-serif;
 $theme10font1: 'Playfair Display', serif;
 $theme10font2: 'Sacramento', cursive;
 $theme10font3: 'Poppins', sans-serif;
+
+
+// theme-11
+$theme11font1: 'Barlow', sans-serif;
+$theme11font2: 'Quicksand', sans-serif;
 
 // Umum
 $fourth-theme-1: #FFFFFF;
@@ -124,3 +131,8 @@ $secondary-theme-9: #DEBE9D;
 $primary-theme-10: #a68f61;
 $secondary-theme-10: #666;
 $secondary-filter-theme-10: invert(35%) sepia(0%) saturate(641%) hue-rotate(180deg) brightness(109%) contrast(87%);
+
+// Theme-11
+$primary-theme-11:#E5D9D0;
+$secondary-theme-11: #7B3902;
+$third-theme-11: #8E793E;

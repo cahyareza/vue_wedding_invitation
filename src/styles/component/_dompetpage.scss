@@ -1,5 +1,6 @@
 @import '../variables';
 @import '../theme/theme-10';
+@import '../theme/theme-11';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -36,9 +37,34 @@
                     color: #FFF;
                 }
             }
+        } @else if ($theme-name == theme-11) {
+            .hero {
+                background-color: $secondary-theme-11;
+            }
+            .title {
+                font-family: $theme11font1;
+                color: $primary-theme-11;
+            }
+            .subtitle {
+                font-family: $theme11font2;
+                color: $primary-theme-11;
+            }
+            .icon{
+                font-size: 3em !important;
+                color: $primary-theme-11 !important;
+            }
+            .container {
+                .button {
+                    background-color: $primary-theme-11 !important;
+                    color: #000;
+                }
+            }
         }
     }
 }
 
 // Call for theme-10
 @include themable(theme-10, $theme-10);
+
+// Call for theme-11
+@include themable(theme-11, $theme-11);

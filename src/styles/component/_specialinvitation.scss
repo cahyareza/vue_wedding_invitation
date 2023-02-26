@@ -9,6 +9,7 @@
 @import '../theme/theme-8';
 @import '../theme/theme-9';
 @import '../theme/theme-10';
+@import '../theme/theme-11';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -163,6 +164,37 @@
                 font-family: $theme10font3;
                 color: #FFF;
             }
+        } @else if ($theme-name == theme-11) {
+            .hero {
+                background-color: $secondary-theme-11;
+            }
+            .title {
+                font-family: $theme11font2;
+                color: $primary-theme-11;
+            }
+            .subtitle {
+                font-family: $theme11font2;
+                color: $primary-theme-11;
+            }
+            .custom-shape-divider-top-1677268119 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                overflow: hidden;
+                line-height: 0;
+            }
+            
+            .custom-shape-divider-top-1677268119 svg {
+                position: relative;
+                display: block;
+                width: calc(100% + 1.3px);
+                height: 28px;
+            }
+            
+            .custom-shape-divider-top-1677268119 .shape-fill {
+                fill: $primary-theme-11;
+            }
         }
     }
 }
@@ -193,3 +225,10 @@
 
 // Call for theme-9
 @include themable(theme-9, $theme-9);
+
+// Call for theme-10
+@include themable(theme-10, $theme-10);
+
+// Call for theme-11
+@include themable(theme-11, $theme-11);
+

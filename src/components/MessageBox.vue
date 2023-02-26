@@ -29,7 +29,7 @@
                 </div>
                 <!-- ANIMATED IMAGE END -->
                 <div class="section py-0">
-                    <div class="columns">
+                    <div class="columns mb-3">
                         <div class="column is-half-tablet is-offset-one-quarter-tablet">
                             <section class="section pt-4">
                                 <div class="container">
@@ -42,7 +42,7 @@
                                         </p>
                                     </div>
                                     <div v-else> 
-                                        <p class="subtitle2 is-uppercase is-size-5">
+                                        <p class="subtitle2 is-uppercase is-size-3-mobile">
                                             Ucapan
                                         </p>
                                         <div v-if="themeproduct.theme?.line">
@@ -56,7 +56,7 @@
                                 || themeproduct.theme?.slug === 'theme-7'">
                                 <MessageForm></MessageForm>
                             </div>
-                            <div v-else-if="themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9'"> 
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9' || themeproduct.theme?.slug === 'theme-11'"> 
                                 <MessageFormCosmos></MessageFormCosmos>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-10'"> 

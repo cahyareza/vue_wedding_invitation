@@ -57,7 +57,7 @@
                                         <div v-else data-aos="fade-right"
                                             data-aos-offset="300" data-aos-duration="1000"
                                             data-aos-easing="ease-in-sine" data-aos-delay="100">
-                                            <p class="subtitle is-size-4-tablet is-size-7-mobile mb-1">
+                                            <p class="subtitle is-size-2-tablet is-size-7-mobile mb-1">
                                                 بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
                                             </p>
                                             <p class="subtitle is-size-4-tablet is-size-7-mobile mt-1 mb-2">
@@ -70,30 +70,59 @@
                                     </div>
                                 </div>
                                 <div v-else>
-                                    <div v-if="quote.kutipan" data-aos="fade-right"
-                                        data-aos-offset="300" data-aos-duration="1000"
-                                        data-aos-easing="ease-in-sine" data-aos-delay="100">
-                                        <p v-if="quote.pembuka" class="subtitle is-size-6-tablet is-size-7-mobile">
-                                            {{ quote.pembuka }}
-                                        </p>
-                                        <p class="subtitle is-size-6-tablet is-size-7-mobile">
-                                            "{{ quote.kutipan }}"
-                                        </p>
-                                        <p class="subtitle is-size-5-tablet is-size-6-mobile is-capitalized is-italic"> {{ quote.ayat }} </p>       
+                                    <div v-if="themeproduct.theme?.slug == 'theme-11'">
+                                        <div v-if="quote.kutipan" data-aos="fade-right"
+                                            data-aos-offset="300" data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p v-if="quote.pembuka" class="subtitle is-size-2-tablet is-size-3-mobile mb-5 mt-3">
+                                                {{ quote.pembuka }}
+                                            </p>
+                                            <p class="subtitle2 is-size-5-tablet is-size-6-mobile">
+                                                "{{ quote.kutipan }}"
+                                            </p>
+                                            <p class="subtitle2 is-size-4-tablet is-size-5-mobile is-capitalized is-italic"> {{ quote.ayat }} </p>       
+                                        </div>
+                                        <div v-else data-aos="fade-right"
+                                            data-aos-offset="300" data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p class="subtitle is-size-2-tablet is-size-3-mobile mb-5 mt-3">
+                                                بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+                                            </p>
+                                            <p class="subtitle2 is-size-5-tablet is-size-6-mobile mt-1 mb-2">
+                                                Assalamu’alaikum Warrahmatullahi Wabarakatuh
+                                            </p>
+                                            <p class="subtitle2 is-size-5-tablet is-size-6-mobile mt-2">
+                                                Dengan memohon Ridho dan Rahmat Allah SWT. Ya Allah, dengan segala kemurahan hati-Mu, kami hendak memohon Ridha-Mu, dan melaksanakan Sunnah Rasul-Mu, untuk menyelenggarakan acara pernikahan putra dan putri kami, untuk membentuk keluarga yang sakinah, mawaddah, warahmah.
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div v-else data-aos="fade-right"
-                                        data-aos-offset="300" data-aos-duration="1000"
-                                        data-aos-easing="ease-in-sine" data-aos-delay="100">
-                                        <p class="subtitle is-size-4-tablet is-size-7-mobile mb-1">
-                                            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
-                                        </p>
-                                        <p class="subtitle is-size-4-tablet is-size-7-mobile mt-1 mb-2">
-                                            Assalamu’alaikum Warrahmatullahi Wabarakatuh
-                                        </p>
-                                        <p class="subtitle is-size-4-tablet is-size-7-mobile mt-2">
-                                            Dengan memohon Ridho dan Rahmat Allah SWT. Ya Allah, dengan segala kemurahan hati-Mu, kami hendak memohon Ridha-Mu, dan melaksanakan Sunnah Rasul-Mu, untuk menyelenggarakan acara pernikahan putra dan putri kami, untuk membentuk keluarga yang sakinah, mawaddah, warahmah.
-                                        </p>
+                                    <div v-else>
+                                        <div v-if="quote.kutipan" data-aos="fade-right"
+                                            data-aos-offset="300" data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p v-if="quote.pembuka" class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                {{ quote.pembuka }}
+                                            </p>
+                                            <p class="subtitle is-size-6-tablet is-size-7-mobile">
+                                                "{{ quote.kutipan }}"
+                                            </p>
+                                            <p class="subtitle is-size-5-tablet is-size-6-mobile is-capitalized is-italic"> {{ quote.ayat }} </p>       
+                                        </div>
+                                        <div v-else data-aos="fade-right"
+                                            data-aos-offset="300" data-aos-duration="1000"
+                                            data-aos-easing="ease-in-sine" data-aos-delay="100">
+                                            <p class="subtitle is-size-4-tablet is-size-7-mobile mb-1">
+                                                بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+                                            </p>
+                                            <p class="subtitle is-size-4-tablet is-size-7-mobile mt-1 mb-2">
+                                                Assalamu’alaikum Warrahmatullahi Wabarakatuh
+                                            </p>
+                                            <p class="subtitle is-size-4-tablet is-size-7-mobile mt-2">
+                                                Dengan memohon Ridho dan Rahmat Allah SWT. Ya Allah, dengan segala kemurahan hati-Mu, kami hendak memohon Ridha-Mu, dan melaksanakan Sunnah Rasul-Mu, untuk menyelenggarakan acara pernikahan putra dan putri kami, untuk membentuk keluarga yang sakinah, mawaddah, warahmah.
+                                            </p>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>

@@ -9,6 +9,7 @@
 @import '../theme/theme-8';
 @import '../theme/theme-9';
 @import '../theme/theme-10';
+@import '../theme/theme-11';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -502,6 +503,66 @@
             .custom-shape-divider-bottom-1676040656 .shape-fill {
                 fill: #FFFFFF;
             }
+        } @else if ($theme-name == theme-11) {
+            .hero {
+                background-color: $primary-theme-11;
+            }
+            .box {
+                background-color: transparent;
+                box-shadow: none;
+            }
+            // .notification {
+            //     background-color: transparent;
+            // }
+            .icon {
+                color: $secondary-theme-11;
+            }
+            .title2 {
+                font-family: $theme11font1;
+                color: $secondary-theme-11;
+                font-weight: bold;
+            }
+            .subtitle2 {
+                font-family: $theme11font2;
+                color: $secondary-theme-11;
+                font-weight: bold;
+            }
+            .subtitle3 {
+                font-family: $theme11font2;
+                color: #000;
+                font-weight: bold;
+            }
+            :deep(.iframe) {
+                border: 5px solid $secondary-theme-11; 
+                border-radius: 4px;
+            }
+            :deep(.button) {
+                border: 1px solid $secondary-theme-11;
+                background-color: $secondary-theme-11;
+                font-family: $quicksand;
+                font-size: 15px;
+                font-weight: bold;
+                color: #FFF;
+            }
+            .low-opacity-bg-image {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
+            .low-opacity-bg-image::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                opacity: 0.6;
+                background: $primary-theme-11;
+            }
+            .line {
+                background-color: $secondary-theme-11;
+                color: $secondary-theme-11;
+            }
         }
     }
 }
@@ -535,3 +596,6 @@
 
 // Call for theme-10
 @include themable(theme-10, $theme-10);
+
+// Call for theme-11
+@include themable(theme-11, $theme-11);

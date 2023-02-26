@@ -9,6 +9,7 @@
 @import '../theme/theme-8';
 @import '../theme/theme-9';
 @import '../theme/theme-10';
+@import '../theme/theme-11';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -258,6 +259,61 @@
                 opacity: 0.9;
                 background: $primary-theme-10;
             }
+        } @else if ($theme-name == theme-11) {
+            .hero {
+                background: $secondary-theme-11;
+            }
+            .subtitle2 {
+                font-family: $theme11font1;
+                color: $primary-theme-11;
+                font-weight: bold;
+            }
+            .subtitle3 {
+                font-family: $theme11font2;
+                color: $primary-theme-11 !important;
+            }
+            .column {
+                background-color: transparent !important;
+                padding: 10px;
+                border-bottom: 1px solid $primary-theme-11;
+            }
+            .low-opacity-bg-image {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                object-fit: cover;
+            }
+            .low-opacity-bg-image::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                opacity: 0.9;
+                background: $primary-theme-8;
+            }
+            .custom-shape-divider-bottom-1677268738 {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                overflow: hidden;
+                line-height: 0;
+                transform: rotate(180deg);
+            }
+            
+            .custom-shape-divider-bottom-1677268738 svg {
+                position: relative;
+                display: block;
+                width: calc(100% + 1.3px);
+                height: 28px;
+            }
+            
+            .custom-shape-divider-bottom-1677268738 .shape-fill {
+                fill: $primary-theme-11;
+            }
         }
     }
 }
@@ -291,3 +347,6 @@
 
 // Call for theme-10
 @include themable(theme-10, $theme-10);
+
+// Call for theme-11
+@include themable(theme-11, $theme-11);

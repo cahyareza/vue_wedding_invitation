@@ -25,19 +25,27 @@
 
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
-                                    <p class="title is-size-3-mobile is-capitalized  is-size-2-tablet mb-1 has-text-white">
-                                        {{ portofolio.pname }}
-                                    </p>
-                                    <div v-if="themeproduct.theme?.open_fitur">
-                                        <img class="filter is-rounded mb-1" :src="themeproduct.theme?.open_fitur">
+                                    <div v-if="themeproduct.theme?.slug === 'theme-11'">
+                                        <p class="title is-size-1-mobile is-capitalized  is-size-1-tablet mb-1 has-text-white">
+                                            {{ portofolio.psurename }} & {{ portofolio.lsurename }}
+                                        </p>
+                                        <p class="subtitle mt-4 is-size-6 has-text-white">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                                     </div>
                                     <div v-else>
-                                        <p class="title is-size-3 mb-1 has-text-white">&</p>
+                                        <p class="title is-size-3-mobile is-capitalized  is-size-2-tablet mb-1 has-text-white">
+                                            {{ portofolio.pname }}
+                                        </p>
+                                        <div v-if="themeproduct.theme?.open_fitur">
+                                            <img class="filter is-rounded mb-1" :src="themeproduct.theme?.open_fitur">
+                                        </div>
+                                        <div v-else>
+                                            <p class="title is-size-3 mb-1 has-text-white">&</p>
+                                        </div>
+                                        <p class="title is-size-3-mobile is-capitalized is-size-2-tablet has-text-white">
+                                            {{ portofolio.lname }}
+                                        </p>
+                                        <p class="subtitle mt-4 is-size-6 has-text-white">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                                     </div>
-                                    <p class="title is-size-3-mobile is-capitalized is-size-2-tablet has-text-white">
-                                        {{ portofolio.lname }}
-                                    </p>
-                                    <p class="subtitle mt-4 is-size-6 has-text-white">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +58,8 @@
                 </div>
                 <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
                     || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5' || themeproduct.theme?.slug === 'theme-6'
-                    || themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9' || themeproduct.theme?.slug === 'theme-10'">
+                    || themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9' || themeproduct.theme?.slug === 'theme-10'
+                    || themeproduct.theme?.slug === 'theme-11'">
                     <div class="hero-footer">
                         <div class="container">
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
@@ -91,6 +100,11 @@
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-10'"> 
                                 <router-link :to="`/main/bright/${slug}`" class="button mt-4">
+                                    Buka Undangan
+                                </router-link>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-11'"> 
+                                <router-link :to="`/main/braun/${slug}`" class="button mt-4">
                                     Buka Undangan
                                 </router-link>
                             </div>
