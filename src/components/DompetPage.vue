@@ -44,8 +44,8 @@
                                                                             <img :src="info.bar_code">
                                                                         </figure>
                                                                     </div>
-                                                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1 mt-1">{{ info.nomor }}</p>
-                                                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1">a/n {{ info.pemilik }}</p>
+                                                                    <p class="subtitle2 is-size-6-mobile is-size-5-tablet mb-1 mt-1">{{ info.nomor }}</p>
+                                                                    <p class="subtitle2 is-size-6-mobile is-size-5-tablet mb-1">a/n {{ info.pemilik }}</p>
                                                                     <button @click="copy(info.nomor)" class="button is-black mt-1">Salin Nomor</button>
                                                                 </div>
                                                                 <div class="column is-12 has-text-center">
