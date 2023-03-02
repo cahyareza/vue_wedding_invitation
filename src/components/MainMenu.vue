@@ -165,17 +165,15 @@
                                     <span @click="navPage('run')" class="icon">
                                         <font-awesome-icon icon="fa-solid fa-calendar-days" />
                                     </span>
-                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                        <!-- <span>Moment</span> -->
-                                        <span @click="navPage('moment')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-images" />
-                                        </span>
-                                    
-                                        <!-- <span>Wishes</span> -->
-                                        <span @click="navPage('message')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                        </span>
-                                    </div>
+                                    <!-- <span>Moment</span> -->
+                                    <span @click="navPage('moment')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-images" />
+                                    </span>
+                                
+                                    <!-- <span>Wishes</span> -->
+                                    <span @click="navPage('message')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    </span>
                                 </span>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-6'">
@@ -192,17 +190,15 @@
                                     <span @click="navPage('run')" class="icon">
                                         <font-awesome-icon icon="fa-solid fa-calendar-days" />
                                     </span>
-                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                        <!-- <span>Moment</span> -->
-                                        <span @click="navPage('moment')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-images" />
-                                        </span>
-                                    
-                                        <!-- <span>Wishes</span> -->
-                                        <span @click="navPage('message')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                        </span>
-                                    </div>
+                                    <!-- <span>Moment</span> -->
+                                    <span @click="navPage('moment')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-images" />
+                                    </span>
+                                
+                                    <!-- <span>Wishes</span> -->
+                                    <span @click="navPage('message')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    </span>
                                 </span>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-7'">
@@ -215,22 +211,20 @@
                                     <span @click="navPage('run')" class="icon">
                                         <font-awesome-icon icon="fa-solid fa-calendar-days" />
                                     </span>
-                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                        <!-- <span>Moment</span> -->
-                                        <span @click="navPage('moment')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-images" />
-                                        </span>
+                                    <!-- <span>Moment</span> -->
+                                    <span @click="navPage('moment')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-images" />
+                                    </span>
 
-                                        <!-- <span>Date</span> -->
-                                        <span @click="navPage('time')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-clock" />
-                                        </span>
-                                    
-                                        <!-- <span>Wishes</span> -->
-                                        <span @click="navPage('message')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                        </span>
-                                    </div>
+                                    <!-- <span>Date</span> -->
+                                    <span @click="navPage('time')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-clock" />
+                                    </span>
+                                
+                                    <!-- <span>Wishes</span> -->
+                                    <span @click="navPage('message')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    </span>
                                 </span>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-8'">
@@ -247,16 +241,14 @@
                                     <span @click="navPage('run')" class="icon">
                                         <font-awesome-icon icon="fa-solid fa-calendar-days" />
                                     </span>
-                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                        <!-- <span>Wishes</span> -->
-                                        <span @click="navPage('message')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                        </span>
-                                        <!-- <span>Moment</span> -->
-                                        <span @click="navPage('moment')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-images" />
-                                        </span>
-                                    </div>
+                                    <!-- <span>Wishes</span> -->
+                                    <span @click="navPage('message')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    </span>
+                                    <!-- <span>Moment</span> -->
+                                    <span @click="navPage('moment')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-images" />
+                                    </span>
                                 </span>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-9'">
@@ -269,22 +261,20 @@
                                     <span @click="navPage('run')" class="icon">
                                         <font-awesome-icon icon="fa-solid fa-calendar-days" />
                                     </span>
-                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
-                                        <!-- <span>Moment</span> -->
-                                        <span @click="navPage('moment')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-images" />
-                                        </span>
+                                    <!-- <span>Moment</span> -->
+                                    <span @click="navPage('moment')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-images" />
+                                    </span>
 
-                                        <!-- <span>Date</span> -->
-                                        <span @click="navPage('time')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-clock" />
-                                        </span>
-                                    
-                                        <!-- <span>Wishes</span> -->
-                                        <span @click="navPage('message')" class="icon">
-                                            <font-awesome-icon icon="fa-solid fa-pen-to-square" />
-                                        </span>
-                                    </div>
+                                    <!-- <span>Date</span> -->
+                                    <span @click="navPage('time')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-clock" />
+                                    </span>
+                                
+                                    <!-- <span>Wishes</span> -->
+                                    <span @click="navPage('message')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    </span>
                                 </span>
                             </div>
                         </div>
