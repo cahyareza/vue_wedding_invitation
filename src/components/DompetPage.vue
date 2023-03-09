@@ -1,6 +1,6 @@
 <template>
     <div :class="theme">
-        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
             <div v-if="dompet.length != 0">
                 <div class="hero is-medium">
                     <div class="section py-0">

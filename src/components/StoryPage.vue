@@ -1,6 +1,6 @@
 <template>
     <div v-if="story.length != 0">
-        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
             <div :class="theme">
                 <section class="hero is-large">
                     <div class="section py-0">

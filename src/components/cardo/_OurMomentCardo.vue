@@ -1,6 +1,6 @@
 <template>
     <div v-if="portofolio.video || multiimage.length != 0">
-        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
             <div :class="theme">
                 <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + themeproduct.theme?.background_5 + ')' }">
                     <section class="hero is-medium">

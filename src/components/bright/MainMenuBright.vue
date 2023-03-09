@@ -52,7 +52,7 @@
                                     <span @click="navPage('message')" class="icon">
                                         <font-awesome-icon icon="fa-solid fa-pen-to-square" />
                                     </span>
-                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
                                         <!-- <span>Date</span> -->
                                         <span @click="navPage('time')" class="icon">
                                             <font-awesome-icon icon="fa-solid fa-gift" />
@@ -75,7 +75,7 @@
                                     <span @click="navPage('moment')" class="icon">
                                         <font-awesome-icon icon="fa-solid fa-images" />
                                     </span>
-                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
                                         <!-- <span>Date</span> -->
                                         <span @click="navPage('time')" class="icon">
                                             <font-awesome-icon icon="fa-solid fa-gift" />

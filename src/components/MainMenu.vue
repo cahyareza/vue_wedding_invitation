@@ -30,7 +30,7 @@
                         </audio>
 
                         <!--  Amplop    -->
-                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
                             <div v-if="dompet.length != 0">
                                 <div @click="showModal" class="button2 is-rounded p-2">
                                     <span class="icon has-text-dark">

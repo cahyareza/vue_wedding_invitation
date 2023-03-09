@@ -30,7 +30,7 @@
                         </audio>
 
                         <!--  Amplop    -->
-                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                        <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
                             <div v-if="dompet.length != 0">
                                 <div @click="showModal" class="button2 is-rounded p-2">
                                     <span class="icon has-text-dark">
@@ -162,7 +162,7 @@
                                 <span @click="navPage('run')" class="icon">
                                     <font-awesome-icon icon="fa-solid fa-calendar-days" />
                                 </span>
-                                <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD'">
+                                <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
                                     <!-- <span>Wishes</span> -->
                                     <span @click="navPage('message')" class="icon">
                                         <font-awesome-icon icon="fa-solid fa-pen-to-square" />
