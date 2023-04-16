@@ -18,6 +18,13 @@
 // Barlow
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap');
 
+// Forum
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
+// Charm
+@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+
+
 // Fonts
 // theme-1
 $dancing_script: 'Dancing Script', cursive;
@@ -48,6 +55,10 @@ $theme10font3: 'Poppins', sans-serif;
 // theme-11
 $theme11font1: 'Barlow', sans-serif;
 $theme11font2: 'Quicksand', sans-serif;
+
+// theme-12
+$forum: 'Forum', cursive;
+$charm: 'Charm', cursive;
 
 // Umum
 $fourth-theme-1: #FFFFFF;
@@ -136,3 +147,7 @@ $secondary-filter-theme-10: invert(35%) sepia(0%) saturate(641%) hue-rotate(180d
 $primary-theme-11:#E5D9D0;
 $secondary-theme-11: #7B3902;
 $third-theme-11: #8E793E;
+
+// Theme-12
+$primary-theme-12:#636363;
+$secondary-theme-12: #C2C2C2;

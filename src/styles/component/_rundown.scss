@@ -10,6 +10,7 @@
 @import '../theme/theme-9';
 @import '../theme/theme-10';
 @import '../theme/theme-11';
+@import '../theme/theme-12';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -563,7 +564,31 @@
                 background-color: $secondary-theme-11;
                 color: $secondary-theme-11;
             }
-        }
+        } @else if ($theme-name == theme-12) {
+            .hero {
+                background-color: $primary-theme-12;
+            }
+            .title2 {
+                font-family: $forum;
+                color: $secondary-theme-12;
+            }
+            .subtitle2 {
+                font-family: $forum;
+                color: #000;
+            }
+            .subtitle3 {
+                font-family: $forum;
+                color: $secondary-theme-12;
+            }
+            .button {
+                border: 1px solid $secondary-theme-12;
+                background-color: transparent;
+                font-family: $forum;
+                font-size: 15px;
+                font-weight: bold;
+                color: $secondary-theme-12;
+            }
+        } 
     }
 }
 
@@ -599,3 +624,6 @@
 
 // Call for theme-11
 @include themable(theme-11, $theme-11);
+
+// Call for theme-12
+@include themable(theme-12, $theme-12);

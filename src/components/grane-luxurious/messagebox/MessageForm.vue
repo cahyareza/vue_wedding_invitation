@@ -2,7 +2,7 @@
     <div v-if="ucapan.length" class="container mb-6"> 
         <div class="product-container">
             <div class="product-card center">
-                <div class="commentlist notification is-light mt-5 p-3" v-for="piece in ucapan" :key="piece.id">
+                <div class="commentlist is-light mt-5 p-3" v-for="piece in ucapan" :key="piece.id">
                     <!-- <div class="product-image"> -->
                     <article class="media is-paddingless is-marginless">
                         <div class="content is-paddingless is-marginless">
@@ -15,37 +15,35 @@
             </div>
         </div>
     </div>
-    <div class="container m-4 mt-2 mb-6">
-        <div class="box">
-            <form class="form" v-on:submit.prevent>
-                <p class="subtitle3 has-text-weight-bold mb-4"> Kirim Ucapan</p>
-                <!-- New Item Field -->
-                <div class="field">
-                    <div class="control">
-                        <input class="input" v-model="fields.nama" type="text" placeholder="Nama lengkap">
-                        <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.nama }}</span>
-                    </div>
+    <div class="container">
+        <form class="form" v-on:submit.prevent>
+            <p class="subtitle3 has-text-weight-bold mb-4"> Kirim Ucapan</p>
+            <!-- New Item Field -->
+            <div class="field">
+                <div class="control">
+                    <input class="input" v-model="fields.nama" type="text" placeholder="Nama lengkap">
+                    <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.nama }}</span>
                 </div>
+            </div>
 
-                <!-- Email Field -->
-                <div class="field">
-                    <div class="control">
-                        <input class="input" v-model="fields.alamat" type="text" placeholder="Alamat">
-                        <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.alamat }}</span>
-                    </div>
-                </div>  
-
-                <!-- Urgency Field -->
-                <div class="field">
-                    <div class="control">
-                        <input class="textarea" v-model="fields.pesan" placeholder="Pesan">
-                        <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.pesan }}</span>
-                    </div>
+            <!-- Email Field -->
+            <div class="field">
+                <div class="control">
+                    <input class="input" v-model="fields.alamat" type="text" placeholder="Alamat">
+                    <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.alamat }}</span>
                 </div>
-                                
-                <button @click="confirmUcapan" class="button is-rounded is-size-6">Kirim</button>
-            </form>
-        </div>
+            </div>  
+
+            <!-- Urgency Field -->
+            <div class="field">
+                <div class="control">
+                    <input class="textarea" v-model="fields.pesan" placeholder="Pesan">
+                    <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.pesan }}</span>
+                </div>
+            </div>
+                            
+            <button @click="confirmUcapan" class="button is-fullwidth is-size-6">Kirim</button>
+        </form>
     </div>
 </template>
 
@@ -103,6 +101,7 @@ const confirmUcapan = () => {
                 // console.log(response.data)
                 store.mutations.updateUcapan(response.data);
             });
+
         })
         .catch((err) => console.log(err));
 }

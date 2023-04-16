@@ -3,14 +3,14 @@
         <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
             <div :class="theme">
                 <section class="hero is-large">
-                    <div class="section py-0">
-                        <p class="subtitle2 is-size-3-tablet is-size-4-mobile mt-3">
-                            Cerita Kita<br>
-                        </p>
-                        <div class="section">
-                            <div class="columns is-multiline">
-                                <div v-for="stori in story" :key="stori" class="column is-one-third-desktop is-one-half-tablet is-full-mobile">
-                                    <div class="box p-1">
+                    <div class="section py-5">
+                        <div class="container">
+                            <p class="subtitle2 is-size-2-tablet is-size-3-mobile mt-3 is-uppercase py-0">
+                                Cerita Kita<br>
+                            </p>
+                            <div class="section py-0">
+                                <div class="columns is-multiline">
+                                    <div v-for="stori in story" :key="stori" class="column is-one-third-desktop is-one-half-tablet is-full-mobile">
                                         <p class="subtitle3 is-size-5-tablet is-size-6-mobile has-text-weight-bold">{{ stori.year}}</p>
                                         <p class="subtitle3 is-size-6-tablet is-size-7-mobile">{{ stori.cerita}}</p>
                                     </div>

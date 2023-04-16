@@ -16,12 +16,12 @@
                                 <div class="notification m-2 p-1">
                                     <div class="column is-12">
                                         <div v-if="portofolio.kata_special_invite">
-                                            <p class="subtitle is-size-6-mobile is-size-7-mobile">
+                                            <p class="subtitle is-size-6-tablet is-size-7-mobile">
                                                 {{ portofolio.kata_special_invite }}
                                             </p>
                                         </div>
                                         <div v-else>
-                                            <p class="subtitle is-size-6-mobile">
+                                            <p class="subtitle is-size-6-tablet is-size-7-mobile">
                                                 Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila, Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan do'a restunya kami ucapkan terimakasih.
                                             </p>
                                         </div>

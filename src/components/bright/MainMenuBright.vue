@@ -87,6 +87,33 @@
                                     </span>
                                 </span>
                             </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-12'">
+                                <span class="icon-text is-paddingless is-marginless">
+                                    <!-- <span>Couple</span> -->
+                                    <span @click="navPage('groom')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-heart" />
+                                    </span>
+                                    <!-- <span>Rundown</span> -->
+                                    <span @click="navPage('run')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" />
+                                    </span>
+
+                                    <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
+                                        <!-- <span>Date</span> -->
+                                        <span @click="navPage('time')" class="icon">
+                                            <font-awesome-icon icon="fa-solid fa-gift" />
+                                        </span>
+                                    </div>
+                                    <!-- <span>Moment</span> -->
+                                    <span @click="navPage('moment')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-images" />
+                                    </span>
+                                    <!-- <span>Wishes</span> -->
+                                    <span @click="navPage('message')" class="icon">
+                                        <font-awesome-icon icon="fa-solid fa-pen-to-square" />
+                                    </span>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

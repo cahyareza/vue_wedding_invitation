@@ -59,7 +59,7 @@
                 <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
                     || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5' || themeproduct.theme?.slug === 'theme-6'
                     || themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9' || themeproduct.theme?.slug === 'theme-10'
-                    || themeproduct.theme?.slug === 'theme-11'">
+                    || themeproduct.theme?.slug === 'theme-11' || themeproduct.theme?.slug === 'theme-12'">
                     <div class="hero-footer">
                         <div class="container">
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
@@ -105,6 +105,11 @@
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-11'"> 
                                 <router-link :to="`/main/braun/${slug}`" class="button mt-4">
+                                    Buka Undangan
+                                </router-link>
+                            </div>
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-12'"> 
+                                <router-link :to="`/main/grane-luxurious/${slug}`" class="button mt-4">
                                     Buka Undangan
                                 </router-link>
                             </div>

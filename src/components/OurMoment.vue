@@ -37,7 +37,7 @@
                             </div>
                         </section>
 
-                        <div v-if="themeproduct.theme?.slug === 'theme-8'">
+                        <div v-if="themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-12'">
                             <OurVideoCosmos :portofolio="portofolio"></OurVideoCosmos>
                         </div>
                         <div v-else-if="themeproduct.theme?.slug === 'theme-9' || themeproduct.theme?.slug === 'theme-10'">
@@ -56,7 +56,7 @@
                             <div v-else-if="themeproduct.theme?.slug === 'theme-6' || themeproduct.theme?.slug === 'theme-7' || themeproduct.theme?.slug === 'theme-11'">
                                 <OurGalleryCardo :multiimage="multiimage"></OurGalleryCardo>
                             </div>
-                            <div v-else-if="themeproduct.theme?.slug === 'theme-8'">
+                            <div v-else-if="themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-12'">
                                 <OurGalleryCosmos :multiimage="multiimage"></OurGalleryCosmos>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-9'">

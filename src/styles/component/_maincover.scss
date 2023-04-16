@@ -10,6 +10,7 @@
 @import '../theme/theme-9';
 @import '../theme/theme-10';
 @import '../theme/theme-11';
+@import '../theme/theme-12';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -373,6 +374,59 @@
                 opacity: 1;
                 background-image: linear-gradient(to top, #e5d9d0, transparent, transparent, transparent, transparent);
             }
+        } @else if ($theme-name == theme-12) {
+            .hero-head {
+                .section {
+                    position: absolute;
+                    z-index: 2;
+                    top: 30%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 90%;
+
+                    .title {
+                        color: $fourth-theme-1;
+                        font-family: $forum;
+
+                    }
+                    .subtitle1 {
+                        color: $fourth-theme-1;
+                        font-family: $forum;
+                    }
+                }
+            }
+            .hero-foot {
+                position: absolute;
+                z-index: 2;
+                bottom: 0%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                .button {
+                    color: #FFF;
+                    font-family: $forum;
+                    background-color: transparent ;
+                }
+            }
+            .low-opacity-bg-image {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
+            .low-opacity-bg-image::after {
+                content: '';
+                position: absolute;
+                z-index: 1;
+                inset: 0;
+                opacity: 0.5;
+                background: $primary-theme-3;
+            }
+            :deep(.subtitle-5) {
+                font-family: $forum;
+                color: #FFF;
+                padding: 5px;
+            }
         }
     }
 }
@@ -409,3 +463,6 @@
 
 // Call for theme-11
 @include themable(theme-11, $theme-11);
+
+// Call for theme-12
+@include themable(theme-12, $theme-12);
