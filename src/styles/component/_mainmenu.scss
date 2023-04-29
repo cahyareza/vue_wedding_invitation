@@ -178,19 +178,19 @@
             }
         } @else if ($theme-name == theme-12) {
             .button2 {
-                background-color: #FFF;
+                background-color: $primary-theme-12;
                 z-index: 3;
             }
             .button1 {
-                background-color: #FFF;
+                background-color: $primary-theme-12;
                 z-index: 3;
             }
             .icon {
-                color: $primary-theme-12 !important;
+                color: #FFF !important;
             }
             .notification2 {
                 z-index: 3;
-                background-color: rgba(#FFF, 0.2);
+                background-color: rgba($primary-theme-12, 0.2);
             }
         }
     }
