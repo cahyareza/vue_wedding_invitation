@@ -10,6 +10,7 @@
 @import '../theme/theme-9';
 @import '../theme/theme-10';
 @import '../theme/theme-11';
+@import '../theme/theme-12';
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/sass/utilities/_all.sass";
@@ -729,6 +730,53 @@
                 background-color: transparent;
                 border-bottom: solid 1px #FFF;
             }
+        } @else if ($theme-name == theme-12) {
+
+            :deep(.product-container) {
+                background-color: rgb($primary-theme-12, 0.7);
+            }
+            :deep(.button) {
+                border: 1px solid $secondary-theme-12;
+                background: transparent;
+                color: $secondary-theme-12;
+            }
+            :deep(.subtitle) {
+                font-family: $forum;
+                color: $secondary-theme-12;
+                font-size: 20px;  
+            }
+            :deep(.subtitle3)  {
+                font-family: $forum;
+                color: $secondary-theme-12;
+                font-size: 20px;
+            }
+            :deep(.input) {
+                background-color: rgba($secondary-theme-12, 0.3);
+            }
+            :deep(.textarea) {
+                background-color: rgba($secondary-theme-12, 0.3);
+            }
+            .hero {
+                background: rgb($primary-theme-12, 0.8);
+            }
+            .title {
+                font-family: $forum;
+                color: $secondary-theme-12;
+            }
+            :deep(.label) {
+                font-family: $forum;
+                color: $secondary-theme-12;
+            }
+            .subtitle2 {
+                font-family: $forum;
+                color: $secondary-theme-12;
+                text-transform: capitalize !important;
+                font-weight: bold;
+            }
+            :deep(.commentlist) {
+                background-color: transparent;
+                border-bottom: solid 1px $secondary-theme-12;
+            }
         }
     }
 }
@@ -765,3 +813,6 @@
 
 // Call for theme-11
 @include themable(theme-11, $theme-11);
+
+// Call for theme-12
+@include themable(theme-12, $theme-12);

@@ -17,7 +17,19 @@
                         is-8-tablets">
 
                             <div class="columns is-multiline">
-                                <div class="card p-4">
+                                <div class="card p-4">                                    
+                                    <div class="column
+                                    is-full has-text-left
+                                    ">                                    
+                                        <p class="title2 is-capitalized is-size-3-tablet is-size-4-mobile mt-3 mb-4">{{ portofolio.pname }}</p>
+
+                                        <p class="subtitle3 is-size-6 has-text-weight-bold mb-1">Putri {{ portofolio.panak_ke }} dari</p>
+                                        <p class="subtitle3 is-size-6 mt-1">Bapak {{ portofolio.pnama_ayah }} & Ibu {{ portofolio.pnama_ibu }}</p>
+
+                                        <div v-if="portofolio.pinsta_link">
+                                            <a :href="portofolio.pinsta_link" target="_blank"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
+                                        </div>
+                                    </div>
                                     <div class="column
                                     is-full
                                     ">
@@ -49,19 +61,6 @@
                                                     </div>
                                                 </div>
                                             </div>                                       
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="column
-                                    is-full has-text-left
-                                    ">                                    
-                                        <p class="title2 is-capitalized is-size-3-tablet is-size-4-mobile mt-3 mb-4">{{ portofolio.pname }}</p>
-
-                                        <p class="subtitle3 is-size-6 has-text-weight-bold mb-1">Putri {{ portofolio.panak_ke }} dari</p>
-                                        <p class="subtitle3 is-size-6 mt-1">Bapak {{ portofolio.pnama_ayah }} & Ibu {{ portofolio.pnama_ibu }}</p>
-
-                                        <div v-if="portofolio.pinsta_link">
-                                            <a :href="portofolio.pinsta_link" target="_blank"><font-awesome-icon class="icon" icon="fa-brands fa-4x fa-instagram" /></a>
                                         </div>
                                     </div>
                                 </div>

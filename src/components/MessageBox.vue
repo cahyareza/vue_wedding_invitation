@@ -41,7 +41,7 @@
                                     </p>
                                 </div>
                                 <div v-else> 
-                                    <p class="subtitle2 is-uppercase is-size-3-mobile">
+                                    <p class="subtitle2 subtitle is-uppercase is-size-3-mobile is-size-2-tablet">
                                         Ucapan
                                     </p>
                                     <div v-if="themeproduct.theme?.line">
@@ -61,6 +61,9 @@
                         <div v-else-if="themeproduct.theme?.slug === 'theme-10'"> 
                             <MessageFormBright></MessageFormBright>
                         </div>
+                        <div v-else-if="themeproduct.theme?.slug === 'theme-12'"> 
+                            <MessageFormGraneLux></MessageFormGraneLux>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,6 +75,7 @@
 import MessageForm from '@/components/parts/messagebox/MessageForm.vue'
 import MessageFormCosmos from '@/components/cosmos/parts/messagebox/MessageForm.vue'
 import MessageFormBright from '@/components/bright/parts/messagebox/MessageForm.vue'
+import MessageFormGraneLux from '@/components/grane-luxurious/messagebox/MessageForm.vue'
 
 import { defineProps } from 'vue'
 

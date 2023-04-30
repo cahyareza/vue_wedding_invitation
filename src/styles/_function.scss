@@ -55,44 +55,6 @@
                         background-color: map-get($map, "background-color");
                     }
                 }
-            // } @else if ($page == maincover) {
-            //     @each $section, $map in $sections {
-            //         @if ($section == font) {
-            //             .title {
-            //                 font-family: map-get($map, "title");
-            //                 color: map-get($map, "color");
-            //             }
-            //             .subtitle {
-            //                 font-family: map-get($map, "subtitle");
-            //                 color: map-get($map, "color");
-            //             }
-            //         } @else if ($section == background){
-            //             background-color: map-get($map, "background-color");
-            //         }
-                    // } @else {
-                    //     .#{$section} {
-                    //         @include mobile {
-                    //             background-image: map-get($map, "mobile");
-                    //             background-repeat:no-repeat;
-                    //             background-size:cover;
-                    //             background-position:center;
-                    //         }
-                
-                    //         @include tablet {
-                    //             background-image: map-get($map, "tablet");
-                    //             background-repeat:no-repeat;
-                    //             background-size:cover;
-                    //             background-position:center;
-                    //         }
-                
-                    //         @include desktop {
-                    //             background-image: map-get($map, "desktop");
-                    //             background-repeat:no-repeat;
-                    //             background-size:cover;
-                    //             background-position:center;
-                    //         }
-                    //     }
-            //     }
             }
         }
     }

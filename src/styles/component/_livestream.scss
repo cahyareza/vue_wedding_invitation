@@ -10,6 +10,7 @@
 @import '../theme/theme-9';
 @import '../theme/theme-10';
 @import '../theme/theme-11';
+@import '../theme/theme-12';
 
 
 // Import only what you need from Bulma
@@ -329,6 +330,41 @@
                 color: #FFF;
                 border: solid 1px #FFF;
             }
+        } @else if ($theme-name == theme-12) {
+            // .hero {
+            //     background-color: $primary-theme-5;
+            // }
+            .subtitle2 {
+                font-family: $forum;
+                color: #FFF;
+            }
+            .subtitle3 {
+                font-family: $forum;
+                color: #FFF;
+                font-weight: bold;
+            }
+            .low-opacity-bg-image {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+                object-fit: cover;
+            }
+            .low-opacity-bg-image::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                opacity: 0.8;
+                background: $primary-theme-8;
+            }
+            .button {
+                font-family: $forum;
+                background-color: transparent;
+                color: #FFF;
+                border: solid 1px #FFF;
+            }
         }
     }
 }
@@ -365,3 +401,6 @@
 
 // Call for theme-11
 @include themable(theme-11, $theme-11);
+
+// Call for theme-12
+@include themable(theme-12, $theme-12);

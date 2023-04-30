@@ -11,8 +11,19 @@ import OceanView from '../views/OceanView.vue'
 // import OceanOpenView from '../views/OceanOpenView.vue'
 import BrightView from '../views/BrightView.vue'
 import BraunView from '../views/BraunView.vue'
+import GraneViewLux from '../views/GraneViewLux.vue'
 
 const routes = [
+  {
+    path: '/main/grane-luxurious/:slug',
+    name: 'maingranelux',
+    component: GraneViewLux,
+  },
+  {
+    path: '/main/grane-luxurious/:slug/:to',
+    name: 'maingraneluxto',
+    component: GraneViewLux,
+  },
   {
     path: '/main/braun/:slug',
     name: 'mainbraun',
@@ -33,16 +44,6 @@ const routes = [
     name: 'mainbrightto',
     component: BrightView,
   },
-  // {
-  //   path: '/ocean/:slug',
-  //   name: 'oceanopen',
-  //   component: OceanOpenView,
-  // },
-  // {
-  //   path: '/ocean/:slug/:to',
-  //   name: 'oceanopento',
-  //   component: OceanOpenView,
-  // },
   {
     path: '/main/ocean/:slug',
     name: 'mainocean',
@@ -53,16 +54,6 @@ const routes = [
     name: 'mainoceanto',
     component: OceanView,
   },
-  // {
-  //   path: '/cosmos/:slug',
-  //   name: 'cosmosopen',
-  //   component: CosmosOpenView,
-  // },
-  // {
-  //   path: '/cosmos/:slug/:to',
-  //   name: 'cosmosopento',
-  //   component: CosmosOpenView,
-  // },
   {
     path: '/main/cosmos/:slug',
     name: 'maincosmos',
@@ -73,16 +64,6 @@ const routes = [
     name: 'maincosmosto',
     component: CosmosView,
   },
-  // {
-  //   path: '/grane/:slug',
-  //   name: 'graneopen',
-  //   component: GraneOpenView,
-  // },
-  // {
-  //   path: '/grane/:slug/:to',
-  //   name: 'graneopento',
-  //   component: GraneOpenView,
-  // },
   {
     path: '/main/grane/:slug',
     name: 'maingrane',
