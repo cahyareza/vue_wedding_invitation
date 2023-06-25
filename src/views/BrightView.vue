@@ -81,6 +81,7 @@
       <MessageBox
         :theme="theme"
         :themeproduct="themeproduct"
+        :direction="direction" 
       >
       </MessageBox>
     </div>
@@ -131,6 +132,9 @@ import {useCounterStore} from '@/stores/store'
 
 // LOAD STATE
 const store = useCounterStore();
+
+// TO PARAMS
+const direction = store.actions.getTo().value
 
 // EMIT
 const emit = defineEmits(['slug']);

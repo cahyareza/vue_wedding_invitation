@@ -15,11 +15,12 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <p class="subtitle has-text-light">{{ fields.message }}</p>
+    <div v-if="show" class="container">
         <form class="form" v-on:submit.prevent>
             <p class="subtitle3 has-text-weight-bold mb-4"> Kirim Ucapan</p>
             <!-- New Item Field -->
-            <div class="field">
+            <div class="field is-hidden">
                 <div class="control">
                     <input class="input" v-model="fields.nama" type="text" placeholder="Nama lengkap">
                     <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.nama }}</span>
@@ -27,7 +28,7 @@
             </div>
 
             <!-- Email Field -->
-            <div class="field">
+            <div class="field mt-1">
                 <div class="control">
                     <input class="input" v-model="fields.alamat" type="text" placeholder="Alamat">
                     <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.alamat }}</span>
@@ -38,6 +39,7 @@
             <div class="field">
                 <div class="control">
                     <input class="textarea" v-model="fields.pesan" placeholder="Pesan">
+                    <p class="help is-success has-text-left has-text-light">*Hanya tamu undangan yang bisa mengirimkan ucapan</p>
                     <span class="subtitle is-size-7" style="color: red">{{ fieldErrors.pesan }}</span>
                 </div>
             </div>
@@ -48,9 +50,16 @@
 </template>
 
 <script setup>
-import { reactive, computed } from "vue";
+import { ref, reactive, computed } from "vue";
 import axios from 'axios';
 import {useCounterStore} from '@/stores/store'
+
+import { defineProps } from 'vue'
+
+// GET PORTOFOLIO
+var props = defineProps({
+  direction: { type: Object },
+});
 
 // LOAD STATE
 const store = useCounterStore();
@@ -59,16 +68,16 @@ var web_url = process.env.VUE_APP_WEB_URL_FIX
 
 const ucapan = computed(() => store.state.ucapan); 
 
-
 store.actions.getUcapan();
 
 var slug = store.actions.getSlug().value;
 
 const fields = reactive({
     portofolio: slug,
-    nama: null,
+    nama: props.direction,
     alamat: null,
     pesan: null,
+    message: null,
 });
 
 const fieldErrors = reactive({
@@ -78,6 +87,12 @@ const fieldErrors = reactive({
     error: 0
 });
 
+const show = ref(true);
+
+const showhidebutton = () => {
+    show.value = !show.value;
+    fields.message = "Terimakasih sudah mengirimkan ucapan.";
+ }
 
 const confirmUcapan = () => {
     fieldErrors.nama= undefined;
@@ -92,6 +107,7 @@ const confirmUcapan = () => {
         .post(`${web_url}portofolio/api/ucapan/?portofolio__slug=${slug}`, fields)
         .then(() => {
             console.log('berhasil post');
+            showhidebutton();
             fields.nama = null;
             fields.alamat = null;
             fields.pesan = null;
@@ -109,6 +125,14 @@ const confirmUcapan = () => {
 const validateForm = (fields) => {
     if (!fields.nama) {
         fieldErrors.nama = "Nama Required";
+        fieldErrors.error += 1;
+    }
+    if (fields.nama == "Violet") {
+        fieldErrors.pesan = "Maaf, hanya tamu undangan yang bisa mengirim ucapan!";
+        fieldErrors.error += 1;
+    }
+    if (fields.nama == 'undefined') {
+        fieldErrors.pesan = "Maaf, hanya tamu undangan yang bisa mengirim ucapan!";
         fieldErrors.error += 1;
     }
     if (!fields.alamat) {

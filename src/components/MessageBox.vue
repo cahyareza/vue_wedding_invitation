@@ -53,16 +53,25 @@
                         <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
                             || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5' || themeproduct.theme?.slug === 'theme-6'
                             || themeproduct.theme?.slug === 'theme-7'">
-                            <MessageForm></MessageForm>
+                            <MessageForm
+                                :direction="direction">
+                            </MessageForm>
                         </div>
                         <div v-else-if="themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9' || themeproduct.theme?.slug === 'theme-11'"> 
-                            <MessageFormCosmos></MessageFormCosmos>
+                            <MessageFormCosmos
+                                :direction="direction" 
+                            >
+                            </MessageFormCosmos>
                         </div>
                         <div v-else-if="themeproduct.theme?.slug === 'theme-10'"> 
-                            <MessageFormBright></MessageFormBright>
+                            <MessageFormBright
+                                :direction="direction" >
+                            </MessageFormBright>
                         </div>
                         <div v-else-if="themeproduct.theme?.slug === 'theme-12'"> 
-                            <MessageFormGraneLux></MessageFormGraneLux>
+                            <MessageFormGraneLux
+                                :direction="direction">
+                            </MessageFormGraneLux>
                         </div>
                     </div>
                 </div>
@@ -83,7 +92,10 @@ import { defineProps } from 'vue'
 defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
+  direction: { type: Object },
 });
+
+
 </script>
 
 <style lang="scss" scoped>
