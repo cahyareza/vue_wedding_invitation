@@ -1,8 +1,8 @@
 <template>
   <section>
-    <CovidPage>
+    <!-- <CovidPage>
       
-    </CovidPage>
+    </CovidPage> -->
     <MainMenuBright 
       @page="navigation"
       :portofolio="portofolio"
@@ -110,7 +110,7 @@
 
 <script setup>
 import MainMenuBright from '@/components/bright/MainMenuBright.vue'
-import CovidPage from '@/components/CovidPage.vue'
+// import CovidPage from '@/components/CovidPage.vue'
 import MainCoverBright from '@/components/bright/MainCoverBright.vue'
 import QuotePage from '@/components/QuotePage.vue'
 import GroomBrideBright from '@/components/bright/GroomBrideBright.vue'

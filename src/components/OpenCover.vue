@@ -25,7 +25,10 @@
 
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
-                                    <div v-if="themeproduct.theme?.slug === 'theme-11'">
+                                    <div v-if="themeproduct.theme?.slug === 'theme-11' || themeproduct.theme?.slug === 'theme-10'">
+                                        <p class="subtitle is-size-6-mobile is-size-5-tablet has-text-white mb-6">
+                                            The Wedding of
+                                        </p>
                                         <p class="title is-size-1-mobile is-capitalized  is-size-1-tablet mb-1 has-text-white">
                                             {{ portofolio.psurename }} & {{ portofolio.lsurename }}
                                         </p>

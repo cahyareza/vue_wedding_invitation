@@ -452,6 +452,21 @@
                 opacity: 0.7;
                 background: #FFF;
             }
+            .low-opacity-bg-image-2 {
+                display: grid;
+                position: relative;
+                isolation: isolate;
+                background-size: cover;
+                background-position: center;
+            }
+            .low-opacity-bg-image-2::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                opacity: 0.3;
+                background: #000;
+            }
             .button {
                 border: 1px solid $primary-theme-10;
                 background-color: $primary-theme-10;

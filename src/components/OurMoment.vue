@@ -33,7 +33,6 @@
                             <div v-else data-aos="fade-right"
                                 data-aos-offset="300" data-aos-duration="1000"
                                 data-aos-easing="ease-in-sine" data-aos-delay="100">
-                                <p class="subtitle-3 mt-3 is-size-6">"Tiada janji terindah yang didengar oleh wanita dari lisan laki-laki, kecuali janji akad pernikahan"</p>
                             </div>
                         </section>
 

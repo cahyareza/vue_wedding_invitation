@@ -1,7 +1,7 @@
 <template>
     <div v-if="acara.length != 0">
         <div :class="theme">
-            <section class="hero is-medium" :style="{ 'background-image': 'url(' + multiimage[1] + ')' }" style="min-height: 300px; background-position: center; position: relative; background-attachment: fixed; background-size: cover;
+            <section class="low-opacity-bg-image-2" :style="{ 'background-image': 'url(' + multiimage[1] + ')' }" style="min-height: 300px; background-position: center; position: relative; background-size: cover;
                 object-fit: cover;">
                 <div class="custom-shape-divider-top-1676040590">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -47,7 +47,6 @@
                     </div>
                 </div>
                 <GuestBook></GuestBook>
-                <GoToOurWedding :portofolio="portofolio"></GoToOurWedding>
             </section>
         </div>
     </div>
@@ -56,7 +55,6 @@
 <script setup>
 import { defineProps } from 'vue'
 import CountDown from '@/components/parts/timelines/CountDown.vue'
-import GoToOurWedding from '@/components/parts/timelines/GoToOurWedding.vue'
 import GuestBook from '@/components/bright/parts/timelines/GuestBook.vue'
 import useMethod from '@/hooks/useMethod.js'
 
