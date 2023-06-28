@@ -14,9 +14,9 @@
                 <div class="hero-footer py-6">
                     <p class="subtitle is-size-5 mb-3">The Wedding of</p>               
                     <p class="title is-size-3 is-capitalized mb-3 mt-3">
-                        {{ portofolio.pname }} <br>
+                        {{ portofolio.psurename }} <br>
                         & <br>
-                        {{ portofolio.lname }}
+                        {{ portofolio.lsurename }}
                     </p>
                     <p class="subtitle mt-0 is-size-6 is-capitalized mt-3">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                 </div>

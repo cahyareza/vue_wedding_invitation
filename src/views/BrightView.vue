@@ -1,8 +1,8 @@
 <template>
   <section>
-    <CovidPage>
+    <!-- <CovidPage>
       
-    </CovidPage>
+    </CovidPage> -->
     <MainMenuBright 
       @page="navigation"
       :portofolio="portofolio"
@@ -81,6 +81,7 @@
       <MessageBox
         :theme="theme"
         :themeproduct="themeproduct"
+        :direction="direction" 
       >
       </MessageBox>
     </div>
@@ -109,7 +110,7 @@
 
 <script setup>
 import MainMenuBright from '@/components/bright/MainMenuBright.vue'
-import CovidPage from '@/components/CovidPage.vue'
+// import CovidPage from '@/components/CovidPage.vue'
 import MainCoverBright from '@/components/bright/MainCoverBright.vue'
 import QuotePage from '@/components/QuotePage.vue'
 import GroomBrideBright from '@/components/bright/GroomBrideBright.vue'
@@ -131,6 +132,9 @@ import {useCounterStore} from '@/stores/store'
 
 // LOAD STATE
 const store = useCounterStore();
+
+// TO PARAMS
+const direction = store.actions.getTo().value
 
 // EMIT
 const emit = defineEmits(['slug']);

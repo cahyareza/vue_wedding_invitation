@@ -25,7 +25,10 @@
 
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
-                                    <div v-if="themeproduct.theme?.slug === 'theme-11'">
+                                    <div v-if="themeproduct.theme?.slug === 'theme-11' || themeproduct.theme?.slug === 'theme-10'">
+                                        <p class="subtitle is-size-6-mobile is-size-5-tablet has-text-white mb-6">
+                                            The Wedding of
+                                        </p>
                                         <p class="title is-size-1-mobile is-capitalized  is-size-1-tablet mb-1 has-text-white">
                                             {{ portofolio.psurename }} & {{ portofolio.lsurename }}
                                         </p>
@@ -79,12 +82,12 @@
                             </div><br>
                             <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
                                 || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5'">
-                                <router-link :to="`/main/${slug}`" class="button mt-4">
+                                <router-link :to="`/main/${slug}/${direction}`" class="button mt-4">
                                     Buka Undangan
                                 </router-link>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-6'"> 
-                                <router-link :to="`/main/cardo/${slug}`" class="button mt-4">
+                                <router-link :to="`/main/cardo/${slug}/${direction}`" class="button mt-4">
                                     Buka Undangan
                                 </router-link>
                             </div>
@@ -99,17 +102,17 @@
                                 </router-link>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-10'"> 
-                                <router-link :to="`/main/bright/${slug}`" class="button mt-4">
+                                <router-link :to="`/main/bright/${slug}/${direction}`" class="button mt-4">
                                     Buka Undangan
                                 </router-link>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-11'"> 
-                                <router-link :to="`/main/braun/${slug}`" class="button mt-4">
+                                <router-link :to="`/main/braun/${slug}/${direction}`" class="button mt-4">
                                     Buka Undangan
                                 </router-link>
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-12'"> 
-                                <router-link :to="`/main/grane-luxurious/${slug}`" class="button mt-4">
+                                <router-link :to="`/main/grane-luxurious/${slug}/${direction}`" class="button mt-4">
                                     Buka Undangan
                                 </router-link>
                             </div>

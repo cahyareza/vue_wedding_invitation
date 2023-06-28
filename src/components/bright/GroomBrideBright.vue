@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="column
                                 is-6">
-                                    <figure class="image is-1by1">
+                                    <figure class="image is-2by3">
                                         <img :src="portofolio.ppicture">
                                     </figure>
                                 </div>
@@ -60,7 +60,7 @@
                                 <div class="column
                                 is-6
                                 "> 
-                                    <figure class="image is-1by1">
+                                    <figure class="image is-2by3">
                                         <img :src="portofolio.lpicture">
                                     </figure>
                                 </div>

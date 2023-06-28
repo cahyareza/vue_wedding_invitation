@@ -81,6 +81,7 @@
       <MessageBox
         :theme="theme"
         :themeproduct="themeproduct"
+        :direction="direction"  
       >
       </MessageBox>
     </div>

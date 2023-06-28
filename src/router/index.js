@@ -85,7 +85,7 @@ const routes = [
   //   component: CardoOpenView,
   // },
   {
-    path: '/main/cardo/:slug',
+    path: '/main/cardo/:slug/:to',
     name: 'maincardo',
     component: CardoView,
   },
@@ -100,7 +100,7 @@ const routes = [
     component: OpenView,
   },
   {
-    path: '/main/:slug',
+    path: '/main/:slug/:to',
     name: 'main',
     component: MainView,
   },
