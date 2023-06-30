@@ -1,7 +1,7 @@
 <template>
     <div v-if="acara.length != 0">
         <div :class="theme">
-            <section class="low-opacity-bg-image-2" :style="{ 'background-image': 'url(' + multiimage[1] + ')' }" style="min-height: 300px; background-position: center; position: relative; background-size: cover;
+            <section class="low-opacity-bg-image-2" :style="{ 'background-image': 'url(' + multiimagetheme[1] + ')' }" style="min-height: 300px; background-position: center; position: relative; background-size: cover;
                 object-fit: cover;">
                 <div class="custom-shape-divider-top-1676040590">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -22,7 +22,7 @@
 
             </section>
             <section class="hero is-large">
-                <div class="notification low-opacity-bg-image m-6" :style="{ 'background-image': 'url(' + multiimage[2] + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
+                <div class="notification low-opacity-bg-image m-6" :style="{ 'background-image': 'url(' + multiimagetheme[2] + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
                 data-aos-offset="300" data-aos-duration="1000"
                 data-aos-easing="ease-in-sine" data-aos-delay="100">
                     <div v-for="(piece) in acara" :key="piece.id">
@@ -67,7 +67,7 @@ defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
   acara: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
   direction: { type: Object },
 });
 </script>

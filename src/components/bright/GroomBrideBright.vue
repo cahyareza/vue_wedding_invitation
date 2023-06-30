@@ -16,7 +16,7 @@
                 </svg>
             </div>
             <figure class="image is-3by2" style="z-index: -1; position: relative;">
-                <img :src="multiimage[0]">
+                <img :src="multiimagetheme[0]">
             </figure>
         </div>
         <section class="hero">
@@ -95,7 +95,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
 });
 </script>
 

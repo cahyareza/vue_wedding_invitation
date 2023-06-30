@@ -121,14 +121,14 @@
                                     <div class="columns is-mobile">
                                         <div class='column is-6'>
                                             <figure class="image is-2by3">
-                                                <img :src="multiimage[6]">
+                                                <img :src="multiimagetheme[6]">
                                             </figure>
                                         </div>
                                         <div class='column is-5'>
                                             <div class="columns is-multiline">
                                                 <div class='column is-12'>
                                                     <figure class="image is-2by3">
-                                                        <img :src="multiimage[7]">
+                                                        <img :src="multiimagetheme[7]">
                                                     </figure>
                                                 </div>
                                                 <div class='column is-12'>
@@ -159,7 +159,7 @@ defineProps({
   themeproduct: { type: Object },
   dompet: { type: Object },
   portofolio: { type: Object },
-  multiimage: { type: Object },
+  multiimagetheme: { type: Object },
 });
 
 const {store, slug, dompets, web_url} = injectStore()

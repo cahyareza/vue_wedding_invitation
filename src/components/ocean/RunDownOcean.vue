@@ -74,7 +74,6 @@ defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
   acara: { type: Object },
-  multiimage: { type: Array },
   direction: { type: Object },
 });
 

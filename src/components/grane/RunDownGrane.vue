@@ -2,7 +2,7 @@
     <div v-if="acara.length != 0">
         <div :class="theme">
             <figure class="image is-3by2">
-                <img :src="multiimage[0]">
+                <img :src="multiimagetheme[0]">
             </figure>
             <section class="hero is-large">
                 <div class="box m-4">
@@ -20,7 +20,7 @@
                                 <!-- <div class="notification is-marginless" data-aos="zoom-out-down" data-aos-duration="1000"> -->
                                     <div class="columns is-multiline">
                                         <div v-for="(piece, index) in acara" :key="piece.id">
-                                            <div class="notification low-opacity-bg-image mb-4" :style="{ 'background-image': 'url(' + multiimage[index+1] + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
+                                            <div class="notification low-opacity-bg-image mb-4" :style="{ 'background-image': 'url(' + multiimagetheme[index+1] + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
                                             data-aos-offset="300" data-aos-duration="1000"
                                             data-aos-easing="ease-in-sine" data-aos-delay="100">
                                                 <div class="column is-12">
@@ -73,7 +73,7 @@ defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
   acara: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
   direction: { type: Object },
 });
 </script>

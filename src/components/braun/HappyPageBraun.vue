@@ -1,6 +1,6 @@
 <template>
     <div :class="theme">
-        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + multiimage[6] + ')' }">
+        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + multiimagetheme[6] + ')' }">
             <section class="hero is-fullheight">
                 <div class="hero-body">
                 </div>
@@ -37,7 +37,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
 });
 </script>
 

@@ -6,7 +6,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimage="multiimage"   
+      :multiimagetheme="multiimagetheme"     
     >
     </MainCoverCardo>
     <QuotePage
@@ -19,8 +19,7 @@
       <GroomBridgeGrane 
         :portofolio="portofolio"
         :theme="theme"
-        :themeproduct="themeproduct"  
-        :multiimage="multiimage"  
+        :themeproduct="themeproduct"
       >
       </GroomBridgeGrane>
     </div>
@@ -30,7 +29,7 @@
         :theme="theme"
         :themeproduct="themeproduct"
         :acara="acara"
-        :multiimage="multiimage" 
+        :multiimagetheme="multiimagetheme"  
         :direction="direction"    
       >
       </RunDownGrane>
@@ -46,7 +45,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimage="multiimage"
+      :multiimagetheme="multiimagetheme" 
     >
     </LiveStreamCardo>
     <div ref='moment'>
@@ -69,7 +68,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"   
-        :multiimage="multiimage"  
+        :multiimagetheme="multiimagetheme" 
       >
       </TimeLinesGrane>
     </div>
@@ -85,7 +84,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimage="multiimage" 
+      :multiimagetheme="multiimagetheme" 
     >
     </HappyPageGrane>
     <FooterPage
@@ -148,6 +147,7 @@ const props = defineProps({
   story: { type: Object },
   dompet: { type: Object },
   multiimage: { type: Array },
+  multiimagetheme: { type: Array },
 });
 
 

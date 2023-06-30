@@ -7,7 +7,7 @@
                         <div class="columns is-multiline">
                             <div class="column is-12-tablet is-12-mobile p-6">
                                 <figure class="image is-2by3">
-                                    <img :src="multiimage[6]">
+                                    <img :src="multiimagetheme[6]">
                                 </figure>
                             </div>
                             <div class="column is-12-tablet is-12-mobile">
@@ -32,7 +32,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
 });
 </script>
 

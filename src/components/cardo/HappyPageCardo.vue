@@ -1,6 +1,6 @@
 <template>
     <div :class="theme">
-        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + multiimage[5] + ')' }">
+        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + multiimagetheme[5] + ')' }">
             <section class="hero is-large">
                 <div class="hero-body">
                     <div class="section py-0">
@@ -35,7 +35,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
 });
 </script>
 

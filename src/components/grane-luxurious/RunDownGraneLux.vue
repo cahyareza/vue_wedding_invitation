@@ -8,7 +8,7 @@
                         is-6-tablet
                         is-12-mobile">
                             <figure class="image is-3by2">
-                                <img :src="multiimage[0]">
+                                <img :src="multiimagetheme[0]">
                             </figure>
                         </div>
                         <div class="column
@@ -58,7 +58,7 @@ defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
   acara: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
   direction: { type: Object },
 });
 </script>

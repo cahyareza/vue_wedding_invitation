@@ -16,13 +16,13 @@
                             <!-- <div class="notification is-marginless" data-aos="zoom-out-down" data-aos-duration="1000"> -->
                                 <div class="columns is-multiline">
                                     <div v-for="(piece, index) in acara" :key="piece.id" class="column is-one-half">
-                                        <!-- <div class="notification low-opacity-bg-image mb-4" :style="{ 'background-image': 'url(' + multiimage[index+1] + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
+                                        <!-- <div class="notification low-opacity-bg-image mb-4" :style="{ 'background-image': 'url(' + multiimagetheme[index+1] + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
                                         data-aos-offset="300" data-aos-duration="1000"
                                         data-aos-easing="ease-in-sine" data-aos-delay="100"> -->
-                                        <div class="card low-opacity-bg-image mb-4" :style="{ 'background-image': 'url(' + multiimage[index+1] + ')' }" style="background-size: cover;background-position: center;">
+                                        <div class="card low-opacity-bg-image mb-4" :style="{ 'background-image': 'url(' + multiimagetheme[index+1] + ')' }" style="background-size: cover;background-position: center;">
                                             <div class="card-image">
                                                     <figure class="image is-4by3" style="border: solid 1px #FFF;">
-                                                        <img :src="multiimage[index+1]" alt="Placeholder image">
+                                                        <img :src="multiimagetheme[index+1]" alt="Placeholder image">
                                                     </figure>
                                             </div>
                                             <div class="card-content">
@@ -75,7 +75,7 @@ defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
   acara: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
   direction: { type: Object },
 });
 </script>

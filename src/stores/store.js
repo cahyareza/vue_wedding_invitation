@@ -12,6 +12,7 @@ export const useCounterStore = defineStore('store', () => {
     hadir: [],
     invitation: [],
     multiimage: [],
+    multiimagetheme: [],
     ucapan: [],
     dompet:[],
     // theme: "false",
@@ -33,6 +34,7 @@ export const useCounterStore = defineStore('store', () => {
     updateHadir: (payload) => state.hadir = payload,
     updateInvitation: (payload) => state.invitation = payload,
     updateMultiImage: (payload) => state.multiimage = payload,
+    updateMultiImageTheme: (payload) => state.multiimagetheme = payload,
     updateUcapan: (payload) => state.ucapan = payload,
     updateDompet: (payload) => state.dompet = payload,
     updateTheme: (payload) => state.theme = payload,
@@ -111,6 +113,16 @@ export const useCounterStore = defineStore('store', () => {
           mutations.updateMultiImage(imagelist);
         });
       },
+      getMultiimageTheme2: (slug) => {
+        return axios.get(`${web_url}api/portofolio/multiimagetheme/?portofolio__slug=${slug}`)
+        .then((response) => {
+          const imagethemelist = []
+          for (let image in response.data) {
+            imagethemelist.push(response.data[image].image)
+          }
+          mutations.updateMultiImageTheme(imagethemelist);
+        });
+      },
       getUcapan: () => {
         actions.getSlug();
         return axios.get(`${web_url}portofolio/api/ucapan/?portofolio__slug=${slug.value}`) .then((response) => {
@@ -182,7 +194,6 @@ export const useCounterStore = defineStore('store', () => {
       getPortofolio2: (slug) => {
         return axios.get(`${web_url}portofolio/api/portofolio/?slug=${slug}`)
         .then((response) => {
-          console.log(response);
           if (response.data[0].timeZone) {
             if (response.data[0].timeZone == 'Asia/Jakarta') {
               response.data[0].timeZone = "WIB"

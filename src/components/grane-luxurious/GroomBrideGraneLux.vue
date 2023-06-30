@@ -71,7 +71,7 @@
                         is-6-mobile is-paddingless">
                             <div class="card p-1">
                                 <figure class="image is-4by5">
-                                    <img :src="multiimage[3]">
+                                    <img :src="multiimagetheme[3]">
                                 </figure>
                             </div>
                         </div>
@@ -118,14 +118,14 @@
                                                     is-full is-paddingless is-marginless
                                                     ">
                                                         <figure class="image is-3by2">
-                                                            <img :src="multiimage[2]">
+                                                            <img :src="multiimagetheme[2]">
                                                         </figure>
                                                     </div>
                                                     <div class="column
                                                     is-full is-paddingless is-marginless
                                                     ">
                                                         <figure class="image is-3by2">
-                                                            <img :src="multiimage[1]">
+                                                            <img :src="multiimagetheme[1]">
                                                         </figure>
                                                     </div>
                                                 </div>
@@ -180,7 +180,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
 });
 </script>
 
