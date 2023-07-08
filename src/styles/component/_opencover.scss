@@ -371,9 +371,13 @@
                 background: #000;
             }
         } @else if ($theme-name == theme-10) {
-            // .hero {
-            //     background-color: $secondary-theme-3;
-            // }
+            .hero {
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+                padding: 0px;
+                overflow-x: hidden; 
+            }
             .button {
                 // border: 1px solid $secondary-theme-5;
                 width: 150px;

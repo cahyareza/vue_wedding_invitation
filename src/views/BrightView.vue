@@ -17,12 +17,12 @@
       :themeproduct="themeproduct"   
     >
     </MainCoverBright>
-    <QuotePage
+    <QuotePageBright
       :theme="theme"
       :themeproduct="themeproduct"  
       :quote="quote"
     >
-    </QuotePage>
+    </QuotePageBright>
     <div ref="groom">
       <GroomBrideBright 
         :portofolio="portofolio"
@@ -86,13 +86,13 @@
       </MessageBox>
     </div>
     <div ref="time">
-      <DompetPage
+      <DompetPageBright
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
         :dompet="dompet" 
       >
-      </DompetPage>
+      </DompetPageBright>
     </div>
     <HappyPageBright
       :portofolio="portofolio"
@@ -112,7 +112,7 @@
 import MainMenuBright from '@/components/bright/MainMenuBright.vue'
 // import CovidPage from '@/components/CovidPage.vue'
 import MainCoverBright from '@/components/bright/MainCoverBright.vue'
-import QuotePage from '@/components/QuotePage.vue'
+import QuotePageBright from '@/components/bright/QuotePageBright.vue'
 import GroomBrideBright from '@/components/bright/GroomBrideBright.vue'
 // import TimeLines from '@/components/TimeLines.vue'
 import RunDownBright from '@/components/bright/RunDownBright.vue'
@@ -123,7 +123,7 @@ import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import HappyPageBright from '@/components/bright/HappyPageBright.vue'
-import DompetPage from '@/components/DompetPage.vue'
+import DompetPageBright from '@/components/bright/DompetPageBright.vue'
 
 
 

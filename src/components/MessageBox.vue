@@ -34,7 +34,7 @@
                             <div class="container">
                                 <div v-if="themeproduct.theme?.slug === 'theme-10'"> 
                                     <p class="title2 is-size-2-mobile is-size-1-tablet">
-                                        guestbook
+                                        Guestbook
                                     </p>
                                     <p class="subtitle is-size-7">
                                         Leave your message here
