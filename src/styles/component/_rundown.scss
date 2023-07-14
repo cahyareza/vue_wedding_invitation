@@ -435,7 +435,6 @@
             .subtitle3 {
                 font-family: $theme10font3;
                 color: $secondary-theme-10;
-                font-weight: bold;
             }
             .low-opacity-bg-image {
                 display: grid;
@@ -449,7 +448,7 @@
                 position: absolute;
                 z-index: -1;
                 inset: 0;
-                opacity: 0.7;
+                opacity: 0.8;
                 background: #FFF;
             }
             .low-opacity-bg-image-2 {

@@ -2,7 +2,7 @@
     <div :class="theme">
         <div v-if="themeproduct.theme?.slug === 'theme-6'"> 
             <SlidePage 
-            :image="multiimage[chooseImage.value]"
+            :image="multiimagetheme[chooseImage.value]"
             :portofolio="portofolio"
             :id="chooseImage.id"
             >
@@ -10,7 +10,7 @@
         </div>
         <div v-else-if="themeproduct.theme?.slug === 'theme-7'">
             <SlidePageGrane 
-            :image="multiimage[chooseImage.value]"
+            :image="multiimagetheme[chooseImage.value]"
             :portofolio="portofolio"
             :id="chooseImage.id"
             >
@@ -18,7 +18,7 @@
         </div>
         <div v-else-if="themeproduct.theme?.slug === 'theme-8'">
             <SlidePageCosmos
-            :image="multiimage[chooseImage.value]"
+            :image="multiimagetheme[chooseImage.value]"
             :portofolio="portofolio"
             :id="chooseImage.id"
             :quote="quote" 
@@ -27,7 +27,7 @@
         </div>
         <div v-else-if="themeproduct.theme?.slug === 'theme-11'">
             <SlidePageBraun
-            :image="multiimage[chooseImage.value]"
+            :image="multiimagetheme[chooseImage.value]"
             :portofolio="portofolio"
             :id="chooseImage.id"
             :quote="quote" 
@@ -52,7 +52,7 @@ const props = defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  multiimagetheme: { type: Array },
   quote: { type: Object },
 });
 
@@ -60,7 +60,7 @@ const chooseImage = reactive({id:0, value:0})
 
 onMounted(() => {
     setInterval(() => {
-        move(chooseImage, props.multiimage);
+        move(chooseImage, props.multiimagetheme);
     }, 10000);
 })
 

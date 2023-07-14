@@ -8,7 +8,7 @@
                             Cerita Kita<br>
                         </p>
                         <figure class="image is-3by2">
-                            <img :src="multiimage[4]">
+                            <img :src="portobackground.image5">
                         </figure>
                         <div class="section pt-3 px-0">
                             <div class="columns is-multiline">
@@ -37,7 +37,7 @@ defineProps({
   story: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  portobackground: { type: Object },
 });
 
 </script>

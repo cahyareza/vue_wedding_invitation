@@ -170,6 +170,9 @@
             .filter{
                 filter: $secondary-filter-theme-10;
             }
+            .line {
+                color: $secondary-theme-10;
+            }
         } @else if ($theme-name == theme-11) {
             .hero {
                 background-color: $primary-theme-11;

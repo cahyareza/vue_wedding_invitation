@@ -3,19 +3,20 @@
         <div v-if="themeproduct.fitur === 'PLATINUM' || themeproduct.fitur === 'GOLD' || themeproduct.fitur === 'DIAMOND'">
             <div v-if="dompet.length != 0">
                 <div class="hero is-medium">
-                    <div class="section p-3">
+                    <div class="section py-0">
                         <div class="container">
-                            <div class="columns is-vcentered">
-                                <div class="column is-6">
+                            <div class="columns">
+                                <div class="column">
                                     <div class="container m-3 mt-5">
                                         <span class="icon has-text-grey is-large">
                                             <font-awesome-icon icon="fa-solid fa-gift" />
                                         </span>
+                                        <p class="title is-capitalized is-size-3-mobile is-size-2-tablet mt-5 mb-3">Wedding Gift</p>
                                         <p class="subtitle is-size-6-mobile is-size-5-tablet mt-3">Bagi keluarga dan kerabat yang ingin mengirimkan tanda kasih, silahkan mengirimkan melalui tautan berikut</p>
                                         
-                                        <a @click="showModal" class="subtitle is-uppercase is-size-5 p-2">
-                                            Click Here <font-awesome-icon :icon="['fas', 'circle-chevron-right']" />
-                                        </a>
+                                        <div @click="showModal" class="button p-2">
+                                            Kirim
+                                        </div>
                                         
                                         <!--    Modal        -->
                                         <div class="modal" :class="{'is-active': modal_data.showModalFlag}">
@@ -26,15 +27,18 @@
                                                     <button class="delete" aria-label="close" @click="cancelModal" style="float: right; position:absolute; top:20px; right:20px;"></button>
                                                 </header>
                                                 <section class="modal-card-body">
-                                                    <p class="has-text-left mb-4">Doa restu keluarga, sahabat, serta rekan-rekan semua di pernikahan kami sudah sangat cukup sebagai hadiah, namun jika memberi merupakan tanda kasih, kami dengan senang hati menerimanya dan tentunya semakin melengkapi kebahagiaan kami.;</p>
                                                     <div class="section is-paddingless is-marginless">
                                                         <div class="container is-paddingless is-marginless">
-                                                            <div class="columns is-multiline is-mobile is-centered mt-4">
+                                                            <div class="columns is-multiline is-mobile is-centered">
                                                                 <div v-if="portofolio.alamat_rumah">
                                                                     <div class="column is-12 has-text-center">
+                                                                        <div class="is-subtitle is-text-5 has-text-weight-bold">Alamat Penerima</div>
                                                                         <p class="mb-2">{{ portofolio.alamat_rumah }}</p>
                                                                         <button @click="copy(portofolio.alamat_rumah)" class="button is-black mt-2">Salin Alamat</button>
                                                                     </div>
+                                                                </div>
+                                                                <div class="column is-12 has-text-center mb-0 pb-0">
+                                                                    <div class="is-subtitle is-text-5 has-text-weight-bold">Nomor Rekening</div>
                                                                 </div>
                                                                 <div v-for="info in dompet" :key="info.id" class="column is-one-half has-text-center">
                                                                     <p class="subtitle is-size-6-mobile is-size-5-tablet mb-1"><strong>{{ info.rekening }}</strong></p>
@@ -47,7 +51,7 @@
                                                                     <p class="subtitle2 is-size-6-mobile is-size-5-tablet mb-1">a/n {{ info.pemilik }}</p>
                                                                     <button @click="copy(info.nomor)" class="button is-black mt-1">Salin Nomor</button>
                                                                 </div>
-                                                                <div class="column is-12 has-text-center">
+                                                                <div class="column is-12 has-text-center is-hidden">
                                                                     <form class="form" v-on:submit.prevent>
                                                                         <p class="subtitle3 has-text-weight-bold mb-4"> Mohon isi form di bawah ini</p>
                                                                         <!-- New Item Field -->
@@ -103,7 +107,7 @@
                                                                             </div>
                                                                         </div><br> -->
                                                                                         
-                                                                        <button @click="confirmDana(web_url, store, slug, fieldErrors, fields)" class="button is-rounded is-size-6">Submit</button>
+                                                                        <button @click="confirmDana(web_url, store, slug, fieldErrors, fields)" class="button is-rounded is-size-6">Kirim</button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -113,27 +117,6 @@
                                                 <footer class="modal-card-foot">
                                                     <p class="subtitle has-text-danger">{{ fields.message }}</p>
                                                 </footer>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="column is-6">
-                                    <div class="columns is-mobile">
-                                        <div class='column is-6'>
-                                            <figure class="image is-2by3">
-                                                <img :src="portobackground.image7">
-                                            </figure>
-                                        </div>
-                                        <div class='column is-5'>
-                                            <div class="columns is-multiline">
-                                                <div class='column is-12'>
-                                                    <figure class="image is-2by3">
-                                                        <img :src="portobackground.image8">
-                                                    </figure>
-                                                </div>
-                                                <div class='column is-12'>
-                                                    <p class="title is-capitalized is-size-3-mobile is-size-2-tablet mt-5 mb-3">Gift</p>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -159,7 +142,6 @@ defineProps({
   themeproduct: { type: Object },
   dompet: { type: Object },
   portofolio: { type: Object },
-  portobackground: { type: Object },
 });
 
 const {store, slug, dompets, web_url} = injectStore()

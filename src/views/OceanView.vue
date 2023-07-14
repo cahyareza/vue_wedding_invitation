@@ -12,7 +12,6 @@
       :theme="theme"
       :themeproduct="themeproduct"  
       :quote="quote"
-      :multiimage="multiimage"  
     >
     </QuotePage>
     <div ref="groom">
@@ -20,7 +19,6 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"  
-        :multiimage="multiimage"  
       >
       </GroomBridgeOcean>
     </div>
@@ -30,7 +28,6 @@
         :theme="theme"
         :themeproduct="themeproduct"
         :acara="acara"   
-        :multiimage="multiimage"
         :direction="direction"   
       >
       </RunDownOcean>
@@ -46,7 +43,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimage="multiimage"
+      :portobackground="portobackground"
     >
     </LiveStreamCardo>
     <div ref='moment'>
@@ -62,7 +59,7 @@
       :theme="theme"
       :themeproduct="themeproduct"
       :story="story"
-      :multiimage="multiimage"
+      :portobackground="portobackground"
     >
     </StoryPageOcean>
     <div ref="time">
@@ -70,7 +67,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"   
-        :multiimage="multiimage"  
+        :portobackground="portobackground"  
       >
       </TimeLinesOcean>
     </div>
@@ -86,12 +83,11 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimage="multiimage" 
+      :portobackground="portobackground" 
     >
     </HappyPageOcean>
     <FooterPage
       :theme="theme"
-      :multiimage="multiimage" 
     >
     </FooterPage>
     <MainMenu
@@ -150,6 +146,8 @@ const props = defineProps({
   story: { type: Object },
   dompet: { type: Object },
   multiimage: { type: Array },
+  multiimagetheme: { type: Array },
+  portobackground: { type: Object },
 });
 
 

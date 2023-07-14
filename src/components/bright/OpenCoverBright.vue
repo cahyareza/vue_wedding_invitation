@@ -2,27 +2,22 @@
     <div :class="theme">
         <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portofolio.open_background + ')' }">
             <section class="hero is-fullheight">
-                <div class="hero-body">
+                <div class="hero-header">
                     <div class="container">
                         <div class="columns is-multiline">
-                            <div class="column is-half-tablet is-offset-one-quarter-tablet">
-                            </div>
-                            <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6"></div>
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
-                                <div class="">
-                                    <p class="title is-size-3-mobile is-capitalized  is-size-2-tablet mb-1 has-text-white">
-                                        {{ portofolio.pname }}
-                                    </p>
-                                    <div v-if="themeproduct.theme?.open_fitur">
-                                        <img class="filter is-rounded mb-1" :src="themeproduct.theme?.open_fitur">
+                                <div v-if="direction">
+                                    <div class="mt-6">
+                                        <p class="subtitle is-size-7 mb-1 has-text-white">
+                                            Dear
+                                        </p>
+                                        <p class="subtitle is-size-5 mt-1 mb-1 has-text-white mb-1">
+                                            {{ direction }}
+                                        </p>
+                                        <p class="is-size-7 has-text-white mt-1">
+                                            You Are Invited!
+                                        </p>
                                     </div>
-                                    <div v-else>
-                                        <p class="title is-size-3 mb-1 has-text-white">&</p>
-                                    </div>
-                                    <p class="title is-size-3-mobile is-capitalized is-size-2-tablet has-text-white">
-                                        {{ portofolio.lname }} 
-                                    </p>
-                                    <p class="subtitle mt-4 is-size-6 has-text-white">{{ tanggal(portofolio.tanggal_countdown) }}</p>
                                 </div>
                             </div>
                         </div>
@@ -33,26 +28,30 @@
                         <VueParticle domId="demo" :config="obj.particleConfig"/>
                     </div>
                 </div>
-                <div class="hero-footer">
-                    <div class="container">
-                        <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
-                            <div v-if="direction">
-                                <div class="mt-6 mx-6 mb-3">
-                                    <p class="subtitle is-size-7-mobile is-size-6-tablet mb-1 has-text-white">
-                                        Kepada Yth.
-                                    </p>
-                                    <p class="subtitle is-size-6-mobile is-size-5-tablet mt-1 mb-1 has-text-white">
-                                        {{ direction }}
-                                    </p>
-                                    <p class="is-size-7 has-text-white mt-1 is-italic">
-                                        Mohon maaf apabila ada kesalahan penulisan nama/gelar
-                                    </p>
+                <div class="hero-foot">
+                    <div class="section">
+                        <div class="container">
+                            <div class="columns is-multiline">
+                                <div class="column is-12-mobile is-half-tablet is-offset-one-quarter-tablet mt-6">
+                                    <div class="">
+                                        <div v-if="themeproduct.theme?.slug === 'theme-10'">
+                                            <p class="subtitle is-size-6-mobile is-size-5-tablet has-text-white mb-6">
+                                                The Wedding Celebration of
+                                            </p>
+                                            <p class="title is-size-2-mobile is-capitalized  is-size-1-tablet has-text-white">
+                                                {{ portofolio.psurename }} & {{ portofolio.lsurename }}
+                                            </p>
+                                            <p class="subtitle mt-4 is-size-6 has-text-white">{{ tanggal(portofolio.tanggal_countdown) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-12 mt-6">
+                                    <router-link :to="`/main/bright/${slug}/${direction}`" class="button mt-4">
+                                        Open Invitation
+                                    </router-link>
                                 </div>
                             </div>
-                        </div><br>
-                        <router-link :to="`/main/bright/${slug}`" class="button mt-4">
-                            Buka Undangan
-                        </router-link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -62,28 +61,17 @@
 
 <script setup>
 import VueParticle from 'vue-particlejs';
-import { inject, reactive, computed, defineProps } from 'vue'
+import {reactive, defineProps } from 'vue'
+import injectStore from '@/hooks/injectStore.js'
 import moment from 'moment';
 
 // GET PROPS
-// eslint-disable-next-line no-unused-vars
 defineProps({
   direction: { type: Object },
   themeproduct: { type: Object },
 });
 
-// LOAD STATE
-const store = inject('store');
-
-// SLUG
-const slug = store.actions.getSlug().value;
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// THEME
-const theme = computed(() => store.state.theme);
-const themeproduct = computed(() => store.state.themeproduct); 
+const {store, slug, portofolio, theme, themeproduct} = injectStore()
 
 const getProps = async () => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -165,7 +153,6 @@ obj.particleConfig = {
     retina_detect: true
 }
 </script>
-
 
 <style lang="scss" scoped>
 @import "@/styles/component/opencover.scss";

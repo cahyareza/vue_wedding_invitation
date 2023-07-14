@@ -7,7 +7,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
-        :multiimage="multiimage"
+        :multiimagetheme="multiimagetheme"  
         :quote="quote"   
       >
       </MainCoverCardo>
@@ -17,7 +17,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"  
-        :multiimage="multiimage"  
+        :portobackground="portobackground"  
       >
       </GroomBridgeCosmos>
     </div>
@@ -27,7 +27,7 @@
         :theme="theme"
         :themeproduct="themeproduct"
         :acara="acara"
-        :multiimage="multiimage"
+        :multiimagetheme="multiimagetheme"  
         :direction="direction"   
       >
       </RunDownCosmos>
@@ -43,7 +43,7 @@
     :portofolio="portofolio"
     :theme="theme"
     :themeproduct="themeproduct"
-    :multiimage="multiimage"
+    :portobackground="portobackground"
     >
     </LiveStreamCardo>
     <StoryPageCosmos
@@ -74,7 +74,6 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimage="multiimage" 
     >
     </HappyPageCosmos>
     <FooterPage
@@ -135,6 +134,8 @@ const props = defineProps({
   story: { type: Object },
   dompet: { type: Object },
   multiimage: { type: Array },
+  multiimagetheme: { type: Array },
+  portobackground: { type: Object },
 });
 
 

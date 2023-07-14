@@ -77,7 +77,6 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
 });
 </script>
 

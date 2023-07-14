@@ -25,7 +25,7 @@
 
                             <div class="column is-half-tablet is-offset-one-quarter-tablet mt-6">
                                 <div class="">
-                                    <div v-if="themeproduct.theme?.slug === 'theme-11' || themeproduct.theme?.slug === 'theme-10'">
+                                    <div v-if="themeproduct.theme?.slug === 'theme-11'">
                                         <p class="subtitle is-size-6-mobile is-size-5-tablet has-text-white mb-6">
                                             The Wedding of
                                         </p>
@@ -61,7 +61,7 @@
                 </div>
                 <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
                     || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5' || themeproduct.theme?.slug === 'theme-6'
-                    || themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9' || themeproduct.theme?.slug === 'theme-10'
+                    || themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9'
                     || themeproduct.theme?.slug === 'theme-11' || themeproduct.theme?.slug === 'theme-12'">
                     <div class="hero-footer">
                         <div class="container">
@@ -98,11 +98,6 @@
                             </div>
                             <div v-else-if="themeproduct.theme?.slug === 'theme-9'"> 
                                 <router-link :to="`/main/ocean/${slug}/${direction}`" class="button mt-4">
-                                    Buka Undangan
-                                </router-link>
-                            </div>
-                            <div v-else-if="themeproduct.theme?.slug === 'theme-10'"> 
-                                <router-link :to="`/main/bright/${slug}/${direction}`" class="button mt-4">
                                     Buka Undangan
                                 </router-link>
                             </div>

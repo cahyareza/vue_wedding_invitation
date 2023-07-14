@@ -36,7 +36,13 @@ export default function useStore(){
     const story = computed(() => store.state.story); 
 
     // MULTIIMAGE
-    const multiimage = computed(() => store.state.multiimage); 
+    const multiimage = computed(() => store.state.multiimage);
+    
+    // MULTIIMAGETHEME
+    const multiimagetheme = computed(() => store.state.multiimagetheme); 
+
+    // PORTOBACKGROUND
+    const portobackground = computed(() => store.state.portobackground); 
 
     var web_url = process.env.VUE_APP_WEB_URL_FIX
 
@@ -54,6 +60,8 @@ export default function useStore(){
         acara,
         invitation,
         multiimage,
+        multiimagetheme,
         dompet,
+        portobackground,
     }
 }

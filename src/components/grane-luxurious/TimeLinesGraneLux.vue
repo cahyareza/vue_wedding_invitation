@@ -7,7 +7,7 @@
                     is-6-tablet
                     is-12-mobile">
                         <figure class="image is-3by2">
-                            <img :src="multiimage[5]">
+                            <img :src="portobackground.image6">
                         </figure>
                     </div>
                     <div class="column
@@ -32,7 +32,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  portobackground: { type: Object },
 });
 </script>
 

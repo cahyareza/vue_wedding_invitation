@@ -2,7 +2,7 @@
     <div v-if="portofolio.livestream">
         <div v-if="themeproduct.fitur === 'GOLD'">
             <div :class="theme">
-                <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + multiimage[4] + ')' }">
+                <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portobackground.image5 + ')' }">
                     <section class="hero is-medium">
                         <div class="hero-body">
                             <div class="section py-0">
@@ -41,7 +41,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  multiimage: { type: Array },
+  portobackground: { type: Array },
 });
 </script>
 

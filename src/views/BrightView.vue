@@ -17,18 +17,18 @@
       :themeproduct="themeproduct"   
     >
     </MainCoverBright>
-    <QuotePage
+    <QuotePageBright
       :theme="theme"
       :themeproduct="themeproduct"  
       :quote="quote"
     >
-    </QuotePage>
+    </QuotePageBright>
     <div ref="groom">
       <GroomBrideBright 
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct" 
-        :multiimage="multiimage"  
+        :portobackground="portobackground"  
       >
       </GroomBrideBright>
     </div>
@@ -38,7 +38,7 @@
         :theme="theme"
         :themeproduct="themeproduct"
         :acara="acara"   
-        :multiimage="multiimage"  
+        :portobackground="portobackground"   
       >
       </RunDownBright>
     </div>
@@ -53,7 +53,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimage="multiimage"
+      :portobackground="portobackground"
     >
     </LiveStreamCardo>
       <!-- <TimeLines 
@@ -86,19 +86,19 @@
       </MessageBox>
     </div>
     <div ref="time">
-      <DompetPage
+      <DompetPageBright
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"
         :dompet="dompet" 
       >
-      </DompetPage>
+      </DompetPageBright>
     </div>
     <HappyPageBright
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimage="multiimage"
+      :portobackground="portobackground"
     >
     </HappyPageBright>
     <FooterPage
@@ -112,7 +112,7 @@
 import MainMenuBright from '@/components/bright/MainMenuBright.vue'
 // import CovidPage from '@/components/CovidPage.vue'
 import MainCoverBright from '@/components/bright/MainCoverBright.vue'
-import QuotePage from '@/components/QuotePage.vue'
+import QuotePageBright from '@/components/bright/QuotePageBright.vue'
 import GroomBrideBright from '@/components/bright/GroomBrideBright.vue'
 // import TimeLines from '@/components/TimeLines.vue'
 import RunDownBright from '@/components/bright/RunDownBright.vue'
@@ -123,7 +123,7 @@ import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import HappyPageBright from '@/components/bright/HappyPageBright.vue'
-import DompetPage from '@/components/DompetPage.vue'
+import DompetPageBright from '@/components/bright/DompetPageBright.vue'
 
 
 
@@ -154,6 +154,8 @@ const props = defineProps({
   story: { type: Object },
   dompet: { type: Object },
   multiimage: { type: Array },
+  multiimagetheme: { type: Array },
+  portobackground: { type: Object },
 });
 
 
