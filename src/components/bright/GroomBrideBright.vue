@@ -1,6 +1,6 @@
 <template>
     <div :class="theme">
-        <figure class="image is-5by4" :style="{ 'background-image': 'url(' + multiimagetheme[0] + ')' }" style="min-height: 300px; background-position: center; position: relative; background-size: cover;
+        <figure class="image is-5by4" :style="{ 'background-image': 'url(' + portobackground.image1 + ')' }" style="min-height: 300px; background-position: center; position: relative; background-size: cover;
             object-fit: cover;">
             <div class="custom-shape-divider-bottom-1676035094">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -92,8 +92,7 @@ import { defineProps } from 'vue'
 defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
-  themeproduct: { type: Object },
-  multiimagetheme: { type: Array },
+  portobackground: { type: Object },
 });
 </script>
 

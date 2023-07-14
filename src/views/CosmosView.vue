@@ -17,7 +17,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"  
-        :multiimagetheme="multiimagetheme"  
+        :portobackground="portobackground"  
       >
       </GroomBridgeCosmos>
     </div>
@@ -43,7 +43,7 @@
     :portofolio="portofolio"
     :theme="theme"
     :themeproduct="themeproduct"
-    :multiimagetheme="multiimagetheme"
+    :portobackground="portobackground"
     >
     </LiveStreamCardo>
     <StoryPageCosmos
@@ -135,6 +135,7 @@ const props = defineProps({
   dompet: { type: Object },
   multiimage: { type: Array },
   multiimagetheme: { type: Array },
+  portobackground: { type: Object },
 });
 
 

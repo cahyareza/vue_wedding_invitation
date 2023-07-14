@@ -41,6 +41,9 @@ export default function useStore(){
     // MULTIIMAGETHEME
     const multiimagetheme = computed(() => store.state.multiimagetheme); 
 
+    // PORTOBACKGROUND
+    const portobackground = computed(() => store.state.portobackground); 
+
     var web_url = process.env.VUE_APP_WEB_URL_FIX
 
     return {
@@ -59,5 +62,6 @@ export default function useStore(){
         multiimage,
         multiimagetheme,
         dompet,
+        portobackground,
     }
 }

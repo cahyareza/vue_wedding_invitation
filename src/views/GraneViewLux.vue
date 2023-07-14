@@ -14,7 +14,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"  
-        :multiimagetheme="multiimagetheme"  
+        :portobackground="portobackground"  
       >
       </GroomBridgeGraneLux>
     </div>
@@ -46,7 +46,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimagetheme="multiimagetheme"
+      :portobackground="portobackground"
     >
     </LiveStreamGraneLux>
     <div ref="time">
@@ -54,7 +54,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct"   
-        :multiimagetheme="multiimagetheme"  
+        :portobackground="portobackground"  
       >
       </TimeLinesGraneLux>
     </div>
@@ -64,7 +64,7 @@
         :theme="theme"
         :themeproduct="themeproduct"
         :dompet="dompet" 
-        :multiimagetheme="multiimagetheme"
+        :portobackground="portobackground"
       >
       </DompetPageGraneLux>
     </div>
@@ -89,7 +89,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimagetheme="multiimagetheme" 
+      :portobackground="portobackground" 
     >
     </HappyPageCosmos>
     <FooterPage
@@ -153,6 +153,7 @@ const props = defineProps({
   dompet: { type: Object },
   multiimage: { type: Array },
   multiimagetheme: { type: Array },
+  portobackground: { type: Object },
 });
 
 

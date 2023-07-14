@@ -11,6 +11,7 @@
     :dompet="dompet" 
     :multiimage="multiimage"
     :multiimagetheme="multiimagetheme"
+    :portobackground="portobackground"
   />
   <!-- <RouterView :portofolio="portofolio" /> -->
 </template>
@@ -21,7 +22,7 @@ import injectStore from '@/hooks/injectStore.js'
 import AOS from "aos";
 
 const {store, portofolio, theme, themeproduct, quote, acara, 
-  invitation, story, dompet, multiimage, multiimagetheme } = injectStore()
+  invitation, story, dompet, multiimage, multiimagetheme, portobackground } = injectStore()
 
 const navigate = (val) => {
   store.actions.getPortofolio2(val);
@@ -34,6 +35,7 @@ const navigate = (val) => {
   store.actions.getDompet2(val);
   store.actions.getMultiimage2(val);
   store.actions.getMultiimageTheme2(val);
+  store.actions.getPortoBackground2(val);
 }
 
 onMounted(() => {

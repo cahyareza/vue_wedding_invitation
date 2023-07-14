@@ -13,6 +13,7 @@ export const useCounterStore = defineStore('store', () => {
     invitation: [],
     multiimage: [],
     multiimagetheme: [],
+    portobackground:[],
     ucapan: [],
     dompet:[],
     // theme: "false",
@@ -39,6 +40,7 @@ export const useCounterStore = defineStore('store', () => {
     updateDompet: (payload) => state.dompet = payload,
     updateTheme: (payload) => state.theme = payload,
     updateThemeProduct: (payload) => state.themeproduct = payload,
+    updatePortoBackground: (payload) => state.portobackground = payload,
     updatePortofolio: (payload) => state.portofolio = payload,
     updateStory: (payload) => state.story = payload,
     updateAcara: (payload) => state.acara = payload,
@@ -59,40 +61,40 @@ export const useCounterStore = defineStore('store', () => {
       },
       getQuote: () => {
         actions.getSlug();
-        return axios.get(`${web_url }portofolio/api/quote/?portofolio__slug=${slug.value}`).then((response) => {
+        return axios.get(`${web_url }api/portofolio/quote/?portofolio__slug=${slug.value}`).then((response) => {
           mutations.updateQuote(response.data[0]);
           // console.log(response.data[0])
         });
       },
       getQuote2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/quote/?portofolio__slug=${slug}`).then((response) => {
+        return axios.get(`${web_url}api/portofolio/quote/?portofolio__slug=${slug}`).then((response) => {
           mutations.updateQuote(response.data[0]);
           // console.log(response.data[0])
         });
       },
       getHadir: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/hadir/?portofolio__slug=${slug.value}`).then((response) => {
+        return axios.get(`${web_url}api/portofolio/hadir/?portofolio__slug=${slug.value}`).then((response) => {
           mutations.updateHadir(response.data);
           // console.log(response.data.results);
         });
       },
       getInvitation: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/specialinvitation/?portofolio__slug=${slug.value}`)
+        return axios.get(`${web_url}api/portofolio/specialinvitation/?portofolio__slug=${slug.value}`)
         .then((response) => {
           mutations.updateInvitation(response.data);
         });
       },
       getInvitation2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/specialinvitation/?portofolio__slug=${slug}`)
+        return axios.get(`${web_url}api/portofolio/specialinvitation/?portofolio__slug=${slug}`)
         .then((response) => {
           mutations.updateInvitation(response.data);
         });
       },
       getMultiimage: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/multiimage/?portofolio__slug=${slug.value}`)
+        return axios.get(`${web_url}api/portofolio/multiimage/?portofolio__slug=${slug.value}`)
         .then((response) => {
           // console.log(response.data) 
           const imagelist = []
@@ -103,7 +105,7 @@ export const useCounterStore = defineStore('store', () => {
         });
       },
       getMultiimage2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/multiimage/?portofolio__slug=${slug}`)
+        return axios.get(`${web_url}api/portofolio/multiimage/?portofolio__slug=${slug}`)
         .then((response) => {
           // console.log(response.data) 
           const imagelist = []
@@ -123,33 +125,39 @@ export const useCounterStore = defineStore('store', () => {
           mutations.updateMultiImageTheme(imagethemelist);
         });
       },
+      getPortoBackground2: (slug) => {
+        return axios.get(`${web_url}api/portofolio/portobackground/?portofolio__slug=${slug}`)
+        .then((response) => {
+          mutations.updatePortoBackground(response.data);
+        });
+      },
       getUcapan: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/ucapan/?portofolio__slug=${slug.value}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/ucapan/?portofolio__slug=${slug.value}`) .then((response) => {
           mutations.updateUcapan(response.data);
         });
       },
       getDompet: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/dompet/?portofolio__slug=${slug.value}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/dompet/?portofolio__slug=${slug.value}`) .then((response) => {
           mutations.updateDompet(response.data);
         });
       },
       getDompet2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/dompet/?portofolio__slug=${slug}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/dompet/?portofolio__slug=${slug}`) .then((response) => {
           mutations.updateDompet(response.data);
         });
       },
       getTheme: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
           const theme = { [response.data[0].theme.slug]: true }
           // console.log(theme)
           mutations.updateTheme(theme);
         });
       },
       getTheme2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/themeproduct/?portofolio__slug=${slug}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/themeproduct/?portofolio__slug=${slug}`) .then((response) => {
           // console.log(response.data[0])
           const theme = { [response.data[0].theme.slug]: true }
           // console.log(theme)
@@ -158,13 +166,13 @@ export const useCounterStore = defineStore('store', () => {
       },
       getThemeProduct: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/themeproduct/?portofolio__slug=${slug.value}`) .then((response) => {
           // console.log(response.data[0])
           mutations.updateThemeProduct(response.data[0]);
         });
       },
       getThemeProduct2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/themeproduct/?portofolio__slug=${slug}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/themeproduct/?portofolio__slug=${slug}`) .then((response) => {
           // console.log(response.data[0])
           mutations.updateThemeProduct(response.data[0]);
         });
@@ -175,7 +183,7 @@ export const useCounterStore = defineStore('store', () => {
         // console.log(route.params)
         // slug.value = route.params.slug
         // console.log(slug.value)
-        return axios.get(`${web_url}portofolio/api/portofolio/?slug=${slug.value}`)
+        return axios.get(`${web_url}api/portofolio/?slug=${slug.value}`)
         .then((response) => {
           // console.log(response);
           // if (response.data[0].timeZone) {
@@ -192,7 +200,7 @@ export const useCounterStore = defineStore('store', () => {
         });
       },
       getPortofolio2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/portofolio/?slug=${slug}`)
+        return axios.get(`${web_url}api/portofolio/?slug=${slug}`)
         .then((response) => {
           if (response.data[0].timeZone) {
             if (response.data[0].timeZone == 'Asia/Jakarta') {
@@ -209,33 +217,33 @@ export const useCounterStore = defineStore('store', () => {
       },
       getStory: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/story/?portofolio__slug=${slug.value}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/story/?portofolio__slug=${slug.value}`) .then((response) => {
           // console.log(response.data);
           mutations.updateStory(response.data);
         });
       },
       getStory2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/story/?portofolio__slug=${slug}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/story/?portofolio__slug=${slug}`) .then((response) => {
           // console.log(response.data);
           mutations.updateStory(response.data);
         });
       },
       getAcara: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/acara/?portofolio__slug=${slug.value}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/acara/?portofolio__slug=${slug.value}`) .then((response) => {
           // console.log(response.data);
           mutations.updateAcara(response.data);
         });
       },
       getAcara2: (slug) => {
-        return axios.get(`${web_url}portofolio/api/acara/?portofolio__slug=${slug}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/acara/?portofolio__slug=${slug}`) .then((response) => {
           // console.log(response.data);
           mutations.updateAcara(response.data);
         });
       },
       getAudio: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/portofolio/?slug=${slug.value}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/?slug=${slug.value}`) .then((response) => {
           // console.log(response.data[0].track.url)
           // eslint-disable-next-line
           let myregex = /https\:\/\/drive\.google\.com\/file\/d\/([a-z0-9\-_]+)\&?/i
@@ -250,7 +258,7 @@ export const useCounterStore = defineStore('store', () => {
       },
       getDana: () => {
         actions.getSlug();
-        return axios.get(`${web_url}portofolio/api/dana/?portofolio__slug=${slug.value}`) .then((response) => {
+        return axios.get(`${web_url}api/portofolio/dana/?portofolio__slug=${slug.value}`) .then((response) => {
           // console.log(response.data);
           mutations.updateDana(response.data);
         });

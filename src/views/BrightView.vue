@@ -28,7 +28,7 @@
         :portofolio="portofolio"
         :theme="theme"
         :themeproduct="themeproduct" 
-        :multiimagetheme="multiimagetheme"  
+        :portobackground="portobackground"  
       >
       </GroomBrideBright>
     </div>
@@ -38,7 +38,7 @@
         :theme="theme"
         :themeproduct="themeproduct"
         :acara="acara"   
-        :multiimagetheme="multiimagetheme"   
+        :portobackground="portobackground"   
       >
       </RunDownBright>
     </div>
@@ -53,7 +53,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimagetheme="multiimagetheme"
+      :portobackground="portobackground"
     >
     </LiveStreamCardo>
       <!-- <TimeLines 
@@ -98,7 +98,7 @@
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
-      :multiimagetheme="multiimagetheme"
+      :portobackground="portobackground"
     >
     </HappyPageBright>
     <FooterPage
@@ -155,6 +155,7 @@ const props = defineProps({
   dompet: { type: Object },
   multiimage: { type: Array },
   multiimagetheme: { type: Array },
+  portobackground: { type: Object },
 });
 
 
