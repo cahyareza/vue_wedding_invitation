@@ -28,7 +28,7 @@
                             data-aos-offset="300" data-aos-duration="1000"
                             data-aos-easing="ease-in-sine" data-aos-delay="100">
                                 <div class="column
-                                is-6 has-text-right
+                                is-5 px-1 has-text-right
                                 ">                                    
                                     <p class="title2 is-capitalized is-size-3-tablet is-size-5-mobile">{{ portofolio.pname }}</p>
 
@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div class="column
-                                is-6">
+                                is-7 px-1">
                                     <figure class="image is-2by3">
                                         <img :src="portofolio.ppicture">
                                     </figure>
@@ -56,14 +56,14 @@
                             data-aos-offset="300" data-aos-duration="1000"
                             data-aos-easing="ease-in-sine" data-aos-delay="100">
                                 <div class="column
-                                is-6
+                                is-7 px-1
                                 "> 
                                     <figure class="image is-2by3">
                                         <img :src="portofolio.lpicture">
                                     </figure>
                                 </div>
                                 <div class="column
-                                is-6 has-text-left
+                                is-5 px-1 has-text-left
                                 ">
                                     <p class="title2 is-capitalized is-size-3-tablet is-size-5-mobile">{{ portofolio.lname }}</p>
 
