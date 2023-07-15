@@ -29,7 +29,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  portobackground: { type: Array },
+  portobackground: { type: Object },
 });
 </script>
 

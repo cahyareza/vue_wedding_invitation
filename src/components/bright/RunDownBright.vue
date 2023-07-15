@@ -67,7 +67,7 @@ defineProps({
   theme: { type: Object },
   themeproduct: { type: Object },
   acara: { type: Object },
-  portobackground: { type: Array },
+  portobackground: { type: Object },
   direction: { type: Object },
 });
 </script>

@@ -126,9 +126,9 @@ export const useCounterStore = defineStore('store', () => {
         });
       },
       getPortoBackground2: (slug) => {
-        return axios.get(`${web_url}api/portofolio/portobackground/?portofolio__slug=${slug}`)
-        .then((response) => {
-          mutations.updatePortoBackground(response.data);
+        return axios.get(`${web_url}api/portofolio/portobackground/?portofolio__slug=${slug}`).then((response) => {
+          mutations.updatePortoBackground(response.data[0]);
+          // console.log(response.data[0])
         });
       },
       getUcapan: () => {
