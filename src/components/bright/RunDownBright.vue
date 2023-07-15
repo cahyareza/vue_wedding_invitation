@@ -22,12 +22,12 @@
 
             </section>
             <section class="hero is-large">
-                <div class="notification low-opacity-bg-image m-4 p-1" :style="{ 'background-image': 'url(' + portobackground.image3 + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
+                <div class="notification low-opacity-bg-image m-4 py-5 px-1" :style="{ 'background-image': 'url(' + portobackground.image3 + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
                 data-aos-offset="300" data-aos-duration="1000"
                 data-aos-easing="ease-in-sine" data-aos-delay="100">
                     <div v-for="(piece) in acara" :key="piece.id">
                         <div class="columns is-multiline">
-                            <div class="column is-12">
+                            <div class="column is-12 mb-2">
                                 <p class="title2 is-size-3-tablet is-capitalized is-size-3-mobile mb-3">{{ piece.nama_acara }}</p>
                                 <p class="subtitle3 is-size-6-tablet is-size-6-mobile has-text-weight-bold mb-1">{{ tanggal(piece.tanggal_acara) }}</p>
                                 <div v-if="piece.waktu_selesai_acara">
