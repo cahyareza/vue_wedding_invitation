@@ -22,7 +22,7 @@
 
             </section>
             <section class="hero is-large">
-                <div class="notification low-opacity-bg-image m-6" :style="{ 'background-image': 'url(' + portobackground.image3 + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
+                <div class="notification low-opacity-bg-image m-4 p-1" :style="{ 'background-image': 'url(' + portobackground.image3 + ')' }" style="background-size: cover;background-position: center;  " data-aos="fade-up"
                 data-aos-offset="300" data-aos-duration="1000"
                 data-aos-easing="ease-in-sine" data-aos-delay="100">
                     <div v-for="(piece) in acara" :key="piece.id">
