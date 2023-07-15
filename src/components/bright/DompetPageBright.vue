@@ -12,7 +12,7 @@
                                             <font-awesome-icon icon="fa-solid fa-gift" />
                                         </span>
                                         <p class="title is-capitalized is-size-3-mobile is-size-2-tablet mt-5 mb-3">Wedding Gift</p>
-                                        <p class="subtitle is-size-6-mobile is-size-5-tablet mt-3">Bagi keluarga dan kerabat yang ingin mengirimkan tanda kasih, silahkan mengirimkan melalui tautan berikut</p>
+                                        <p class="subtitle is-size-6-mobile is-size-5-tablet mt-3">Bagi keluarga dan kerabat yang ingin mengirimkan tanda kasih, dapat mengirimkan melalui tautan berikut</p>
                                         
                                         <div @click="showModal" class="button p-2">
                                             Kirim
