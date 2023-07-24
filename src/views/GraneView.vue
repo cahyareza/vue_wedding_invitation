@@ -29,7 +29,8 @@
         :theme="theme"
         :themeproduct="themeproduct"
         :acara="acara"
-        :multiimagetheme="multiimagetheme"  
+        :multiimagetheme="multiimagetheme"
+        :portobackground="portobackground"   
         :direction="direction"    
       >
       </RunDownGrane>

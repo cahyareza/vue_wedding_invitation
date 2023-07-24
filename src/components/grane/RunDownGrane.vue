@@ -2,7 +2,7 @@
     <div v-if="acara.length != 0">
         <div :class="theme">
             <figure class="image is-3by2">
-                <img :src="multiimagetheme[0]">
+                <img :src="portobackground.image1">
             </figure>
             <section class="hero is-large">
                 <div class="box m-4">
@@ -75,6 +75,7 @@ defineProps({
   acara: { type: Object },
   multiimagetheme: { type: Array },
   direction: { type: Object },
+  portobackground: { type: Object },
 });
 </script>
 
