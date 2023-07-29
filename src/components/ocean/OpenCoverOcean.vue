@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </div><br>
-                        <router-link :to="`/main/ocean/${slug}/${direction}`" class="button mt-4">
+                        <router-link :to="`/main/ocean/${slug}`" class="button mt-4">
                             Buka Undangan
                         </router-link>
                     </div>
@@ -62,27 +62,17 @@
 
 <script setup>
 import VueParticle from 'vue-particlejs';
-import { inject, reactive, computed, defineProps } from 'vue'
+import {reactive, defineProps } from 'vue'
+import injectStore from '@/hooks/injectStore.js'
 import moment from 'moment';
 
 // GET PROPS
-// eslint-disable-next-line no-unused-vars
 defineProps({
   direction: { type: Object },
+  themeproduct: { type: Object },
 });
 
-// LOAD STATE
-const store = inject('store');
-
-// SLUG
-const slug = store.actions.getSlug().value;
-
-// PORTOFOLIO
-const portofolio = computed(() => store.state.portofolio);
-
-// THEME
-const theme = computed(() => store.state.theme);
-const themeproduct = computed(() => store.state.themeproduct); 
+const {store, slug, portofolio, theme, themeproduct} = injectStore()
 
 const getProps = async () => {
     await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -168,5 +158,4 @@ obj.particleConfig = {
 
 <style lang="scss" scoped>
 @import "../../styles/component/opencover.scss";
-// @import "../styles/global.scss";
 </style>

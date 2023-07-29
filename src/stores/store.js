@@ -158,7 +158,7 @@ export const useCounterStore = defineStore('store', () => {
       },
       getTheme2: (slug) => {
         return axios.get(`${web_url}api/portofolio/themeproduct/?portofolio__slug=${slug}`) .then((response) => {
-          // console.log(response.data[0])
+          console.log(response.data[0])
           const theme = { [response.data[0].theme.slug]: true }
           // console.log(theme)
           mutations.updateTheme(theme);
@@ -182,7 +182,7 @@ export const useCounterStore = defineStore('store', () => {
         // const route = useRoute();
         // console.log(route.params)
         // slug.value = route.params.slug
-        // console.log(slug.value)
+        console.log(slug.value)
         return axios.get(`${web_url}api/portofolio/?slug=${slug.value}`)
         .then((response) => {
           // console.log(response);

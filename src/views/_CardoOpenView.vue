@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import OpenCoverCardo from '@/components/cardo/OpenCoverCardo.vue'
+import OpenCoverCardo from '@/components/cardo/_OpenCoverCardo.vue'
 import { ref, onBeforeMount, inject } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
 

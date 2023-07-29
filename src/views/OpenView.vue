@@ -5,7 +5,7 @@
       <template #default>
         <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
           || themeproduct.theme?.slug === 'theme-4' || themeproduct.theme?.slug === 'theme-5' || themeproduct.theme?.slug === 'theme-6'
-          || themeproduct.theme?.slug === 'theme-7' || themeproduct.theme?.slug === 'theme-8' || themeproduct.theme?.slug === 'theme-9'
+          || themeproduct.theme?.slug === 'theme-7' || themeproduct.theme?.slug === 'theme-8'
           || themeproduct.theme?.slug === 'theme-11' || themeproduct.theme?.slug === 'theme-12'">
           <OpenCover 
             :direction="direction"
@@ -13,6 +13,14 @@
             :quote="quote"
             >
           </OpenCover>
+        </div>
+        <div v-else-if="themeproduct.theme?.slug === 'theme-9'">
+          <OpenCoverOcean 
+            :direction="direction"
+            :themeproduct="themeproduct" 
+            :quote="quote"
+            >
+          </OpenCoverOcean>
         </div>
         <div v-else-if="themeproduct.theme?.slug === 'theme-10'">
           <OpenCoverBright 
@@ -36,6 +44,7 @@
 <script setup>
 import OpenCover from '@/components/OpenCover.vue'
 import OpenCoverBright from '@/components/bright/OpenCoverBright.vue'
+import OpenCoverOcean from '@/components/ocean/OpenCoverOcean.vue'
 import { ref, onMounted, computed } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
 import {useCounterStore} from '@/stores/store'
