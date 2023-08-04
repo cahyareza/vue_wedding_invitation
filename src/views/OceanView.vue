@@ -1,7 +1,16 @@
 <template>
+  <form @submit.prevent="submit" class="vl-parent" ref="formContainer">
+      <!-- your form inputs goes here-->
+      <label class="is-hidden"><input type="checkbox" v-model="fullPage">Full page?</label>
+  </form>
+
   <section>
-    <CovidPage>
-    </CovidPage>
+    <OpenCoverOcean
+      :portofolio="portofolio"
+      :direction="direction"
+      :themeproduct="themeproduct"
+    >
+    </OpenCoverOcean>
     <MainCover
       :portofolio="portofolio"
       :theme="theme"
@@ -90,20 +99,20 @@
       :theme="theme"
     >
     </FooterPage>
-    <MainMenu
+    <MainMenuOcean
       @page="navigation"
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
     >
-    </MainMenu>
+    </MainMenuOcean>
   </section>
 </template>
 
 <script setup>
-import MainMenu from '@/components/MainMenu.vue'
-import CovidPage from '@/components/CovidPage.vue'
+import MainMenuOcean from '@/components/ocean/MainMenuOcean.vue'
+import OpenCoverOcean from '@/components/ocean/OpenCoverOcean.vue'
 import MainCover from '@/components/MainCover.vue'
 import QuotePage from '@/components/QuotePage.vue'
 import GroomBridgeOcean from '@/components/ocean/GroomBridgeOcean.vue'
@@ -121,6 +130,35 @@ import HappyPageOcean from '@/components/ocean/HappyPageOcean.vue'
 
 import { ref, onMounted, defineProps, defineEmits } from "vue";
 import {useCounterStore} from '@/stores/store'
+import {useLoading} from 'vue-loading-overlay'
+import injectStore from '@/hooks/injectStore.js'
+
+const {slug} = injectStore()
+
+const $loading = useLoading({
+    // options
+});
+// or use inject without importing useLoading
+// const $loading =  inject('$loading')
+
+const fullPage = ref(false)
+
+const submit = () => {
+    const loader = $loading.show({
+        // Optional parameters
+        color:'black',
+        loader: 'dots',
+        width: 90,
+        height: 90,
+        backgroundColor:'#ffffff',
+        opacity: 1,
+        zIndex: 999,
+    });
+    // simulate AJAX
+    setTimeout(() => {
+        loader.hide()
+    }, 4000)
+}
 
 // LOAD STATE
 const store = useCounterStore();
@@ -176,8 +214,10 @@ const navigation = val => {
 // NAVIGATION END
 
 onMounted( () => {
-  navigation();
+  store.actions.getPortofolio2(slug);
   getSlug();
+  navigation();
+  submit();
 })
 
 </script>

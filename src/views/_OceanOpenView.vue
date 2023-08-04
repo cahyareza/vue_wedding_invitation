@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import OpenCoverOcean from '@/components/ocean/OpenCoverOcean.vue'
+import OpenCoverOcean from '@/components/ocean/_OpenCoverOcean.vue'
 import { ref, onBeforeMount, inject } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
 

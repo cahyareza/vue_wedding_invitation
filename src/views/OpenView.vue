@@ -44,7 +44,7 @@
 <script setup>
 import OpenCover from '@/components/OpenCover.vue'
 import OpenCoverBright from '@/components/bright/OpenCoverBright.vue'
-import OpenCoverOcean from '@/components/ocean/OpenCoverOcean.vue'
+import OpenCoverOcean from '@/components/ocean/_OpenCoverOcean.vue'
 import { ref, onMounted, computed } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
 import {useCounterStore} from '@/stores/store'
