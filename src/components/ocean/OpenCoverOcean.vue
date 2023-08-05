@@ -78,7 +78,6 @@ const callChildMethod = () => {
     child.value.play();
 }
 
-
 const {portofolio, theme, themeproduct} = injectStore()
 
 // GET PROPS

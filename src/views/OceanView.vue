@@ -1,10 +1,9 @@
 <template>
-  <form @submit.prevent="submit" class="vl-parent" ref="formContainer">
-      <!-- your form inputs goes here-->
-      <label class="is-hidden"><input type="checkbox" v-model="fullPage">Full page?</label>
-  </form>
-
   <section>
+    <LoadingPage
+      @timer="getSlug"
+    >
+    </LoadingPage>
     <OpenCoverOcean
       :portofolio="portofolio"
       :direction="direction"
@@ -125,40 +124,14 @@ import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import HappyPageOcean from '@/components/ocean/HappyPageOcean.vue'
-
+import LoadingPage from '@/views/parts/LoadingPage.vue'
 
 
 import { ref, onMounted, defineProps, defineEmits } from "vue";
 import {useCounterStore} from '@/stores/store'
-import {useLoading} from 'vue-loading-overlay'
 import injectStore from '@/hooks/injectStore.js'
 
 const {slug} = injectStore()
-
-const $loading = useLoading({
-    // options
-});
-// or use inject without importing useLoading
-// const $loading =  inject('$loading')
-
-const fullPage = ref(false)
-
-const submit = () => {
-    const loader = $loading.show({
-        // Optional parameters
-        color:'black',
-        loader: 'dots',
-        width: 90,
-        height: 90,
-        backgroundColor:'#ffffff',
-        opacity: 1,
-        zIndex: 999,
-    });
-    // simulate AJAX
-    setTimeout(() => {
-        loader.hide()
-    }, 4000)
-}
 
 // LOAD STATE
 const store = useCounterStore();
@@ -215,9 +188,8 @@ const navigation = val => {
 
 onMounted( () => {
   store.actions.getPortofolio2(slug);
-  getSlug();
+  // getSlug();
   navigation();
-  submit();
 })
 
 </script>
