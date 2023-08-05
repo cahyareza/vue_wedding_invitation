@@ -1,6 +1,5 @@
 <template>
   <section>
-    <!-- <OpenCover id="openCover"></OpenCover> -->
     <Suspense>
       <template #default>
         <div v-if="themeproduct.theme?.slug === 'theme-1' || themeproduct.theme?.slug === 'theme-2' || themeproduct.theme?.slug === 'theme-3'
@@ -14,14 +13,6 @@
             >
           </OpenCover>
         </div>
-        <div v-else-if="themeproduct.theme?.slug === 'theme-9'">
-          <OpenCoverOcean 
-            :direction="direction"
-            :themeproduct="themeproduct" 
-            :quote="quote"
-            >
-          </OpenCoverOcean>
-        </div>
         <div v-else-if="themeproduct.theme?.slug === 'theme-10'">
           <OpenCoverBright 
             :direction="direction"
@@ -33,7 +24,6 @@
       </template>
       <template #fallback>
         <form @submit.prevent="submit" class="vl-parent" ref="formContainer">
-        <!-- your form inputs goes here-->
         <label class="is-hidden"><input type="checkbox" v-model="fullPage">Full page?</label>
         </form>
       </template>
@@ -44,7 +34,6 @@
 <script setup>
 import OpenCover from '@/components/OpenCover.vue'
 import OpenCoverBright from '@/components/bright/OpenCoverBright.vue'
-import OpenCoverOcean from '@/components/ocean/_OpenCoverOcean.vue'
 import { ref, onMounted, computed } from 'vue'
 import {useLoading} from 'vue-loading-overlay'
 import {useCounterStore} from '@/stores/store'

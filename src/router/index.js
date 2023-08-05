@@ -2,13 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import OpenView from '../views/OpenView.vue'
 import MainView from '../views/MainView.vue'
 import CardoView from '../views/CardoView.vue'
-// import CardoOpenView from '../views/CardoOpenView.vue'
 import GraneView from '../views/GraneView.vue'
-// import GraneOpenView from '../views/GraneOpenView.vue'
 import CosmosView from '../views/CosmosView.vue'
-// import CosmosOpenView from '../views/CosmosOpenView.vue'
 import OceanView from '../views/OceanView.vue'
-// import OceanOpenView from '../views/OceanOpenView.vue'
 import BrightView from '../views/BrightView.vue'
 import BraunView from '../views/BraunView.vue'
 import GraneViewLux from '../views/GraneViewLux.vue'
@@ -45,12 +41,12 @@ const routes = [
     component: BrightView,
   },
   {
-    path: '/main/ocean/:slug',
+    path: '/ocean/:slug',
     name: 'mainocean',
     component: OceanView,
   },
   {
-    path: '/main/ocean/:slug/:to',
+    path: '/ocean/:slug/:to',
     name: 'mainoceanto',
     component: OceanView,
   },
@@ -74,16 +70,6 @@ const routes = [
     name: 'maingraneto',
     component: GraneView,
   },
-  // {
-  //   path: '/cardo/:slug',
-  //   name: 'cardoopen',
-  //   component: CardoOpenView,
-  // },
-  // {
-  //   path: '/cardo/:slug/:to',
-  //   name: 'cardoopento',
-  //   component: CardoOpenView,
-  // },
   {
     path: '/main/cardo/:slug/:to',
     name: 'maincardo',
