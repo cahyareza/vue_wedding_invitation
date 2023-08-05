@@ -8,7 +8,7 @@
                         is-6-tablet
                         is-12-mobile p-5">
                             <figure class="image is-4by5">
-                                <img :src="portobackground.image1">
+                                <img :src="portobackground.image3">
                             </figure>
                         </div>
                         <div class="column

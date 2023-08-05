@@ -49,7 +49,7 @@
                                                     is-full is-paddingless is-marginless
                                                     ">
                                                         <figure class="image is-3by2">
-                                                            <img :src="portobackground.image3">
+                                                            <img :src="portobackground.image1">
                                                         </figure>
                                                     </div>
                                                     <div class="column
@@ -120,7 +120,7 @@ defineProps({
   portofolio: { type: Object },
   theme: { type: Object },
   themeproduct: { type: Object },
-  portobackground: { type: Array },
+  portobackground: { type: Object },
 });
 </script>
 

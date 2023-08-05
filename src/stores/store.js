@@ -182,7 +182,7 @@ export const useCounterStore = defineStore('store', () => {
         // const route = useRoute();
         // console.log(route.params)
         // slug.value = route.params.slug
-        // console.log(slug.value)
+        console.log(slug.value)
         return axios.get(`${web_url}api/portofolio/?slug=${slug.value}`)
         .then((response) => {
           // console.log(response);

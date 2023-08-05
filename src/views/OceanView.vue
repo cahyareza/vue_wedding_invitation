@@ -1,7 +1,15 @@
 <template>
   <section>
-    <CovidPage>
-    </CovidPage>
+    <LoadingPage
+      @timer="getSlug"
+    >
+    </LoadingPage>
+    <OpenCoverOcean
+      :portofolio="portofolio"
+      :direction="direction"
+      :themeproduct="themeproduct"
+    >
+    </OpenCoverOcean>
     <MainCover
       :portofolio="portofolio"
       :theme="theme"
@@ -90,20 +98,20 @@
       :theme="theme"
     >
     </FooterPage>
-    <MainMenu
+    <MainMenuOcean
       @page="navigation"
       :portofolio="portofolio"
       :theme="theme"
       :themeproduct="themeproduct"
       :dompet="dompet" 
     >
-    </MainMenu>
+    </MainMenuOcean>
   </section>
 </template>
 
 <script setup>
-import MainMenu from '@/components/MainMenu.vue'
-import CovidPage from '@/components/CovidPage.vue'
+import MainMenuOcean from '@/components/ocean/MainMenuOcean.vue'
+import OpenCoverOcean from '@/components/ocean/OpenCoverOcean.vue'
 import MainCover from '@/components/MainCover.vue'
 import QuotePage from '@/components/QuotePage.vue'
 import GroomBridgeOcean from '@/components/ocean/GroomBridgeOcean.vue'
@@ -116,11 +124,14 @@ import OurMoment from '@/components/OurMoment.vue'
 import MessageBox from '@/components/MessageBox.vue'
 import FooterPage from '@/components/FooterPage.vue'
 import HappyPageOcean from '@/components/ocean/HappyPageOcean.vue'
-
+import LoadingPage from '@/views/parts/LoadingPage.vue'
 
 
 import { ref, onMounted, defineProps, defineEmits } from "vue";
 import {useCounterStore} from '@/stores/store'
+import injectStore from '@/hooks/injectStore.js'
+
+const {slug} = injectStore()
 
 // LOAD STATE
 const store = useCounterStore();
@@ -176,8 +187,9 @@ const navigation = val => {
 // NAVIGATION END
 
 onMounted( () => {
+  store.actions.getPortofolio2(slug);
+  // getSlug();
   navigation();
-  getSlug();
 })
 
 </script>

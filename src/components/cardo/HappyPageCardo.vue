@@ -1,6 +1,6 @@
 <template>
     <div :class="theme">
-        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portobackground.image6 + ')' }">
+        <div class="low-opacity-bg-image" :style="{ 'background-image': 'url(' + portobackground.image5 + ')' }">
             <section class="hero is-large">
                 <div class="hero-body">
                     <div class="section py-0">
